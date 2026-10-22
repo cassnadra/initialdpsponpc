@@ -1,5 +1,5 @@
 {
- "last_id": "1562724602453434421",
+ "last_id": "1562750042601824276",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -23,14 +23,41 @@
      "ghost": "ghosts/akagi-0/b46085569295d65f.idg"
     }
    }
+  },
+  "usui-0": {
+   "course": "usui",
+   "label": "Usui uphill",
+   "start": [
+    198.78599548339844,
+    -0.019999373704195023,
+    -255.8990020751953
+   ],
+   "lens": [
+    8524.1
+   ],
+   "entries": {
+    "2ff94d72b41c145f": {
+     "name": "AFK",
+     "time_ms": 210066,
+     "car": 0,
+     "game": "en",
+     "date": "2026-10-22",
+     "msg": "1562750042601824276",
+     "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg"
+    }
+   }
   }
  },
  "keys": {
-  "b46085569295d65f": "92aaa9127eaf88ea38de52ce6e50e18e87ec777574eaa1abee4a3350e3fefa6cfed9baf77e363261d0709ed8f341cf47dd650f757361bfc1da85b0af99e8c6a4"
+  "b46085569295d65f": "92aaa9127eaf88ea38de52ce6e50e18e87ec777574eaa1abee4a3350e3fefa6cfed9baf77e363261d0709ed8f341cf47dd650f757361bfc1da85b0af99e8c6a4",
+  "2ff94d72b41c145f": "a189f2ca547d40597f0bfa70799f33d0cfadf2adf2ef7d7888aa20f45dd4001dcf11ec139e576429c4b2824369c4cf4afb5d38b17c5aa3c28ce36451dee354ef"
  },
  "names": {
   "b46085569295d65f": [
    "Cassandra"
+  ],
+  "2ff94d72b41c145f": [
+   "AFK"
   ]
  },
  "steam": {},

@@ -16,5 +16,23 @@
     "ghost": "ghosts/akagi-0/b46085569295d65f.idg"
    }
   ]
+ },
+ "usui-0": {
+  "course": "usui",
+  "label": "Usui uphill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "2ff94d72b41c145f",
+    "shown": "AFK #2ff9",
+    "steam": "",
+    "name": "AFK",
+    "time_ms": 210066,
+    "car": 0,
+    "game": "en",
+    "date": "2026-10-22",
+    "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg"
+   }
+  ]
  }
 }
