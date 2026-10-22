@@ -136,6 +136,9 @@ def main():
     steam = state.setdefault('steam', {})    # player id -> the Steam account it proved (signing in through Steam)
     nonces = state.setdefault('nonces', [])  # Steam answers already used
     msgs = messages_after(state['last_id'])
+    if msgs and all(not m.get('content') for m in msgs if m.get('webhook_id')) and any(m.get('webhook_id') for m in msgs):
+        sys.exit('::error::The submissions came with empty text: turn on MESSAGE CONTENT INTENT (Developer Portal -> your '
+                 'app -> Bot -> Privileged Gateway Intents -> Save), then run again. Nothing is lost.')
     added = rejected = 0
     for m in msgs:
         state['last_id'] = m['id']
@@ -203,5 +206,19 @@ def main():
     print(f'{len(msgs)} new messages: {added} times added, {rejected} rejected')
 
 
+HELP = {
+    401: 'Discord refused the bot token (401). DISCORD_TOKEN must be the bot token (Developer Portal -> your app -> Bot -> '
+         'Reset Token), pasted with nothing else - not the webhook URL, not the application id / public key.',
+    403: 'The bot can\'t read the channel (403). Server settings -> the leaderboard channel -> Permissions: give the bot '
+         'View Channel and Read Message History.',
+    404: 'Discord doesn\'t know that channel (404). DISCORD_CHANNEL must be the channel id (Discord settings -> Advanced -> '
+         'Developer Mode on, right-click the channel -> Copy Channel ID), and the bot must be in that server.',
+}
+
+
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except urllib.error.HTTPError as e:
+        sys.exit(f'::error::{HELP.get(e.code, f"Discord answered HTTP {e.code} for {e.url}")}')
+
