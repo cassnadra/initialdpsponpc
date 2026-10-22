@@ -61,5 +61,6 @@
   ]
  },
  "steam": {},
- "nonces": []
+ "nonces": [],
+ "steam_ok": {}
 }
