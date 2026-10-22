@@ -1,8 +1,38 @@
 {
- "last_id": "1562695879834607659",
- "boards": {},
- "keys": {},
- "names": {},
+ "last_id": "1562724602453434421",
+ "boards": {
+  "akagi-0": {
+   "course": "akagi",
+   "label": "Akagi downhill",
+   "start": [
+    1935.22998046875,
+    452.0198669433594,
+    -1721.949951171875
+   ],
+   "lens": [
+    5785.4
+   ],
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 154600,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-22",
+     "msg": "1562724602453434421",
+     "ghost": "ghosts/akagi-0/b46085569295d65f.idg"
+    }
+   }
+  }
+ },
+ "keys": {
+  "b46085569295d65f": "92aaa9127eaf88ea38de52ce6e50e18e87ec777574eaa1abee4a3350e3fefa6cfed9baf77e363261d0709ed8f341cf47dd650f757361bfc1da85b0af99e8c6a4"
+ },
+ "names": {
+  "b46085569295d65f": [
+   "Cassandra"
+  ]
+ },
  "steam": {},
  "nonces": []
 }

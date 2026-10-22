@@ -1,1 +1,20 @@
-{}
+{
+ "akagi-0": {
+  "course": "akagi",
+  "label": "Akagi downhill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "b46085569295d65f",
+    "shown": "Cassandra #b460",
+    "steam": "",
+    "name": "Cassandra",
+    "time_ms": 154600,
+    "car": 13,
+    "game": "en",
+    "date": "2026-10-22",
+    "ghost": "ghosts/akagi-0/b46085569295d65f.idg"
+   }
+  ]
+ }
+}

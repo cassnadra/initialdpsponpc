@@ -1,1 +1,3 @@
 # IDSS leaderboard 1
+B	akagi-0	akagi	Akagi downhill
+E	1	Cassandra	154600	13	b46085569295d65f	ghosts/akagi-0/b46085569295d65f.idg	2026-10-22	
