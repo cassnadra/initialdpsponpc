@@ -87,6 +87,21 @@ def check_link(link, proof, keys):
     return None
 
 
+def clean_text(t, n):
+    t = re.sub(r'[\x00-\x1f\x7f]', ' ', str(t or ''))
+    return t.replace('\t', ' ').strip()[:n]
+
+
+def check_profile(pr, keys):
+    """None if a profile message is signed by the key that owns its player id, else why not."""
+    pid = str(pr.get('pid', ''))
+    if not re.fullmatch(r'[0-9a-f]{16}', pid): return 'bad player id'
+    signed = 'profile|%s|%s|%s|%d|%d|%d|%d|%s|%s' % (pid, pr.get('name', ''), pr.get('bio', ''), int(pr.get('pic', 1)), int(pr.get('car', -1)), int(pr.get('cards', -1)), int(pr.get('play_h', 0)), pr.get('car_img', ''), pr.get('discord', ''))
+    if not ecdsa_p256.verify(str(pr.get('pub', '')), str(pr.get('sig', '')), signed.encode()): return 'bad signature'
+    if pid in keys and keys[pid] != pr['pub']: return 'player id already belongs to another key (impersonation?)'
+    return None
+
+
 def check_signature(sub, data, keys):
     """None if the submission is signed by the key that owns its player id (the first key seen for it), else why not."""
     pid = str(sub.get('pid', ''))
@@ -166,6 +181,7 @@ def main():
     steam_ok = state.setdefault('steam_ok', {})   # player id -> True: Steam confirmed it; else linked by the player (unverified)
     for pid in steam: steam_ok.setdefault(pid, True)   # (links made before this split were all confirmed)
     nonces = state.setdefault('nonces', [])  # Steam answers already used
+    profiles = state.setdefault('profiles', {})   # player id -> {pic, car, cards, play_h, name, bio} (their profile card)
     msgs = messages_after(state['last_id'])
     if msgs and all(not m.get('content') for m in msgs if m.get('webhook_id')) and any(m.get('webhook_id') for m in msgs):
         sys.exit('::error::The submissions came with empty text: turn on MESSAGE CONTENT INTENT (Developer Portal -> your '
@@ -174,6 +190,31 @@ def main():
     for m in msgs:
         state['last_id'] = m['id']
         c = m.get('content', '')
+        if c.startswith('IDSS-PROFILE 1 '):   # a player's profile card (name, portrait, a line about them, stats, car)
+            try:
+                pr = json.loads(c[len('IDSS-PROFILE 1 '):])
+                why = check_profile(pr, keys)
+            except Exception as e:
+                why = 'unreadable (%s)' % e
+            if why: print(f"profile {m['id']} rejected: {why}"); continue
+            keys.setdefault(pr['pid'], pr['pub'])
+            img = str(pr.get('car_img', ''))
+            if re.fullmatch(r'[0-9a-f]{32}', img):   # their car's turntable picture: a PNG whose fingerprint (sha256, first 16 bytes) was signed
+                att = next((a for a in m.get('attachments', []) if a.get('filename') == 'car.png'), None)
+                ok_img = False
+                if att and att.get('size', 0) <= 600 * 1024:
+                    data = get(att['url'], auth=False)
+                    if data[:8] == b'\x89PNG\r\n\x1a\n' and hashlib.sha256(data).hexdigest()[:32] == img:
+                        os.makedirs(os.path.join(LB, 'cars'), exist_ok=True)
+                        open(os.path.join(LB, 'cars', img + '.png'), 'wb').write(data); ok_img = True
+                if not ok_img: img = ''
+            else: img = ''
+            pic = int(pr.get('pic', 1)); pic = pic if pic == -1 or 1 <= pic <= 30 else 1
+            profiles[pr['pid']] = {'pic': pic, 'car': max(-1, min(34, int(pr.get('car', -1)))), 'cards': max(-1, min(173, int(pr.get('cards', -1)))),
+                                   'play_h': max(0, min(100000, int(pr.get('play_h', 0)))), 'name': clean_text(pr.get('name'), 24), 'bio': clean_text(pr.get('bio'), 120),
+                                   'car_img': img, 'discord': clean_text(pr.get('discord'), 37)}
+            print(f"{pr['pid']}: profile updated")
+            continue
         if c.startswith('IDSS-LINK 1 ') and m.get('attachments'):   # sent when a player signs in through Steam (+ the bot woken up):
             try:                                                     # checked while Steam still confirms it - then every run is verified
                 link = json.loads(c[len('IDSS-LINK 1 '):])
@@ -239,6 +280,8 @@ def main():
         for r, (pid, e) in enumerate(ranked, 1):
             lines.append('\t'.join(['E', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
             js[bid]['entries'].append({'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), 'steam_verified': bool(steam_ok.get(pid)), **{k: e[k] for k in ('name', 'time_ms', 'car', 'game', 'date', 'ghost')}})
+    for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio
+        lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', '')]))
     open(os.path.join(LB, 'boards.txt'), 'w', newline='\n').write('\n'.join(lines) + '\n')
     json.dump(js, open(os.path.join(LB, 'boards.json'), 'w'), indent=1)
     json.dump(state, open(sp, 'w'), indent=1)
