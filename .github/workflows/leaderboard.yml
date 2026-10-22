@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main            # always the newest boards (a re-run of an old run would build on its old copy: push refused)
       - name: Read Discord, update the boards
         run: python3 tools/leaderboard/lb_build.py
         env:
@@ -26,4 +28,4 @@ jobs:
           git config user.name "leaderboard-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add lb
-          git diff --cached --quiet || (git commit -m "leaderboard update" && git push)
+          git diff --cached --quiet || (git commit -m "leaderboard update" && git push origin HEAD:main)
