@@ -75,6 +75,12 @@ def check_signature(sub, data, keys):
     return None
 
 
+class NotConfirmed(ValueError):
+    """A well-formed sign-in answer for this game that Steam no longer confirms (its answers only check out shortly
+    after the sign-in; the board runs every few hours): .steam_id is the account claimed."""
+    def __init__(self, steam_id): super().__init__('Steam no longer confirms it'); self.steam_id = steam_id
+
+
 def verify_steam(query, used_nonces):
     """A "Sign in through Steam" answer (the query string Steam sent back) -> the Steam id it proves, or raises why not.
     Steam itself is asked whether the answer is genuine (OpenID check_authentication: no key needed)."""
@@ -91,8 +97,8 @@ def verify_steam(query, used_nonces):
     req = urllib.request.Request(STEAM_OPENID, data=urlencode(check).encode(), headers={'User-Agent': 'idss-leaderboard', 'Content-Type': 'application/x-www-form-urlencoded'})
     with urllib.request.urlopen(req, timeout=30) as r:
         answer = r.read().decode('utf-8', 'replace')
-    if 'is_valid:true' not in answer: raise ValueError('Steam says it is not genuine')
     used_nonces.append(nonce)
+    if 'is_valid:true' not in answer: raise NotConfirmed(m.group(1))
     return m.group(1)
 
 
@@ -134,6 +140,8 @@ def main():
     keys = state.setdefault('keys', {})      # player id -> its key (the first one seen)
     names = state.setdefault('names', {})    # player id -> every name it has used (moderation)
     steam = state.setdefault('steam', {})    # player id -> the Steam account it proved (signing in through Steam)
+    steam_ok = state.setdefault('steam_ok', {})   # player id -> True: Steam confirmed it; else linked by the player (unverified)
+    for pid in steam: steam_ok.setdefault(pid, True)   # (links made before this split were all confirmed)
     nonces = state.setdefault('nonces', [])  # Steam answers already used
     msgs = messages_after(state['last_id'])
     if msgs and all(not m.get('content') for m in msgs if m.get('webhook_id')) and any(m.get('webhook_id') for m in msgs):
@@ -165,10 +173,14 @@ def main():
         pid = sub['pid']
         keys.setdefault(pid, sub['pub'])
         st = next((a for a in m['attachments'][1:] if a.get('filename') == 'steam.txt'), None)
-        if st and pid not in steam:   # (the signature above proves this player sent it - now: is the Steam answer genuine?)
+        if st and not steam_ok.get(pid):   # (the signature above proves this player sent it - now: is the Steam answer genuine?)
             try:
-                steam[pid] = verify_steam(get(st['url'], auth=False).decode('utf-8', 'replace'), nonces)
-                print(f"{pid}: Steam account {steam[pid]} linked")
+                steam[pid] = verify_steam(get(st['url'], auth=False).decode('utf-8', 'replace'), nonces); steam_ok[pid] = True
+                print(f"{pid}: Steam account {steam[pid]} linked (confirmed by Steam)")
+            except NotConfirmed as e:   # a real sign-in answer for this game, too old to check: shown as linked by the player
+                if pid not in steam:
+                    steam[pid] = e.steam_id; steam_ok[pid] = False
+                    print(f"{pid}: Steam account {e.steam_id} linked (by the player - Steam no longer confirms the sign-in)")
             except Exception as e:
                 print(f"{pid}: Steam link not accepted ({e})")
         nm = clean_name(sub.get('name'))
@@ -198,8 +210,8 @@ def main():
         lines.append('\t'.join(['B', bid, b['course'], b['label']]))
         js[bid] = {'course': b['course'], 'label': b['label'], 'entries': []}
         for r, (pid, e) in enumerate(ranked, 1):
-            lines.append('\t'.join(['E', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, '')]))
-            js[bid]['entries'].append({'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), **{k: e[k] for k in ('name', 'time_ms', 'car', 'game', 'date', 'ghost')}})
+            lines.append('\t'.join(['E', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
+            js[bid]['entries'].append({'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), 'steam_verified': bool(steam_ok.get(pid)), **{k: e[k] for k in ('name', 'time_ms', 'car', 'game', 'date', 'ghost')}})
     open(os.path.join(LB, 'boards.txt'), 'w', newline='\n').write('\n'.join(lines) + '\n')
     json.dump(js, open(os.path.join(LB, 'boards.json'), 'w'), indent=1)
     json.dump(state, open(sp, 'w'), indent=1)
