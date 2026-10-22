@@ -15,3 +15,5 @@ multighost races
 + more!
 
 if you have any problems, please send me the logs/screenshots of the problem on discord @cassnadra (crashes have an in built reporter, please use that for crashes) 
+
+!! you will need to source your own copy of the initial d street stage iso for this project !! I will not help you with this, do not ask !! 
