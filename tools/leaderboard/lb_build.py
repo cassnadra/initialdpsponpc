@@ -64,6 +64,29 @@ def parse_ghost(data):
     return {'course': course.split(b'\0')[0].decode('ascii', 'replace'), 'car': car, 'ai': ai, 'samples': s, 'finish': finish, 'entry': entry}
 
 
+def link_steam(pid, proof, steam, steam_ok, nonces):
+    """A Steam sign-in answer from player `pid`: confirmed by Steam -> verified; too old to confirm -> linked by the player."""
+    try:
+        steam[pid] = verify_steam(proof, nonces); steam_ok[pid] = True
+        print(f"{pid}: Steam account {steam[pid]} linked (confirmed by Steam)")
+    except NotConfirmed as e:   # a real sign-in answer for this game, too old to check: shown as linked by the player
+        if pid not in steam:
+            steam[pid] = e.steam_id; steam_ok[pid] = False
+            print(f"{pid}: Steam account {e.steam_id} linked (by the player - Steam no longer confirms the sign-in)")
+    except Exception as e:
+        print(f"{pid}: Steam link not accepted ({e})")
+
+
+def check_link(link, proof, keys):
+    """None if a link message ("link|pid|sha256(proof)" signed) comes from the key that owns its player id, else why not."""
+    pid = str(link.get('pid', ''))
+    if not re.fullmatch(r'[0-9a-f]{16}', pid): return 'bad player id'
+    if hashlib.sha256(proof).hexdigest() != link.get('proof_sha256'): return 'proof was changed'
+    if not ecdsa_p256.verify(str(link.get('pub', '')), str(link.get('sig', '')), ('link|%s|%s' % (pid, link['proof_sha256'])).encode()): return 'bad signature'
+    if pid in keys and keys[pid] != link['pub']: return 'player id already belongs to another key (impersonation?)'
+    return None
+
+
 def check_signature(sub, data, keys):
     """None if the submission is signed by the key that owns its player id (the first key seen for it), else why not."""
     pid = str(sub.get('pid', ''))
@@ -151,6 +174,17 @@ def main():
     for m in msgs:
         state['last_id'] = m['id']
         c = m.get('content', '')
+        if c.startswith('IDSS-LINK 1 ') and m.get('attachments'):   # sent when a player signs in through Steam (+ the bot woken up):
+            try:                                                     # checked while Steam still confirms it - then every run is verified
+                link = json.loads(c[len('IDSS-LINK 1 '):])
+                proof = get(m['attachments'][0]['url'], auth=False)
+                why = check_link(link, proof, keys)
+            except Exception as e:
+                why = 'unreadable (%s)' % e
+            if why: print(f"link {m['id']} rejected: {why}"); continue
+            keys.setdefault(link['pid'], link['pub'])
+            if not steam_ok.get(link['pid']): link_steam(link['pid'], proof.decode('utf-8', 'replace'), steam, steam_ok, nonces)
+            continue
         if not c.startswith('IDSS-LB 1 ') or not m.get('attachments'): continue
         try:
             sub = json.loads(c[len('IDSS-LB 1 '):])
@@ -174,15 +208,8 @@ def main():
         keys.setdefault(pid, sub['pub'])
         st = next((a for a in m['attachments'][1:] if a.get('filename') == 'steam.txt'), None)
         if st and not steam_ok.get(pid):   # (the signature above proves this player sent it - now: is the Steam answer genuine?)
-            try:
-                steam[pid] = verify_steam(get(st['url'], auth=False).decode('utf-8', 'replace'), nonces); steam_ok[pid] = True
-                print(f"{pid}: Steam account {steam[pid]} linked (confirmed by Steam)")
-            except NotConfirmed as e:   # a real sign-in answer for this game, too old to check: shown as linked by the player
-                if pid not in steam:
-                    steam[pid] = e.steam_id; steam_ok[pid] = False
-                    print(f"{pid}: Steam account {e.steam_id} linked (by the player - Steam no longer confirms the sign-in)")
-            except Exception as e:
-                print(f"{pid}: Steam link not accepted ({e})")
+            try: link_steam(pid, get(st['url'], auth=False).decode('utf-8', 'replace'), steam, steam_ok, nonces)
+            except Exception as e: print(f"{pid}: Steam link not accepted ({e})")
         nm = clean_name(sub.get('name'))
         if nm not in names.setdefault(pid, []): names[pid].append(nm)
         old = b['entries'].get(pid)
