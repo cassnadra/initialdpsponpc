@@ -1,0 +1,29 @@
+# Copy to .github/workflows/leaderboard.yml in the repo that hosts the leaderboard (see SETUP.md).
+# Every 10 minutes: read new submissions from Discord, check them, publish lb/boards.txt + ghosts.
+name: leaderboard
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:          # (the "Run workflow" button in the Actions tab)
+permissions:
+  contents: write             # to commit lb/ - with the run's own temporary token, no personal token needed
+concurrency:
+  group: leaderboard
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Read Discord, update the boards
+        run: python3 tools/leaderboard/lb_build.py
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          DISCORD_CHANNEL: ${{ secrets.DISCORD_CHANNEL }}
+          LB_DIR: lb
+      - name: Publish
+        run: |
+          git config user.name "leaderboard-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lb
+          git diff --cached --quiet || (git commit -m "leaderboard update" && git push)
