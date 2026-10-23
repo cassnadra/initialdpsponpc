@@ -1,5 +1,5 @@
 {
- "last_id": "1563062847884492851",
+ "last_id": "1563065967691571280",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -46,6 +46,29 @@
      "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg"
     }
    }
+  },
+  "myougi-0": {
+   "course": "myougi",
+   "label": "Myougi downhill",
+   "start": [
+    -2.5,
+    119.9872055053711,
+    -1.7999999523162842
+   ],
+   "lens": [
+    9769.4
+   ],
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 187233,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-23",
+     "msg": "1563065967691571280",
+     "ghost": "ghosts/myougi-0/b46085569295d65f.idg"
+    }
+   }
   }
  },
  "keys": {
@@ -72,12 +95,12 @@
  "profiles": {
   "b46085569295d65f": {
    "pic": 164,
-   "car": -1,
+   "car": 13,
    "cards": 40,
    "play_h": 0,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "",
+   "car_img": "bbee8c89576d0c1aa3a9aca4eeaf1bb4",
    "discord": "cassnadra"
   }
  }

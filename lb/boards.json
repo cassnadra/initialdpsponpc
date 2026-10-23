@@ -18,6 +18,25 @@
    }
   ]
  },
+ "myougi-0": {
+  "course": "myougi",
+  "label": "Myougi downhill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "b46085569295d65f",
+    "shown": "Cassandra (Steam)",
+    "steam": "76561198289153961",
+    "steam_verified": true,
+    "name": "Cassandra",
+    "time_ms": 187233,
+    "car": 13,
+    "game": "en",
+    "date": "2026-10-23",
+    "ghost": "ghosts/myougi-0/b46085569295d65f.idg"
+   }
+  ]
+ },
  "usui-0": {
   "course": "usui",
   "label": "Usui uphill",
