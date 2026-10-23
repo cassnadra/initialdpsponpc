@@ -209,7 +209,7 @@ def main():
                         open(os.path.join(LB, 'cars', img + '.png'), 'wb').write(data); ok_img = True
                 if not ok_img: img = ''
             else: img = ''
-            pic = int(pr.get('pic', 1)); pic = pic if pic == -1 or 1 <= pic <= 30 else 1
+            pic = int(pr.get('pic', 1)); pic = pic if pic == -1 or 1 <= pic <= 173 else 1   # (any collection card)
             profiles[pr['pid']] = {'pic': pic, 'car': max(-1, min(34, int(pr.get('car', -1)))), 'cards': max(-1, min(173, int(pr.get('cards', -1)))),
                                    'play_h': max(0, min(100000, int(pr.get('play_h', 0)))), 'name': clean_text(pr.get('name'), 24), 'bio': clean_text(pr.get('bio'), 120),
                                    'car_img': img, 'discord': clean_text(pr.get('discord'), 37)}
