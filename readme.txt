@@ -16,4 +16,9 @@ multighost races
 
 if you have any problems, please send me the logs/screenshots of the problem on discord @cassnadra (crashes have an in built reporter, please use that for crashes) 
 
+!!Latest update is kinda buggy, my claude sub had almost run out so I pushed the unpolished build just before I hit 99% weekly. I will be releasing a more polished build once my sub resets on Tuesday!!
+
+
+
+
 !! you will need to source your own copy of the initial d street stage iso for this project !! I will not help you with this, do not ask !! 
