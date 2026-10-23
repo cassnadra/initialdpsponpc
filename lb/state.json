@@ -1,5 +1,5 @@
 {
- "last_id": "1563059062894104577",
+ "last_id": "1563062847884492851",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -60,19 +60,25 @@
    "AFK"
   ]
  },
- "steam": {},
- "nonces": [],
- "steam_ok": {},
+ "steam": {
+  "b46085569295d65f": "76561198289153961"
+ },
+ "nonces": [
+  "2026-10-23T05:33:43ZAGJr+ZimYgqankIYN/7lK3t9ygI="
+ ],
+ "steam_ok": {
+  "b46085569295d65f": true
+ },
  "profiles": {
   "b46085569295d65f": {
    "pic": 164,
-   "car": 13,
+   "car": -1,
    "cards": 40,
    "play_h": 0,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "14f6cd32f7e89472d2fdef30304a0668",
-   "discord": ""
+   "car_img": "",
+   "discord": "cassnadra"
   }
  }
 }
