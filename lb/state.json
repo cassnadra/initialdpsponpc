@@ -62,5 +62,6 @@
  },
  "steam": {},
  "nonces": [],
- "steam_ok": {}
+ "steam_ok": {},
+ "profiles": {}
 }
