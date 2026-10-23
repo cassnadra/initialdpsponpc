@@ -24,6 +24,19 @@
   "entries": [
    {
     "rank": 1,
+    "pid": "2ff94d72b41c145f",
+    "shown": "AFK (Steam)",
+    "steam": "76561198259702682",
+    "steam_verified": true,
+    "name": "AFK",
+    "time_ms": 149166,
+    "car": 2,
+    "game": "en",
+    "date": "2026-10-23",
+    "ghost": "ghosts/myougi-0/2ff94d72b41c145f.idg"
+   },
+   {
+    "rank": 2,
     "pid": "b46085569295d65f",
     "shown": "Cassandra (Steam)",
     "steam": "76561198289153961",

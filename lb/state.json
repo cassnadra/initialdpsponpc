@@ -1,5 +1,5 @@
 {
- "last_id": "1563078435088244789",
+ "last_id": "1563082201669566566",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -56,7 +56,8 @@
     -1.7999999523162842
    ],
    "lens": [
-    9769.4
+    9769.4,
+    4970.3
    ],
    "entries": {
     "b46085569295d65f": {
@@ -67,6 +68,15 @@
      "date": "2026-10-23",
      "msg": "1563065967691571280",
      "ghost": "ghosts/myougi-0/b46085569295d65f.idg"
+    },
+    "2ff94d72b41c145f": {
+     "name": "AFK",
+     "time_ms": 149166,
+     "car": 2,
+     "game": "en",
+     "date": "2026-10-23",
+     "msg": "1563080665187098674",
+     "ghost": "ghosts/myougi-0/2ff94d72b41c145f.idg"
     }
    }
   }
@@ -97,18 +107,18 @@
  },
  "profiles": {
   "b46085569295d65f": {
-   "pic": 164,
-   "car": 13,
+   "pic": -1,
+   "car": -1,
    "cards": 40,
    "play_h": 1,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "bbee8c89576d0c1aa3a9aca4eeaf1bb4",
+   "car_img": "",
    "discord": "cassnadra"
   },
   "2ff94d72b41c145f": {
-   "pic": 1,
-   "car": 0,
+   "pic": -1,
+   "car": -1,
    "cards": 0,
    "play_h": 0,
    "name": "AFK",
