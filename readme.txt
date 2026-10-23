@@ -16,7 +16,7 @@ multighost races
 
 if you have any problems, please send me the logs/screenshots of the problem on discord @cassnadra (crashes have an in built reporter, please use that for crashes) 
 
-!!Latest update is kinda buggy, my claude sub had almost run out so I pushed the unpolished build just before I hit 99% weekly. I will be releasing a more polished build once my sub resets on Tuesday!!
+!!Latest update is kinda buggy, also it doxes r c:/name/ if u play online so i recommend not testing online in 0.93+. my claude sub had almost run out so I pushed the unpolished build just before I hit 99% weekly. I will be releasing a more polished build once my sub resets on Tuesday!!
 
 
 
