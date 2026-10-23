@@ -44,9 +44,9 @@
    {
     "rank": 1,
     "pid": "2ff94d72b41c145f",
-    "shown": "AFK #2ff9",
-    "steam": "",
-    "steam_verified": false,
+    "shown": "AFK (Steam)",
+    "steam": "76561198259702682",
+    "steam_verified": true,
     "name": "AFK",
     "time_ms": 210066,
     "car": 0,

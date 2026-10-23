@@ -1,5 +1,5 @@
 {
- "last_id": "1563065967691571280",
+ "last_id": "1563078435088244789",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -84,24 +84,37 @@
   ]
  },
  "steam": {
-  "b46085569295d65f": "76561198289153961"
+  "b46085569295d65f": "76561198289153961",
+  "2ff94d72b41c145f": "76561198259702682"
  },
  "nonces": [
-  "2026-10-23T05:33:43ZAGJr+ZimYgqankIYN/7lK3t9ygI="
+  "2026-10-23T05:33:43ZAGJr+ZimYgqankIYN/7lK3t9ygI=",
+  "2026-10-23T06:35:39ZymaKV5AyIYGyUGUBgw+4M4xkOlw="
  ],
  "steam_ok": {
-  "b46085569295d65f": true
+  "b46085569295d65f": true,
+  "2ff94d72b41c145f": true
  },
  "profiles": {
   "b46085569295d65f": {
    "pic": 164,
    "car": 13,
    "cards": 40,
-   "play_h": 0,
+   "play_h": 1,
    "name": "Cassandra",
    "bio": "",
    "car_img": "bbee8c89576d0c1aa3a9aca4eeaf1bb4",
    "discord": "cassnadra"
+  },
+  "2ff94d72b41c145f": {
+   "pic": 1,
+   "car": 0,
+   "cards": 0,
+   "play_h": 0,
+   "name": "AFK",
+   "bio": "Test account",
+   "car_img": "",
+   "discord": "a7ena"
   }
  }
 }

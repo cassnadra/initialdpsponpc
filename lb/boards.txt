@@ -4,5 +4,6 @@ E	1	Cassandra	154600	13	b46085569295d65f	ghosts/akagi-0/b46085569295d65f.idg	202
 B	myougi-0	myougi	Myougi downhill
 E	1	Cassandra	187233	13	b46085569295d65f	ghosts/myougi-0/b46085569295d65f.idg	2026-10-23	76561198289153961	1
 B	usui-0	usui	Usui uphill
-E	1	AFK	210066	0	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-22		
-P	b46085569295d65f	164	13	40	0	Cassandra		bbee8c89576d0c1aa3a9aca4eeaf1bb4	cassnadra
+E	1	AFK	210066	0	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-22	76561198259702682	1
+P	2ff94d72b41c145f	1	0	0	0	AFK	Test account		a7ena
+P	b46085569295d65f	164	13	40	3600	Cassandra		bbee8c89576d0c1aa3a9aca4eeaf1bb4	cassnadra
