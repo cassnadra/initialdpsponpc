@@ -10,7 +10,7 @@ up to 4 player races
 leaderboards
 custom music
 custom world themes/texture packs
-custom car skind
+custom car skins
 multighost races
 + more!
 
