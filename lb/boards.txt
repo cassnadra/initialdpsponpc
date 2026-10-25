@@ -1,14 +1,20 @@
 # IDSS leaderboard 1
 B	akagi-0	akagi	Akagi downhill
 E	1	Cassandra	154600	13	b46085569295d65f	ghosts/akagi-0/b46085569295d65f.idg	2026-10-22	76561198289153961	1
+B	akina-0	akina	Akina downhill
+E	1	Cassandra	196566	13	b46085569295d65f	ghosts/akina-0/b46085569295d65f.idg	2026-10-25	76561198289153961	1
 B	myougi-0	myougi	Myougi downhill
-E	1	Cassandra	181533	13	b46085569295d65f	ghosts/myougi-0/b46085569295d65f.idg	2026-10-25	76561198289153961	1
-E	2	qfqr	182300	16	bea21af9c6bf95f3	ghosts/myougi-0/bea21af9c6bf95f3.idg	2026-10-25		
-E	3	BLACKLIST	182600	16	5168fd241b77a365	ghosts/myougi-0/5168fd241b77a365.idg	2026-10-25		
+E	1	AFK	149166	2	2ff94d72b41c145f	ghosts/myougi-0/2ff94d72b41c145f.idg	2026-10-23	76561198259702682	1
+E	2	Cassandra	181533	13	b46085569295d65f	ghosts/myougi-0/b46085569295d65f.idg	2026-10-25	76561198289153961	1
+E	3	qfqr	182300	16	bea21af9c6bf95f3	ghosts/myougi-0/bea21af9c6bf95f3.idg	2026-10-25		
+E	4	BLACKLIST	182600	16	5168fd241b77a365	ghosts/myougi-0/5168fd241b77a365.idg	2026-10-25		
+B	myougi-1	myougi	Myougi downhill
+E	1	qfqr	180100	13	bea21af9c6bf95f3	ghosts/myougi-1/bea21af9c6bf95f3.idg	2026-10-25		
+E	2	BLACKLIST	182233	13	5168fd241b77a365	ghosts/myougi-1/5168fd241b77a365.idg	2026-10-25		
 B	usui-0	usui	Usui uphill
 E	1	AFK	210066	0	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-22	76561198259702682	1
-P	2ff94d72b41c145f	-1	-1	0	0	AFK	Test account		a7ena
+P	2ff94d72b41c145f	-1	0	1	0	AFK	Test account	94599de2f1c2c419e25432aa870c264c	a7ena
 P	5168fd241b77a365	1	23	0	0	BLACKLIST		fb467c26ecd18123dd80c94408867be6	
 P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf			
-P	b46085569295d65f	-1	-1	40	7200	Cassandra			cassnadra
+P	b46085569295d65f	-1	-1	40	10800	Cassandra			cassnadra
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr			

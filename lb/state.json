@@ -1,5 +1,5 @@
 {
- "last_id": "1564011038175797390",
+ "last_id": "1564049736762261575",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -135,6 +135,29 @@
      "ghost": "ghosts/myougi-1/5168fd241b77a365.idg"
     }
    }
+  },
+  "akina-0": {
+   "course": "akina",
+   "label": "Akina downhill",
+   "start": [
+    175.3209991455078,
+    1129.97998046875,
+    -305.6910095214844
+   ],
+   "lens": [
+    7631.0
+   ],
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 196566,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-25",
+     "msg": "1564033675098726564",
+     "ghost": "ghosts/akina-0/b46085569295d65f.idg"
+    }
+   }
   }
  },
  "keys": {
@@ -175,7 +198,7 @@
    "pic": -1,
    "car": -1,
    "cards": 40,
-   "play_h": 2,
+   "play_h": 3,
    "name": "Cassandra",
    "bio": "",
    "car_img": "",
@@ -183,12 +206,12 @@
   },
   "2ff94d72b41c145f": {
    "pic": -1,
-   "car": -1,
-   "cards": 0,
+   "car": 0,
+   "cards": 1,
    "play_h": 0,
    "name": "AFK",
    "bio": "Test account",
-   "car_img": "",
+   "car_img": "94599de2f1c2c419e25432aa870c264c",
    "discord": "a7ena"
   },
   "bea21af9c6bf95f3": {
@@ -221,5 +244,6 @@
    "car_img": "fb467c26ecd18123dd80c94408867be6",
    "discord": ""
   }
- }
+ },
+ "bans": {}
 }
