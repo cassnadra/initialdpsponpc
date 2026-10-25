@@ -37,6 +37,19 @@
    },
    {
     "rank": 2,
+    "pid": "bea21af9c6bf95f3",
+    "shown": "qfqr #bea2",
+    "steam": "",
+    "steam_verified": false,
+    "name": "qfqr",
+    "time_ms": 182300,
+    "car": 16,
+    "game": "en",
+    "date": "2026-10-25",
+    "ghost": "ghosts/myougi-0/bea21af9c6bf95f3.idg"
+   },
+   {
+    "rank": 3,
     "pid": "b46085569295d65f",
     "shown": "Cassandra (Steam)",
     "steam": "76561198289153961",
@@ -47,6 +60,25 @@
     "game": "en",
     "date": "2026-10-23",
     "ghost": "ghosts/myougi-0/b46085569295d65f.idg"
+   }
+  ]
+ },
+ "myougi-1": {
+  "course": "myougi",
+  "label": "Myougi downhill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "bea21af9c6bf95f3",
+    "shown": "qfqr #bea2",
+    "steam": "",
+    "steam_verified": false,
+    "name": "qfqr",
+    "time_ms": 180100,
+    "car": 13,
+    "game": "en",
+    "date": "2026-10-25",
+    "ghost": "ghosts/myougi-1/bea21af9c6bf95f3.idg"
    }
   ]
  },
