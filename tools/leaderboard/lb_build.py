@@ -19,6 +19,10 @@ TOKEN = os.environ.get('DISCORD_TOKEN', '')
 CHANNEL = os.environ.get('DISCORD_CHANNEL', '')
 LB = os.environ.get('LB_DIR', 'lb')
 STEAM_OPENID = os.environ.get('STEAM_OPENID', 'https://steamcommunity.com/openid/login')   # (tests: fake_discord.py)
+# The only account that may moderate (delete scores, ban players): the admin's Steam id (17 digits).
+# A moderation command is accepted only when it is signed with the admin's signing key (a key only their PC has) and
+# that key's player id has been Steam-verified to this account. A Steam id isn't a secret, so it is safe to keep here.
+ADMIN_STEAM_ID = os.environ.get('ADMIN_STEAM_ID', '76561198289153961')
 TOP = 100                  # entries per board in boards.txt
 MAX_GHOST = 4 << 20
 HEAD = struct.Struct('<4si16si')              # magic, version, course, n
@@ -102,6 +106,19 @@ def check_profile(pr, keys):
     return None
 
 
+def check_admin(sub, keys, steam, steam_ok, signed):
+    """None if a moderation command is from the admin, else why not. The command must be signed with the key that
+    owns `sub['pid']`, and that player id must be Steam-verified to ADMIN_STEAM_ID - so only the admin's PC
+    (the only place with the key) that has signed in through the admin's Steam account can moderate."""
+    if not ADMIN_STEAM_ID: return 'no admin configured on the board'
+    pid = str(sub.get('pid', ''))
+    if not re.fullmatch(r'[0-9a-f]{16}', pid): return 'bad admin player id'
+    if not ecdsa_p256.verify(str(sub.get('pub', '')), str(sub.get('sig', '')), signed.encode()): return 'bad signature'
+    if pid in keys and keys[pid] != sub['pub']: return 'player id already belongs to another key (impersonation?)'
+    if not steam_ok.get(pid) or steam.get(pid) != ADMIN_STEAM_ID: return 'not the admin (Steam not confirmed)'
+    return None
+
+
 def check_signature(sub, data, keys):
     """None if the submission is signed by the key that owns its player id (the first key seen for it), else why not."""
     pid = str(sub.get('pid', ''))
@@ -182,6 +199,7 @@ def main():
     for pid in steam: steam_ok.setdefault(pid, True)   # (links made before this split were all confirmed)
     nonces = state.setdefault('nonces', [])  # Steam answers already used
     profiles = state.setdefault('profiles', {})   # player id -> {pic, car, cards, play_h, name, bio} (their profile card)
+    bans = state.setdefault('bans', {})           # "steam:<id>" or "<pid>" -> {name, reason, when} (moderation)
     msgs = messages_after(state['last_id'])
     if msgs and all(not m.get('content') for m in msgs if m.get('webhook_id')) and any(m.get('webhook_id') for m in msgs):
         sys.exit('::error::The submissions came with empty text: turn on MESSAGE CONTENT INTENT (Developer Portal -> your '
@@ -226,6 +244,39 @@ def main():
             keys.setdefault(link['pid'], link['pub'])
             if not steam_ok.get(link['pid']): link_steam(link['pid'], proof.decode('utf-8', 'replace'), steam, steam_ok, nonces)
             continue
+        if c.startswith('IDSS-DELETE 1 '):   # the admin removes a score from a board (the game only offers this in an admin build)
+            try:
+                d = json.loads(c[len('IDSS-DELETE 1 '):])
+                board, target = str(d.get('board', '')), str(d.get('target', ''))
+                why = check_admin(d, keys, steam, steam_ok, 'delete|%s|%s' % (board, target))
+            except Exception as e:
+                why = 'unreadable (%s)' % e
+            if why: print(f"delete {m['id']} rejected: {why}"); continue
+            keys.setdefault(d['pid'], d['pub'])
+            b = state['boards'].get(board)
+            if b and target in b.get('entries', {}):
+                del b['entries'][target]
+                g = os.path.join(LB, 'ghosts', board, target + '.idg')
+                if os.path.exists(g): os.remove(g)
+                print(f"delete: removed {target} from {board}")
+            else:
+                print(f"delete: {target} not on {board}")
+            continue
+        if c.startswith('IDSS-BAN 1 '):   # the admin mutes (no chat) or bans (no chat + no scores) a player
+            try:
+                d = json.loads(c[len('IDSS-BAN 1 '):])
+                tsteam, tpid = str(d.get('steam', '')), str(d.get('target', ''))
+                kind = 'mute' if str(d.get('kind', '')) == 'mute' else 'ban'
+                why = check_admin(d, keys, steam, steam_ok, 'ban|%s|%s|%s' % (tsteam, tpid, kind))
+            except Exception as e:
+                why = 'unreadable (%s)' % e
+            if why: print(f"ban {m['id']} rejected: {why}"); continue
+            keys.setdefault(d['pid'], d['pub'])
+            key = ('steam:' + tsteam) if tsteam else tpid
+            if key:
+                bans[key] = {'name': clean_name(d.get('name')), 'reason': clean_text(d.get('reason'), 120), 'when': m['timestamp'][:10], 'kind': kind}
+                print(f"ban: {key} ({bans[key]['name']}) {kind}")
+            continue
         if not c.startswith('IDSS-LB 1 ') or not m.get('attachments'): continue
         try:
             sub = json.loads(c[len('IDSS-LB 1 '):])
@@ -251,6 +302,10 @@ def main():
         if st and not steam_ok.get(pid):   # (the signature above proves this player sent it - now: is the Steam answer genuine?)
             try: link_steam(pid, get(st['url'], auth=False).decode('utf-8', 'replace'), steam, steam_ok, nonces)
             except Exception as e: print(f"{pid}: Steam link not accepted ({e})")
+        if (pid in bans and bans[pid].get('kind') != 'mute') or (steam.get(pid) and ('steam:' + steam[pid]) in bans and bans['steam:' + steam[pid]].get('kind') != 'mute'):
+            rejected += 1   # a full ban drops new submissions (a mute only silences chat)
+            print(f"rejected {m['id']}: banned")
+            continue
         nm = clean_name(sub.get('name'))
         if nm not in names.setdefault(pid, []): names[pid].append(nm)
         old = b['entries'].get(pid)
@@ -284,6 +339,8 @@ def main():
         lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', '')]))
     open(os.path.join(LB, 'boards.txt'), 'w', newline='\n').write('\n'.join(lines) + '\n')
     json.dump(js, open(os.path.join(LB, 'boards.json'), 'w'), indent=1)
+    open(os.path.join(LB, 'bans.txt'), 'w', newline='\n').write(   # X<TAB>key<TAB>kind<TAB>name<TAB>reason<TAB>when  (key = steam:<id> or <pid>, kind = mute/ban)
+        '\n'.join(['# IDSS bans 1'] + ['\t'.join(['X', k, v.get('kind', 'ban'), v.get('name', ''), v.get('reason', ''), v.get('when', '')]) for k, v in sorted(bans.items())]) + '\n')
     json.dump(state, open(sp, 'w'), indent=1)
     print(f'{len(msgs)} new messages: {added} times added, {rejected} rejected')
 
