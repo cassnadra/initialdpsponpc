@@ -187,6 +187,32 @@ def clean_name(n):
     return n or 'Player'
 
 
+def count_laps(samples, start, threshold=30.0):
+    """Circuit laps the ghost completes: how many times it leaves the start area and comes back.
+    Only used for circuits (finish near start); a point-to-point course counts as one 'lap'."""
+    laps = 0
+    away = False
+    for s in samples:
+        d = sum(abs(s[1 + k] - start[k]) for k in range(3))
+        if d > threshold:
+            away = True
+        elif away:
+            laps += 1
+            away = False
+    return max(1, laps)
+
+
+def board_label(sub, s, is_circuit, laps):
+    """The board's label: downhill/uphill for point-to-point, or a direction/lap note for circuits."""
+    name = sub['course'].capitalize()
+    if is_circuit:
+        label = name + (' (reverse)' if str(sub.get('board', '')).endswith('-1') else '')
+        if laps != 3:
+            label += ' (%d laps)' % laps
+        return label
+    return name + (' downhill' if s[-1][2] < s[0][2] else ' uphill')
+
+
 def main():
     if not TOKEN or not CHANNEL: sys.exit('DISCORD_TOKEN and DISCORD_CHANNEL must be set')
     os.makedirs(os.path.join(LB, 'ghosts'), exist_ok=True)
@@ -284,7 +310,14 @@ def main():
             if att.get('size', 0) > MAX_GHOST: raise ValueError('ghost too big')
             data = get(att['url'], auth=False)
             g = parse_ghost(data)
-            b = state['boards'].get(sub['board'])
+            s = g['samples']
+            # a circuit ends where it started; a 2-lap versus race is a different event from the 3-lap main mode, so it
+            # gets its own board instead of beating the 3-lap times
+            start = s[0][1:4]
+            is_circuit = sum(abs(s[-1][1 + k] - start[k]) for k in range(3)) <= 30.0
+            laps = count_laps(s, start) if is_circuit else 1
+            board_key = ('%s-x%d' % (sub['board'], laps)) if (is_circuit and laps != 3) else sub['board']
+            b = state['boards'].get(board_key)
             why = check_signature(sub, data, keys) or check(sub, g, b)
         except Exception as e:
             why = 'unreadable (%s)' % e
@@ -292,10 +325,8 @@ def main():
             rejected += 1
             print(f"rejected {m['id']}: {why}")
             continue
-        s = g['samples']
         if not b:
-            label = '%s %s' % (sub['course'].capitalize(), 'downhill' if s[-1][2] < s[0][2] else 'uphill')
-            b = state['boards'][sub['board']] = {'course': sub['course'], 'label': label, 'start': list(s[0][1:4]), 'lens': [], 'entries': {}}
+            b = state['boards'][board_key] = {'course': sub['course'], 'label': board_label(sub, s, is_circuit, laps), 'start': list(s[0][1:4]), 'lens': [], 'entries': {}}
         pid = sub['pid']
         keys.setdefault(pid, sub['pub'])
         st = next((a for a in m['attachments'][1:] if a.get('filename') == 'steam.txt'), None)
@@ -310,15 +341,15 @@ def main():
         if nm not in names.setdefault(pid, []): names[pid].append(nm)
         old = b['entries'].get(pid)
         if old and old['time_ms'] <= sub['time_ms']: continue
-        gdir = os.path.join(LB, 'ghosts', sub['board'])
+        gdir = os.path.join(LB, 'ghosts', board_key)
         os.makedirs(gdir, exist_ok=True)
         open(os.path.join(gdir, pid + '.idg'), 'wb').write(data)
         b['entries'][pid] = {'name': clean_name(sub.get('name')), 'time_ms': int(sub['time_ms']), 'car': int(sub.get('car', -1)),
                              'game': str(sub.get('game', ''))[:2], 'date': m['timestamp'][:10], 'msg': m['id'],
-                             'ghost': 'ghosts/%s/%s.idg' % (sub['board'], pid)}
+                             'ghost': 'ghosts/%s/%s.idg' % (board_key, pid)}
         b['lens'] = (b['lens'] + [round(g['length'], 1)])[-50:]
         added += 1
-        print(f"added {sub['board']}: {clean_name(sub.get('name'))} {sub['time_ms']} ms")
+        print(f"added {board_key}: {clean_name(sub.get('name'))} {sub['time_ms']} ms")
     # publish (everyone is shown with a tag from their id: "Takumi #3f2a" - names alone can clash or change; a player
     # who linked Steam is that Steam account instead: one entry for all their PCs, the best time)
     def shown(pid, e): return e['name'] + (' (Steam)' if pid in steam else ' #' + pid[:4])
