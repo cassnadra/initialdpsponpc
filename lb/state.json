@@ -1,5 +1,5 @@
 {
- "last_id": "1563936736051200032",
+ "last_id": "1563979501438767206",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -59,7 +59,9 @@
     9769.4,
     4970.3,
     9787.3,
-    9776.3
+    9776.3,
+    9725.1,
+    9714.1
    ],
    "entries": {
     "b46085569295d65f": {
@@ -88,6 +90,15 @@
      "date": "2026-10-25",
      "msg": "1563936736051200032",
      "ghost": "ghosts/myougi-0/bea21af9c6bf95f3.idg"
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 182600,
+     "car": 16,
+     "game": "en",
+     "date": "2026-10-25",
+     "msg": "1563978812402835589",
+     "ghost": "ghosts/myougi-0/5168fd241b77a365.idg"
     }
    }
   },
@@ -100,7 +111,8 @@
     -1.7999999523162842
    ],
    "lens": [
-    9749.7
+    9749.7,
+    9734.9
    ],
    "entries": {
     "bea21af9c6bf95f3": {
@@ -111,6 +123,15 @@
      "date": "2026-10-25",
      "msg": "1563935634060611595",
      "ghost": "ghosts/myougi-1/bea21af9c6bf95f3.idg"
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 182233,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-25",
+     "msg": "1563977489963810917",
+     "ghost": "ghosts/myougi-1/5168fd241b77a365.idg"
     }
    }
   }
@@ -118,7 +139,9 @@
  "keys": {
   "b46085569295d65f": "92aaa9127eaf88ea38de52ce6e50e18e87ec777574eaa1abee4a3350e3fefa6cfed9baf77e363261d0709ed8f341cf47dd650f757361bfc1da85b0af99e8c6a4",
   "2ff94d72b41c145f": "a189f2ca547d40597f0bfa70799f33d0cfadf2adf2ef7d7888aa20f45dd4001dcf11ec139e576429c4b2824369c4cf4afb5d38b17c5aa3c28ce36451dee354ef",
-  "bea21af9c6bf95f3": "f0f03d9aa004256f8e6a78cae7f6a64ff2fa6c5b95b48b0375bfbbc15798af63f380e4e0d93fc97293536d01d4dab4c170a36c5b5e04e18f23dd682ac857ca06"
+  "bea21af9c6bf95f3": "f0f03d9aa004256f8e6a78cae7f6a64ff2fa6c5b95b48b0375bfbbc15798af63f380e4e0d93fc97293536d01d4dab4c170a36c5b5e04e18f23dd682ac857ca06",
+  "5fa3dcfbafb837ec": "9def07936b9071a1136b2ecb66aaa3a6f189a56e08493993f79dff5442c026db5caf1459e56a8265fc8fdbd31c50fb3a7f61f5434d388130d9489f6101028a2b",
+  "5168fd241b77a365": "a0425cada2c76e6a579a0e9f25ae67d45a0b4c3152fd8b2fc05217d7adf4bd36149d5cc3ce27986d1b8daf672e4aafc4043bd660483048692ee40ee08670cbe2"
  },
  "names": {
   "b46085569295d65f": [
@@ -129,6 +152,9 @@
   ],
   "bea21af9c6bf95f3": [
    "qfqr"
+  ],
+  "5168fd241b77a365": [
+   "BLACKLIST"
   ]
  },
  "steam": {
@@ -172,6 +198,26 @@
    "name": "qfqr",
    "bio": "",
    "car_img": "",
+   "discord": ""
+  },
+  "5fa3dcfbafb837ec": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "xcb wf",
+   "bio": "",
+   "car_img": "",
+   "discord": ""
+  },
+  "5168fd241b77a365": {
+   "pic": 1,
+   "car": 23,
+   "cards": 0,
+   "play_h": 0,
+   "name": "BLACKLIST",
+   "bio": "",
+   "car_img": "fb467c26ecd18123dd80c94408867be6",
    "discord": ""
   }
  }
