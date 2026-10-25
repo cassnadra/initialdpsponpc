@@ -37,6 +37,19 @@
    },
    {
     "rank": 2,
+    "pid": "b46085569295d65f",
+    "shown": "Cassandra (Steam)",
+    "steam": "76561198289153961",
+    "steam_verified": true,
+    "name": "Cassandra",
+    "time_ms": 181533,
+    "car": 13,
+    "game": "en",
+    "date": "2026-10-25",
+    "ghost": "ghosts/myougi-0/b46085569295d65f.idg"
+   },
+   {
+    "rank": 3,
     "pid": "bea21af9c6bf95f3",
     "shown": "qfqr #bea2",
     "steam": "",
@@ -49,7 +62,7 @@
     "ghost": "ghosts/myougi-0/bea21af9c6bf95f3.idg"
    },
    {
-    "rank": 3,
+    "rank": 4,
     "pid": "5168fd241b77a365",
     "shown": "BLACKLIST #5168",
     "steam": "",
@@ -60,19 +73,6 @@
     "game": "en",
     "date": "2026-10-25",
     "ghost": "ghosts/myougi-0/5168fd241b77a365.idg"
-   },
-   {
-    "rank": 4,
-    "pid": "b46085569295d65f",
-    "shown": "Cassandra (Steam)",
-    "steam": "76561198289153961",
-    "steam_verified": true,
-    "name": "Cassandra",
-    "time_ms": 187233,
-    "car": 13,
-    "game": "en",
-    "date": "2026-10-23",
-    "ghost": "ghosts/myougi-0/b46085569295d65f.idg"
    }
   ]
  },
