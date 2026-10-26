@@ -10,7 +10,7 @@ checks every ghost, keeps each player's best per board and writes into LB_DIR:
 Env: DISCORD_TOKEN (a bot that can read the channel), DISCORD_CHANNEL (its id), LB_DIR (default lb),
      DISCORD_API (default https://discord.com/api/v10 - tests point it at fake_discord.py). Python 3 stdlib only.
 """
-import hashlib, json, os, re, statistics, struct, sys, time, urllib.request, urllib.error
+import hashlib, json, os, re, shutil, statistics, struct, sys, time, urllib.request, urllib.error
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import ecdsa_p256
 
@@ -29,6 +29,7 @@ HEAD = struct.Struct('<4si16si')              # magic, version, course, n
 HEAD2 = struct.Struct('<iI23sb')              # car, paint, model, ai
 SAMPLE = struct.Struct('<10f')                # t (vblanks since GO), pos, right, forward
 TAIL = struct.Struct('<4sIiI')                # "IDGF", finish (race timer, 1/6000 s), start place, reserved
+                                             # (reserved bit 0: the run had another player in it - versus / party)
 
 
 def get(url, auth=True):
@@ -63,9 +64,9 @@ def parse_ghost(data):
     car, paint, model, ai = HEAD2.unpack_from(data, HEAD.size)
     if len(data) != HEAD.size + HEAD2.size + n * SAMPLE.size + TAIL.size: raise ValueError('wrong size')
     s = [SAMPLE.unpack_from(data, HEAD.size + HEAD2.size + i * SAMPLE.size) for i in range(n)]
-    tmagic, finish, entry, _ = TAIL.unpack_from(data, len(data) - TAIL.size)
+    tmagic, finish, entry, reserved = TAIL.unpack_from(data, len(data) - TAIL.size)
     if tmagic != b'IDGF': raise ValueError('no finish record')
-    return {'course': course.split(b'\0')[0].decode('ascii', 'replace'), 'car': car, 'ai': ai, 'samples': s, 'finish': finish, 'entry': entry}
+    return {'course': course.split(b'\0')[0].decode('ascii', 'replace'), 'car': car, 'ai': ai, 'samples': s, 'finish': finish, 'entry': entry, 'reserved': reserved}
 
 
 def link_steam(pid, proof, steam, steam_ok, nonces):
@@ -124,8 +125,11 @@ def check_signature(sub, data, keys):
     pid = str(sub.get('pid', ''))
     if not re.fullmatch(r'[0-9a-f]{16}', pid): return 'bad player id'
     if hashlib.sha256(data).hexdigest() != sub.get('ghost_sha256'): return 'ghost file was changed'
-    signed = '%s|%d|%d|%s|%s|%d|%s' % (sub['board'], int(sub['time_ms']), int(sub['finish']), pid, sub.get('name', ''), int(sub.get('car', -1)), sub['ghost_sha256'])
-    if not ecdsa_p256.verify(str(sub.get('pub', '')), str(sub.get('sig', '')), signed.encode()): return 'bad signature'
+    base = '%s|%d|%d|%s|%s|%d|%s' % (sub['board'], int(sub['time_ms']), int(sub['finish']), pid, sub.get('name', ''), int(sub.get('car', -1)), sub['ghost_sha256'])
+    solo = 0 if (sub.get('solo') is False or sub.get('solo') == 0) else 1
+    texts = [base + '|%d' % solo]
+    if 'solo' not in sub: texts.append(base)   # (a build from before the versus check signed without it)
+    if not any(ecdsa_p256.verify(str(sub.get('pub', '')), str(sub.get('sig', '')), t.encode()) for t in texts): return 'bad signature'
     if pid in keys and keys[pid] != sub['pub']: return 'player id already belongs to another key (impersonation?)'
     return None
 
@@ -160,6 +164,8 @@ def verify_steam(query, used_nonces):
 def check(sub, g, board_info):
     """None if the run looks real, else why not."""
     if g['ai']: return 'a CPU run'
+    if g.get('reserved', 0) & 1: return 'a versus race (not a solo run)'
+    if sub.get('solo') is False or sub.get('solo') == 0: return 'a versus race (not a solo run)'
     if g['course'] != sub['course'] or g['entry'] != sub['entry'] or g['finish'] != sub['finish']: return 'message and ghost disagree'
     if sub['board'] != f"{g['course']}-{(g['entry'] >> 1) & 1}" or g['entry'] < 0: return 'wrong board'
     if sub['time_ms'] != g['finish'] // 6: return 'time and finish disagree'
@@ -226,6 +232,10 @@ def main():
     nonces = state.setdefault('nonces', [])  # Steam answers already used
     profiles = state.setdefault('profiles', {})   # player id -> {pic, car, cards, play_h, name, bio} (their profile card)
     bans = state.setdefault('bans', {})           # "steam:<id>" or "<pid>" -> {name, reason, when} (moderation)
+    for bid in [b for b in state['boards'] if re.search(r'-x\d+$', b)]:   # (versus races used to get lap-split boards)
+        del state['boards'][bid]
+        shutil.rmtree(os.path.join(LB, 'ghosts', bid), ignore_errors=True)
+        print(f'removed board {bid}: versus races no longer count')
     msgs = messages_after(state['last_id'])
     if msgs and all(not m.get('content') for m in msgs if m.get('webhook_id')) and any(m.get('webhook_id') for m in msgs):
         sys.exit('::error::The submissions came with empty text: turn on MESSAGE CONTENT INTENT (Developer Portal -> your '
@@ -311,14 +321,16 @@ def main():
             data = get(att['url'], auth=False)
             g = parse_ghost(data)
             s = g['samples']
-            # a circuit ends where it started; a 2-lap versus race is a different event from the 3-lap main mode, so it
-            # gets its own board instead of beating the 3-lap times
+            # a circuit ends where it started. Only the main 3-lap mode is a solo time; a shorter/longer run is a
+            # versus race (or a modified build) and must not beat the real times.
             start = s[0][1:4]
             is_circuit = sum(abs(s[-1][1 + k] - start[k]) for k in range(3)) <= 30.0
             laps = count_laps(s, start) if is_circuit else 1
-            board_key = ('%s-x%d' % (sub['board'], laps)) if (is_circuit and laps != 3) else sub['board']
+            board_key = sub['board']
             b = state['boards'].get(board_key)
-            why = check_signature(sub, data, keys) or check(sub, g, b)
+            why = (check_signature(sub, data, keys)
+                   or ('a %d-lap circuit race (only 3-lap races count)' % laps if is_circuit and laps != 3 else None)
+                   or check(sub, g, b))
         except Exception as e:
             why = 'unreadable (%s)' % e
         if why:
@@ -366,8 +378,9 @@ def main():
         for r, (pid, e) in enumerate(ranked, 1):
             lines.append('\t'.join(['E', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
             js[bid]['entries'].append({'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), 'steam_verified': bool(steam_ok.get(pid)), **{k: e[k] for k in ('name', 'time_ms', 'car', 'game', 'date', 'ghost')}})
-    for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio
-        lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', '')]))
+    for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok
+        lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', ''),
+                                steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '']))
     open(os.path.join(LB, 'boards.txt'), 'w', newline='\n').write('\n'.join(lines) + '\n')
     json.dump(js, open(os.path.join(LB, 'boards.json'), 'w'), indent=1)
     open(os.path.join(LB, 'bans.txt'), 'w', newline='\n').write(   # X<TAB>key<TAB>kind<TAB>name<TAB>reason<TAB>when  (key = steam:<id> or <pid>, kind = mute/ban)
