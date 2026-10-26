@@ -1,5 +1,5 @@
 {
- "last_id": "1564132643942178857",
+ "last_id": "1564149768022659082",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -33,7 +33,8 @@
     -255.8990020751953
    ],
    "lens": [
-    8524.1
+    8524.1,
+    8551.4
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -44,6 +45,15 @@
      "date": "2026-10-22",
      "msg": "1562750042601824276",
      "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg"
+    },
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 190333,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-26",
+     "msg": "1564136291921174538",
+     "ghost": "ghosts/usui-0/b46085569295d65f.idg"
     }
    }
   },
@@ -63,7 +73,9 @@
     9725.1,
     9714.1,
     9776.4,
-    9644.4
+    9644.4,
+    9629.8,
+    9632.6
    ],
    "entries": {
     "b46085569295d65f": {
@@ -95,11 +107,11 @@
     },
     "2ff94d72b41c145f": {
      "name": "AFK",
-     "time_ms": 178066,
+     "time_ms": 177466,
      "car": 0,
      "game": "en",
      "date": "2026-10-26",
-     "msg": "1564132340106793081",
+     "msg": "1564149768022659082",
      "ghost": "ghosts/myougi-0/2ff94d72b41c145f.idg"
     }
    }
@@ -157,7 +169,8 @@
   "bea21af9c6bf95f3": "f0f03d9aa004256f8e6a78cae7f6a64ff2fa6c5b95b48b0375bfbbc15798af63f380e4e0d93fc97293536d01d4dab4c170a36c5b5e04e18f23dd682ac857ca06",
   "5fa3dcfbafb837ec": "9def07936b9071a1136b2ecb66aaa3a6f189a56e08493993f79dff5442c026db5caf1459e56a8265fc8fdbd31c50fb3a7f61f5434d388130d9489f6101028a2b",
   "5168fd241b77a365": "a0425cada2c76e6a579a0e9f25ae67d45a0b4c3152fd8b2fc05217d7adf4bd36149d5cc3ce27986d1b8daf672e4aafc4043bd660483048692ee40ee08670cbe2",
-  "a44fe613bf64ea22": "5fa9614c57ee38111331a5c8d5f9e459251d3ad29e957092fd8adfaf7abb27a22b15cd928b545ef869980751a36792c926d0e1a0c8347958a15813891c6f8a82"
+  "a44fe613bf64ea22": "5fa9614c57ee38111331a5c8d5f9e459251d3ad29e957092fd8adfaf7abb27a22b15cd928b545ef869980751a36792c926d0e1a0c8347958a15813891c6f8a82",
+  "380f37887df72c14": "8e792f169655d79954e070be4aedc77084a2f30eb2f34fa0b701de96247d0e00998a2bca0d82bea08ebaef093082e58baa9ef9cf61d5fc78bae98d30f4a22d0f"
  },
  "names": {
   "b46085569295d65f": [
@@ -200,10 +213,10 @@
    "pic": -1,
    "car": 0,
    "cards": 5,
-   "play_h": 2,
+   "play_h": 3,
    "name": "AFK",
    "bio": "Test account",
-   "car_img": "00401451e30c8d58e92e27df2ff3cf80",
+   "car_img": "4f8de4030bc03d3bb172389b74dcfa0e",
    "discord": "a7ena"
   },
   "bea21af9c6bf95f3": {
@@ -238,10 +251,20 @@
   },
   "a44fe613bf64ea22": {
    "pic": 1,
-   "car": 14,
+   "car": -1,
+   "cards": 0,
+   "play_h": 1,
+   "name": "Deroh",
+   "bio": "Autism",
+   "car_img": "",
+   "discord": ""
+  },
+  "380f37887df72c14": {
+   "pic": 1,
+   "car": -1,
    "cards": 0,
    "play_h": 0,
-   "name": "Deroh",
+   "name": "Ale",
    "bio": "",
    "car_img": "",
    "discord": ""

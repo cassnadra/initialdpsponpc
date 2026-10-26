@@ -48,7 +48,7 @@
     "steam": "76561198259702682",
     "steam_verified": true,
     "name": "AFK",
-    "time_ms": 178066,
+    "time_ms": 177466,
     "car": 0,
     "game": "en",
     "date": "2026-10-26",
@@ -120,6 +120,19 @@
   "entries": [
    {
     "rank": 1,
+    "pid": "b46085569295d65f",
+    "shown": "Cassandra (Steam)",
+    "steam": "76561198289153961",
+    "steam_verified": true,
+    "name": "Cassandra",
+    "time_ms": 190333,
+    "car": 13,
+    "game": "en",
+    "date": "2026-10-26",
+    "ghost": "ghosts/usui-0/b46085569295d65f.idg"
+   },
+   {
+    "rank": 2,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",
