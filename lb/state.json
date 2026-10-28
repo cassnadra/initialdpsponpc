@@ -1,5 +1,5 @@
 {
- "last_id": "1564494994608357538",
+ "last_id": "1564779268934996009",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -75,7 +75,8 @@
     9776.4,
     9644.4,
     9629.8,
-    9632.6
+    9632.6,
+    9755.1
    ],
    "entries": {
     "b46085569295d65f": {
@@ -113,6 +114,15 @@
      "date": "2026-10-26",
      "msg": "1564149768022659082",
      "ghost": "ghosts/myougi-0/2ff94d72b41c145f.idg"
+    },
+    "52143161d65181cd": {
+     "name": "+Rockman+",
+     "time_ms": 185466,
+     "car": 0,
+     "game": "jp",
+     "date": "2026-10-27",
+     "msg": "1564779268934996009",
+     "ghost": "ghosts/myougi-0/52143161d65181cd.idg"
     }
    }
   },
@@ -171,7 +181,8 @@
   "5168fd241b77a365": "a0425cada2c76e6a579a0e9f25ae67d45a0b4c3152fd8b2fc05217d7adf4bd36149d5cc3ce27986d1b8daf672e4aafc4043bd660483048692ee40ee08670cbe2",
   "a44fe613bf64ea22": "5fa9614c57ee38111331a5c8d5f9e459251d3ad29e957092fd8adfaf7abb27a22b15cd928b545ef869980751a36792c926d0e1a0c8347958a15813891c6f8a82",
   "380f37887df72c14": "8e792f169655d79954e070be4aedc77084a2f30eb2f34fa0b701de96247d0e00998a2bca0d82bea08ebaef093082e58baa9ef9cf61d5fc78bae98d30f4a22d0f",
-  "18f0147cfb0c1c94": "cb09a46cbae7da4164d9ae50a7abe7d6d0e5a83980d22e0a86ececd8065357dcb9c3b7f677042a8d8c4c8b7a963f917eaba1b8732fe65ab26580409e89fda509"
+  "18f0147cfb0c1c94": "cb09a46cbae7da4164d9ae50a7abe7d6d0e5a83980d22e0a86ececd8065357dcb9c3b7f677042a8d8c4c8b7a963f917eaba1b8732fe65ab26580409e89fda509",
+  "52143161d65181cd": "32ab853251171cc5ac5cd2033cd4b5a64fbfefdc31ec971f66b32017fdc045bdd442edee83bd897c69f2baabae0b87043962f551667b3d80f42389a3bd0fc781"
  },
  "names": {
   "b46085569295d65f": [
@@ -185,6 +196,9 @@
   ],
   "5168fd241b77a365": [
    "BLACKLIST"
+  ],
+  "52143161d65181cd": [
+   "+Rockman+"
   ]
  },
  "steam": {
@@ -276,6 +290,16 @@
    "cards": 0,
    "play_h": 0,
    "name": "Doc703VA",
+   "bio": "",
+   "car_img": "",
+   "discord": ""
+  },
+  "52143161d65181cd": {
+   "pic": 1,
+   "car": 0,
+   "cards": 0,
+   "play_h": 0,
+   "name": "+Rockman+",
    "bio": "",
    "car_img": "",
    "discord": ""

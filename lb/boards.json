@@ -92,6 +92,19 @@
     "game": "en",
     "date": "2026-10-25",
     "ghost": "ghosts/myougi-0/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 5,
+    "pid": "52143161d65181cd",
+    "shown": "+Rockman+ #5214",
+    "steam": "",
+    "steam_verified": false,
+    "name": "+Rockman+",
+    "time_ms": 185466,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-10-27",
+    "ghost": "ghosts/myougi-0/52143161d65181cd.idg"
    }
   ]
  },
