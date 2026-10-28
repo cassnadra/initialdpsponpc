@@ -26,7 +26,7 @@
   },
   "usui-0": {
    "course": "usui",
-   "label": "Usui uphill",
+   "label": "Usui",
    "start": [
     198.78599548339844,
     -0.019999373704195023,
@@ -59,7 +59,7 @@
   },
   "myougi-0": {
    "course": "myougi",
-   "label": "Myougi downhill",
+   "label": "Myougi",
    "start": [
     -2.5,
     119.9872055053711,
@@ -151,7 +151,7 @@
   },
   "myougi-1": {
    "course": "myougi",
-   "label": "Myougi downhill",
+   "label": "Myougi (reverse)",
    "start": [
     2.5,
     119.99413299560547,

@@ -39,7 +39,7 @@
  },
  "myougi-0": {
   "course": "myougi",
-  "label": "Myougi downhill",
+  "label": "Myougi",
   "entries": [
    {
     "rank": 1,
@@ -110,7 +110,7 @@
  },
  "myougi-1": {
   "course": "myougi",
-  "label": "Myougi downhill",
+  "label": "Myougi (reverse)",
   "entries": [
    {
     "rank": 1,
@@ -129,7 +129,7 @@
  },
  "usui-0": {
   "course": "usui",
-  "label": "Usui uphill",
+  "label": "Usui",
   "entries": [
    {
     "rank": 1,
