@@ -1,5 +1,5 @@
 {
- "last_id": "1564937400751489075",
+ "last_id": "1565080295764660356",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -34,7 +34,9 @@
    ],
    "lens": [
     8524.1,
-    8551.4
+    8551.4,
+    8485.1,
+    8490.2
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -54,6 +56,15 @@
      "date": "2026-10-26",
      "msg": "1564136291921174538",
      "ghost": "ghosts/usui-0/b46085569295d65f.idg"
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 181333,
+     "car": 31,
+     "game": "en",
+     "date": "2026-10-28",
+     "msg": "1565011108195082371",
+     "ghost": "ghosts/usui-0/5168fd241b77a365.idg"
     }
    }
   },
@@ -76,7 +87,9 @@
     9644.4,
     9629.8,
     9632.6,
-    9755.1
+    9755.1,
+    9751.5,
+    9774.8
    ],
    "entries": {
     "b46085569295d65f": {
@@ -123,6 +136,24 @@
      "date": "2026-10-27",
      "msg": "1564779268934996009",
      "ghost": "ghosts/myougi-0/52143161d65181cd.idg"
+    },
+    "062910041e786c15": {
+     "name": "Icipher",
+     "time_ms": 186133,
+     "car": 2,
+     "game": "en",
+     "date": "2026-10-28",
+     "msg": "1565018959164481599",
+     "ghost": "ghosts/myougi-0/062910041e786c15.idg"
+    },
+    "55f9aa565f92c636": {
+     "name": "XShadowVileX",
+     "time_ms": 192433,
+     "car": 2,
+     "game": "en",
+     "date": "2026-10-28",
+     "msg": "1565050099606757386",
+     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
     }
    }
   },
@@ -158,7 +189,8 @@
     1.7999999523162842
    ],
    "lens": [
-    9779.4
+    9779.4,
+    9801.2
    ],
    "entries": {
     "b46085569295d65f": {
@@ -169,6 +201,15 @@
      "date": "2026-10-26",
      "msg": "1564120386357170279",
      "ghost": "ghosts/myougi-1/b46085569295d65f.idg"
+    },
+    "55f9aa565f92c636": {
+     "name": "XShadowVileX",
+     "time_ms": 188100,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-28",
+     "msg": "1565051648521543800",
+     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
     }
    }
   }
@@ -182,7 +223,9 @@
   "a44fe613bf64ea22": "5fa9614c57ee38111331a5c8d5f9e459251d3ad29e957092fd8adfaf7abb27a22b15cd928b545ef869980751a36792c926d0e1a0c8347958a15813891c6f8a82",
   "380f37887df72c14": "8e792f169655d79954e070be4aedc77084a2f30eb2f34fa0b701de96247d0e00998a2bca0d82bea08ebaef093082e58baa9ef9cf61d5fc78bae98d30f4a22d0f",
   "18f0147cfb0c1c94": "cb09a46cbae7da4164d9ae50a7abe7d6d0e5a83980d22e0a86ececd8065357dcb9c3b7f677042a8d8c4c8b7a963f917eaba1b8732fe65ab26580409e89fda509",
-  "52143161d65181cd": "32ab853251171cc5ac5cd2033cd4b5a64fbfefdc31ec971f66b32017fdc045bdd442edee83bd897c69f2baabae0b87043962f551667b3d80f42389a3bd0fc781"
+  "52143161d65181cd": "32ab853251171cc5ac5cd2033cd4b5a64fbfefdc31ec971f66b32017fdc045bdd442edee83bd897c69f2baabae0b87043962f551667b3d80f42389a3bd0fc781",
+  "062910041e786c15": "3bc861575ca9ce30ae5244335590f4525af63c8225cb62dd05acb2cfa40b08d631921433269ef545efda11644351a764e184e02b79bc235ae077e3e82cf2be8a",
+  "55f9aa565f92c636": "88de12678361e9945ce7cc65b2548aae123e5dbb8586cbfef1938e18c3e8bbb20f5a8e31f1e5401569facf5b4cf83212aa62dd67ab23105a62eb23401a7a1306"
  },
  "names": {
   "b46085569295d65f": [
@@ -199,6 +242,12 @@
   ],
   "52143161d65181cd": [
    "+Rockman+"
+  ],
+  "062910041e786c15": [
+   "Icipher"
+  ],
+  "55f9aa565f92c636": [
+   "XShadowVileX"
   ]
  },
  "steam": {
@@ -216,12 +265,12 @@
  "profiles": {
   "b46085569295d65f": {
    "pic": -1,
-   "car": -1,
+   "car": 13,
    "cards": 42,
    "play_h": 5,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "",
+   "car_img": "aa6d86a7a82b963743442dfbfe51fd75",
    "discord": "cassnadra"
   },
   "2ff94d72b41c145f": {
@@ -300,6 +349,16 @@
    "cards": 0,
    "play_h": 0,
    "name": "+Rockman+",
+   "bio": "",
+   "car_img": "",
+   "discord": ""
+  },
+  "55f9aa565f92c636": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "XShadowVileX",
    "bio": "",
    "car_img": "",
    "discord": ""

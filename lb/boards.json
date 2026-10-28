@@ -105,6 +105,32 @@
     "game": "jp",
     "date": "2026-10-27",
     "ghost": "ghosts/myougi-0/52143161d65181cd.idg"
+   },
+   {
+    "rank": 6,
+    "pid": "062910041e786c15",
+    "shown": "Icipher #0629",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Icipher",
+    "time_ms": 186133,
+    "car": 2,
+    "game": "en",
+    "date": "2026-10-28",
+    "ghost": "ghosts/myougi-0/062910041e786c15.idg"
+   },
+   {
+    "rank": 7,
+    "pid": "55f9aa565f92c636",
+    "shown": "XShadowVileX #55f9",
+    "steam": "",
+    "steam_verified": false,
+    "name": "XShadowVileX",
+    "time_ms": 192433,
+    "car": 2,
+    "game": "en",
+    "date": "2026-10-28",
+    "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    }
   ]
  },
@@ -124,6 +150,19 @@
     "game": "en",
     "date": "2026-10-26",
     "ghost": "ghosts/myougi-1/b46085569295d65f.idg"
+   },
+   {
+    "rank": 2,
+    "pid": "55f9aa565f92c636",
+    "shown": "XShadowVileX #55f9",
+    "steam": "",
+    "steam_verified": false,
+    "name": "XShadowVileX",
+    "time_ms": 188100,
+    "car": 13,
+    "game": "en",
+    "date": "2026-10-28",
+    "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
    }
   ]
  },
@@ -133,6 +172,19 @@
   "entries": [
    {
     "rank": 1,
+    "pid": "5168fd241b77a365",
+    "shown": "BLACKLIST #5168",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BLACKLIST",
+    "time_ms": 181333,
+    "car": 31,
+    "game": "en",
+    "date": "2026-10-28",
+    "ghost": "ghosts/usui-0/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 2,
     "pid": "b46085569295d65f",
     "shown": "Cassandra (Steam)",
     "steam": "76561198289153961",
@@ -145,7 +197,7 @@
     "ghost": "ghosts/usui-0/b46085569295d65f.idg"
    },
    {
-    "rank": 2,
+    "rank": 3,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",
