@@ -21,5 +21,5 @@ P	5168fd241b77a365	1	23	0	0	BLACKLIST		fb467c26ecd18123dd80c94408867be6
 P	52143161d65181cd	1	0	0	0	+Rockman+					
 P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf					
 P	a44fe613bf64ea22	1	-1	0	3600	Deroh	Autism				
-P	b46085569295d65f	-1	13	42	14400	Cassandra		0521a07e255da9912b48425381f5c79f	cassnadra	76561198289153961	1
+P	b46085569295d65f	-1	-1	42	18000	Cassandra			cassnadra	76561198289153961	1
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr					
