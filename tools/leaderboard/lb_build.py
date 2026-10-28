@@ -7,6 +7,8 @@ checks every ghost, keeps each player's best per board and writes into LB_DIR:
   ghosts/<board>/<pid>.idg
   state.json   what has been read (last message id), every accepted entry, each player id's key + names used
   config.txt   (yours, never touched): submit_webhook=<url> makes every copy of the game send there
+A board is "<course>-<direction>" (0 / 1), plus "-wet" for a run on the course's rain variant (a wet lap is slower,
+so dry and wet have their own boards; the ghost's tail records which).
 Env: DISCORD_TOKEN (a bot that can read the channel), DISCORD_CHANNEL (its id), LB_DIR (default lb),
      DISCORD_API (default https://discord.com/api/v10 - tests point it at fake_discord.py). Python 3 stdlib only.
 """
@@ -29,7 +31,8 @@ HEAD = struct.Struct('<4si16si')              # magic, version, course, n
 HEAD2 = struct.Struct('<iI23sb')              # car, paint, model, ai
 SAMPLE = struct.Struct('<10f')                # t (vblanks since GO), pos, right, forward
 TAIL = struct.Struct('<4sIiI')                # "IDGF", finish (race timer, 1/6000 s), start place, reserved
-                                             # (reserved bit 0: the run had another player in it - versus / party)
+                                             # (reserved bit 0: the run had another player in it - versus / party;
+                                             #  bit 1: the run was on the course's wet variant)
 
 
 def get(url, auth=True):
@@ -167,7 +170,8 @@ def check(sub, g, board_info):
     if g.get('reserved', 0) & 1: return 'a versus race (not a solo run)'
     if sub.get('solo') is False or sub.get('solo') == 0: return 'a versus race (not a solo run)'
     if g['course'] != sub['course'] or g['entry'] != sub['entry'] or g['finish'] != sub['finish']: return 'message and ghost disagree'
-    if sub['board'] != f"{g['course']}-{(g['entry'] >> 1) & 1}" or g['entry'] < 0: return 'wrong board'
+    want = f"{g['course']}-{(g['entry'] >> 1) & 1}" + ('-wet' if g.get('reserved', 0) & 2 else '')
+    if sub['board'] != want or g['entry'] < 0: return 'wrong board (dry/wet or direction)'
     if sub['time_ms'] != g['finish'] // 6: return 'time and finish disagree'
     if g['finish'] < 30 * 6000: return 'too short to be a race'
     s = g['samples']
@@ -208,15 +212,35 @@ def count_laps(samples, start, threshold=30.0):
     return max(1, laps)
 
 
+# a circuit's finish line is a little past its grid (Myougi ~70 m, Usui ~40-60 m); a point-to-point run ends kilometres
+# from where it started
+CIRCUIT_END = 300.0
+# the laps of a solo (time attack) race on each circuit: 3, but Usui's longer lap is raced twice
+COURSE_LAPS = {'usui': 2}
+
+
+def run_shape(s):
+    """(is_circuit, laps) of a run's samples: a point-to-point run is one 'lap'."""
+    start = s[0][1:4]
+    is_circuit = sum(abs(s[-1][1 + k] - start[k]) for k in range(3)) <= CIRCUIT_END
+    return is_circuit, (count_laps(s, start) if is_circuit else 1)
+
+
 def board_label(sub, s, is_circuit, laps):
-    """The board's label: downhill/uphill for point-to-point, or a direction/lap note for circuits."""
+    """The board's label: downhill/uphill for point-to-point, or a direction/lap note for circuits.
+    A wet run gets "(wet)": its board is separate, since the rain variant is slower."""
+    bid = str(sub.get('board', ''))
+    wet = bid.endswith('-wet')
+    if wet:
+        bid = bid[:-4]
     name = sub['course'].capitalize()
     if is_circuit:
-        label = name + (' (reverse)' if str(sub.get('board', '')).endswith('-1') else '')
-        if laps != 3:
+        label = name + (' (reverse)' if bid.endswith('-1') else '')
+        if laps != COURSE_LAPS.get(sub['course'], 3):
             label += ' (%d laps)' % laps
-        return label
-    return name + (' downhill' if s[-1][2] < s[0][2] else ' uphill')
+    else:
+        label = name + (' downhill' if s[-1][2] < s[0][2] else ' uphill')
+    return label + (' (wet)' if wet else '')
 
 
 def main():
@@ -236,7 +260,14 @@ def main():
         del state['boards'][bid]
         shutil.rmtree(os.path.join(LB, 'ghosts', bid), ignore_errors=True)
         print(f'removed board {bid}: versus races no longer count')
-    msgs = messages_after(state['last_id'])
+    for bid, b in state['boards'].items():   # (circuits finishing past their grid were labelled as point-to-point: two
+        for e in b['entries'].values():      #  "Myougi downhill" boards. A board's label comes from one of its ghosts)
+            try: s = parse_ghost(open(os.path.join(LB, e['ghost']), 'rb').read())['samples']
+            except Exception: continue
+            label = board_label({'course': b['course'], 'board': bid}, s, *run_shape(s))
+            if label != b.get('label'): print(f"board {bid}: label '{b.get('label')}' -> '{label}'"); b['label'] = label
+            break
+    msgs =messages_after(state['last_id'])
     if msgs and all(not m.get('content') for m in msgs if m.get('webhook_id')) and any(m.get('webhook_id') for m in msgs):
         sys.exit('::error::The submissions came with empty text: turn on MESSAGE CONTENT INTENT (Developer Portal -> your '
                  'app -> Bot -> Privileged Gateway Intents -> Save), then run again. Nothing is lost.')
@@ -321,15 +352,14 @@ def main():
             data = get(att['url'], auth=False)
             g = parse_ghost(data)
             s = g['samples']
-            # a circuit ends where it started. Only the main 3-lap mode is a solo time; a shorter/longer run is a
-            # versus race (or a modified build) and must not beat the real times.
-            start = s[0][1:4]
-            is_circuit = sum(abs(s[-1][1 + k] - start[k]) for k in range(3)) <= 30.0
-            laps = count_laps(s, start) if is_circuit else 1
+            # a circuit ends near where it started. Only the time attack lap count is a solo time; a shorter/longer
+            # run is a versus race (or a modified build) and must not beat the real times.
+            is_circuit, laps = run_shape(s)
+            want_laps = COURSE_LAPS.get(sub['course'], 3)
             board_key = sub['board']
             b = state['boards'].get(board_key)
             why = (check_signature(sub, data, keys)
-                   or ('a %d-lap circuit race (only 3-lap races count)' % laps if is_circuit and laps != 3 else None)
+                   or ('a %d-lap circuit race (only %d-lap races count)' % (laps, want_laps) if is_circuit and laps != want_laps else None)
                    or check(sub, g, b))
         except Exception as e:
             why = 'unreadable (%s)' % e
