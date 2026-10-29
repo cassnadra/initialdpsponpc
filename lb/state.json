@@ -1,5 +1,5 @@
 {
- "last_id": "1565144031691018280",
+ "last_id": "1565241882894929920",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -90,7 +90,8 @@
     9755.1,
     9751.5,
     9774.8,
-    9776.8
+    9776.8,
+    9741.3
    ],
    "entries": {
     "b46085569295d65f": {
@@ -158,11 +159,11 @@
     },
     "cb291afb8872aabc": {
      "name": "MATphantom",
-     "time_ms": 191766,
-     "car": 2,
+     "time_ms": 187000,
+     "car": 16,
      "game": "en",
-     "date": "2026-10-28",
-     "msg": "1565144031691018280",
+     "date": "2026-10-29",
+     "msg": "1565203084051742854",
      "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
     }
    }
@@ -200,7 +201,8 @@
    ],
    "lens": [
     9779.4,
-    9801.2
+    9801.2,
+    9747.5
    ],
    "entries": {
     "b46085569295d65f": {
@@ -220,6 +222,15 @@
      "date": "2026-10-28",
      "msg": "1565051648521543800",
      "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
+    },
+    "cb291afb8872aabc": {
+     "name": "MATphantom",
+     "time_ms": 187100,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565202104899866624",
+     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
     }
    }
   }
@@ -284,7 +295,7 @@
    "play_h": 5,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "aa6d86a7a82b963743442dfbfe51fd75",
+   "car_img": "abd4fd8870a523c79c27644ba9dc3357",
    "discord": "cassnadra"
   },
   "2ff94d72b41c145f": {
@@ -375,6 +386,16 @@
    "name": "XShadowVileX",
    "bio": "",
    "car_img": "",
+   "discord": ""
+  },
+  "cb291afb8872aabc": {
+   "pic": 1,
+   "car": 0,
+   "cards": 4,
+   "play_h": 0,
+   "name": "MATphantom",
+   "bio": "",
+   "car_img": "67adc908723dc5e0eb2638adb2559091",
    "discord": ""
   }
  },

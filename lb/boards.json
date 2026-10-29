@@ -126,10 +126,10 @@
     "steam": "",
     "steam_verified": false,
     "name": "MATphantom",
-    "time_ms": 191766,
-    "car": 2,
+    "time_ms": 187000,
+    "car": 16,
     "game": "en",
-    "date": "2026-10-28",
+    "date": "2026-10-29",
     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
    },
    {
@@ -166,6 +166,19 @@
    },
    {
     "rank": 2,
+    "pid": "cb291afb8872aabc",
+    "shown": "MATphantom #cb29",
+    "steam": "",
+    "steam_verified": false,
+    "name": "MATphantom",
+    "time_ms": 187100,
+    "car": 13,
+    "game": "en",
+    "date": "2026-10-29",
+    "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
+   },
+   {
+    "rank": 3,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
