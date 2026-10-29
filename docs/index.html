@@ -3,47 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IDSS Leaderboard</title>
-<meta name="description" content="Time attack leaderboard for the Initial D Street Stage PC port: best times per course, filters and ghost replays on the course map.">
+<title>IDSS Time Attack Ranking</title>
+<meta name="description" content="Time attack ranking for the Initial D Street Stage PC port: best times per course, search and filters, and ghost replays on the course map.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700;1,800&family=Barlow:wght@400;500;600&family=Noto+Sans+JP:wght@900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="top">
-  <div class="brand">
-    <span class="logo">IDSS</span>
-    <span class="title"><span class="wide">Time Attack </span>Leaderboard</span>
-  </div>
-  <label class="mapToggle"><input id="mapOn" type="checkbox"> Map preview</label>
-  <div class="status">
-    <span id="updated">Loading...</span>
-    <button id="refresh" class="btn" hidden>Update board</button>
+<header class="banner">
+  <div class="bannerIn">
+    <div class="brand">
+      <span class="jp" lang="ja">タイムアタック ランキング</span>
+      <span class="en">Initial D Street Stage &middot; Time Attack Ranking</span>
+    </div>
+    <label class="mapToggle"><input id="mapOn" type="checkbox"><span>Map</span></label>
+    <div class="status">
+      <span id="updated">Loading...</span>
+      <button id="refresh" class="key" hidden>Update board</button>
+    </div>
   </div>
 </header>
 
+<div class="bar">
+  <button id="courseBtn" class="barBtn"><span class="tri">&#9654;</span> Change course</button>
+  <button id="optBar" class="barBtn" aria-expanded="false"><span class="tri">&#9660;</span> Options</button>
+</div>
+
 <main class="grid">
-  <button id="optBar" class="optBar" aria-expanded="false"><span class="caret">&#9662;</span> Options <span id="optSum" class="optSum"></span></button>
-  <nav class="panel courses" aria-label="Courses">
-    <h2>Courses</h2>
+  <nav class="courses" id="courses" aria-label="Courses">
+    <div class="tab">Course select</div>
     <ul id="courseList"></ul>
   </nav>
+  <div id="scrim" class="scrim"></div>
 
-  <section class="panel board" aria-label="Leaderboard">
+  <section class="board" aria-label="Ranking">
     <div class="boardHead">
-      <h2 id="boardTitle">Leaderboard</h2>
-      <span id="boardCount" class="muted"></span>
+      <div class="tab tab-blue" id="boardTitle">Ranking</div>
+      <span id="boardCount" class="count"></span>
     </div>
     <div class="tableWrap">
       <table id="table">
         <thead>
           <tr>
-            <th class="c-map" title="Show on the course map">Map</th>
-            <th class="c-rank">#</th>
-            <th>Player</th>
+            <th class="c-map" title="Replay on the course map">Map</th>
+            <th class="c-rank">Pos</th>
+            <th>Driver</th>
             <th class="c-time">Time</th>
-            <th class="c-gap">Gap</th>
+            <th class="c-gap">Diff</th>
             <th class="c-car">Car</th>
             <th class="c-date">Date</th>
           </tr>
@@ -55,50 +62,48 @@
   </section>
 
   <aside class="side">
-    <section class="panel filters" aria-label="Search and filters">
-      <h2>Search times</h2>
-      <input id="search" type="search" placeholder="Player name..." autocomplete="off">
-      <div class="row">
-        <span class="lbl">Direction</span>
-        <div class="seg" id="dirSeg">
-          <button data-dir="0">Downhill</button><button data-dir="1">Uphill</button>
+    <section class="filters" id="filters" aria-label="Search and filters">
+      <div class="tab">Search</div>
+      <div class="fBody">
+        <input id="search" type="search" placeholder="Driver name" autocomplete="off">
+        <div class="row">
+          <span class="lbl">Route</span>
+          <div class="seg" id="dirSeg"><button data-dir="0">Downhill</button><button data-dir="1">Uphill</button></div>
         </div>
-      </div>
-      <div class="row">
-        <span class="lbl">Road</span>
-        <div class="seg" id="wetSeg">
-          <button data-wet="0">Dry</button><button data-wet="1">Wet</button>
+        <div class="row">
+          <span class="lbl">Road</span>
+          <div class="seg" id="wetSeg"><button data-wet="0">Dry</button><button data-wet="1">Wet</button></div>
         </div>
+        <div class="row">
+          <span class="lbl">Sort</span>
+          <select id="sort">
+            <option value="time">Fastest</option>
+            <option value="date">Newest</option>
+            <option value="name">Driver</option>
+            <option value="car">Car</option>
+          </select>
+        </div>
+        <div class="row">
+          <span class="lbl">Car</span>
+          <select id="carFilter"><option value="">Any car</option></select>
+        </div>
+        <label class="check"><input id="steamOnly" type="checkbox"> Steam-verified drivers only</label>
       </div>
-      <div class="row">
-        <span class="lbl">Sort</span>
-        <select id="sort">
-          <option value="time">Fastest first</option>
-          <option value="date">Newest first</option>
-          <option value="name">Name</option>
-          <option value="car">Car</option>
-        </select>
-      </div>
-      <div class="row">
-        <span class="lbl">Car</span>
-        <select id="carFilter"><option value="">Any car</option></select>
-      </div>
-      <label class="check"><input id="steamOnly" type="checkbox"> Steam-verified only</label>
     </section>
 
-    <section class="panel mapPanel" aria-label="Course map">
+    <section class="mapPanel" aria-label="Course map">
       <div class="mapHead">
-        <h2>Course map</h2>
-        <span id="mapNote" class="muted"></span>
+        <div class="tab">Course map</div>
+        <span id="mapNote" class="count"></span>
       </div>
-      <canvas id="map"></canvas>
+      <div class="mapBox"><canvas id="map"></canvas></div>
       <div class="player">
-        <button id="play" class="btn" disabled>Play</button>
+        <button id="play" class="key" disabled>Play</button>
         <select id="speed" title="Replay speed">
-          <option value="1">1x</option><option value="4" selected>4x</option><option value="10">10x</option><option value="30">30x</option>
+          <option value="1">x1</option><option value="4" selected>x4</option><option value="10">x10</option><option value="30">x30</option>
         </select>
         <input id="scrub" type="range" min="0" max="1000" value="0" disabled>
-        <span id="clock" class="clock">0:00.000</span>
+        <span id="clock" class="clock">0'00"000</span>
       </div>
       <ul id="legend" class="legend"></ul>
     </section>
@@ -106,8 +111,10 @@
 </main>
 
 <footer class="foot">
-  Times are checked from each run's ghost before they're listed. <span class="wide">Tick runs in the Map column to replay them on the course.</span><span class="narrow">Tap a time to put that run on the map preview; tap the map to play it.</span>
-  <a href="https://github.com/cassnadra/initialdpsponpc/releases" target="_blank" rel="noopener">Get the game port</a>
+  <span>Every time is checked against its ghost before it's ranked.</span>
+  <span class="wide">Tick runs in the Map column to replay them on the course.</span>
+  <span class="narrow">Tap a time to put that run on the map; tap the map to play.</span>
+  <a href="https://github.com/cassnadra/initialdpsponpc/releases" target="_blank" rel="noopener">Get the PC port</a>
 </footer>
 
 <script src="app.js"></script>

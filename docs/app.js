@@ -16,7 +16,8 @@ const CARS = ['TRUENO GT-APEX (AE86)', 'LEVIN GT-APEX (AE86)', 'LEVIN SR (AE85)'
   'IMPREZA WRX STi (GDB)', 'IMPREZA WRX type R STi Version V (Bunta)', 'CAPPUCCINO (EA11R)', 'SKYLINE 25GT TURBO (ER34)',
   'LANCER RS EVOLUTION V (CP9A)', 'LANCER GSR EVOLUTION VI TM EDITION (CP9A)', 'RX-8 Type S (SE3P)'];
 const COURSE_NAMES = { akina: 'Akina', akagi: 'Akagi', myougi: 'Myogi', usui: 'Usui' };
-const COLORS = ['#ffc21a', '#5ac8ff', '#ff5ab4', '#7dff8a', '#c08bff', '#ff8a4c'];
+const COURSE_KANJI = { akina: '秋名', akagi: '赤城', myougi: '妙義', usui: '碓氷' };
+const COLORS = ['#ffcc00', '#1d6bff', '#e3141f', '#b04dff', '#ff7a00', '#00b37a'];   // (readable on the green minimap)
 const MAX_ON_MAP = 6;
 
 const $ = id => document.getElementById(id);
@@ -25,7 +26,7 @@ const state = { boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: 
 // ---------------- formatting ----------------
 function fmtTime(ms) {
   const m = Math.floor(ms / 60000), s = Math.floor(ms / 1000) % 60, r = Math.round(ms % 1000);
-  return `${m}:${String(s).padStart(2, '0')}.${String(r).padStart(3, '0')}`;
+  return `${m}'${String(s).padStart(2, '0')}"${String(r).padStart(3, '0')}`;   // (as the game shows it: 2'57"466)
 }
 const carName = c => (c >= 0 && c < CARS.length ? CARS[c] : 'Unknown car');
 const courseName = c => COURSE_NAMES[c] || c.charAt(0).toUpperCase() + c.slice(1);
@@ -119,12 +120,14 @@ function drawCourses() {
   for (const c of courses()) {
     const li = document.createElement('li'), b = document.createElement('button');
     b.className = c.course === state.course ? 'on' : '';
+    const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '▶';
     const n = document.createElement('span'); n.className = 'cname'; n.textContent = courseName(c.course);
+    const kj = document.createElement('span'); kj.className = 'kanji'; kj.lang = 'ja'; kj.textContent = COURSE_KANJI[c.course] || '';
     const meta = document.createElement('span'); meta.className = 'cmeta';
     meta.textContent = `${c.entries} time${c.entries === 1 ? '' : 's'} · ${c.boards.length} board${c.boards.length === 1 ? '' : 's'}`;
     if (playerOn(c.course, q)) { const h = document.createElement('span'); h.className = 'hit'; h.textContent = ' · found'; meta.append(h); }
-    b.append(n, meta);
-    b.onclick = () => { state.course = c.course; pickDefaults(); render(); };
+    b.append(arrow, n, kj, meta);
+    b.onclick = () => { state.course = c.course; pickDefaults(); render(); document.body.classList.remove('drawer'); };
     li.append(b); ul.append(li);
   }
 }
@@ -154,7 +157,6 @@ function visibleEntries(b) {
 function drawBoard() {
   const b = currentBoard();
   $('boardTitle').textContent = `${courseName(state.course)} · ${dirName(state.course, state.dir)}${state.wet ? ' · Wet' : ''}`;
-  $('optSum').textContent = `${courseName(state.course)} · ${dirName(state.course, state.dir)} · ${state.wet ? 'Wet' : 'Dry'}${state.search ? ` · "${state.search}"` : ''}`;
   const es = visibleEntries(b), total = b ? b.entries.length : 0;
   $('boardCount').textContent = b ? (es.length === total ? `${total} driver${total === 1 ? '' : 's'}` : `${es.length} of ${total} shown`) : '';
   const tb = $('rows'); tb.textContent = '';
@@ -172,7 +174,10 @@ function drawBoard() {
     const mapCell = cell('c-map', cb);
     const pi = picked.indexOf(e.pid);
     if (pi >= 0) { const sw = document.createElement('span'); sw.className = 'swatch'; sw.style.background = COLORS[pi % COLORS.length]; mapCell.prepend(sw); }
-    cell('c-rank', String(e.rank));
+    const rk = document.createElement('span'); rk.textContent = String(e.rank);
+    const ord = document.createElement('span'); ord.className = 'ord';
+    ord.textContent = e.rank % 100 >= 11 && e.rank % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[e.rank % 10] || 'th');
+    const rc = cell('c-rank', rk); rc.append(ord);
     const who = document.createElement('div'); who.className = 'who';
     const prof = state.profiles[e.pid];
     if (prof && prof.carImg) who.append(carPic(`${RAW}cars/${prof.carImg}.png`));
@@ -187,7 +192,7 @@ function drawBoard() {
     cell('c-car', carName(e.car));
     cell('c-date', e.date);
     tr.onclick = ev => { if (ev.target !== cb) { cb.checked = !cb.checked; togglePick(e.pid, cb.checked); } };
-    if (picked.includes(e.pid)) tr.querySelector('.c-rank').style.boxShadow = `inset 3px 0 0 ${COLORS[pi % COLORS.length]}`;
+    if (picked.includes(e.pid)) tr.querySelector('.c-rank').style.boxShadow = `inset 4px 0 0 ${COLORS[pi % COLORS.length]}`;
     tb.append(tr);
   }
 }
@@ -239,6 +244,9 @@ function wire() {
   $('speed').onchange = e => { replay.speed = +e.target.value; };
   window.addEventListener('resize', () => drawMap());
   // phones: Options folds out the courses + filters; Map preview shows the map as a small window (remembered)
+  $('courseBtn').onclick = () => document.body.classList.add('drawer');
+  $('scrim').onclick = () => document.body.classList.remove('drawer');
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape') document.body.classList.remove('drawer'); });
   $('optBar').onclick = () => { const on = document.body.classList.toggle('opts'); $('optBar').setAttribute('aria-expanded', on); };
   let mapOn = false; try { mapOn = localStorage.getItem('lb_map') === '1'; } catch {}
   $('mapOn').checked = mapOn; document.body.classList.toggle('mapon', mapOn);
@@ -325,7 +333,7 @@ function drawMap() {
   const c = cv.getContext('2d'); c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, w, h);
   const v = replay.view;
   if (!v || !replay.track) {
-    c.fillStyle = '#9aa3d6'; c.font = '14px Inter, sans-serif'; c.textAlign = 'center';
+    c.fillStyle = '#3b4a40'; c.font = 'italic 700 16px "Barlow Condensed", sans-serif'; c.textAlign = 'center';
     c.fillText(currentBoard() ? 'Loading the course...' : 'No runs on this board yet', w / 2, h / 2); return;
   }
   const pad = 18, sx = (w - pad * 2) / Math.max(1, v.x1 - v.x0), sz = (h - pad * 2) / Math.max(1, v.z1 - v.z0), s = Math.min(sx, sz);
@@ -336,19 +344,25 @@ function drawMap() {
     for (let i = 0; i < g.n; i += 2) { const [px, pz] = P(g.x[i], g.z[i]); i ? c.lineTo(px, pz) : c.moveTo(px, pz); }
     c.strokeStyle = style; c.lineWidth = width; c.lineJoin = c.lineCap = 'round'; c.stroke();
   };
-  line(replay.track, 'rgba(255,255,255,0.13)', 11);
-  line(replay.track, 'rgba(255,255,255,0.35)', 2);
-  for (const r of replay.runs) line(r.g, r.color + '66', 2);
+  // the road as the in-race minimap draws it: a dark line on the pale green
+  line(replay.track, 'rgba(255,255,255,0.55)', 7);
+  line(replay.track, '#1c231f', 3.5);
   const tg = replay.track, [sxp, szp] = P(tg.x[0], tg.z[0]), [fx, fz] = P(tg.x[tg.n - 1], tg.z[tg.n - 1]);
-  const flag = (x, y, col, txt) => { c.beginPath(); c.arc(x, y, 6, 0, 7); c.fillStyle = col; c.fill(); c.fillStyle = '#fff'; c.font = '600 11px Inter, sans-serif'; c.textAlign = 'left'; c.fillText(txt, x + 9, y + 4); };
-  if (Math.hypot(tg.x[0] - tg.x[tg.n - 1], tg.z[0] - tg.z[tg.n - 1]) < 150) flag(sxp, szp, '#4cff8a', 'Start / Finish');   // (a circuit)
-  else { flag(sxp, szp, '#4cff8a', 'Start'); flag(fx, fz, '#ff5a5a', 'Finish'); }
+  const flag = (x, y, col, txt) => {
+    c.fillStyle = col; c.strokeStyle = '#000'; c.lineWidth = 1.5; c.fillRect(x - 5, y - 5, 10, 10); c.strokeRect(x - 5, y - 5, 10, 10);
+    c.font = 'italic 800 13px "Barlow Condensed", sans-serif'; c.lineWidth = 3; c.strokeStyle = 'rgba(255,255,255,.85)';
+    const t = txt.toUpperCase(), right = x + 9 + c.measureText(t).width < w - 4;   // (near the right edge: on the left)
+    c.textAlign = right ? 'left' : 'right'; const tx = right ? x + 9 : x - 9;
+    c.strokeText(t, tx, y + 4); c.fillStyle = '#111'; c.fillText(t, tx, y + 4);
+  };
+  if (Math.hypot(tg.x[0] - tg.x[tg.n - 1], tg.z[0] - tg.z[tg.n - 1]) < 150) flag(sxp, szp, '#22c55e', 'Start / Finish');   // (a circuit)
+  else { flag(sxp, szp, '#22c55e', 'Start'); flag(fx, fz, '#e3141f', 'Finish'); }
   // the cars at the replay time, with the gap to the leader of the picked runs (time behind at the same distance is
   // hard to get without the route, so: how far behind in seconds = when they reach the leader's spot)
   for (const r of replay.runs) {
     const [x, z, done] = posAt(r.g, replay.t), [px, pz] = P(x, z);
     c.beginPath(); c.arc(px, pz, 7, 0, 7); c.fillStyle = r.color; c.fill();
-    c.lineWidth = 2; c.strokeStyle = '#0a0b2e'; c.stroke();
+    c.lineWidth = 2; c.strokeStyle = '#000'; c.stroke();
     if (r.gapEl) r.gapEl.textContent = done ? fmtTime(r.e.time_ms) : '';
   }
   $('clock').textContent = fmtTime(Math.max(0, replay.t) * 1000);
