@@ -14,8 +14,9 @@
 <header class="top">
   <div class="brand">
     <span class="logo">IDSS</span>
-    <span class="title">Time Attack Leaderboard</span>
+    <span class="title"><span class="wide">Time Attack </span>Leaderboard</span>
   </div>
+  <label class="mapToggle"><input id="mapOn" type="checkbox"> Map preview</label>
   <div class="status">
     <span id="updated">Loading...</span>
     <button id="refresh" class="btn" hidden>Update board</button>
@@ -23,6 +24,7 @@
 </header>
 
 <main class="grid">
+  <button id="optBar" class="optBar" aria-expanded="false"><span class="caret">&#9662;</span> Options <span id="optSum" class="optSum"></span></button>
   <nav class="panel courses" aria-label="Courses">
     <h2>Courses</h2>
     <ul id="courseList"></ul>
@@ -104,7 +106,7 @@
 </main>
 
 <footer class="foot">
-  Times are checked from each run's ghost before they're listed. Tick runs in the Map column to replay them on the course.
+  Times are checked from each run's ghost before they're listed. <span class="wide">Tick runs in the Map column to replay them on the course.</span><span class="narrow">Tap a time to put that run on the map preview; tap the map to play it.</span>
   <a href="https://github.com/cassnadra/initialdpsponpc/releases" target="_blank" rel="noopener">Get the game port</a>
 </footer>
 

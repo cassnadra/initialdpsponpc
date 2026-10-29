@@ -154,6 +154,7 @@ function visibleEntries(b) {
 function drawBoard() {
   const b = currentBoard();
   $('boardTitle').textContent = `${courseName(state.course)} · ${dirName(state.course, state.dir)}${state.wet ? ' · Wet' : ''}`;
+  $('optSum').textContent = `${courseName(state.course)} · ${dirName(state.course, state.dir)} · ${state.wet ? 'Wet' : 'Dry'}${state.search ? ` · "${state.search}"` : ''}`;
   const es = visibleEntries(b), total = b ? b.entries.length : 0;
   $('boardCount').textContent = b ? (es.length === total ? `${total} driver${total === 1 ? '' : 's'}` : `${es.length} of ${total} shown`) : '';
   const tb = $('rows'); tb.textContent = '';
@@ -186,6 +187,7 @@ function drawBoard() {
     cell('c-car', carName(e.car));
     cell('c-date', e.date);
     tr.onclick = ev => { if (ev.target !== cb) { cb.checked = !cb.checked; togglePick(e.pid, cb.checked); } };
+    if (picked.includes(e.pid)) tr.querySelector('.c-rank').style.boxShadow = `inset 3px 0 0 ${COLORS[pi % COLORS.length]}`;
     tb.append(tr);
   }
 }
@@ -236,6 +238,16 @@ function wire() {
   $('scrub').oninput = e => { replay.t = (e.target.value / 1000) * replay.len; pause(); drawMap(); };
   $('speed').onchange = e => { replay.speed = +e.target.value; };
   window.addEventListener('resize', () => drawMap());
+  // phones: Options folds out the courses + filters; Map preview shows the map as a small window (remembered)
+  $('optBar').onclick = () => { const on = document.body.classList.toggle('opts'); $('optBar').setAttribute('aria-expanded', on); };
+  let mapOn = false; try { mapOn = localStorage.getItem('lb_map') === '1'; } catch {}
+  $('mapOn').checked = mapOn; document.body.classList.toggle('mapon', mapOn);
+  $('mapOn').onchange = e => {
+    document.body.classList.toggle('mapon', e.target.checked);
+    try { localStorage.setItem('lb_map', e.target.checked ? '1' : '0'); } catch {}
+    drawMap();
+  };
+  $('map').onclick = () => { if (!$('play').disabled) replay.playing ? pause() : play(); };
   if (REFRESH_URL) {
     const r = $('refresh'); r.hidden = false;
     r.onclick = async () => {
