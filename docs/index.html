@@ -96,7 +96,10 @@
         <div class="tab">Course map</div>
         <span id="mapNote" class="count"></span>
       </div>
-      <div class="mapBox"><canvas id="map"></canvas></div>
+      <div class="mapBox"><canvas id="map"></canvas>
+        <div class="mapHud"><button id="mPlay" aria-label="Play">&#9654;</button><span id="mClock">0'00"000</span></div>
+      </div>
+      <div id="mapHint" class="mapHint" hidden>Tap the map to play the race.<br>Tap a time in the list to add or remove a driver.</div>
       <div class="player">
         <button id="play" class="key" disabled>Play</button>
         <select id="speed" title="Replay speed">

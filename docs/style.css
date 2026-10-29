@@ -135,7 +135,8 @@ select option { background: #16181c; }
 
 /* ---------- course map: the in-race minimap ---------- */
 .mapHead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.mapBox { background: var(--map-bg); border: 3px solid #111; outline: 1px solid #5c6b61; }
+.mapBox { position: relative; background: var(--map-bg); border: 3px solid #111; outline: 1px solid #5c6b61; }
+.mapHud, .mapHint { display: none; }
 #map { width: 100%; aspect-ratio: 1 / 1; display: block; cursor: pointer; }
 .player { display: grid; grid-template-columns: auto 64px 1fr auto; align-items: center; gap: 8px; margin-top: 10px; }
 .player input[type=range] { width: 100%; accent-color: var(--yellow); }
@@ -196,6 +197,12 @@ select option { background: #16181c; }
   .mapPanel { display: none; position: fixed; right: 12px; bottom: 12px; z-index: 20; width: min(46vw, 210px); padding: 0; border: 0; background: none; box-shadow: 0 8px 24px rgba(0,0,0,.6); }
   body.mapon .mapPanel { display: block; }
   .mapHead, .player, .legend { display: none; }
+  .mapHud { display: flex; align-items: center; gap: 6px; position: absolute; left: 4px; top: 4px; background: rgba(0,0,0,.78); padding: 2px 6px 2px 2px; pointer-events: none; }
+  .mapHud button { pointer-events: auto; width: 26px; height: 24px; padding: 0; border: 0; background: var(--yellow); color: #111; font-size: 12px; cursor: pointer; }
+  .mapHud span { font: italic 800 14px var(--cond); color: #fff; font-variant-numeric: tabular-nums; }
+  .mapHint:not([hidden]) { display: block; position: absolute; right: 0; bottom: calc(100% + 10px); width: 220px; padding: 8px 10px;
+    background: var(--yellow); color: #111; font: 600 13px/1.35 Barlow, sans-serif; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
+  .mapHint::after { content: ''; position: absolute; right: 24px; top: 100%; border: 8px solid transparent; border-top-color: var(--yellow); }
   .foot { padding: 4px 12px 20px; }
   body.mapon .foot { padding-bottom: 250px; }
 }

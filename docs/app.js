@@ -254,8 +254,12 @@ function wire() {
     document.body.classList.toggle('mapon', e.target.checked);
     try { localStorage.setItem('lb_map', e.target.checked ? '1' : '0'); } catch {}
     drawMap();
+    if (e.target.checked) showHint();
   };
-  $('map').onclick = () => { if (!$('play').disabled) replay.playing ? pause() : play(); };
+  const toggle = () => { hideHint(); if (!$('play').disabled) replay.playing ? pause() : play(); };
+  $('map').onclick = toggle;
+  $('mPlay').onclick = ev => { ev.stopPropagation(); toggle(); };
+  if (mapOn) setTimeout(showHint, 1500);
   if (REFRESH_URL) {
     const r = $('refresh'); r.hidden = false;
     r.onclick = async () => {
@@ -313,6 +317,14 @@ async function loadMap() {
   if (state.t0) { replay.t = Math.min(state.t0, replay.len); state.t0 = 0; }   // (a link to a moment: #...&t=SECONDS)
   drawBoard(); drawMap();
 }
+// phones: a tip over the small map, once per visit, until tapped or for a few seconds
+let hintTimer = 0, hintShown = false;
+function showHint() {
+  if (hintShown || !matchMedia('(max-width: 720px)').matches) return;
+  hintShown = true; $('mapHint').hidden = false;
+  clearTimeout(hintTimer); hintTimer = setTimeout(hideHint, 7000);
+}
+function hideHint() { $('mapHint').hidden = true; clearTimeout(hintTimer); }
 function setPlayer(on) { $('play').disabled = !on; $('scrub').disabled = !on; $('play').textContent = 'Play'; }
 function viewOf(gs) {
   let x0 = Infinity, x1 = -Infinity, z0 = Infinity, z1 = -Infinity;
@@ -365,16 +377,16 @@ function drawMap() {
     c.lineWidth = 2; c.strokeStyle = '#000'; c.stroke();
     if (r.gapEl) r.gapEl.textContent = done ? fmtTime(r.e.time_ms) : '';
   }
-  $('clock').textContent = fmtTime(Math.max(0, replay.t) * 1000);
+  $('clock').textContent = $('mClock').textContent = fmtTime(Math.max(0, replay.t) * 1000);
   $('scrub').value = replay.len ? Math.round((replay.t / replay.len) * 1000) : 0;
 }
 function play() {
   if (!replay.runs.length) return;
   if (replay.t >= replay.len) replay.t = 0;
-  replay.playing = true; replay.last = performance.now(); $('play').textContent = 'Pause';
+  replay.playing = true; replay.last = performance.now(); $('play').textContent = 'Pause'; $('mPlay').textContent = '❚❚';
   requestAnimationFrame(step);
 }
-function pause() { replay.playing = false; if (!$('play').disabled) $('play').textContent = 'Play'; }
+function pause() { replay.playing = false; if (!$('play').disabled) $('play').textContent = 'Play'; $('mPlay').textContent = '▶'; }
 function step(now) {
   if (!replay.playing) return;
   replay.t += ((now - replay.last) / 1000) * replay.speed; replay.last = now;
