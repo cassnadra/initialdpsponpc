@@ -200,13 +200,32 @@ function drawBoard() {
   }
 }
 // their car picture: a turntable sheet of 12 angles (4 x 3); one angle, turning while the mouse is over it
+// a car picture's layout from its size: 24 angles (6 x 4, the game since 0.97.2) or 12 (4 x 3, older versions)
+const sheets = new Map();
+function sheetOf(url) {
+  if (!sheets.has(url)) sheets.set(url, new Promise(res => {
+    const im = new Image();
+    im.onload = () => res(im.naturalWidth * 4 * 9 === im.naturalHeight * 6 * 16 ? { frames: 24, cols: 6, rows: 4 } : { frames: 12, cols: 4, rows: 3 });
+    im.onerror = () => res(null);
+    im.src = url;
+  }));
+  return sheets.get(url);
+}
+// angle f of sheet s as el's background
+function showFrame(el, s, f) {
+  el.style.backgroundSize = `${s.cols * 100}% ${s.rows * 100}%`;
+  el.style.backgroundPosition = `${(f % s.cols) * 100 / (s.cols - 1)}% ${Math.floor(f / s.cols) * 100 / (s.rows - 1)}%`;
+}
 function carPic(url) {
-  const d = document.createElement('span'); d.className = 'pic'; d.style.backgroundImage = `url("${url}")`;
-  let f = 1, timer = 0;
-  const show = () => { d.style.backgroundPosition = `${(f % 4) * 100 / 3}% ${Math.floor(f / 4) * 50}%`; };
-  show();
-  d.onmouseenter = () => { timer = setInterval(() => { f = (f + 1) % 12; show(); }, 110); };
-  d.onmouseleave = () => { clearInterval(timer); f = 1; show(); };
+  const d = document.createElement('span'); d.className = 'pic';
+  sheetOf(url).then(s => {
+    if (!s) { d.className = 'ph'; return; }
+    d.style.backgroundImage = `url("${url}")`;
+    const start = s.frames / 12; let f = start, timer = 0;   // (30 degrees round: the car's front three-quarters)
+    showFrame(d, s, f);
+    d.onmouseenter = () => { timer = setInterval(() => { f = (f + 1) % s.frames; showFrame(d, s, f); }, 1320 / s.frames); };
+    d.onmouseleave = () => { clearInterval(timer); f = start; showFrame(d, s, f); };
+  });
   return d;
 }
 function togglePick(pid, on) {
@@ -430,14 +449,19 @@ function openProfile(pid) {
   // the car: their turntable picture, turning; drag to turn it yourself
   const car = $('profCar'); clearInterval(profTimer);
   if (pr.carImg) {
-    car.className = 'profCar'; car.textContent = ''; car.style.backgroundImage = `url("${RAW}cars/${pr.carImg}.png")`;
-    let f = 1, drag = null;
-    const show = () => { car.style.backgroundPosition = `${(f % 4) * 100 / 3}% ${Math.floor(f / 4) * 50}%`; };
-    show();
-    profTimer = setInterval(() => { if (!drag) { f = (f + 1) % 12; show(); } }, 260);
-    car.onpointerdown = ev => { drag = { x: ev.clientX, f }; car.setPointerCapture(ev.pointerId); };
-    car.onpointermove = ev => { if (drag) { f = ((drag.f - Math.round((ev.clientX - drag.x) / 25)) % 12 + 12) % 12; show(); } };
-    car.onpointerup = car.onpointercancel = () => { drag = null; };
+    const url = `${RAW}cars/${pr.carImg}.png`, token = pid;
+    car.className = 'profCar'; car.textContent = ''; car.style.backgroundImage = '';
+    sheetOf(url).then(s => {
+      if (!s || state.prof !== token) return;
+      car.style.backgroundImage = `url("${url}")`;
+      let f = s.frames / 12, drag = null;
+      showFrame(car, s, f);
+      profTimer = setInterval(() => { if (!drag) { f = (f + 1) % s.frames; showFrame(car, s, f); } }, 3120 / s.frames);   // (a turn in ~3 s)
+      const step = 300 / s.frames;   // (px of drag per angle: a full turn = 300 px)
+      car.onpointerdown = ev => { drag = { x: ev.clientX, f }; car.setPointerCapture(ev.pointerId); };
+      car.onpointermove = ev => { if (drag) { f = ((drag.f - Math.round((ev.clientX - drag.x) / step)) % s.frames + s.frames) % s.frames; showFrame(car, s, f); } };
+      car.onpointerup = car.onpointercancel = () => { drag = null; };
+    });
   } else {
     car.className = 'profCar none'; car.style.backgroundImage = ''; car.textContent = 'No car picture yet'; car.onpointerdown = null;
   }

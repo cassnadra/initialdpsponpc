@@ -287,7 +287,7 @@ def main():
             if re.fullmatch(r'[0-9a-f]{32}', img):   # their car's turntable picture: a PNG whose fingerprint (sha256, first 16 bytes) was signed
                 att = next((a for a in m.get('attachments', []) if a.get('filename') == 'car.png'), None)
                 ok_img = False
-                if att and att.get('size', 0) <= 600 * 1024:
+                if att and att.get('size', 0) <= 4 << 20:   # (24-angle 384 x 216 pictures since 0.97.2: ~1 MB; the old 12-angle ones ~300 KB)
                     data = get(att['url'], auth=False)
                     if data[:8] == b'\x89PNG\r\n\x1a\n' and hashlib.sha256(data).hexdigest()[:32] == img:
                         os.makedirs(os.path.join(LB, 'cars'), exist_ok=True)
