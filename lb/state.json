@@ -1,5 +1,5 @@
 {
- "last_id": "1565241882894929920",
+ "last_id": "1565388151424553111",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -91,7 +91,9 @@
     9751.5,
     9774.8,
     9776.8,
-    9741.3
+    9741.3,
+    9665.7,
+    9722.0
    ],
    "entries": {
     "b46085569295d65f": {
@@ -165,6 +167,15 @@
      "date": "2026-10-29",
      "msg": "1565203084051742854",
      "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
+    },
+    "ea03af8d21d8415e": {
+     "name": "Alex.Kirch",
+     "time_ms": 186500,
+     "car": 16,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565388151424553111",
+     "ghost": "ghosts/myougi-0/ea03af8d21d8415e.idg"
     }
    }
   },
@@ -202,7 +213,8 @@
    "lens": [
     9779.4,
     9801.2,
-    9747.5
+    9747.5,
+    9739.9
    ],
    "entries": {
     "b46085569295d65f": {
@@ -231,6 +243,15 @@
      "date": "2026-10-29",
      "msg": "1565202104899866624",
      "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
+    },
+    "ea03af8d21d8415e": {
+     "name": "Alex.Kirch",
+     "time_ms": 187066,
+     "car": 13,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565387133680746597",
+     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
     }
    }
   }
@@ -247,7 +268,8 @@
   "52143161d65181cd": "32ab853251171cc5ac5cd2033cd4b5a64fbfefdc31ec971f66b32017fdc045bdd442edee83bd897c69f2baabae0b87043962f551667b3d80f42389a3bd0fc781",
   "062910041e786c15": "3bc861575ca9ce30ae5244335590f4525af63c8225cb62dd05acb2cfa40b08d631921433269ef545efda11644351a764e184e02b79bc235ae077e3e82cf2be8a",
   "55f9aa565f92c636": "88de12678361e9945ce7cc65b2548aae123e5dbb8586cbfef1938e18c3e8bbb20f5a8e31f1e5401569facf5b4cf83212aa62dd67ab23105a62eb23401a7a1306",
-  "cb291afb8872aabc": "8b3ca3547997069ec5e1e5aca1794549c8a388fedb55edce67ffbf5b8ed339132d9bb540795fcb8a8cc2d0db2504701031c6622508822d7df98c9a34224a8c89"
+  "cb291afb8872aabc": "8b3ca3547997069ec5e1e5aca1794549c8a388fedb55edce67ffbf5b8ed339132d9bb540795fcb8a8cc2d0db2504701031c6622508822d7df98c9a34224a8c89",
+  "ea03af8d21d8415e": "c2637e6749222b598d13e167b08a855a4d9e364736ddf86427f6d1869c022f9b3b63b71fd10c6136baccb5f57c46bb1017f2b7ff1351441b1b977fd087988f61"
  },
  "names": {
   "b46085569295d65f": [
@@ -273,6 +295,9 @@
   ],
   "cb291afb8872aabc": [
    "MATphantom"
+  ],
+  "ea03af8d21d8415e": [
+   "Alex.Kirch"
   ]
  },
  "steam": {
@@ -396,6 +421,16 @@
    "name": "MATphantom",
    "bio": "",
    "car_img": "67adc908723dc5e0eb2638adb2559091",
+   "discord": ""
+  },
+  "ea03af8d21d8415e": {
+   "pic": 1,
+   "car": 2,
+   "cards": 0,
+   "play_h": 0,
+   "name": "Alex.Kirch",
+   "bio": "",
+   "car_img": "9daace2324a9ef39c681a4d278db4972",
    "discord": ""
   }
  },

@@ -10,12 +10,14 @@ E	3	qfqr	182300	16	bea21af9c6bf95f3	ghosts/myougi-0/bea21af9c6bf95f3.idg	2026-10
 E	4	BLACKLIST	182600	16	5168fd241b77a365	ghosts/myougi-0/5168fd241b77a365.idg	2026-10-25		
 E	5	+Rockman+	185466	0	52143161d65181cd	ghosts/myougi-0/52143161d65181cd.idg	2026-10-27		
 E	6	Icipher	186133	2	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
-E	7	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
-E	8	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
+E	7	Alex.Kirch	186500	16	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
+E	8	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
+E	9	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
 B	myougi-1	myougi	Myougi (reverse)
 E	1	Cassandra	181200	13	b46085569295d65f	ghosts/myougi-1/b46085569295d65f.idg	2026-10-26	76561198289153961	1
-E	2	MATphantom	187100	13	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	2026-10-29		
-E	3	XShadowVileX	188100	13	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
+E	2	Alex.Kirch	187066	13	ea03af8d21d8415e	ghosts/myougi-1/ea03af8d21d8415e.idg	2026-10-29		
+E	3	MATphantom	187100	13	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	2026-10-29		
+E	4	XShadowVileX	188100	13	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
 B	usui-0	usui	Usui
 E	1	BLACKLIST	181333	31	5168fd241b77a365	ghosts/usui-0/5168fd241b77a365.idg	2026-10-28		
 E	2	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
@@ -31,3 +33,4 @@ P	a44fe613bf64ea22	1	-1	0	3600	Deroh	Autism
 P	b46085569295d65f	-1	13	42	18000	Cassandra		abd4fd8870a523c79c27644ba9dc3357	cassnadra	76561198289153961	1
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr					
 P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091			
+P	ea03af8d21d8415e	1	2	0	0	Alex.Kirch		9daace2324a9ef39c681a4d278db4972			
