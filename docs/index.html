@@ -113,6 +113,27 @@
   </aside>
 </main>
 
+<div id="profScrim" class="profScrim" hidden></div>
+<section id="prof" class="prof" role="dialog" aria-modal="true" aria-labelledby="profName" hidden>
+  <div class="profTop">
+    <div class="tab tab-blue">Driver profile</div>
+    <button id="profClose" class="profClose" aria-label="Close">&times;</button>
+  </div>
+  <div class="profCar" id="profCar" title="Drag to turn the car"></div>
+  <div class="profId">
+    <h3 id="profName"></h3>
+    <div id="profTags" class="profTags"></div>
+  </div>
+  <p id="profBio" class="profBio"></p>
+  <dl class="profStats">
+    <div><dt>Favourite car</dt><dd id="profFav"></dd></div>
+    <div><dt>Cards</dt><dd id="profCards"></dd></div>
+    <div><dt>Play time</dt><dd id="profPlay"></dd></div>
+  </dl>
+  <div class="tab">Times</div>
+  <table class="profTimes"><tbody id="profTimes"></tbody></table>
+</section>
+
 <footer class="foot">
   <span>Every time is checked against its ghost before it's ranked.</span>
   <span class="wide">Tick runs in the Map column to replay them on the course.</span>

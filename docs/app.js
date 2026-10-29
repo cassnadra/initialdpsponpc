@@ -60,7 +60,8 @@ async function load() {
   state.boards = js;
   for (const line of txt.split('\n')) {   // P pid pic car cards play_s name bio car_img discord steam steam_ok
     const f = line.split('\t');
-    if (f[0] === 'P') state.profiles[f[1]] = { name: f[6], bio: f[7], carImg: f[8], discord: f[9], steam: f[10] };
+    if (f[0] === 'P') state.profiles[f[1]] = { name: f[6], bio: f[7], carImg: f[8], discord: f[9], steam: f[10], steamOk: f[11] === '1',
+      car: +f[3], cards: +f[4], playS: +f[5] };
   }
   loadUpdated();
 }
@@ -182,7 +183,9 @@ function drawBoard() {
     const prof = state.profiles[e.pid];
     if (prof && prof.carImg) who.append(carPic(`${RAW}cars/${prof.carImg}.png`));
     else who.append(Object.assign(document.createElement('span'), { className: 'ph' }));
-    const nm = document.createElement('span'); nm.textContent = e.shown.replace(/ \(Steam\)$/, '');
+    const nm = document.createElement('button'); nm.className = 'nameBtn'; nm.textContent = e.shown.replace(/ \(Steam\)$/, '');
+    nm.title = 'Driver profile';
+    nm.onclick = ev => { ev.stopPropagation(); openProfile(e.pid); };
     who.append(nm);
     if (e.steam_verified) { const s = document.createElement('span'); s.className = 'badge'; s.textContent = 'Steam'; s.title = 'Steam account verified'; who.append(s); }
     if (prof && prof.bio) who.title = prof.bio;
@@ -277,13 +280,14 @@ function saveHash() {
   if (state.search) p.set('q', state.search);
   if (state.sort !== 'time') p.set('s', state.sort);
   if (state.car !== '') p.set('car', state.car);
+  if (state.prof) p.set('p', state.prof);
   history.replaceState(null, '', '#' + p);
 }
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   if (p.get('c')) state.course = p.get('c');
   state.dir = +(p.get('d') || 0); state.wet = +(p.get('w') || 0);
-  state.t0 = +(p.get('t') || 0); state.search = p.get('q') || ''; state.sort = p.get('s') || 'time'; state.car = p.get('car') || '';
+  state.t0 = +(p.get('t') || 0); state.search = p.get('q') || ''; state.sort = p.get('s') || 'time'; state.car = p.get('car') || ''; state.prof = p.get('p') || '';
   $('search').value = state.search; $('sort').value = state.sort;
 }
 
@@ -394,14 +398,83 @@ function step(now) {
   drawMap(); requestAnimationFrame(step);
 }
 
+// ---------------- driver profile ----------------
+// everything the board knows about a driver: their profile card (P line) and their times on every board
+function profileTimes(pid) {
+  const out = [];
+  for (const [id, b] of Object.entries(state.boards)) {
+    const e = b.entries.find(x => x.pid === pid);
+    if (e) out.push({ id, b, e, lead: b.entries[0].time_ms });
+  }
+  return out.sort((x, y) => x.e.rank - y.e.rank || x.b.course.localeCompare(y.b.course));
+}
+let profTimer = 0;
+function openProfile(pid) {
+  const pr = state.profiles[pid] || {}, times = profileTimes(pid);
+  const any = times[0] ? times[0].e : null;
+  state.prof = pid; saveHash();
+  $('profName').textContent = (pr.name || (any ? any.name : '')) || 'Driver';
+  // tags: Steam (verified: a link to their Steam page), Discord, their id tag
+  const tags = $('profTags'); tags.textContent = '';
+  const steam = pr.steam || (any && any.steam) || '', steamOk = pr.steamOk || (any && any.steam_verified);
+  if (steam && steamOk) {
+    const a = document.createElement('a'); a.className = 'steam'; a.textContent = 'Steam verified'; a.target = '_blank'; a.rel = 'noopener';
+    a.href = `https://steamcommunity.com/profiles/${encodeURIComponent(steam)}`; tags.append(a);
+  }
+  if (pr.discord) { const d = document.createElement('span'); d.className = 'discord'; d.textContent = 'Discord: ' + pr.discord; tags.append(d); }
+  const idt = document.createElement('span'); idt.className = 'id'; idt.textContent = '#' + pid.slice(0, 4); tags.append(idt);
+  $('profBio').textContent = pr.bio || '';
+  $('profFav').textContent = pr.car >= 0 ? carName(pr.car) : (any ? carName(any.car) : '-');
+  $('profCards').textContent = pr.cards > 0 ? `${pr.cards} / 173` : '-';
+  $('profPlay').textContent = pr.playS > 0 ? `${Math.round(pr.playS / 3600)} h` : '-';
+  // the car: their turntable picture, turning; drag to turn it yourself
+  const car = $('profCar'); clearInterval(profTimer);
+  if (pr.carImg) {
+    car.className = 'profCar'; car.textContent = ''; car.style.backgroundImage = `url("${RAW}cars/${pr.carImg}.png")`;
+    let f = 1, drag = null;
+    const show = () => { car.style.backgroundPosition = `${(f % 4) * 100 / 3}% ${Math.floor(f / 4) * 50}%`; };
+    show();
+    profTimer = setInterval(() => { if (!drag) { f = (f + 1) % 12; show(); } }, 260);
+    car.onpointerdown = ev => { drag = { x: ev.clientX, f }; car.setPointerCapture(ev.pointerId); };
+    car.onpointermove = ev => { if (drag) { f = ((drag.f - Math.round((ev.clientX - drag.x) / 25)) % 12 + 12) % 12; show(); } };
+    car.onpointerup = car.onpointercancel = () => { drag = null; };
+  } else {
+    car.className = 'profCar none'; car.style.backgroundImage = ''; car.textContent = 'No car picture yet'; car.onpointerdown = null;
+  }
+  // their times: course / route / road, position, time, gap to first; click = that board
+  const tb = $('profTimes'); tb.textContent = '';
+  for (const t of times) {
+    const tr = document.createElement('tr'); if (t.e.rank === 1) tr.className = 'p1';
+    const td = (cls, txt) => { const c = document.createElement('td'); c.className = cls; c.textContent = txt; tr.append(c); };
+    const [course, dir, wet] = [t.b.course, +t.id.split('-')[1], t.id.endsWith('-wet')];
+    td('pp', `${t.e.rank}${t.e.rank % 100 >= 11 && t.e.rank % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[t.e.rank % 10] || 'th')}`);
+    td('pc', `${courseName(course)} · ${dirName(course, dir)}${wet ? ' · Wet' : ''}`);
+    td('pt', fmtTime(t.e.time_ms));
+    td('pg', t.e.time_ms === t.lead ? '' : `+${((t.e.time_ms - t.lead) / 1000).toFixed(3)}`);
+    tr.title = `${carName(t.e.car)} · ${t.e.date}`;
+    tr.onclick = () => { closeProfile(); state.course = course; state.dir = dir; state.wet = wet ? 1 : 0; state.picked = null; render(); };
+    tb.append(tr);
+  }
+  if (!times.length) { const tr = document.createElement('tr'); const c = document.createElement('td'); c.textContent = 'No times on the board.'; tr.append(c); tb.append(tr); }
+  $('prof').hidden = $('profScrim').hidden = false;
+  $('profClose').focus();
+}
+function closeProfile() {
+  $('prof').hidden = $('profScrim').hidden = true; clearInterval(profTimer);
+  state.prof = ''; saveHash();
+}
+
 // ---------------- start ----------------
 function render() { drawCourses(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
 (async () => {
   wire(); readHash();
+  $('profClose').onclick = closeProfile; $('profScrim').onclick = closeProfile;
+  document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !$('prof').hidden) closeProfile(); });
   try { await load(); } catch (err) { $('updated').textContent = 'Could not load the board'; console.error(err); return; }
   const cs = courses();
   if (!cs.length) { $('updated').textContent = 'No times yet'; return; }
   if (!state.course || !cs.some(c => c.course === state.course)) state.course = cs[0].course;
   pickDefaults();
   render();
+  if (state.prof) openProfile(state.prof);   // (a link to a driver: #...&p=<id>)
 })();

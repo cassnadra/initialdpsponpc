@@ -150,6 +150,43 @@ select option { background: #16181c; }
 .scrim { display: none; }
 .mapToggle { display: none; }
 
+/* ---------- driver profile ---------- */
+.nameBtn { background: none; border: 0; padding: 0; font: inherit; font-weight: 600; color: inherit; cursor: pointer; text-align: left; }
+.nameBtn:hover { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
+.profScrim { position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,.6); }
+.prof {
+  position: fixed; z-index: 60; top: 50%; left: 50%; transform: translate(-50%, -50%); width: min(560px, calc(100vw - 32px)); max-height: calc(100vh - 40px); overflow-y: auto;
+  background: #15171b; border: 1px solid var(--line); border-top: 4px solid var(--red); padding: 14px 16px 16px; box-shadow: 0 20px 60px rgba(0,0,0,.7);
+}
+.profScrim[hidden], .prof[hidden] { display: none; }
+.profTop { display: flex; align-items: flex-start; justify-content: space-between; }
+.profClose { background: none; border: 0; color: var(--muted); font-size: 30px; line-height: 1; cursor: pointer; padding: 0 4px; }
+.profClose:hover { color: #fff; }
+.profClose:focus:not(:focus-visible) { outline: none; }
+.profCar { width: 100%; aspect-ratio: 192 / 108; background-color: #0d0e10; background-size: 400% 300%; background-repeat: no-repeat; border: 1px solid var(--line); cursor: grab; touch-action: pan-y; }
+.profCar.none { display: grid; place-items: center; color: var(--muted); font: italic 700 16px var(--cond); letter-spacing: .08em; text-transform: uppercase; cursor: default; }
+.profId { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 12px; margin-top: 12px; }
+.profId h3 { margin: 0; font: italic 800 30px/1 var(--cond); letter-spacing: .04em; }
+.profTags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+.profTags a, .profTags span { font: italic 700 12px var(--cond); letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; text-decoration: none; }
+.profTags .steam { background: var(--blue); color: #fff; }
+.profTags .discord { background: #2b2f6b; color: #d6dafe; text-transform: none; letter-spacing: .02em; }
+.profTags .id { background: #24272c; color: var(--muted); text-transform: none; }
+.profBio { margin: 10px 0 0; color: #d3d7de; white-space: pre-wrap; }
+.profBio:empty { display: none; }
+.profStats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0; }
+.profStats div { background: #1d2024; border: 1px solid var(--line); padding: 8px 10px; min-width: 0; }
+.profStats dt { font: italic 700 12px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.profStats dd { margin: 2px 0 0; font: italic 800 18px/1.15 var(--cond); letter-spacing: .03em; overflow-wrap: anywhere; }
+.profTimes { width: 100%; }
+.profTimes td { padding: 7px 8px; }
+.profTimes tr { cursor: pointer; }
+.profTimes .pc { font: italic 800 17px var(--cond); text-transform: uppercase; letter-spacing: .04em; white-space: normal; }
+.profTimes .pp { font: italic 800 19px var(--cond); color: var(--muted); width: 44px; }
+.profTimes .pt { font: italic 800 19px var(--cond); text-align: right; font-variant-numeric: tabular-nums; }
+.profTimes .pg { font: italic 700 14px var(--cond); color: #ff7b7b; text-align: right; width: 70px; }
+.profTimes tr.p1 .pp { color: var(--gold); }
+
 @media (max-width: 1100px) {
   .grid { grid-template-columns: 210px minmax(0, 1fr); }
   .side { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
@@ -204,5 +241,8 @@ select option { background: #16181c; }
     background: var(--yellow); color: #111; font: 600 13px/1.35 Barlow, sans-serif; box-shadow: 0 6px 16px rgba(0,0,0,.5); }
   .mapHint::after { content: ''; position: absolute; right: 24px; top: 100%; border: 8px solid transparent; border-top-color: var(--yellow); }
   .foot { padding: 4px 12px 20px; }
+  .prof { top: auto; bottom: 0; left: 0; transform: none; width: 100%; max-height: 88vh; border-left: 0; border-right: 0; }
+  .profStats dd { font-size: 16px; }
+  .profTimes .pg { display: none; }
   body.mapon .foot { padding-bottom: 250px; }
 }
