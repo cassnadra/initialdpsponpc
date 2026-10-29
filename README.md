@@ -6,12 +6,14 @@ supplies all game data; nothing is redistributed.
 
 > You must source your own copy of the Initial D Street Stage ISO. It will not be provided.
 
+**Leaderboard:** [cassnadra.github.io/initialdpsponpc](https://cassnadra.github.io/initialdpsponpc/) - every course's time attack ranking, with search, filters and ghost replays on the course map (also in game: F1 -> Online -> Leaderboard -> *Open on the website*).
+
 ## Features
 
 - High-resolution, high-frame-rate gameplay (smoothing / frame interpolation).
 - Controller + keyboard remapping; gamepad hot-swap.
 - LAN and Internet party races (up to 4 players).
-- Online leaderboards with ghost racing (download and race other players' runs).
+- Online leaderboards with ghost racing (download and race other players' runs) - [ranking website](https://cassnadra.github.io/initialdpsponpc/).
 - Modding layer: custom cars, courses, music, skins/texture packs, skyboxes, liveries.
 - Multiple ghosts (up to 8 of your fastest runs race alongside you).
 - Replay theatre with save states, free camera, keyframes, slow motion, MP4 export.
