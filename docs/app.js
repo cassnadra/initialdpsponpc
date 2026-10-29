@@ -373,8 +373,8 @@ function drawMap() {
   // hard to get without the route, so: how far behind in seconds = when they reach the leader's spot)
   for (const r of replay.runs) {
     const [x, z, done] = posAt(r.g, replay.t), [px, pz] = P(x, z);
-    c.beginPath(); c.arc(px, pz, 7, 0, 7); c.fillStyle = r.color; c.fill();
-    c.lineWidth = 2; c.strokeStyle = '#000'; c.stroke();
+    c.beginPath(); c.arc(px, pz, Math.max(3, Math.min(5, w / 70)), 0, 7); c.fillStyle = r.color; c.fill();   // (small: 3 px on the phone map, 5 on the big one)
+    c.lineWidth = 1.5; c.strokeStyle = '#000'; c.stroke();
     if (r.gapEl) r.gapEl.textContent = done ? fmtTime(r.e.time_ms) : '';
   }
   $('clock').textContent = $('mClock').textContent = fmtTime(Math.max(0, replay.t) * 1000);
