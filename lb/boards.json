@@ -15,6 +15,57 @@
     "game": "en",
     "date": "2026-10-22",
     "ghost": "ghosts/akagi-0/b46085569295d65f.idg"
+   },
+   {
+    "rank": 2,
+    "pid": "ea03af8d21d8415e",
+    "shown": "Alex.Kirch #ea03",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Alex.Kirch",
+    "time_ms": 165033,
+    "car": 22,
+    "game": "en",
+    "date": "2026-10-29",
+    "ghost": "ghosts/akagi-0/ea03af8d21d8415e.idg"
+   }
+  ]
+ },
+ "akagi-0-wet": {
+  "course": "akagi",
+  "label": "Akagi downhill (wet)",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "ea03af8d21d8415e",
+    "shown": "Alex.Kirch #ea03",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Alex.Kirch",
+    "time_ms": 175866,
+    "car": 10,
+    "game": "en",
+    "date": "2026-10-29",
+    "ghost": "ghosts/akagi-0-wet/ea03af8d21d8415e.idg"
+   }
+  ]
+ },
+ "akagi-1": {
+  "course": "akagi",
+  "label": "Akagi uphill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "ea03af8d21d8415e",
+    "shown": "Alex.Kirch #ea03",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Alex.Kirch",
+    "time_ms": 181500,
+    "car": 12,
+    "game": "en",
+    "date": "2026-10-29",
+    "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
    }
   ]
  },
@@ -237,6 +288,19 @@
    },
    {
     "rank": 2,
+    "pid": "ea03af8d21d8415e",
+    "shown": "Alex.Kirch #ea03",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Alex.Kirch",
+    "time_ms": 189966,
+    "car": 14,
+    "game": "en",
+    "date": "2026-10-29",
+    "ghost": "ghosts/usui-0/ea03af8d21d8415e.idg"
+   },
+   {
+    "rank": 3,
     "pid": "b46085569295d65f",
     "shown": "Cassandra (Steam)",
     "steam": "76561198289153961",
@@ -249,7 +313,7 @@
     "ghost": "ghosts/usui-0/b46085569295d65f.idg"
    },
    {
-    "rank": 3,
+    "rank": 4,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",

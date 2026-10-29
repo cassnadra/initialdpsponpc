@@ -1,5 +1,5 @@
 {
- "last_id": "1565388151424553111",
+ "last_id": "1565422651088965673",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -10,7 +10,9 @@
     -1721.949951171875
    ],
    "lens": [
-    5785.4
+    5785.4,
+    5759.4,
+    5789.4
    ],
    "entries": {
     "b46085569295d65f": {
@@ -21,6 +23,15 @@
      "date": "2026-10-22",
      "msg": "1562724602453434421",
      "ghost": "ghosts/akagi-0/b46085569295d65f.idg"
+    },
+    "ea03af8d21d8415e": {
+     "name": "Alex.Kirch",
+     "time_ms": 165033,
+     "car": 22,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565422651088965673",
+     "ghost": "ghosts/akagi-0/ea03af8d21d8415e.idg"
     }
    }
   },
@@ -36,7 +47,10 @@
     8524.1,
     8551.4,
     8485.1,
-    8490.2
+    8490.2,
+    8457.1,
+    8484.6,
+    8499.1
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -65,6 +79,15 @@
      "date": "2026-10-28",
      "msg": "1565011108195082371",
      "ghost": "ghosts/usui-0/5168fd241b77a365.idg"
+    },
+    "ea03af8d21d8415e": {
+     "name": "Alex.Kirch",
+     "time_ms": 189966,
+     "car": 14,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565400762421354727",
+     "ghost": "ghosts/usui-0/ea03af8d21d8415e.idg"
     }
    }
   },
@@ -252,6 +275,52 @@
      "date": "2026-10-29",
      "msg": "1565387133680746597",
      "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
+    }
+   }
+  },
+  "akagi-1": {
+   "course": "akagi",
+   "label": "Akagi uphill",
+   "start": [
+    470.7279968261719,
+    38.5991325378418,
+    32.029998779296875
+   ],
+   "lens": [
+    5767.7
+   ],
+   "entries": {
+    "ea03af8d21d8415e": {
+     "name": "Alex.Kirch",
+     "time_ms": 181500,
+     "car": 12,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565404723283230731",
+     "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
+    }
+   }
+  },
+  "akagi-0-wet": {
+   "course": "akagi",
+   "label": "Akagi downhill (wet)",
+   "start": [
+    1933.06005859375,
+    451.99176025390625,
+    -1724.0999755859375
+   ],
+   "lens": [
+    5774.0
+   ],
+   "entries": {
+    "ea03af8d21d8415e": {
+     "name": "Alex.Kirch",
+     "time_ms": 175866,
+     "car": 10,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565406445749407935",
+     "ghost": "ghosts/akagi-0-wet/ea03af8d21d8415e.idg"
     }
    }
   }

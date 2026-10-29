@@ -1,6 +1,11 @@
 # IDSS leaderboard 1
 B	akagi-0	akagi	Akagi downhill
 E	1	Cassandra	154600	13	b46085569295d65f	ghosts/akagi-0/b46085569295d65f.idg	2026-10-22	76561198289153961	1
+E	2	Alex.Kirch	165033	22	ea03af8d21d8415e	ghosts/akagi-0/ea03af8d21d8415e.idg	2026-10-29		
+B	akagi-0-wet	akagi	Akagi downhill (wet)
+E	1	Alex.Kirch	175866	10	ea03af8d21d8415e	ghosts/akagi-0-wet/ea03af8d21d8415e.idg	2026-10-29		
+B	akagi-1	akagi	Akagi uphill
+E	1	Alex.Kirch	181500	12	ea03af8d21d8415e	ghosts/akagi-1/ea03af8d21d8415e.idg	2026-10-29		
 B	akina-0	akina	Akina downhill
 E	1	Cassandra	196566	13	b46085569295d65f	ghosts/akina-0/b46085569295d65f.idg	2026-10-25	76561198289153961	1
 B	myougi-0	myougi	Myougi
@@ -20,8 +25,9 @@ E	3	MATphantom	187100	13	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	2
 E	4	XShadowVileX	188100	13	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
 B	usui-0	usui	Usui
 E	1	BLACKLIST	181333	31	5168fd241b77a365	ghosts/usui-0/5168fd241b77a365.idg	2026-10-28		
-E	2	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
-E	3	AFK	210066	0	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-22	76561198259702682	1
+E	2	Alex.Kirch	189966	14	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29		
+E	3	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
+E	4	AFK	210066	0	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-22	76561198259702682	1
 P	18f0147cfb0c1c94	1	-1	0	0	Doc703VA					
 P	2ff94d72b41c145f	-1	-1	6	10800	AFK	Test account		a7ena	76561198259702682	1
 P	380f37887df72c14	1	-1	0	0	Ale					
