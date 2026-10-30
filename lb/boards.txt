@@ -37,7 +37,7 @@ P	52143161d65181cd	1	0	0	0	+Rockman+
 P	55f9aa565f92c636	1	-1	0	0	XShadowVileX					
 P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf					
 P	a44fe613bf64ea22	1	-1	0	3600	Deroh	Autism				
-P	b46085569295d65f	-1	13	42	18000	Cassandra		abd4fd8870a523c79c27644ba9dc3357	cassnadra	76561198289153961	1
+P	b46085569295d65f	-1	13	42	18000	Cassandra		d759598045c2220eb98dfa100b648c84	cassnadra	76561198289153961	1
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr					
 P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091			
 P	ea03af8d21d8415e	1	2	0	0	Alex.Kirch		9daace2324a9ef39c681a4d278db4972			
