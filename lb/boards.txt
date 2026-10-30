@@ -27,8 +27,9 @@ B	usui-0	usui	Usui
 E	1	BLACKLIST	181333	31	5168fd241b77a365	ghosts/usui-0/5168fd241b77a365.idg	2026-10-28		
 E	2	Alex.Kirch	189966	14	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29		
 E	3	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
-E	4	MATphantom	199766	25	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
-E	5	AFK	200333	30	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
+E	4	Giogio	192366	24	7bef37ad91d8806b	ghosts/usui-0/7bef37ad91d8806b.idg	2026-10-30		
+E	5	MATphantom	199766	25	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
+E	6	AFK	200333	30	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
 P	18f0147cfb0c1c94	1	-1	0	0	Doc703VA					
 P	2ff94d72b41c145f	-1	-1	6	10800	AFK	Test account		a7ena	76561198259702682	1
 P	380f37887df72c14	1	-1	0	0	Ale					
@@ -36,6 +37,7 @@ P	5168fd241b77a365	1	23	0	0	BLACKLIST		fb467c26ecd18123dd80c94408867be6
 P	52143161d65181cd	1	0	0	0	+Rockman+					
 P	55f9aa565f92c636	1	-1	0	0	XShadowVileX					
 P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf					
+P	7bef37ad91d8806b	1	24	2	0	Giogio		8626a45fab6773f29f6bc0ac65083201			
 P	a44fe613bf64ea22	1	-1	0	3600	Deroh	Autism				
 P	b46085569295d65f	-1	13	42	18000	Cassandra		d759598045c2220eb98dfa100b648c84	cassnadra	76561198289153961	1
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr					

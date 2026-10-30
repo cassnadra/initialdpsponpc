@@ -314,6 +314,19 @@
    },
    {
     "rank": 4,
+    "pid": "7bef37ad91d8806b",
+    "shown": "Giogio #7bef",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Giogio",
+    "time_ms": 192366,
+    "car": 24,
+    "game": "en",
+    "date": "2026-10-30",
+    "ghost": "ghosts/usui-0/7bef37ad91d8806b.idg"
+   },
+   {
+    "rank": 5,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -326,7 +339,7 @@
     "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",

@@ -1,5 +1,5 @@
 {
- "last_id": "1565607476592910356",
+ "last_id": "1565782658141917346",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -53,7 +53,9 @@
     8499.1,
     8528.8,
     8430.7,
-    8426.8
+    8426.8,
+    8514.2,
+    8537.1
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -100,6 +102,15 @@
      "date": "2026-10-29",
      "msg": "1565494571985535097",
      "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
+    },
+    "7bef37ad91d8806b": {
+     "name": "Giogio",
+     "time_ms": 192366,
+     "car": 24,
+     "game": "en",
+     "date": "2026-10-30",
+     "msg": "1565778902989930507",
+     "ghost": "ghosts/usui-0/7bef37ad91d8806b.idg"
     }
    }
   },
@@ -353,7 +364,8 @@
   "062910041e786c15": "3bc861575ca9ce30ae5244335590f4525af63c8225cb62dd05acb2cfa40b08d631921433269ef545efda11644351a764e184e02b79bc235ae077e3e82cf2be8a",
   "55f9aa565f92c636": "88de12678361e9945ce7cc65b2548aae123e5dbb8586cbfef1938e18c3e8bbb20f5a8e31f1e5401569facf5b4cf83212aa62dd67ab23105a62eb23401a7a1306",
   "cb291afb8872aabc": "8b3ca3547997069ec5e1e5aca1794549c8a388fedb55edce67ffbf5b8ed339132d9bb540795fcb8a8cc2d0db2504701031c6622508822d7df98c9a34224a8c89",
-  "ea03af8d21d8415e": "c2637e6749222b598d13e167b08a855a4d9e364736ddf86427f6d1869c022f9b3b63b71fd10c6136baccb5f57c46bb1017f2b7ff1351441b1b977fd087988f61"
+  "ea03af8d21d8415e": "c2637e6749222b598d13e167b08a855a4d9e364736ddf86427f6d1869c022f9b3b63b71fd10c6136baccb5f57c46bb1017f2b7ff1351441b1b977fd087988f61",
+  "7bef37ad91d8806b": "8c49e21eb7c8325e47a55642c98f42f72ab1f2d0af3378ba8eb6b0d0f287194f12d5be9b1b39154d44f78b9d183ce0a6fd3b65070abb0f008ad66cbc2a5ef739"
  },
  "names": {
   "b46085569295d65f": [
@@ -382,6 +394,9 @@
   ],
   "ea03af8d21d8415e": [
    "Alex.Kirch"
+  ],
+  "7bef37ad91d8806b": [
+   "Giogio"
   ]
  },
  "steam": {
@@ -515,6 +530,16 @@
    "name": "Alex.Kirch",
    "bio": "",
    "car_img": "9daace2324a9ef39c681a4d278db4972",
+   "discord": ""
+  },
+  "7bef37ad91d8806b": {
+   "pic": 1,
+   "car": 24,
+   "cards": 2,
+   "play_h": 0,
+   "name": "Giogio",
+   "bio": "",
+   "car_img": "8626a45fab6773f29f6bc0ac65083201",
    "discord": ""
   }
  },
