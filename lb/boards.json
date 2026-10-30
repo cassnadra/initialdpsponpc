@@ -99,10 +99,10 @@
     "steam": "76561198259702682",
     "steam_verified": true,
     "name": "AFK",
-    "time_ms": 177466,
-    "car": 0,
+    "time_ms": 176200,
+    "car": 30,
     "game": "en",
-    "date": "2026-10-26",
+    "date": "2026-10-30",
     "ghost": "ghosts/myougi-0/2ff94d72b41c145f.idg"
    },
    {
@@ -332,10 +332,10 @@
     "steam": "76561198259702682",
     "steam_verified": true,
     "name": "AFK",
-    "time_ms": 210066,
-    "car": 0,
+    "time_ms": 202333,
+    "car": 30,
     "game": "en",
-    "date": "2026-10-22",
+    "date": "2026-10-30",
     "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg"
    }
   ]
