@@ -1,5 +1,5 @@
 {
- "last_id": "1565422651088965673",
+ "last_id": "1565494571985535097",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -50,7 +50,8 @@
     8490.2,
     8457.1,
     8484.6,
-    8499.1
+    8499.1,
+    8528.8
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -88,6 +89,15 @@
      "date": "2026-10-29",
      "msg": "1565400762421354727",
      "ghost": "ghosts/usui-0/ea03af8d21d8415e.idg"
+    },
+    "cb291afb8872aabc": {
+     "name": "MATphantom",
+     "time_ms": 199766,
+     "car": 25,
+     "game": "en",
+     "date": "2026-10-29",
+     "msg": "1565494571985535097",
+     "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
     }
    }
   },

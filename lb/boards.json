@@ -314,6 +314,19 @@
    },
    {
     "rank": 4,
+    "pid": "cb291afb8872aabc",
+    "shown": "MATphantom #cb29",
+    "steam": "",
+    "steam_verified": false,
+    "name": "MATphantom",
+    "time_ms": 199766,
+    "car": 25,
+    "game": "en",
+    "date": "2026-10-29",
+    "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
+   },
+   {
+    "rank": 5,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",
