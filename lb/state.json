@@ -1,5 +1,5 @@
 {
- "last_id": "1565966000204029992",
+ "last_id": "1566017236760789015",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -75,15 +75,6 @@
      "date": "2026-10-26",
      "msg": "1564136291921174538",
      "ghost": "ghosts/usui-0/b46085569295d65f.idg"
-    },
-    "5168fd241b77a365": {
-     "name": "BLACKLIST",
-     "time_ms": 181333,
-     "car": 31,
-     "game": "en",
-     "date": "2026-10-28",
-     "msg": "1565011108195082371",
-     "ghost": "ghosts/usui-0/5168fd241b77a365.idg"
     },
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
@@ -247,16 +238,17 @@
     -305.6910095214844
    ],
    "lens": [
-    7631.0
+    7631.0,
+    7577.0
    ],
    "entries": {
     "b46085569295d65f": {
      "name": "Cassandra",
-     "time_ms": 196566,
-     "car": 13,
+     "time_ms": 195500,
+     "car": 0,
      "game": "en",
-     "date": "2026-10-25",
-     "msg": "1564033675098726564",
+     "date": "2026-10-31",
+     "msg": "1566004660165419099",
      "ghost": "ghosts/akina-0/b46085569295d65f.idg"
     }
    }
@@ -359,6 +351,27 @@
      "ghost": "ghosts/akagi-0-wet/ea03af8d21d8415e.idg"
     }
    }
+  },
+  "usui-1": {
+   "course": "usui",
+   "label": "Usui (reverse)",
+   "start": [
+    198.78599548339844,
+    -0.01999916508793831,
+    -255.8990020751953
+   ],
+   "lens": [],
+   "entries": {
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 181333,
+     "car": 31,
+     "game": "en",
+     "date": "2026-10-28",
+     "msg": "1565011108195082371",
+     "ghost": "ghosts/usui-1/5168fd241b77a365.idg"
+    }
+   }
   }
  },
  "keys": {
@@ -428,23 +441,23 @@
  "profiles": {
   "b46085569295d65f": {
    "pic": -1,
-   "car": 13,
+   "car": 0,
    "cards": 42,
-   "play_h": 5,
+   "play_h": 7,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "d759598045c2220eb98dfa100b648c84",
+   "car_img": "dc78e09b99a1af71bd7b4acae4a63d92",
    "discord": "cassnadra"
   },
   "2ff94d72b41c145f": {
-   "pic": -1,
+   "pic": 1,
    "car": -1,
-   "cards": 6,
-   "play_h": 3,
+   "cards": 1,
+   "play_h": 0,
    "name": "AFK",
-   "bio": "Test account",
+   "bio": "",
    "car_img": "",
-   "discord": "a7ena"
+   "discord": ""
   },
   "bea21af9c6bf95f3": {
    "pic": 1,

@@ -80,10 +80,10 @@
     "steam": "76561198289153961",
     "steam_verified": true,
     "name": "Cassandra",
-    "time_ms": 196566,
-    "car": 13,
+    "time_ms": 195500,
+    "car": 0,
     "game": "en",
-    "date": "2026-10-25",
+    "date": "2026-10-31",
     "ghost": "ghosts/akina-0/b46085569295d65f.idg"
    }
   ]
@@ -288,19 +288,6 @@
   "entries": [
    {
     "rank": 1,
-    "pid": "5168fd241b77a365",
-    "shown": "BLACKLIST #5168",
-    "steam": "",
-    "steam_verified": false,
-    "name": "BLACKLIST",
-    "time_ms": 181333,
-    "car": 31,
-    "game": "en",
-    "date": "2026-10-28",
-    "ghost": "ghosts/usui-0/5168fd241b77a365.idg"
-   },
-   {
-    "rank": 2,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch #ea03",
     "steam": "",
@@ -313,7 +300,7 @@
     "ghost": "ghosts/usui-0/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 3,
+    "rank": 2,
     "pid": "b46085569295d65f",
     "shown": "Cassandra (Steam)",
     "steam": "76561198289153961",
@@ -326,7 +313,7 @@
     "ghost": "ghosts/usui-0/b46085569295d65f.idg"
    },
    {
-    "rank": 4,
+    "rank": 3,
     "pid": "7bef37ad91d8806b",
     "shown": "Giogio #7bef",
     "steam": "",
@@ -339,7 +326,7 @@
     "ghost": "ghosts/usui-0/7bef37ad91d8806b.idg"
    },
    {
-    "rank": 5,
+    "rank": 4,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -352,7 +339,7 @@
     "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 6,
+    "rank": 5,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",
@@ -363,6 +350,25 @@
     "game": "en",
     "date": "2026-10-30",
     "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg"
+   }
+  ]
+ },
+ "usui-1": {
+  "course": "usui",
+  "label": "Usui (reverse)",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "5168fd241b77a365",
+    "shown": "BLACKLIST #5168",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BLACKLIST",
+    "time_ms": 181333,
+    "car": 31,
+    "game": "en",
+    "date": "2026-10-28",
+    "ghost": "ghosts/usui-1/5168fd241b77a365.idg"
    }
   ]
  }
