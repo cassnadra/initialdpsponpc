@@ -164,13 +164,30 @@ def verify_steam(query, used_nonces):
     return m.group(1)
 
 
+# Usui starts both directions on the same spot, facing opposite ways: the game (before 0.97.5) told them apart by the
+# start place alone and sent every Usui run as direction 0. The ghost's heading at the start says which it was:
+# anti-clockwise (direction 0) leaves facing -z, clockwise (1) +z.
+SAME_START = {'usui'}
+
+
+def run_dir(course, s, entry):
+    """the run's direction (0 / 1): the start place's, or for SAME_START courses the heading at the start"""
+    if course in SAME_START and len(s[0]) >= 10:
+        return 0 if s[0][9] < 0 else 1
+    return (entry >> 1) & 1
+
+
+def run_board(course, s, entry, reserved):
+    return f"{course}-{run_dir(course, s, entry)}" + ('-wet' if reserved & 2 else '')
+
+
 def check(sub, g, board_info):
     """None if the run looks real, else why not."""
     if g['ai']: return 'a CPU run'
     if g.get('reserved', 0) & 1: return 'a versus race (not a solo run)'
     if sub.get('solo') is False or sub.get('solo') == 0: return 'a versus race (not a solo run)'
     if g['course'] != sub['course'] or g['entry'] != sub['entry'] or g['finish'] != sub['finish']: return 'message and ghost disagree'
-    want = f"{g['course']}-{(g['entry'] >> 1) & 1}" + ('-wet' if g.get('reserved', 0) & 2 else '')
+    want = run_board(g['course'], g['samples'], g['entry'], g.get('reserved', 0))
     if sub['board'] != want or g['entry'] < 0: return 'wrong board (dry/wet or direction)'
     if sub['time_ms'] != g['finish'] // 6: return 'time and finish disagree'
     if g['finish'] < 30 * 6000: return 'too short to be a race'
@@ -267,6 +284,26 @@ def main():
             label = board_label({'course': b['course'], 'board': bid}, s, *run_shape(s))
             if label != b.get('label'): print(f"board {bid}: label '{b.get('label')}' -> '{label}'"); b['label'] = label
             break
+    for bid in list(state['boards']):   # (Usui runs filed by the start place alone: clockwise ones were on the anti-clockwise board)
+        b = state['boards'][bid]
+        if b['course'] not in SAME_START: continue
+        for pid, e in list(b['entries'].items()):
+            try: g = parse_ghost(open(os.path.join(LB, e['ghost']), 'rb').read())
+            except Exception: continue
+            to = run_board(b['course'], g['samples'], g['entry'], g.get('reserved', 0))
+            if to == bid: continue
+            nb = state['boards'].get(to)
+            if not nb:
+                nb = state['boards'][to] = {'course': b['course'], 'label': board_label({'course': b['course'], 'board': to}, g['samples'], *run_shape(g['samples'])),
+                                            'start': list(g['samples'][0][1:4]), 'lens': [], 'entries': {}}
+            del b['entries'][pid]
+            old_e = nb['entries'].get(pid)
+            if old_e and old_e['time_ms'] <= e['time_ms']: print(f"{pid} ({e['name']}): {bid} -> {to}, slower than their time there"); continue
+            os.makedirs(os.path.join(LB, 'ghosts', to), exist_ok=True)
+            ng = f"ghosts/{to}/{pid}.idg"
+            shutil.move(os.path.join(LB, e['ghost']), os.path.join(LB, ng)); e['ghost'] = ng
+            nb['entries'][pid] = e
+            print(f"{pid} ({e['name']}): {bid} -> {to} (its heading at the start)")
     msgs =messages_after(state['last_id'])
     if msgs and all(not m.get('content') for m in msgs if m.get('webhook_id')) and any(m.get('webhook_id') for m in msgs):
         sys.exit('::error::The submissions came with empty text: turn on MESSAGE CONTENT INTENT (Developer Portal -> your '
@@ -356,9 +393,13 @@ def main():
             # run is a versus race (or a modified build) and must not beat the real times.
             is_circuit, laps = run_shape(s)
             want_laps = COURSE_LAPS.get(sub['course'], 3)
+            why = check_signature(sub, data, keys)   # (signed with the board the game sent)
+            if not why and g['course'] in SAME_START and g['course'] == sub['course']:
+                fixed = run_board(g['course'], s, g['entry'], g.get('reserved', 0))
+                if fixed != sub['board']: print(f"{m['id']}: {sub['board']} -> {fixed} (its heading at the start)"); sub['board'] = fixed
             board_key = sub['board']
             b = state['boards'].get(board_key)
-            why = (check_signature(sub, data, keys)
+            why = (why
                    or ('a %d-lap circuit race (only %d-lap races count)' % (laps, want_laps) if is_circuit and laps != want_laps else None)
                    or check(sub, g, b))
         except Exception as e:
