@@ -1,5 +1,5 @@
 {
- "last_id": "1566017236760789015",
+ "last_id": "1566149225941704817",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -134,7 +134,9 @@
     9635.9,
     9626.3,
     9622.5,
-    9737.7
+    9737.7,
+    9788.9,
+    9810.0
    ],
    "entries": {
     "b46085569295d65f": {
@@ -226,6 +228,15 @@
      "date": "2026-10-31",
      "msg": "1565964897194344561",
      "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
+    },
+    "5796e19e5d90fa1b": {
+     "name": "yodasao",
+     "time_ms": 185533,
+     "car": 7,
+     "game": "en",
+     "date": "2026-10-31",
+     "msg": "1566149225941704817",
+     "ghost": "ghosts/myougi-0/5796e19e5d90fa1b.idg"
     }
    }
   },
@@ -389,7 +400,8 @@
   "cb291afb8872aabc": "8b3ca3547997069ec5e1e5aca1794549c8a388fedb55edce67ffbf5b8ed339132d9bb540795fcb8a8cc2d0db2504701031c6622508822d7df98c9a34224a8c89",
   "ea03af8d21d8415e": "c2637e6749222b598d13e167b08a855a4d9e364736ddf86427f6d1869c022f9b3b63b71fd10c6136baccb5f57c46bb1017f2b7ff1351441b1b977fd087988f61",
   "7bef37ad91d8806b": "8c49e21eb7c8325e47a55642c98f42f72ab1f2d0af3378ba8eb6b0d0f287194f12d5be9b1b39154d44f78b9d183ce0a6fd3b65070abb0f008ad66cbc2a5ef739",
-  "7876c31e772509fa": "98682f2bf0d2ebdc7a420148e300b420dc82535ac96485e50041dadd461f920bbccccb4c717a1acb4e3a3d65b3da1b77f571e0cb21921f731037834cba38fd51"
+  "7876c31e772509fa": "98682f2bf0d2ebdc7a420148e300b420dc82535ac96485e50041dadd461f920bbccccb4c717a1acb4e3a3d65b3da1b77f571e0cb21921f731037834cba38fd51",
+  "5796e19e5d90fa1b": "9fbad3962c57f9801c6179fb3ceb2657e214a27ba93ed6241698d703077400df8d3308630d747d6925a88dba2ab92fbf698d6d71c5786ee0e3014a25fa8d946b"
  },
  "names": {
   "b46085569295d65f": [
@@ -424,6 +436,9 @@
   ],
   "7876c31e772509fa": [
    "red"
+  ],
+  "5796e19e5d90fa1b": [
+   "yodasao"
   ]
  },
  "steam": {
