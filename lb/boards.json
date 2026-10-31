@@ -211,6 +211,19 @@
    },
    {
     "rank": 10,
+    "pid": "d11124014e323aa6",
+    "shown": "BL4ck0uT _YuGi #d111",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BL4ck0uT _YuGi",
+    "time_ms": 192100,
+    "car": 2,
+    "game": "jp",
+    "date": "2026-10-31",
+    "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
+   },
+   {
+    "rank": 11,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -223,7 +236,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 11,
+    "rank": 12,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",

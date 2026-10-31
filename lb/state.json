@@ -1,5 +1,5 @@
 {
- "last_id": "1566149225941704817",
+ "last_id": "1566173818639356074",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -136,7 +136,8 @@
     9622.5,
     9737.7,
     9788.9,
-    9810.0
+    9810.0,
+    9748.9
    ],
    "entries": {
     "b46085569295d65f": {
@@ -237,6 +238,15 @@
      "date": "2026-10-31",
      "msg": "1566149225941704817",
      "ghost": "ghosts/myougi-0/5796e19e5d90fa1b.idg"
+    },
+    "d11124014e323aa6": {
+     "name": "BL4ck0uT _YuGi",
+     "time_ms": 192100,
+     "car": 2,
+     "game": "jp",
+     "date": "2026-10-31",
+     "msg": "1566173818639356074",
+     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
     }
    }
   },
@@ -401,7 +411,8 @@
   "ea03af8d21d8415e": "c2637e6749222b598d13e167b08a855a4d9e364736ddf86427f6d1869c022f9b3b63b71fd10c6136baccb5f57c46bb1017f2b7ff1351441b1b977fd087988f61",
   "7bef37ad91d8806b": "8c49e21eb7c8325e47a55642c98f42f72ab1f2d0af3378ba8eb6b0d0f287194f12d5be9b1b39154d44f78b9d183ce0a6fd3b65070abb0f008ad66cbc2a5ef739",
   "7876c31e772509fa": "98682f2bf0d2ebdc7a420148e300b420dc82535ac96485e50041dadd461f920bbccccb4c717a1acb4e3a3d65b3da1b77f571e0cb21921f731037834cba38fd51",
-  "5796e19e5d90fa1b": "9fbad3962c57f9801c6179fb3ceb2657e214a27ba93ed6241698d703077400df8d3308630d747d6925a88dba2ab92fbf698d6d71c5786ee0e3014a25fa8d946b"
+  "5796e19e5d90fa1b": "9fbad3962c57f9801c6179fb3ceb2657e214a27ba93ed6241698d703077400df8d3308630d747d6925a88dba2ab92fbf698d6d71c5786ee0e3014a25fa8d946b",
+  "d11124014e323aa6": "9160c54d55c90cda53b1b55c8d7490530ad491c2d5ac25c7ee2ed9bffda71a5a93f9dca8aef7e9c0199d0b0c9364042035b23efeb946e7926abed67b99c18f1a"
  },
  "names": {
   "b46085569295d65f": [
@@ -439,6 +450,9 @@
   ],
   "5796e19e5d90fa1b": [
    "yodasao"
+  ],
+  "d11124014e323aa6": [
+   "BL4ck0uT _YuGi"
   ]
  },
  "steam": {
@@ -592,6 +606,16 @@
    "name": "red",
    "bio": "",
    "car_img": "89ee09d82cdea8d885cb6d86c80566f1",
+   "discord": ""
+  },
+  "d11124014e323aa6": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "BL4ck0uT _YuGi",
+   "bio": "",
+   "car_img": "",
    "discord": ""
   }
  },
