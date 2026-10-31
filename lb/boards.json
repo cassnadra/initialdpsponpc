@@ -208,6 +208,19 @@
     "game": "en",
     "date": "2026-10-28",
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
+   },
+   {
+    "rank": 10,
+    "pid": "7876c31e772509fa",
+    "shown": "red #7876",
+    "steam": "",
+    "steam_verified": false,
+    "name": "red",
+    "time_ms": 193133,
+    "car": 2,
+    "game": "jp",
+    "date": "2026-10-31",
+    "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
    }
   ]
  },

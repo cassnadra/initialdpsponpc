@@ -18,6 +18,7 @@ E	6	Icipher	186133	2	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-
 E	7	Alex.Kirch	186500	16	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
 E	8	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
 E	9	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
+E	10	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
 B	myougi-1	myougi	Myougi (reverse)
 E	1	Cassandra	181200	13	b46085569295d65f	ghosts/myougi-1/b46085569295d65f.idg	2026-10-26	76561198289153961	1
 E	2	Alex.Kirch	187066	13	ea03af8d21d8415e	ghosts/myougi-1/ea03af8d21d8415e.idg	2026-10-29		
@@ -37,6 +38,7 @@ P	5168fd241b77a365	1	23	0	0	BLACKLIST		fb467c26ecd18123dd80c94408867be6
 P	52143161d65181cd	1	0	0	0	+Rockman+					
 P	55f9aa565f92c636	1	-1	0	0	XShadowVileX					
 P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf					
+P	7876c31e772509fa	1	13	1	0	red		89ee09d82cdea8d885cb6d86c80566f1			
 P	7bef37ad91d8806b	1	24	2	0	Giogio		8626a45fab6773f29f6bc0ac65083201			
 P	a44fe613bf64ea22	1	-1	0	3600	Deroh	Autism				
 P	b46085569295d65f	-1	13	42	18000	Cassandra		d759598045c2220eb98dfa100b648c84	cassnadra	76561198289153961	1
