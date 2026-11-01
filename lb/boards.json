@@ -247,6 +247,19 @@
     "game": "jp",
     "date": "2026-10-31",
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
+   },
+   {
+    "rank": 13,
+    "pid": "fb6457d17ea6e509",
+    "shown": "SeAshe #fb64",
+    "steam": "",
+    "steam_verified": false,
+    "name": "SeAshe",
+    "time_ms": 205233,
+    "car": 2,
+    "game": "jp",
+    "date": "2026-11-01",
+    "ghost": "ghosts/myougi-0/fb6457d17ea6e509.idg"
    }
   ]
  },
@@ -269,6 +282,19 @@
    },
    {
     "rank": 2,
+    "pid": "fb6457d17ea6e509",
+    "shown": "SeAshe #fb64",
+    "steam": "",
+    "steam_verified": false,
+    "name": "SeAshe",
+    "time_ms": 184600,
+    "car": 13,
+    "game": "jp",
+    "date": "2026-11-01",
+    "ghost": "ghosts/myougi-1/fb6457d17ea6e509.idg"
+   },
+   {
+    "rank": 3,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch #ea03",
     "steam": "",
@@ -281,7 +307,7 @@
     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 3,
+    "rank": 4,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -294,7 +320,7 @@
     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
    },
    {
-    "rank": 4,
+    "rank": 5,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
