@@ -146,6 +146,19 @@
    },
    {
     "rank": 5,
+    "pid": "fb6457d17ea6e509",
+    "shown": "SeAshe #fb64",
+    "steam": "",
+    "steam_verified": false,
+    "name": "SeAshe",
+    "time_ms": 185233,
+    "car": 16,
+    "game": "jp",
+    "date": "2026-11-01",
+    "ghost": "ghosts/myougi-0/fb6457d17ea6e509.idg"
+   },
+   {
+    "rank": 6,
     "pid": "52143161d65181cd",
     "shown": "+Rockman+ #5214",
     "steam": "",
@@ -158,7 +171,7 @@
     "ghost": "ghosts/myougi-0/52143161d65181cd.idg"
    },
    {
-    "rank": 6,
+    "rank": 7,
     "pid": "5796e19e5d90fa1b",
     "shown": "yodasao #5796",
     "steam": "",
@@ -171,7 +184,7 @@
     "ghost": "ghosts/myougi-0/5796e19e5d90fa1b.idg"
    },
    {
-    "rank": 7,
+    "rank": 8,
     "pid": "062910041e786c15",
     "shown": "Icipher #0629",
     "steam": "",
@@ -184,7 +197,7 @@
     "ghost": "ghosts/myougi-0/062910041e786c15.idg"
    },
    {
-    "rank": 8,
+    "rank": 9,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch #ea03",
     "steam": "",
@@ -197,7 +210,7 @@
     "ghost": "ghosts/myougi-0/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 9,
+    "rank": 10,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -210,7 +223,7 @@
     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 10,
+    "rank": 11,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -223,7 +236,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 11,
+    "rank": 12,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -236,7 +249,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 12,
+    "rank": 13,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -247,19 +260,6 @@
     "game": "jp",
     "date": "2026-10-31",
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
-   },
-   {
-    "rank": 13,
-    "pid": "fb6457d17ea6e509",
-    "shown": "SeAshe #fb64",
-    "steam": "",
-    "steam_verified": false,
-    "name": "SeAshe",
-    "time_ms": 205233,
-    "car": 2,
-    "game": "jp",
-    "date": "2026-11-01",
-    "ghost": "ghosts/myougi-0/fb6457d17ea6e509.idg"
    }
   ]
  },
@@ -379,6 +379,19 @@
    },
    {
     "rank": 4,
+    "pid": "fb6457d17ea6e509",
+    "shown": "SeAshe #fb64",
+    "steam": "",
+    "steam_verified": false,
+    "name": "SeAshe",
+    "time_ms": 198900,
+    "car": 25,
+    "game": "jp",
+    "date": "2026-11-01",
+    "ghost": "ghosts/usui-0/fb6457d17ea6e509.idg"
+   },
+   {
+    "rank": 5,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -391,7 +404,7 @@
     "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",
@@ -421,6 +434,19 @@
     "game": "en",
     "date": "2026-10-28",
     "ghost": "ghosts/usui-1/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 2,
+    "pid": "fb6457d17ea6e509",
+    "shown": "SeAshe #fb64",
+    "steam": "",
+    "steam_verified": false,
+    "name": "SeAshe",
+    "time_ms": 196333,
+    "car": 31,
+    "game": "jp",
+    "date": "2026-11-01",
+    "ghost": "ghosts/usui-1/fb6457d17ea6e509.idg"
    }
   ]
  }

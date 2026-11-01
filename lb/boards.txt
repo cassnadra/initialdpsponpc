@@ -13,15 +13,15 @@ E	1	AFK	176200	30	2ff94d72b41c145f	ghosts/myougi-0/2ff94d72b41c145f.idg	2026-10-
 E	2	Cassandra	181533	13	b46085569295d65f	ghosts/myougi-0/b46085569295d65f.idg	2026-10-25	76561198289153961	1
 E	3	qfqr	182300	16	bea21af9c6bf95f3	ghosts/myougi-0/bea21af9c6bf95f3.idg	2026-10-25		
 E	4	BLACKLIST	182600	16	5168fd241b77a365	ghosts/myougi-0/5168fd241b77a365.idg	2026-10-25		
-E	5	+Rockman+	185466	0	52143161d65181cd	ghosts/myougi-0/52143161d65181cd.idg	2026-10-27		
-E	6	yodasao	185533	7	5796e19e5d90fa1b	ghosts/myougi-0/5796e19e5d90fa1b.idg	2026-10-31		
-E	7	Icipher	186133	2	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
-E	8	Alex.Kirch	186500	16	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
-E	9	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
-E	10	BL4ck0uT _YuGi	192100	2	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
-E	11	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
-E	12	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
-E	13	SeAshe	205233	2	fb6457d17ea6e509	ghosts/myougi-0/fb6457d17ea6e509.idg	2026-11-01		
+E	5	SeAshe	185233	16	fb6457d17ea6e509	ghosts/myougi-0/fb6457d17ea6e509.idg	2026-11-01		
+E	6	+Rockman+	185466	0	52143161d65181cd	ghosts/myougi-0/52143161d65181cd.idg	2026-10-27		
+E	7	yodasao	185533	7	5796e19e5d90fa1b	ghosts/myougi-0/5796e19e5d90fa1b.idg	2026-10-31		
+E	8	Icipher	186133	2	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
+E	9	Alex.Kirch	186500	16	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
+E	10	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
+E	11	BL4ck0uT _YuGi	192100	2	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
+E	12	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
+E	13	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
 B	myougi-1	myougi	Myougi (reverse)
 E	1	Cassandra	181200	13	b46085569295d65f	ghosts/myougi-1/b46085569295d65f.idg	2026-10-26	76561198289153961	1
 E	2	SeAshe	184600	13	fb6457d17ea6e509	ghosts/myougi-1/fb6457d17ea6e509.idg	2026-11-01		
@@ -32,10 +32,12 @@ B	usui-0	usui	Usui
 E	1	Alex.Kirch	189966	14	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29		
 E	2	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
 E	3	Giogio	192366	24	7bef37ad91d8806b	ghosts/usui-0/7bef37ad91d8806b.idg	2026-10-30		
-E	4	MATphantom	199766	25	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
-E	5	AFK	200333	30	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
+E	4	SeAshe	198900	25	fb6457d17ea6e509	ghosts/usui-0/fb6457d17ea6e509.idg	2026-11-01		
+E	5	MATphantom	199766	25	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
+E	6	AFK	200333	30	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
 B	usui-1	usui	Usui (reverse)
 E	1	BLACKLIST	181333	31	5168fd241b77a365	ghosts/usui-1/5168fd241b77a365.idg	2026-10-28		
+E	2	SeAshe	196333	31	fb6457d17ea6e509	ghosts/usui-1/fb6457d17ea6e509.idg	2026-11-01		
 P	18f0147cfb0c1c94	1	-1	0	0	Doc703VA					
 P	2ff94d72b41c145f	1	-1	1	0	AFK				76561198259702682	1
 P	380f37887df72c14	1	-1	0	0	Ale					
@@ -51,4 +53,5 @@ P	bea21af9c6bf95f3	1	-1	0	0	qfqr
 P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091			
 P	d11124014e323aa6	1	-1	0	0	BL4ck0uT _YuGi					
 P	ea03af8d21d8415e	1	2	0	0	Alex.Kirch		9daace2324a9ef39c681a4d278db4972			
+P	fb6457d17ea6e509	1	-1	7	10800	SeAshe					
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c			
