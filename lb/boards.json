@@ -224,6 +224,19 @@
    },
    {
     "rank": 11,
+    "pid": "23f293906b0ffd82",
+    "shown": "Sora #23f2",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Sora",
+    "time_ms": 187966,
+    "car": 2,
+    "game": "jp",
+    "date": "2026-11-01",
+    "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
+   },
+   {
+    "rank": 12,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -236,7 +249,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 12,
+    "rank": 13,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -249,7 +262,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 13,
+    "rank": 14,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -282,6 +295,19 @@
    },
    {
     "rank": 2,
+    "pid": "23f293906b0ffd82",
+    "shown": "Sora #23f2",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Sora",
+    "time_ms": 183500,
+    "car": 13,
+    "game": "jp",
+    "date": "2026-11-01",
+    "ghost": "ghosts/myougi-1/23f293906b0ffd82.idg"
+   },
+   {
+    "rank": 3,
     "pid": "fb6457d17ea6e509",
     "shown": "SeAshe #fb64",
     "steam": "",
@@ -294,7 +320,7 @@
     "ghost": "ghosts/myougi-1/fb6457d17ea6e509.idg"
    },
    {
-    "rank": 3,
+    "rank": 4,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch #ea03",
     "steam": "",
@@ -307,7 +333,7 @@
     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 4,
+    "rank": 5,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -320,7 +346,7 @@
     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
