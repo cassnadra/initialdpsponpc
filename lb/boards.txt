@@ -33,6 +33,7 @@ E	4	Alex.Kirch	187066	13	ea03af8d21d8415e	ghosts/myougi-1/ea03af8d21d8415e.idg	2
 E	5	MATphantom	187100	13	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	2026-10-29		
 E	6	XShadowVileX	188100	13	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
 E	7	BusterWolf	190633	13	0bbe2ad8c59307dd	ghosts/myougi-1/0bbe2ad8c59307dd.idg	2026-11-02		
+E	8	driver	193233	13	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
 B	usui-0	usui	Usui
 E	1	Alex.Kirch	189966	14	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29		
 E	2	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
@@ -61,4 +62,5 @@ P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091
 P	d11124014e323aa6	1	-1	0	0	BL4ck0uT _YuGi					
 P	ea03af8d21d8415e	1	2	0	0	Alex.Kirch		9daace2324a9ef39c681a4d278db4972			
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe					
+P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx					
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c			

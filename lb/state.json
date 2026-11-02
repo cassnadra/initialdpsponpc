@@ -1,5 +1,5 @@
 {
- "last_id": "1566707022517506089",
+ "last_id": "1566896096742084653",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -342,7 +342,8 @@
     9739.9,
     9711.4,
     9720.8,
-    9740.7
+    9740.7,
+    9849.4
    ],
    "entries": {
     "b46085569295d65f": {
@@ -407,6 +408,15 @@
      "date": "2026-11-02",
      "msg": "1566706009928372224",
      "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
+    },
+    "1a734c3b3debfca8": {
+     "name": "driver",
+     "time_ms": 193233,
+     "car": 13,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566841275427192903",
+     "ghost": "ghosts/myougi-1/1a734c3b3debfca8.idg"
     }
    }
   },
@@ -511,7 +521,9 @@
   "ffbe4156772f9fc4": "c6601acf302f6a28dab2f91e6ee2c005bb6035a1dcaab0c1e91f452c96ae6083e802310ca6d27916d0d34670053ef96f42e14579bcaf9c7e90c1255cd8513b4d",
   "23f293906b0ffd82": "466d2c79c969bac8ee9bac8ecc4aaf3a0fba71681e099b6b5de65462664514141c91b35ddc7659f65d8759d24948bf541db23512e4db121f0686fd70868fc2c9",
   "ec39ad52dee6b67e": "1c37acd6b8537d1f6deedb2beed61d14a33c4e54db9a24ea7ab301be38819fd883c058af66f5d4fe4510d11a5c5fc2a315ca05ceb20dfe444010929f57990c56",
-  "0bbe2ad8c59307dd": "36338fbe10764a5235aac8b029660d74de34cc67f3595b745d8a90685c97db49091c43f50755fa3250b179c01d59ba0f81105d00e38ca9790376f512442e6e12"
+  "0bbe2ad8c59307dd": "36338fbe10764a5235aac8b029660d74de34cc67f3595b745d8a90685c97db49091c43f50755fa3250b179c01d59ba0f81105d00e38ca9790376f512442e6e12",
+  "1a734c3b3debfca8": "02034e50f0a1c2148aba72fc768122aae4d747083df7ba031f040d4ca31db8c2108685f6effce759634c824f129a13c9c7972da1318308de117bea3a88f98d2d",
+  "fe5cdccfe44c1bac": "23fac3c22a7cec86e8b030fa1f54d0c8b1e97a24d59a5f88c061697d37220824b914fd230c25c5e5ffb36be9ab06579c0757b0c152bb0e07e7574424f1876a09"
  },
  "names": {
   "b46085569295d65f": [
@@ -564,6 +576,9 @@
   ],
   "0bbe2ad8c59307dd": [
    "BusterWolf"
+  ],
+  "1a734c3b3debfca8": [
+   "driver"
   ]
  },
  "steam": {
@@ -765,6 +780,16 @@
    "cards": 0,
    "play_h": 0,
    "name": "BusterWolf",
+   "bio": "",
+   "car_img": "",
+   "discord": ""
+  },
+  "fe5cdccfe44c1bac": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "pysinixx",
    "bio": "",
    "car_img": "",
    "discord": ""

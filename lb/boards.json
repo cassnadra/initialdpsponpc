@@ -396,6 +396,19 @@
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
+   },
+   {
+    "rank": 8,
+    "pid": "1a734c3b3debfca8",
+    "shown": "driver #1a73",
+    "steam": "",
+    "steam_verified": false,
+    "name": "driver",
+    "time_ms": 193233,
+    "car": 13,
+    "game": "en",
+    "date": "2026-11-02",
+    "ghost": "ghosts/myougi-1/1a734c3b3debfca8.idg"
    }
   ]
  },
