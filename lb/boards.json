@@ -237,6 +237,32 @@
    },
    {
     "rank": 12,
+    "pid": "0bbe2ad8c59307dd",
+    "shown": "BusterWolf #0bbe",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BusterWolf",
+    "time_ms": 188333,
+    "car": 16,
+    "game": "en",
+    "date": "2026-11-02",
+    "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
+   },
+   {
+    "rank": 13,
+    "pid": "ec39ad52dee6b67e",
+    "shown": "Mainha #ec39",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Mainha",
+    "time_ms": 189700,
+    "car": 2,
+    "game": "jp",
+    "date": "2026-11-02",
+    "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
+   },
+   {
+    "rank": 14,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -249,7 +275,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 13,
+    "rank": 15,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -262,7 +288,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 14,
+    "rank": 16,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -357,6 +383,19 @@
     "game": "en",
     "date": "2026-10-28",
     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
+   },
+   {
+    "rank": 7,
+    "pid": "0bbe2ad8c59307dd",
+    "shown": "BusterWolf #0bbe",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BusterWolf",
+    "time_ms": 190633,
+    "car": 13,
+    "game": "en",
+    "date": "2026-11-02",
+    "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
    }
   ]
  },

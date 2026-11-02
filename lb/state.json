@@ -1,5 +1,5 @@
 {
- "last_id": "1566464180985266237",
+ "last_id": "1566707022517506089",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -151,7 +151,10 @@
     9748.9,
     9740.8,
     9714.7,
-    9718.9
+    9718.9,
+    9763.7,
+    9729.2,
+    9700.8
    ],
    "entries": {
     "b46085569295d65f": {
@@ -279,6 +282,24 @@
      "date": "2026-11-01",
      "msg": "1566462080549126214",
      "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
+    },
+    "ec39ad52dee6b67e": {
+     "name": "Mainha",
+     "time_ms": 189700,
+     "car": 2,
+     "game": "jp",
+     "date": "2026-11-02",
+     "msg": "1566698082261930085",
+     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
+    },
+    "0bbe2ad8c59307dd": {
+     "name": "BusterWolf",
+     "time_ms": 188333,
+     "car": 16,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566707022517506089",
+     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
     }
    }
   },
@@ -320,7 +341,8 @@
     9747.5,
     9739.9,
     9711.4,
-    9720.8
+    9720.8,
+    9740.7
    ],
    "entries": {
     "b46085569295d65f": {
@@ -376,6 +398,15 @@
      "date": "2026-11-01",
      "msg": "1566464180985266237",
      "ghost": "ghosts/myougi-1/23f293906b0ffd82.idg"
+    },
+    "0bbe2ad8c59307dd": {
+     "name": "BusterWolf",
+     "time_ms": 190633,
+     "car": 13,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566706009928372224",
+     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
     }
    }
   },
@@ -478,7 +509,9 @@
   "d11124014e323aa6": "9160c54d55c90cda53b1b55c8d7490530ad491c2d5ac25c7ee2ed9bffda71a5a93f9dca8aef7e9c0199d0b0c9364042035b23efeb946e7926abed67b99c18f1a",
   "fb6457d17ea6e509": "fb9e0344890be0b118f913577c1419c9990f9d9a4371b3f16fecdf76994667275b78ae0265787d09eb00b5c574361c7a00b521ac4403ad24daa9c57385988d14",
   "ffbe4156772f9fc4": "c6601acf302f6a28dab2f91e6ee2c005bb6035a1dcaab0c1e91f452c96ae6083e802310ca6d27916d0d34670053ef96f42e14579bcaf9c7e90c1255cd8513b4d",
-  "23f293906b0ffd82": "466d2c79c969bac8ee9bac8ecc4aaf3a0fba71681e099b6b5de65462664514141c91b35ddc7659f65d8759d24948bf541db23512e4db121f0686fd70868fc2c9"
+  "23f293906b0ffd82": "466d2c79c969bac8ee9bac8ecc4aaf3a0fba71681e099b6b5de65462664514141c91b35ddc7659f65d8759d24948bf541db23512e4db121f0686fd70868fc2c9",
+  "ec39ad52dee6b67e": "1c37acd6b8537d1f6deedb2beed61d14a33c4e54db9a24ea7ab301be38819fd883c058af66f5d4fe4510d11a5c5fc2a315ca05ceb20dfe444010929f57990c56",
+  "0bbe2ad8c59307dd": "36338fbe10764a5235aac8b029660d74de34cc67f3595b745d8a90685c97db49091c43f50755fa3250b179c01d59ba0f81105d00e38ca9790376f512442e6e12"
  },
  "names": {
   "b46085569295d65f": [
@@ -525,6 +558,12 @@
   ],
   "23f293906b0ffd82": [
    "Sora"
+  ],
+  "ec39ad52dee6b67e": [
+   "Mainha"
+  ],
+  "0bbe2ad8c59307dd": [
+   "BusterWolf"
   ]
  },
  "steam": {
@@ -716,6 +755,16 @@
    "cards": 0,
    "play_h": 0,
    "name": "Sora",
+   "bio": "",
+   "car_img": "",
+   "discord": ""
+  },
+  "0bbe2ad8c59307dd": {
+   "pic": 1,
+   "car": 2,
+   "cards": 0,
+   "play_h": 0,
+   "name": "BusterWolf",
    "bio": "",
    "car_img": "",
    "discord": ""
