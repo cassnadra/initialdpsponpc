@@ -1,5 +1,5 @@
 {
- "last_id": "1566992066997780511",
+ "last_id": "1567052479890333806",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -166,7 +166,9 @@
     9729.2,
     9700.8,
     9750.7,
-    9726.4
+    9726.4,
+    9766.0,
+    9768.6
    ],
    "entries": {
     "b46085569295d65f": {
@@ -321,6 +323,24 @@
      "date": "2026-11-02",
      "msg": "1566949625829523607",
      "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg"
+    },
+    "aafb3d604c35ec8f": {
+     "name": "10:30 PM.mus",
+     "time_ms": 184266,
+     "car": 17,
+     "game": "en",
+     "date": "2026-11-03",
+     "msg": "1567020816628056277",
+     "ghost": "ghosts/myougi-0/aafb3d604c35ec8f.idg"
+    },
+    "23a1d569341162c9": {
+     "name": "SupaChill",
+     "time_ms": 195933,
+     "car": 2,
+     "game": "jp",
+     "date": "2026-11-03",
+     "msg": "1567051476944031795",
+     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
     }
    }
   },
@@ -366,7 +386,8 @@
     9740.7,
     9849.4,
     9746.2,
-    9772.0
+    9772.0,
+    9770.2
    ],
    "entries": {
     "b46085569295d65f": {
@@ -458,6 +479,15 @@
      "date": "2026-11-03",
      "msg": "1566975559798366238",
      "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
+    },
+    "23a1d569341162c9": {
+     "name": "SupaChill",
+     "time_ms": 194366,
+     "car": 13,
+     "game": "jp",
+     "date": "2026-11-03",
+     "msg": "1567052479890333806",
+     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
     }
    }
   },
@@ -588,7 +618,10 @@
   "798da52dbb827e1c": "7c34523702a6f9bf56b483e96019d538b51a7f0a0defabd9de930880fe770e7c569198210de7b694a7e0e79ffe4a7d28928e6e4c7d92f29ad56fa5cacf22d150",
   "2327c9c66e935ed9": "cab9ab08b392b338af762ee2ef96e08ce62dd15f6fe388ddb58db7ddfd64572127983237c3db2180b628292d55d709820f053c933cc213e5ed4b48a66cb19b9a",
   "60f0b3ebbbf7d46a": "e89efcf68f171e756d42abcc6dcd911e1539d23ca61fb8d705d0428494da492eae6e153d03605419b1fdcbee47814942c94fc9614c6bbe9a891603bb7e9ad98d",
-  "10725c87f42d2d71": "28280da907a5ac0d154ff21583ba36af3fbaa73639f7beedb2638b887689cba442df0ae22a78faf6c7c2a9a7092273085ce8284b390fcef7d3956644fbec50a2"
+  "10725c87f42d2d71": "28280da907a5ac0d154ff21583ba36af3fbaa73639f7beedb2638b887689cba442df0ae22a78faf6c7c2a9a7092273085ce8284b390fcef7d3956644fbec50a2",
+  "aea9983b3f205f83": "c4133c8bb5e8710d4c419559753f45c1cb52770b09d5134a062d615b45a18c356104e5ddade3fe343c831272ea098f178441aa5fc9e415ec1589a8858d6a5074",
+  "aafb3d604c35ec8f": "35824c8bc3ceb0b099ccf0338a59c02db3fd7d82a7dad6e7409c0ea310a21ba48992c29ef25a3cd102cd299146e93a115654d8b17affbc02d135eb94983b8785",
+  "23a1d569341162c9": "99abb7d13144c46185e164f3e372c917e177c7317952646b5d15157dee33053b196cad3947d96bdcf2cdb17f7ccea9190499a76183179f4d99001d13f4564d88"
  },
  "names": {
   "b46085569295d65f": [
@@ -650,6 +683,12 @@
   ],
   "60f0b3ebbbf7d46a": [
    "Evil Night"
+  ],
+  "aafb3d604c35ec8f": [
+   "10:30 PM.mus"
+  ],
+  "23a1d569341162c9": [
+   "SupaChill"
   ]
  },
  "steam": {
@@ -883,6 +922,26 @@
    "name": "VerOfficial",
    "bio": "",
    "car_img": "",
+   "discord": ""
+  },
+  "aea9983b3f205f83": {
+   "pic": 1,
+   "car": 19,
+   "cards": 0,
+   "play_h": 0,
+   "name": "GD3 HONDA FIT",
+   "bio": "",
+   "car_img": "f6cae09079929e9f5158494a902e0596",
+   "discord": ""
+  },
+  "aafb3d604c35ec8f": {
+   "pic": 1,
+   "car": 17,
+   "cards": 0,
+   "play_h": 0,
+   "name": "10:30 PM.mus",
+   "bio": "",
+   "car_img": "a179abe442679ed02909c2f94f282d10",
    "discord": ""
   }
  },

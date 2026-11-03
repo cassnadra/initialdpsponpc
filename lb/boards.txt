@@ -14,19 +14,21 @@ E	1	AFK	176200	30	2ff94d72b41c145f	ghosts/myougi-0/2ff94d72b41c145f.idg	2026-10-
 E	2	Cassandra	181533	13	b46085569295d65f	ghosts/myougi-0/b46085569295d65f.idg	2026-10-25	76561198289153961	1
 E	3	qfqr	182300	16	bea21af9c6bf95f3	ghosts/myougi-0/bea21af9c6bf95f3.idg	2026-10-25		
 E	4	BLACKLIST	182600	16	5168fd241b77a365	ghosts/myougi-0/5168fd241b77a365.idg	2026-10-25		
-E	5	SeAshe	185233	16	fb6457d17ea6e509	ghosts/myougi-0/fb6457d17ea6e509.idg	2026-11-01		
-E	6	+Rockman+	185466	0	52143161d65181cd	ghosts/myougi-0/52143161d65181cd.idg	2026-10-27		
-E	7	yodasao	185533	7	5796e19e5d90fa1b	ghosts/myougi-0/5796e19e5d90fa1b.idg	2026-10-31		
-E	8	Icipher	186133	2	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
-E	9	PRZ2K0	186433	16	798da52dbb827e1c	ghosts/myougi-0/798da52dbb827e1c.idg	2026-11-02		
-E	10	Alex.Kirch	186500	16	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
-E	11	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
-E	12	Sora	187966	2	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
-E	13	BusterWolf	188333	16	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
-E	14	Mainha	189700	2	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
-E	15	BL4ck0uT _YuGi	192100	2	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
-E	16	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
-E	17	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
+E	5	10:30 PM.mus	184266	17	aafb3d604c35ec8f	ghosts/myougi-0/aafb3d604c35ec8f.idg	2026-11-03		
+E	6	SeAshe	185233	16	fb6457d17ea6e509	ghosts/myougi-0/fb6457d17ea6e509.idg	2026-11-01		
+E	7	+Rockman+	185466	0	52143161d65181cd	ghosts/myougi-0/52143161d65181cd.idg	2026-10-27		
+E	8	yodasao	185533	7	5796e19e5d90fa1b	ghosts/myougi-0/5796e19e5d90fa1b.idg	2026-10-31		
+E	9	Icipher	186133	2	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
+E	10	PRZ2K0	186433	16	798da52dbb827e1c	ghosts/myougi-0/798da52dbb827e1c.idg	2026-11-02		
+E	11	Alex.Kirch	186500	16	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
+E	12	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
+E	13	Sora	187966	2	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
+E	14	BusterWolf	188333	16	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
+E	15	Mainha	189700	2	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
+E	16	BL4ck0uT _YuGi	192100	2	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
+E	17	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
+E	18	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
+E	19	SupaChill	195933	2	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-03		
 B	myougi-1	myougi	Myougi (reverse)
 E	1	Cassandra	181200	13	b46085569295d65f	ghosts/myougi-1/b46085569295d65f.idg	2026-10-26	76561198289153961	1
 E	2	Sora	183500	13	23f293906b0ffd82	ghosts/myougi-1/23f293906b0ffd82.idg	2026-11-01		
@@ -38,6 +40,7 @@ E	7	XShadowVileX	188100	13	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg
 E	8	BusterWolf	190633	13	0bbe2ad8c59307dd	ghosts/myougi-1/0bbe2ad8c59307dd.idg	2026-11-02		
 E	9	Evil Night	191233	13	60f0b3ebbbf7d46a	ghosts/myougi-1/60f0b3ebbbf7d46a.idg	2026-11-03		
 E	10	driver	193233	13	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
+E	11	SupaChill	194366	13	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-03		
 B	usui-0	usui	Usui
 E	1	Alex.Kirch	189966	14	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29		
 E	2	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
@@ -64,6 +67,8 @@ P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf
 P	7876c31e772509fa	1	13	1	0	red		89ee09d82cdea8d885cb6d86c80566f1			
 P	7bef37ad91d8806b	1	24	2	0	Giogio		8626a45fab6773f29f6bc0ac65083201			
 P	a44fe613bf64ea22	1	-1	0	7200	Deroh	Autism				
+P	aafb3d604c35ec8f	1	17	0	0	10:30 PM.mus		a179abe442679ed02909c2f94f282d10			
+P	aea9983b3f205f83	1	19	0	0	GD3 HONDA FIT		f6cae09079929e9f5158494a902e0596			
 P	b46085569295d65f	-1	0	42	25200	Cassandra		dc78e09b99a1af71bd7b4acae4a63d92	cassnadra	76561198289153961	1
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr					
 P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091			
