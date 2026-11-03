@@ -1,5 +1,5 @@
 {
- "last_id": "1566896096742084653",
+ "last_id": "1566992066997780511",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -57,7 +57,8 @@
     8514.2,
     8537.1,
     8442.3,
-    8456.6
+    8456.6,
+    8513.5
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -113,6 +114,15 @@
      "date": "2026-11-01",
      "msg": "1566293100031123546",
      "ghost": "ghosts/usui-0/fb6457d17ea6e509.idg"
+    },
+    "798da52dbb827e1c": {
+     "name": "PRZ2K0",
+     "time_ms": 195700,
+     "car": 25,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566951249553916094",
+     "ghost": "ghosts/usui-0/798da52dbb827e1c.idg"
     }
    }
   },
@@ -154,7 +164,9 @@
     9718.9,
     9763.7,
     9729.2,
-    9700.8
+    9700.8,
+    9750.7,
+    9726.4
    ],
    "entries": {
     "b46085569295d65f": {
@@ -300,6 +312,15 @@
      "date": "2026-11-02",
      "msg": "1566707022517506089",
      "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
+    },
+    "798da52dbb827e1c": {
+     "name": "PRZ2K0",
+     "time_ms": 186433,
+     "car": 16,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566949625829523607",
+     "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg"
     }
    }
   },
@@ -343,7 +364,9 @@
     9711.4,
     9720.8,
     9740.7,
-    9849.4
+    9849.4,
+    9746.2,
+    9772.0
    ],
    "entries": {
     "b46085569295d65f": {
@@ -417,6 +440,24 @@
      "date": "2026-11-02",
      "msg": "1566841275427192903",
      "ghost": "ghosts/myougi-1/1a734c3b3debfca8.idg"
+    },
+    "798da52dbb827e1c": {
+     "name": "PRZ2K0",
+     "time_ms": 186833,
+     "car": 13,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566948652218319002",
+     "ghost": "ghosts/myougi-1/798da52dbb827e1c.idg"
+    },
+    "60f0b3ebbbf7d46a": {
+     "name": "Evil Night",
+     "time_ms": 191233,
+     "car": 13,
+     "game": "jp",
+     "date": "2026-11-03",
+     "msg": "1566975559798366238",
+     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
     }
    }
   },
@@ -429,7 +470,8 @@
     32.029998779296875
    ],
    "lens": [
-    5767.7
+    5767.7,
+    5710.1
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -440,6 +482,15 @@
      "date": "2026-10-29",
      "msg": "1565404723283230731",
      "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
+    },
+    "798da52dbb827e1c": {
+     "name": "PRZ2K0",
+     "time_ms": 169066,
+     "car": 12,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566955110603423754",
+     "ghost": "ghosts/akagi-1/798da52dbb827e1c.idg"
     }
    }
   },
@@ -475,7 +526,8 @@
     -255.8990020751953
    ],
    "lens": [
-    8450.8
+    8450.8,
+    8495.6
    ],
    "entries": {
     "5168fd241b77a365": {
@@ -495,6 +547,15 @@
      "date": "2026-11-01",
      "msg": "1566294265074811054",
      "ghost": "ghosts/usui-1/fb6457d17ea6e509.idg"
+    },
+    "798da52dbb827e1c": {
+     "name": "PRZ2K0",
+     "time_ms": 188966,
+     "car": 31,
+     "game": "en",
+     "date": "2026-11-02",
+     "msg": "1566953104920809563",
+     "ghost": "ghosts/usui-1/798da52dbb827e1c.idg"
     }
    }
   }
@@ -523,7 +584,11 @@
   "ec39ad52dee6b67e": "1c37acd6b8537d1f6deedb2beed61d14a33c4e54db9a24ea7ab301be38819fd883c058af66f5d4fe4510d11a5c5fc2a315ca05ceb20dfe444010929f57990c56",
   "0bbe2ad8c59307dd": "36338fbe10764a5235aac8b029660d74de34cc67f3595b745d8a90685c97db49091c43f50755fa3250b179c01d59ba0f81105d00e38ca9790376f512442e6e12",
   "1a734c3b3debfca8": "02034e50f0a1c2148aba72fc768122aae4d747083df7ba031f040d4ca31db8c2108685f6effce759634c824f129a13c9c7972da1318308de117bea3a88f98d2d",
-  "fe5cdccfe44c1bac": "23fac3c22a7cec86e8b030fa1f54d0c8b1e97a24d59a5f88c061697d37220824b914fd230c25c5e5ffb36be9ab06579c0757b0c152bb0e07e7574424f1876a09"
+  "fe5cdccfe44c1bac": "23fac3c22a7cec86e8b030fa1f54d0c8b1e97a24d59a5f88c061697d37220824b914fd230c25c5e5ffb36be9ab06579c0757b0c152bb0e07e7574424f1876a09",
+  "798da52dbb827e1c": "7c34523702a6f9bf56b483e96019d538b51a7f0a0defabd9de930880fe770e7c569198210de7b694a7e0e79ffe4a7d28928e6e4c7d92f29ad56fa5cacf22d150",
+  "2327c9c66e935ed9": "cab9ab08b392b338af762ee2ef96e08ce62dd15f6fe388ddb58db7ddfd64572127983237c3db2180b628292d55d709820f053c933cc213e5ed4b48a66cb19b9a",
+  "60f0b3ebbbf7d46a": "e89efcf68f171e756d42abcc6dcd911e1539d23ca61fb8d705d0428494da492eae6e153d03605419b1fdcbee47814942c94fc9614c6bbe9a891603bb7e9ad98d",
+  "10725c87f42d2d71": "28280da907a5ac0d154ff21583ba36af3fbaa73639f7beedb2638b887689cba442df0ae22a78faf6c7c2a9a7092273085ce8284b390fcef7d3956644fbec50a2"
  },
  "names": {
   "b46085569295d65f": [
@@ -579,6 +644,12 @@
   ],
   "1a734c3b3debfca8": [
    "driver"
+  ],
+  "798da52dbb827e1c": [
+   "PRZ2K0"
+  ],
+  "60f0b3ebbbf7d46a": [
+   "Evil Night"
   ]
  },
  "steam": {
@@ -790,6 +861,26 @@
    "cards": 0,
    "play_h": 0,
    "name": "pysinixx",
+   "bio": "",
+   "car_img": "",
+   "discord": ""
+  },
+  "2327c9c66e935ed9": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "Kal-EL",
+   "bio": "",
+   "car_img": "",
+   "discord": ""
+  },
+  "10725c87f42d2d71": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "VerOfficial",
    "bio": "",
    "car_img": "",
    "discord": ""
