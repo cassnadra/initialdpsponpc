@@ -1,5 +1,5 @@
 {
- "last_id": "1567052479890333806",
+ "last_id": "1567351023562137601",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -168,7 +168,8 @@
     9750.7,
     9726.4,
     9766.0,
-    9768.6
+    9768.6,
+    9796.3
    ],
    "entries": {
     "b46085569295d65f": {
@@ -341,6 +342,15 @@
      "date": "2026-11-03",
      "msg": "1567051476944031795",
      "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
+    },
+    "963ca3a4a77a38f7": {
+     "name": "Din_Lin",
+     "time_ms": 187466,
+     "car": 0,
+     "game": "jp",
+     "date": "2026-11-04",
+     "msg": "1567351023562137601",
+     "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg"
     }
    }
   },
@@ -621,7 +631,8 @@
   "10725c87f42d2d71": "28280da907a5ac0d154ff21583ba36af3fbaa73639f7beedb2638b887689cba442df0ae22a78faf6c7c2a9a7092273085ce8284b390fcef7d3956644fbec50a2",
   "aea9983b3f205f83": "c4133c8bb5e8710d4c419559753f45c1cb52770b09d5134a062d615b45a18c356104e5ddade3fe343c831272ea098f178441aa5fc9e415ec1589a8858d6a5074",
   "aafb3d604c35ec8f": "35824c8bc3ceb0b099ccf0338a59c02db3fd7d82a7dad6e7409c0ea310a21ba48992c29ef25a3cd102cd299146e93a115654d8b17affbc02d135eb94983b8785",
-  "23a1d569341162c9": "99abb7d13144c46185e164f3e372c917e177c7317952646b5d15157dee33053b196cad3947d96bdcf2cdb17f7ccea9190499a76183179f4d99001d13f4564d88"
+  "23a1d569341162c9": "99abb7d13144c46185e164f3e372c917e177c7317952646b5d15157dee33053b196cad3947d96bdcf2cdb17f7ccea9190499a76183179f4d99001d13f4564d88",
+  "963ca3a4a77a38f7": "efd547007a053c29df5dbd2e71aeeb536b9360564c353cb82b31733f7f89fb07e401a27ade93f51f009c5fca17dd4c0dbae0c734f474393f1c1253dd2183f07b"
  },
  "names": {
   "b46085569295d65f": [
@@ -689,6 +700,9 @@
   ],
   "23a1d569341162c9": [
    "SupaChill"
+  ],
+  "963ca3a4a77a38f7": [
+   "Din_Lin"
   ]
  },
  "steam": {
@@ -942,6 +956,16 @@
    "name": "10:30 PM.mus",
    "bio": "",
    "car_img": "a179abe442679ed02909c2f94f282d10",
+   "discord": ""
+  },
+  "963ca3a4a77a38f7": {
+   "pic": 1,
+   "car": 0,
+   "cards": 0,
+   "play_h": 0,
+   "name": "Din_Lin",
+   "bio": "",
+   "car_img": "660a83d5d8bf5a899c0cd4e6adcd1430",
    "discord": ""
   }
  },

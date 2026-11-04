@@ -263,6 +263,19 @@
    },
    {
     "rank": 13,
+    "pid": "963ca3a4a77a38f7",
+    "shown": "Din_Lin #963c",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Din_Lin",
+    "time_ms": 187466,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-11-04",
+    "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg"
+   },
+   {
+    "rank": 14,
     "pid": "23f293906b0ffd82",
     "shown": "Sora #23f2",
     "steam": "",
@@ -275,7 +288,7 @@
     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
    },
    {
-    "rank": 14,
+    "rank": 15,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -288,7 +301,7 @@
     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "ec39ad52dee6b67e",
     "shown": "Mainha #ec39",
     "steam": "",
@@ -301,7 +314,7 @@
     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
    },
    {
-    "rank": 16,
+    "rank": 17,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -314,7 +327,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 17,
+    "rank": 18,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -327,7 +340,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 18,
+    "rank": 19,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -340,7 +353,7 @@
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
    },
    {
-    "rank": 19,
+    "rank": 20,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
