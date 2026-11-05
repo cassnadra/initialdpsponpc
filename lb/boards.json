@@ -360,6 +360,19 @@
    },
    {
     "rank": 17,
+    "pid": "dd0ff6704e4ed00e",
+    "shown": "ADZ #dd0f",
+    "steam": "",
+    "steam_verified": false,
+    "name": "ADZ",
+    "time_ms": 190633,
+    "car": 2,
+    "game": "jp",
+    "date": "2026-11-05",
+    "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg"
+   },
+   {
+    "rank": 18,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -372,7 +385,7 @@
     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
    },
    {
-    "rank": 18,
+    "rank": 19,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -385,7 +398,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 19,
+    "rank": 20,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -398,7 +411,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 20,
+    "rank": 21,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",

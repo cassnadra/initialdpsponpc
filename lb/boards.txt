@@ -30,10 +30,11 @@ E	13	Din_Lin	187466	0	963ca3a4a77a38f7	ghosts/myougi-0/963ca3a4a77a38f7.idg	2026
 E	14	Sora	187966	2	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
 E	15	BusterWolf	188333	16	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
 E	16	Mainha	189700	2	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
-E	17	SupaChill	191766	16	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-05		
-E	18	BL4ck0uT _YuGi	192100	2	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
-E	19	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
-E	20	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
+E	17	ADZ	190633	2	dd0ff6704e4ed00e	ghosts/myougi-0/dd0ff6704e4ed00e.idg	2026-11-05		
+E	18	SupaChill	191766	16	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-05		
+E	19	BL4ck0uT _YuGi	192100	2	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
+E	20	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
+E	21	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
 B	myougi-1	myougi	Myougi (reverse)
 E	1	Cassandra	181200	13	b46085569295d65f	ghosts/myougi-1/b46085569295d65f.idg	2026-10-26	76561198289153961	1
 E	2	Sora	183500	13	23f293906b0ffd82	ghosts/myougi-1/23f293906b0ffd82.idg	2026-11-01		
@@ -81,6 +82,7 @@ P	bea21af9c6bf95f3	1	-1	0	0	qfqr
 P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091			
 P	d11124014e323aa6	1	-1	0	0	BL4ck0uT _YuGi					
 P	dbbde3ded80d1c83	1	-1	0	0	Ueno					
+P	dd0ff6704e4ed00e	1	34	1	0	ADZ					
 P	ea03af8d21d8415e	1	2	0	0	Alex.Kirch		9daace2324a9ef39c681a4d278db4972			
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe					
 P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx					
@@ -91,3 +93,49 @@ C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	on	2
 R	1	Cassandra	163800	0	b46085569295d65f	ghosts/ch/w-2026-W45/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 R	2	Marcus	189833	12	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		
 C	d-2026-11-04	daily	Akina downhill, day	akina-0	day	3	0	1793750400	1793836800	over	0
+K	checker	streak	Tilted checker
+K	camo_digital	streak	Digital camo
+K	twotone_black	streak	Two-tone (panda)
+K	stars	streak	Star field
+K	fade_red	streak	Fade (white to red)
+K	racestripe	streak	Racing stripe
+K	camo_arctic	streak	Arctic camo
+K	polka	streak	Polka dots
+K	splatter	streak	Paint splatter
+K	pinstripe	streak	Pinstripes
+K	tiger	streak	Tiger
+K	hockey	streak	Hockey stick
+K	checker_red	streak	Tilted checker (red)
+K	camo_desert	streak	Desert camo
+K	twotone_navy	streak	Two-tone (navy)
+K	stars_pink	streak	Star field (pink)
+K	fade_purple	streak	Fade (cyan to purple)
+K	racestripe_red	streak	Racing stripe (red)
+K	camo_urban	streak	Urban camo
+K	tiger_white	streak	Snow tiger
+K	flames	weekly	Blue flames
+K	honeycomb	weekly	Honeycomb
+K	stripes	weekly	Twin stripes
+K	sunset	weekly	Sunset speed
+K	halftone_purple	weekly	Halftone fade
+K	slashes	weekly	Shard slashes
+K	tribal	weekly	Tribal
+K	lightning	weekly	Lightning
+K	halftone_red	weekly	Halftone fade (red)
+K	flames_red	weekly	Hot rod flames
+K	honeycomb_gold	weekly	Honeycomb (gold)
+K	sunset_miami	weekly	Sunset speed (Miami)
+K	stripes_gold	weekly	Twin stripes (gold)
+K	tribal_red	weekly	Tribal (red)
+K	lightning_blue	weekly	Lightning (blue)
+K	halftone_blue	weekly	Halftone fade (blue)
+K	slashes_lime	weekly	Shard slashes (lime)
+K	flames_green	weekly	Toxic flames
+K	honeycomb_red	weekly	Honeycomb (red)
+K	sunset_toxic	weekly	Sunset speed (toxic)
+K	stripes_red	weekly	Twin stripes (red)
+K	halftone_gold	weekly	Halftone fade (gold)
+K	champion	daily_win	Champion
+K	sunburst	weekly_win	Sunburst
+U	f341e22f0a0d3a93	flames	0	0	1	0	0
+U	steam:76561198289153961	flames	1	1	1	0	0
