@@ -60,6 +60,17 @@ def messages_after(last_id):
     return out
 
 
+# the game's car ids (0..34) by model name: a ghost's car is read from its model - the header's car id was whatever
+# car the game last looked up a paint for (often not yours: every Myougi reverse run showed as car 13)
+MODELS = ['toyota_ae86t', 'toyota_ae86l', 'toyota_ae85l', 'toyota_sw20', 'toyota_zzw30', 'toyota_sxe10', 'toyota_st205',
+          'nissan_bnr32', 'nissan_bnr34', 'nissan_s13k', 'nissan_s14q', 'nissan_s14k', 'nissan_s15', 'nissan_rps13',
+          'nissan_rps13k', 'honda_ek9', 'honda_eg6', 'honda_dc2', 'honda_ap1', 'mitsu_ce9a', 'mitsu_cn9a', 'mitsu_ct9a',
+          'mazda_fd3s', 'mazda_fd3sa', 'mazda_fc3s', 'mazda_na6ce', 'mazda_nb8c', 'subaru_gc8s6', 'subaru_gdb', 'subaru_gc8s5',
+          'suzuki_ea11r', 'nissan_er34', 'mitsu_cp9a', 'mitsu_cp9at', 'mazda_se3p']
+def ghost_car(g, fallback):
+    return MODELS.index(g['model']) if g.get('model') in MODELS else fallback
+
+
 def parse_ghost(data):
     if len(data) < HEAD.size + HEAD2.size + TAIL.size: raise ValueError('too short')
     magic, ver, course, n = HEAD.unpack_from(data, 0)
@@ -69,7 +80,7 @@ def parse_ghost(data):
     s = [SAMPLE.unpack_from(data, HEAD.size + HEAD2.size + i * SAMPLE.size) for i in range(n)]
     tmagic, finish, entry, reserved = TAIL.unpack_from(data, len(data) - TAIL.size)
     if tmagic != b'IDGF': raise ValueError('no finish record')
-    return {'course': course.split(b'\0')[0].decode('ascii', 'replace'), 'car': car, 'ai': ai, 'samples': s, 'finish': finish, 'entry': entry, 'reserved': reserved}
+    return {'course': course.split(b'\0')[0].decode('ascii', 'replace'), 'car': car, 'model': model.split(b'\0')[0].decode('ascii', 'replace'), 'ai': ai, 'samples': s, 'finish': finish, 'entry': entry, 'reserved': reserved}
 
 
 def link_steam(pid, proof, steam, steam_ok, nonces):
@@ -403,7 +414,7 @@ def ch_file(state, m, sub, g, data):
         gp = 'ghosts/ch/%s/%s.idg' % (ch['id'], pid)
         os.makedirs(os.path.dirname(os.path.join(LB, gp)), exist_ok=True)
         open(os.path.join(LB, gp), 'wb').write(data)
-        c['entries'][pid] = {'name': clean_name(sub.get('name')), 'time_ms': int(sub['time_ms']), 'car': int(sub.get('car', -1)),
+        c['entries'][pid] = {'name': clean_name(sub.get('name')), 'time_ms': int(sub['time_ms']), 'car': ghost_car(g, int(sub.get('car', -1))),
                              'date': m['timestamp'][:10], 'msg': m['id'], 'ghost': gp}
         out.append(ch['id'])
     return out
@@ -686,7 +697,7 @@ def main():
         gdir = os.path.join(LB, 'ghosts', board_key)
         os.makedirs(gdir, exist_ok=True)
         open(os.path.join(gdir, pid + '.idg'), 'wb').write(data)
-        b['entries'][pid] = {'name': clean_name(sub.get('name')), 'time_ms': int(sub['time_ms']), 'car': int(sub.get('car', -1)),
+        b['entries'][pid] = {'name': clean_name(sub.get('name')), 'time_ms': int(sub['time_ms']), 'car': ghost_car(g, int(sub.get('car', -1))),
                              'game': str(sub.get('game', ''))[:2], 'date': m['timestamp'][:10], 'msg': m['id'],
                              'ghost': 'ghosts/%s/%s.idg' % (board_key, pid)}
         b['lens'] = (b['lens'] + [round(g['length'], 1)])[-50:]
@@ -694,6 +705,11 @@ def main():
         print(f"added {board_key}: {clean_name(sub.get('name'))} {sub['time_ms']} ms")
     # publish (everyone is shown with a tag from their id: "Takumi #3f2a" - names alone can clash or change; a player
     # who linked Steam is that Steam account instead: one entry for all their PCs, the best time)
+    for e in [e for b in state['boards'].values() for e in b['entries'].values()] + [e for c in state.get('challenges', {}).values() for e in c['entries'].values()]:
+        if e.get('car_from_model'): continue   # (entries from before: their car from the ghost's model, once)
+        try: e['car'] = ghost_car(parse_ghost(open(os.path.join(LB, e['ghost']), 'rb').read()), e['car'])
+        except Exception: pass
+        e['car_from_model'] = 1
     def shown(pid, e): return e['name'] + (' (Steam)' if pid in steam else ' #' + pid[:4])
     def who(pid): return 'steam:' + steam[pid] if pid in steam else pid
     lines, js = ['# IDSS leaderboard 1'], {}
