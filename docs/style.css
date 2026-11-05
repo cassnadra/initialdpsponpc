@@ -292,3 +292,8 @@ select option { background: #16181c; }
 .fold::before { content: '▸'; display: inline-block; color: var(--muted); font-size: 14px; transition: transform .15s; }
 .filters[open] .fold::before { transform: rotate(90deg); }
 .filters > summary:hover .fold::before { color: var(--yellow); }
+
+/* the driver level ranking */
+.c-lv { width: 70px; }
+.c-xp { width: 90px; font-variant-numeric: tabular-nums; text-align: right; padding-right: 18px; }
+.lvview .mapPanel { display: none; }

@@ -22,7 +22,7 @@ const COLORS = ['#ffcc00', '#1d6bff', '#e3141f', '#b04dff', '#ff7a00', '#00b37a'
 const MAX_ON_MAP = 6;
 
 const $ = id => document.getElementById(id);
-const state = { ch: '', boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: '', sort: 'time', car: '', steamOnly: false, picked: [] };
+const state = { view: '', ch: '', boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: '', sort: 'time', car: '', steamOnly: false, picked: [] };
 
 // ---------------- driver level (the game's level.c: level L to L + 1 takes 200 + 100 (L - 1) XP) ----------------
 function levelOf(xp) { let L = 1; while (L < 99 && xp >= 200 + 100 * (L - 1)) { xp -= 200 + 100 * (L - 1); L++; } return L; }
@@ -124,7 +124,7 @@ function drawCourses() {
   const q = state.search.toLowerCase();
   for (const c of courses()) {
     const li = document.createElement('li'), b = document.createElement('button');
-    b.className = c.course === state.course && !state.ch ? 'on' : '';
+    b.className = c.course === state.course && !state.ch && !state.view ? 'on' : '';
     const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '▶';
     const n = document.createElement('span'); n.className = 'cname'; n.textContent = courseName(c.course);
     const kj = document.createElement('span'); kj.className = 'kanji'; kj.lang = 'ja'; kj.textContent = COURSE_KANJI[c.course] || '';
@@ -132,8 +132,61 @@ function drawCourses() {
     meta.textContent = `${c.entries} time${c.entries === 1 ? '' : 's'} · ${c.boards.length} board${c.boards.length === 1 ? '' : 's'}`;
     if (playerOn(c.course, q)) { const h = document.createElement('span'); h.className = 'hit'; h.textContent = ' · found'; meta.append(h); }
     b.append(arrow, n, kj, meta);
-    b.onclick = () => { state.ch = ''; state.course = c.course; pickDefaults(); render(); document.body.classList.remove('drawer'); };
+    b.onclick = () => { state.view = ''; state.ch = ''; state.course = c.course; pickDefaults(); render(); document.body.classList.remove('drawer'); };
     li.append(b); ul.append(li);
+  }
+  // the driver level ranking: everyone's level from their profile
+  const lv = levelRows(), li = document.createElement('li'), b = document.createElement('button');
+  b.className = state.view === 'levels' ? 'on' : '';
+  b.append(Object.assign(document.createElement('span'), { className: 'arrow', textContent: '▶' }),
+    Object.assign(document.createElement('span'), { className: 'cname', textContent: 'Driver levels' }),
+    Object.assign(document.createElement('span'), { className: 'kanji', lang: 'ja', textContent: 'レベル' }),
+    Object.assign(document.createElement('span'), { className: 'cmeta', textContent: lv.length ? `${lv.length} driver${lv.length === 1 ? '' : 's'} · top Lv ${levelOf(lv[0].xp)}` : 'No levels yet' }));
+  b.onclick = () => { state.view = 'levels'; state.ch = ''; render(); document.body.classList.remove('drawer'); };
+  li.append(b); ul.append(li);
+}
+// everyone with a level, most XP first: one row per Steam account (its PC with the most XP)
+function levelRows() {
+  const byKey = new Map();
+  for (const [pid, pr] of Object.entries(state.profiles)) {
+    if (!(pr.xp > 0)) continue;   // (none shared, or banned)
+    const key = pr.steam ? 's:' + pr.steam : pid, had = byKey.get(key);
+    if (!had || pr.xp > had.xp) byKey.set(key, { pid, ...pr });
+  }
+  const anyName = pid => { for (const b of Object.values(state.boards)) { const e = b.entries.find(x => x.pid === pid); if (e) return e.name; } return ''; };
+  const rows = [...byKey.values()].map(r => ({ ...r, name: r.name || anyName(r.pid) || 'Player' }))
+    .sort((a, b) => b.xp - a.xp || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+  rows.forEach((r, i) => { r.rank = i && rows[i - 1].xp === r.xp ? rows[i - 1].rank : i + 1; });
+  return rows;
+}
+const HEAD_TIMES = $('thead').innerHTML;
+function drawLevels() {
+  $('boardTitle').textContent = 'Driver levels';
+  $('thead').innerHTML = '<tr><th class="c-rank">Pos</th><th>Driver</th><th class="c-lv">Level</th><th class="c-xp">XP</th><th class="c-car">Favourite car</th></tr>';
+  const q = state.search.toLowerCase(), all = levelRows(), rows = all.filter(r => !q || r.name.toLowerCase().includes(q));
+  $('boardCount').textContent = rows.length === all.length ? `${all.length} driver${all.length === 1 ? '' : 's'}` : `${rows.length} of ${all.length} shown`;
+  const tb = $('rows'); tb.textContent = '';
+  $('empty').hidden = rows.length > 0;
+  $('empty').textContent = all.length ? 'No drivers match the search.' : 'No levels yet - they come with the profile the game sends while you share your times.';
+  for (const r of rows) {
+    const tr = document.createElement('tr'); tr.className = r.rank <= 3 ? `r${r.rank}` : '';
+    const cell = (cls, content) => { const td = document.createElement('td'); if (cls) td.className = cls; if (content instanceof Node) td.append(content); else td.textContent = content; tr.append(td); return td; };
+    const rk = document.createElement('span'); rk.textContent = String(r.rank);
+    const ord = Object.assign(document.createElement('span'), { className: 'ord', textContent: r.rank % 100 >= 11 && r.rank % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[r.rank % 10] || 'th') });
+    cell('c-rank', rk).append(ord);
+    const who = document.createElement('div'); who.className = 'who';
+    who.append(r.carImg ? carPic(`${RAW}cars/${r.carImg}.png`) : Object.assign(document.createElement('span'), { className: 'ph' }));
+    const nm = Object.assign(document.createElement('button'), { className: 'nameBtn', textContent: r.name, title: 'Driver profile' });
+    nm.onclick = ev => { ev.stopPropagation(); openProfile(r.pid); };
+    who.append(nm);
+    if (r.steam && r.steamOk) who.append(Object.assign(document.createElement('span'), { className: 'badge', textContent: 'Steam', title: 'Steam account verified' }));
+    if (r.bio) who.title = r.bio;
+    cell('', who);
+    cell('c-lv', Object.assign(document.createElement('span'), { className: 'lvl', textContent: `Lv ${levelOf(r.xp)}` }));
+    cell('c-xp', r.xp.toLocaleString('en-US'));
+    cell('c-car', r.car >= 0 ? carName(r.car) : '-');
+    tr.onclick = () => openProfile(r.pid);
+    tb.append(tr);
   }
 }
 // on a course change: a direction / road that has times
@@ -148,6 +201,7 @@ function pickDefaults() {
 // ---------------- table ----------------
 function currentChallenge() { return state.ch && chal ? [...chal.current, ...chal.recent].find(c => c.id === state.ch) || null : null; }
 function currentBoard() {
+  if (state.view === 'levels') return null;
   const c = currentChallenge();
   if (c) return { course: c.course, label: c.label, entries: c.entries.map(e => ({ ...e, steam_verified: !!e.steam })) };
   return state.boards[boardId(state.course, state.dir, state.wet)];
@@ -165,6 +219,8 @@ function visibleEntries(b) {
   return es.sort(by);
 }
 function drawBoard() {
+  if (state.view === 'levels') { drawLevels(); return; }
+  if ($('thead').innerHTML !== HEAD_TIMES) $('thead').innerHTML = HEAD_TIMES;
   const b = currentBoard();
   const ch = currentChallenge();
   $('boardTitle').textContent = ch ? `${ch.kind === 'daily' ? 'Daily' : 'Weekly'} challenge · ${ch.label}`
@@ -268,8 +324,8 @@ function drawFilters() {
 }
 function wire() {
   $('search').oninput = e => { state.search = e.target.value.trim(); drawCourses(); drawBoard(); saveHash(); };
-  for (const btn of $('dirSeg').children) btn.onclick = () => { state.ch = ''; state.dir = +btn.dataset.dir; state.picked = null; render(); };
-  for (const btn of $('wetSeg').children) btn.onclick = () => { state.ch = ''; state.wet = +btn.dataset.wet; state.picked = null; render(); };
+  for (const btn of $('dirSeg').children) btn.onclick = () => { state.view = ''; state.ch = ''; state.dir = +btn.dataset.dir; state.picked = null; render(); };
+  for (const btn of $('wetSeg').children) btn.onclick = () => { state.view = ''; state.ch = ''; state.wet = +btn.dataset.wet; state.picked = null; render(); };
   // the search panel folds away (remembered); open when a search is in the link
   let fOpen = false; try { fOpen = localStorage.getItem('lb_search') === '1'; } catch {}
   $('filters').open = fOpen || !!state.search;
@@ -313,6 +369,7 @@ function wire() {
 function saveHash() {
   const p = new URLSearchParams({ c: state.course, d: state.dir, w: state.wet });
   if (state.ch) p.set('ch', state.ch);
+  if (state.view) p.set('v', state.view);
   if (state.search) p.set('q', state.search);
   if (state.sort !== 'time') p.set('s', state.sort);
   if (state.car !== '') p.set('car', state.car);
@@ -322,7 +379,7 @@ function saveHash() {
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   if (p.get('c')) state.course = p.get('c');
-  state.ch = p.get('ch') || '';
+  state.ch = p.get('ch') || ''; state.view = p.get('v') === 'levels' ? 'levels' : '';
   state.dir = +(p.get('d') || 0); state.wet = +(p.get('w') || 0);
   state.t0 = +(p.get('t') || 0); state.search = p.get('q') || ''; state.sort = p.get('s') || 'time'; state.car = p.get('car') || ''; state.prof = p.get('p') || '';
   $('search').value = state.search; $('sort').value = state.sort;
@@ -335,7 +392,7 @@ async function loadMap() {
   const b = currentBoard(), token = ++mapToken;
   pause(); replay.runs = []; replay.t = 0; replay.len = 0;
   $('legend').textContent = '';
-  if (!b || !b.entries.length) { replay.track = null; replay.view = null; $('mapNote').textContent = 'no runs yet'; setPlayer(false); drawMap(); return; }
+  if (!b || !b.entries.length) { replay.track = null; replay.view = null; $('mapNote').textContent = state.view === 'levels' ? 'pick a course for its runs' : 'no runs yet'; setPlayer(false); drawMap(); return; }
   if (!state.picked) state.picked = b.entries.slice(0, Math.min(3, b.entries.length)).map(e => e.pid);
   const picks = state.picked.map(pid => b.entries.find(e => e.pid === pid)).filter(Boolean);
   $('mapNote').textContent = 'loading runs...';
@@ -495,7 +552,7 @@ function openProfile(pid) {
     td('pt', fmtTime(t.e.time_ms));
     td('pg', t.e.time_ms === t.lead ? '' : `+${((t.e.time_ms - t.lead) / 1000).toFixed(3)}`);
     tr.title = `${carName(t.e.car)} · ${t.e.date}`;
-    tr.onclick = () => { closeProfile(); state.course = course; state.dir = dir; state.wet = wet ? 1 : 0; state.picked = null; render(); };
+    tr.onclick = () => { closeProfile(); state.view = ''; state.ch = ''; state.course = course; state.dir = dir; state.wet = wet ? 1 : 0; state.picked = null; render(); };
     tb.append(tr);
   }
   if (!times.length) { const tr = document.createElement('tr'); const c = document.createElement('td'); c.textContent = 'No times on the board.'; tr.append(c); tb.append(tr); }
@@ -530,7 +587,7 @@ function drawChallenges() {
       textContent: c.entries.length ? `${c.drivers} driver${c.drivers === 1 ? '' : 's'} · leader ${c.entries[0].shown.replace(/ \(Steam\)$/, '')} ${fmtTime(c.entries[0].time_ms)}` : 'No times yet - be the first' });
     b.append(arrow, kind, left, lbl, meta);
     b.onclick = () => {
-      state.ch = c.id; state.course = c.course; state.dir = c.dir; state.wet = c.board.endsWith('-wet') ? 1 : 0; state.picked = null;
+      state.view = ''; state.ch = c.id; state.course = c.course; state.dir = c.dir; state.wet = c.board.endsWith('-wet') ? 1 : 0; state.picked = null;
       render(); document.body.classList.remove('drawer');
     };
     li.append(b); list.append(li);
@@ -566,7 +623,7 @@ async function loadChallenges() {
 }
 
 // ---------------- start ----------------
-function render() { drawCourses(); drawChallenges(); drawPrize(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
+function render() { document.body.classList.toggle('lvview', state.view === 'levels'); drawCourses(); drawChallenges(); drawPrize(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
 (async () => {
   wire(); readHash();
   $('profClose').onclick = closeProfile; $('profScrim').onclick = closeProfile;

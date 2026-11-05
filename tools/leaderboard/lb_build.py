@@ -726,9 +726,10 @@ def main():
         for r, (pid, e) in enumerate(ranked, 1):
             lines.append('\t'.join(['E', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
             js[bid]['entries'].append({'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), 'steam_verified': bool(steam_ok.get(pid)), **{k: e[k] for k in ('name', 'time_ms', 'car', 'game', 'date', 'ghost')}})
+    def banned(pid): return (pid in bans and bans[pid].get('kind') != 'mute') or (steam.get(pid) and bans.get('steam:' + steam[pid], {'kind': 'mute'}).get('kind') != 'mute')
     for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok<TAB>xp
         lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', ''),
-                                steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '', str(pr.get('xp', 0))]))
+                                steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '', '0' if banned(pid) else str(pr.get('xp', 0))]))   # (a banned player's XP: 0, off the level ranking)
     now = float(os.environ.get('LB_NOW') or time.time())   # (LB_NOW: tests)
     ch_publish(state, now, lines, rank_of, steam, steam_ok, shown)
     rw = rewards(state, now, rank_of, who)
