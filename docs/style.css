@@ -172,6 +172,8 @@ select option { background: #16181c; }
 .profTags a, .profTags span { font: italic 700 12px var(--cond); letter-spacing: .08em; text-transform: uppercase; padding: 2px 7px; text-decoration: none; }
 .profTags .steam { background: var(--blue); color: #fff; }
 .profTags .discord { background: #2b2f6b; color: #d6dafe; text-transform: none; letter-spacing: .02em; }
+.lvl { font: italic 800 12px var(--cond); letter-spacing: .06em; padding: 1px 6px; background: #3a2a00; color: var(--yellow); border: 1px solid #6b5200; }
+.profTags .lvl { font-size: 12px; }
 .profTags .id { background: #24272c; color: var(--muted); text-transform: none; }
 .profBio { margin: 10px 0 0; color: #d3d7de; white-space: pre-wrap; }
 .profBio:empty { display: none; }

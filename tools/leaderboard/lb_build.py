@@ -105,6 +105,7 @@ def check_profile(pr, keys):
     pid = str(pr.get('pid', ''))
     if not re.fullmatch(r'[0-9a-f]{16}', pid): return 'bad player id'
     signed = 'profile|%s|%s|%s|%d|%d|%d|%d|%s|%s' % (pid, pr.get('name', ''), pr.get('bio', ''), int(pr.get('pic', 1)), int(pr.get('car', -1)), int(pr.get('cards', -1)), int(pr.get('play_h', 0)), pr.get('car_img', ''), pr.get('discord', ''))
+    if 'xp' in pr: signed += '|%d' % int(pr['xp'])   # (games with the driver level sign their XP too)
     if not ecdsa_p256.verify(str(pr.get('pub', '')), str(pr.get('sig', '')), signed.encode()): return 'bad signature'
     if pid in keys and keys[pid] != pr['pub']: return 'player id already belongs to another key (impersonation?)'
     return None
@@ -591,7 +592,7 @@ def main():
             pic = int(pr.get('pic', 1)); pic = pic if pic == -1 or 1 <= pic <= 173 else 1   # (any collection card)
             profiles[pr['pid']] = {'pic': pic, 'car': max(-1, min(34, int(pr.get('car', -1)))), 'cards': max(-1, min(173, int(pr.get('cards', -1)))),
                                    'play_h': max(0, min(100000, int(pr.get('play_h', 0)))), 'name': clean_text(pr.get('name'), 24), 'bio': clean_text(pr.get('bio'), 120),
-                                   'car_img': img, 'discord': clean_text(pr.get('discord'), 37)}
+                                   'car_img': img, 'discord': clean_text(pr.get('discord'), 37), 'xp': max(0, min(10 ** 8, int(pr.get('xp', 0))))}
             print(f"{pr['pid']}: profile updated")
             continue
         if c.startswith('IDSS-LINK 1 ') and m.get('attachments'):   # sent when a player signs in through Steam (+ the bot woken up):
@@ -709,9 +710,9 @@ def main():
         for r, (pid, e) in enumerate(ranked, 1):
             lines.append('\t'.join(['E', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
             js[bid]['entries'].append({'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), 'steam_verified': bool(steam_ok.get(pid)), **{k: e[k] for k in ('name', 'time_ms', 'car', 'game', 'date', 'ghost')}})
-    for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok
+    for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok<TAB>xp
         lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', ''),
-                                steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '']))
+                                steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '', str(pr.get('xp', 0))]))
     now = float(os.environ.get('LB_NOW') or time.time())   # (LB_NOW: tests)
     ch_publish(state, now, lines, rank_of, steam, steam_ok, shown)
     rw = rewards(state, now, rank_of, who)
