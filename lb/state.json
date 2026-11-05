@@ -1,5 +1,5 @@
 {
- "last_id": "1567978317427253354",
+ "last_id": "1568029005582704691",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -181,7 +181,8 @@
     9796.3,
     9679.3,
     9751.4,
-    9782.6
+    9782.6,
+    9734.3
    ],
    "entries": {
     "b46085569295d65f": {
@@ -266,11 +267,11 @@
     },
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
-     "time_ms": 186500,
-     "car": 21,
+     "time_ms": 185700,
+     "car": 14,
      "game": "en",
-     "date": "2026-10-29",
-     "msg": "1565388151424553111",
+     "date": "2026-11-05",
+     "msg": "1568028518514827437",
      "ghost": "ghosts/myougi-0/ea03af8d21d8415e.idg",
      "car_from_model": 1
     },
@@ -580,7 +581,8 @@
     5805.0,
     5836.6,
     5811.8,
-    5844.4
+    5844.4,
+    5792.3
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -605,11 +607,11 @@
     },
     "b46085569295d65f": {
      "name": "Cassandra",
-     "time_ms": 163800,
-     "car": 0,
+     "time_ms": 162433,
+     "car": 13,
      "game": "en",
      "date": "2026-11-05",
-     "msg": "1567786894257815603",
+     "msg": "1567998611332014220",
      "ghost": "ghosts/akagi-1/b46085569295d65f.idg",
      "car_from_model": 1
     },
@@ -841,15 +843,18 @@
  },
  "steam": {
   "b46085569295d65f": "76561198289153961",
-  "2ff94d72b41c145f": "76561198259702682"
+  "2ff94d72b41c145f": "76561198259702682",
+  "ea03af8d21d8415e": "76561198064983234"
  },
  "nonces": [
   "2026-10-23T05:33:43ZAGJr+ZimYgqankIYN/7lK3t9ygI=",
-  "2026-10-23T06:35:39ZymaKV5AyIYGyUGUBgw+4M4xkOlw="
+  "2026-10-23T06:35:39ZymaKV5AyIYGyUGUBgw+4M4xkOlw=",
+  "2026-11-05T22:27:27ZzyzP78khaYnfn9fX/cgtE8y0HqA="
  ],
  "steam_ok": {
   "b46085569295d65f": true,
-  "2ff94d72b41c145f": true
+  "2ff94d72b41c145f": true,
+  "ea03af8d21d8415e": true
  },
  "profiles": {
   "b46085569295d65f": {
@@ -965,13 +970,14 @@
   },
   "ea03af8d21d8415e": {
    "pic": 1,
-   "car": 2,
-   "cards": 0,
-   "play_h": 0,
+   "car": 0,
+   "cards": 12,
+   "play_h": 2,
    "name": "Alex.Kirch",
    "bio": "",
-   "car_img": "9daace2324a9ef39c681a4d278db4972",
-   "discord": ""
+   "car_img": "6806bf222a29839e3e5a1d271e1a40aa",
+   "discord": "",
+   "xp": 0
   },
   "7bef37ad91d8806b": {
    "pic": 1,
@@ -1158,10 +1164,10 @@
    "entries": {
     "b46085569295d65f": {
      "name": "Cassandra",
-     "time_ms": 163800,
-     "car": 0,
+     "time_ms": 162433,
+     "car": 13,
      "date": "2026-11-05",
-     "msg": "1567786894257815603",
+     "msg": "1567998611332014220",
      "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg",
      "car_from_model": 1
     },
