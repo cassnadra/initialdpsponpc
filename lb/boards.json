@@ -360,6 +360,19 @@
    },
    {
     "rank": 17,
+    "pid": "23a1d569341162c9",
+    "shown": "SupaChill #23a1",
+    "steam": "",
+    "steam_verified": false,
+    "name": "SupaChill",
+    "time_ms": 191766,
+    "car": 16,
+    "game": "jp",
+    "date": "2026-11-05",
+    "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
+   },
+   {
+    "rank": 18,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -372,7 +385,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 18,
+    "rank": 19,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -385,7 +398,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 19,
+    "rank": 20,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -396,19 +409,6 @@
     "game": "jp",
     "date": "2026-10-31",
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
-   },
-   {
-    "rank": 20,
-    "pid": "23a1d569341162c9",
-    "shown": "SupaChill #23a1",
-    "steam": "",
-    "steam_verified": false,
-    "name": "SupaChill",
-    "time_ms": 195933,
-    "car": 2,
-    "game": "jp",
-    "date": "2026-11-03",
-    "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
    }
   ]
  },
@@ -535,6 +535,19 @@
    },
    {
     "rank": 10,
+    "pid": "23a1d569341162c9",
+    "shown": "SupaChill #23a1",
+    "steam": "",
+    "steam_verified": false,
+    "name": "SupaChill",
+    "time_ms": 192533,
+    "car": 13,
+    "game": "jp",
+    "date": "2026-11-05",
+    "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
+   },
+   {
+    "rank": 11,
     "pid": "1a734c3b3debfca8",
     "shown": "driver #1a73",
     "steam": "",
@@ -545,19 +558,6 @@
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-1/1a734c3b3debfca8.idg"
-   },
-   {
-    "rank": 11,
-    "pid": "23a1d569341162c9",
-    "shown": "SupaChill #23a1",
-    "steam": "",
-    "steam_verified": false,
-    "name": "SupaChill",
-    "time_ms": 194366,
-    "car": 13,
-    "game": "jp",
-    "date": "2026-11-03",
-    "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
    }
   ]
  },
