@@ -56,6 +56,7 @@ E	2	PRZ2K0	188966	31	798da52dbb827e1c	ghosts/usui-1/798da52dbb827e1c.idg	2026-11
 E	3	SeAshe	196333	31	fb6457d17ea6e509	ghosts/usui-1/fb6457d17ea6e509.idg	2026-11-01		
 P	0bbe2ad8c59307dd	1	2	0	0	BusterWolf					
 P	10725c87f42d2d71	1	-1	0	0	VerOfficial					
+P	1531e4adafe55f6c	1	-1	0	0	(-:[DarkLeviathan-Ego]:-					
 P	18f0147cfb0c1c94	1	-1	0	0	Doc703VA					
 P	2327c9c66e935ed9	1	-1	0	0	Kal-EL					
 P	23f293906b0ffd82	1	-1	0	0	Sora					
