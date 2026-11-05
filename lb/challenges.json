@@ -1,10 +1,10 @@
 {
- "now": 1793858533,
+ "now": 1793859942,
  "current": [
   {
    "id": "d-2026-11-05",
    "kind": "daily",
-   "label": "Iroha uphill, wet",
+   "label": "Irohazaka uphill, wet",
    "board": "iroha-1-wet",
    "cond": "wet",
    "course": "iroha",
@@ -44,8 +44,8 @@
      "shown": "Cassandra (Steam)",
      "steam": "76561198289153961",
      "name": "Cassandra",
-     "time_ms": 167666,
-     "car": 17,
+     "time_ms": 163800,
+     "car": 0,
      "date": "2026-11-05",
      "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg"
     }

@@ -1,5 +1,5 @@
 {
- "last_id": "1567780912840712273",
+ "last_id": "1567786894257815603",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -512,7 +512,9 @@
    "lens": [
     5767.7,
     5710.1,
-    5805.0
+    5805.0,
+    5836.6,
+    5811.8
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -535,11 +537,11 @@
     },
     "b46085569295d65f": {
      "name": "Cassandra",
-     "time_ms": 167666,
-     "car": 17,
+     "time_ms": 163800,
+     "car": 0,
      "game": "en",
      "date": "2026-11-05",
-     "msg": "1567778345205108767",
+     "msg": "1567786894257815603",
      "ghost": "ghosts/akagi-1/b46085569295d65f.idg"
     }
    }
@@ -756,10 +758,10 @@
   "b46085569295d65f": {
    "pic": -1,
    "car": -1,
-   "cards": 42,
-   "play_h": 5,
-   "name": "Tester",
-   "bio": "",
+   "cards": 43,
+   "play_h": 8,
+   "name": "Cassandra",
+   "bio": "dev, dm me on disc with any issues",
    "car_img": "",
    "discord": "cassnadra"
   },
@@ -1037,10 +1039,10 @@
    "entries": {
     "b46085569295d65f": {
      "name": "Cassandra",
-     "time_ms": 167666,
-     "car": 17,
+     "time_ms": 163800,
+     "car": 0,
      "date": "2026-11-05",
-     "msg": "1567778345205108767",
+     "msg": "1567786894257815603",
      "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg"
     }
    }
