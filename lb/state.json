@@ -1,5 +1,5 @@
 {
- "last_id": "1567786894257815603",
+ "last_id": "1567800295940038766",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -514,7 +514,8 @@
     5710.1,
     5805.0,
     5836.6,
-    5811.8
+    5811.8,
+    5844.4
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -543,6 +544,15 @@
      "date": "2026-11-05",
      "msg": "1567786894257815603",
      "ghost": "ghosts/akagi-1/b46085569295d65f.idg"
+    },
+    "f341e22f0a0d3a93": {
+     "name": "Marcus",
+     "time_ms": 189833,
+     "car": 12,
+     "game": "jp",
+     "date": "2026-11-05",
+     "msg": "1567800295940038766",
+     "ghost": "ghosts/akagi-1/f341e22f0a0d3a93.idg"
     }
    }
   },
@@ -669,7 +679,8 @@
   "23a1d569341162c9": "99abb7d13144c46185e164f3e372c917e177c7317952646b5d15157dee33053b196cad3947d96bdcf2cdb17f7ccea9190499a76183179f4d99001d13f4564d88",
   "963ca3a4a77a38f7": "efd547007a053c29df5dbd2e71aeeb536b9360564c353cb82b31733f7f89fb07e401a27ade93f51f009c5fca17dd4c0dbae0c734f474393f1c1253dd2183f07b",
   "dbbde3ded80d1c83": "4a8b19b3af5e4bd6af18ff7c3b4bd1f2c964ed74aee0a112392fa10769d499296f94e8adb7edecc8e58584f7d04004735cf3a54a79ca36121bbe6ee670474f3f",
-  "1531e4adafe55f6c": "0b3cb8248457d59134e67451b9f1870f87ce7f3a6879f982ff53723c5624f1717cc0ae36a7618ba90a36a5df63cccca8fd1cd6d63230958d8a70f19d9ab2e7b5"
+  "1531e4adafe55f6c": "0b3cb8248457d59134e67451b9f1870f87ce7f3a6879f982ff53723c5624f1717cc0ae36a7618ba90a36a5df63cccca8fd1cd6d63230958d8a70f19d9ab2e7b5",
+  "f341e22f0a0d3a93": "5cf006c09c8be93169aa408dc39eca82f489a9714e077e6c72972443a126a9dd709125aa4cbfc7605a129af2bca7be541c438b3639fdff3bdece5f61c5c9800d"
  },
  "names": {
   "b46085569295d65f": [
@@ -740,6 +751,9 @@
   ],
   "963ca3a4a77a38f7": [
    "Din_Lin"
+  ],
+  "f341e22f0a0d3a93": [
+   "Marcus"
   ]
  },
  "steam": {
@@ -1044,6 +1058,14 @@
      "date": "2026-11-05",
      "msg": "1567786894257815603",
      "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg"
+    },
+    "f341e22f0a0d3a93": {
+     "name": "Marcus",
+     "time_ms": 189833,
+     "car": 12,
+     "date": "2026-11-05",
+     "msg": "1567800295940038766",
+     "ghost": "ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg"
     }
    }
   },

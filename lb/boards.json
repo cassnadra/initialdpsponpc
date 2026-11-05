@@ -92,6 +92,19 @@
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
+   },
+   {
+    "rank": 4,
+    "pid": "f341e22f0a0d3a93",
+    "shown": "Marcus #f341",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Marcus",
+    "time_ms": 189833,
+    "car": 12,
+    "game": "jp",
+    "date": "2026-11-05",
+    "ghost": "ghosts/akagi-1/f341e22f0a0d3a93.idg"
    }
   ]
  },

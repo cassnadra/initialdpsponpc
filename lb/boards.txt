@@ -8,6 +8,7 @@ B	akagi-1	akagi	Akagi uphill
 E	1	Cassandra	163800	0	b46085569295d65f	ghosts/akagi-1/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 E	2	PRZ2K0	169066	12	798da52dbb827e1c	ghosts/akagi-1/798da52dbb827e1c.idg	2026-11-02		
 E	3	Alex.Kirch	181500	12	ea03af8d21d8415e	ghosts/akagi-1/ea03af8d21d8415e.idg	2026-10-29		
+E	4	Marcus	189833	12	f341e22f0a0d3a93	ghosts/akagi-1/f341e22f0a0d3a93.idg	2026-11-05		
 B	akina-0	akina	Akina downhill
 E	1	Cassandra	195500	0	b46085569295d65f	ghosts/akina-0/b46085569295d65f.idg	2026-10-31	76561198289153961	1
 B	iroha-1-wet	iroha	Iroha uphill (wet)
@@ -86,6 +87,7 @@ P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c			
 C	d-2026-11-05	daily	Irohazaka uphill, wet	iroha-1-wet	wet	5	1	1793836800	1793923200	on	1
 R	1	Cassandra	220566	13	b46085569295d65f	ghosts/ch/d-2026-11-05/b46085569295d65f.idg	2026-11-05	76561198289153961	1
-C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	on	1
+C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	on	2
 R	1	Cassandra	163800	0	b46085569295d65f	ghosts/ch/w-2026-W45/b46085569295d65f.idg	2026-11-05	76561198289153961	1
+R	2	Marcus	189833	12	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		
 C	d-2026-11-04	daily	Akina downhill, day	akina-0	day	3	0	1793750400	1793836800	over	0
