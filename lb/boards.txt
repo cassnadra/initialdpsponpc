@@ -77,7 +77,7 @@ P	963ca3a4a77a38f7	1	0	0	0	Din_Lin		660a83d5d8bf5a899c0cd4e6adcd1430
 P	a44fe613bf64ea22	1	-1	0	7200	Deroh	Autism				
 P	aafb3d604c35ec8f	1	17	0	0	10:30 PM.mus		a179abe442679ed02909c2f94f282d10			
 P	aea9983b3f205f83	1	19	0	0	GD3 HONDA FIT		f6cae09079929e9f5158494a902e0596			
-P	b46085569295d65f	-1	-1	43	28800	Cassandra	dev, dm me on disc with any issues		cassnadra	76561198289153961	1
+P	b46085569295d65f	-1	-1	43	28800	Cassandra			cassnadra	76561198289153961	1
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr					
 P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091			
 P	d11124014e323aa6	1	-1	0	0	BL4ck0uT _YuGi					

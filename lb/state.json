@@ -1,5 +1,5 @@
 {
- "last_id": "1567847543952380105",
+ "last_id": "1567856484312809533",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -791,7 +791,7 @@
    "cards": 43,
    "play_h": 8,
    "name": "Cassandra",
-   "bio": "dev, dm me on disc with any issues",
+   "bio": "",
    "car_img": "",
    "discord": "cassnadra"
   },
