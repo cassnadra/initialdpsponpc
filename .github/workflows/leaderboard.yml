@@ -17,6 +17,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main            # always the newest boards (a re-run of an old run would build on its old copy: push refused)
+          sparse-checkout: |   # (not skins/: ~300 MB of reward skins the job never needs)
+            lb
+            tools
       - name: Read Discord, update the boards
         run: python3 tools/leaderboard/lb_build.py
         env:

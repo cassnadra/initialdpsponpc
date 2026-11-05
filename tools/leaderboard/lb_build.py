@@ -417,6 +417,80 @@ def ch_publish(state, now, lines, rank_of, steam, steam_ok, shown):
     json.dump(js, open(os.path.join(LB, 'challenges.json'), 'w'), indent=1)
 
 
+# ---- reward skins (tools/skin_designs.py draws them; the game downloads the one picked for the car it drives) ----
+# Every 3 dailies in a row: the next pattern of REWARD_STREAK; every weekly raced: the next of REWARD_WEEKLY; first
+# place in a finished daily / weekly: its winner's skin. The k-th reward is always the k-th of its list, so the lists
+# are append-only (a skin taken out or moved would change what players already have).
+REWARD_STREAK = ['checker', 'camo_digital', 'twotone_black', 'stars', 'fade_red', 'racestripe', 'camo_arctic', 'polka',
+                 'splatter', 'pinstripe', 'tiger', 'hockey', 'checker_red', 'camo_desert', 'twotone_navy', 'stars_pink',
+                 'fade_purple', 'racestripe_red', 'camo_urban', 'tiger_white']
+REWARD_WEEKLY = ['flames', 'honeycomb', 'stripes', 'sunset', 'halftone_purple', 'slashes', 'tribal', 'lightning',
+                 'halftone_red', 'flames_red', 'honeycomb_gold', 'sunset_miami', 'stripes_gold', 'tribal_red',
+                 'lightning_blue', 'halftone_blue', 'slashes_lime', 'flames_green', 'honeycomb_red', 'sunset_toxic',
+                 'stripes_red', 'halftone_gold']
+REWARD_DAILY_WIN = 'champion'
+REWARD_WEEKLY_WIN = 'sunburst'
+REWARD_NAMES = {'checker': 'Tilted checker', 'camo_digital': 'Digital camo', 'twotone_black': 'Two-tone (panda)', 'stars': 'Star field',
+                'fade_red': 'Fade (white to red)', 'racestripe': 'Racing stripe', 'camo_arctic': 'Arctic camo', 'polka': 'Polka dots',
+                'splatter': 'Paint splatter', 'pinstripe': 'Pinstripes', 'tiger': 'Tiger', 'hockey': 'Hockey stick',
+                'checker_red': 'Tilted checker (red)', 'camo_desert': 'Desert camo', 'twotone_navy': 'Two-tone (navy)',
+                'stars_pink': 'Star field (pink)', 'fade_purple': 'Fade (cyan to purple)', 'racestripe_red': 'Racing stripe (red)',
+                'camo_urban': 'Urban camo', 'tiger_white': 'Snow tiger', 'flames': 'Blue flames', 'honeycomb': 'Honeycomb',
+                'stripes': 'Twin stripes', 'sunset': 'Sunset speed', 'halftone_purple': 'Halftone fade', 'slashes': 'Shard slashes',
+                'tribal': 'Tribal', 'lightning': 'Lightning', 'halftone_red': 'Halftone fade (red)', 'flames_red': 'Hot rod flames',
+                'honeycomb_gold': 'Honeycomb (gold)', 'sunset_miami': 'Sunset speed (Miami)', 'stripes_gold': 'Twin stripes (gold)',
+                'tribal_red': 'Tribal (red)', 'lightning_blue': 'Lightning (blue)', 'halftone_blue': 'Halftone fade (blue)',
+                'slashes_lime': 'Shard slashes (lime)', 'flames_green': 'Toxic flames', 'honeycomb_red': 'Honeycomb (red)',
+                'sunset_toxic': 'Sunset speed (toxic)', 'stripes_red': 'Twin stripes (red)', 'halftone_gold': 'Halftone fade (gold)',
+                'champion': 'Champion', 'sunburst': 'Sunburst'}
+
+
+def rewards(state, now, rank_of, who):
+    """{player key (steam:<id> or pid): {skins, streak, dailies, weeklies, daily_wins, weekly_wins}} from every
+    challenge raced so far (a run in one still on counts at once; a win only once it's over)"""
+    import datetime
+    chs = state.get('challenges', {})
+    first = _day(CH_EPOCH)
+    today = datetime.datetime.fromtimestamp(now, datetime.timezone.utc).date()
+    out = {}
+    def me(k): return out.setdefault(k, {'skins': [], 'streak': 0, 'dailies': 0, 'weeklies': 0, 'daily_wins': 0, 'weekly_wins': 0, '_run': 0, '_ns': 0, '_nw': 0})
+    def raced(cid): return {who(pid) for pid in chs.get(cid, {}).get('entries', {})}
+    day = first
+    while day <= today:   # dailies in order: a day missed breaks the run (today's not raced yet doesn't)
+        got = raced('d-' + day.isoformat())
+        for k in sorted(got):
+            r = me(k); r['dailies'] += 1; r['_run'] += 1
+            if r['_run'] % 3 == 0 and r['_ns'] < len(REWARD_STREAK): r['skins'].append(REWARD_STREAK[r['_ns']]); r['_ns'] += 1
+        if day < today:
+            for k, r in out.items():
+                if k not in got: r['_run'] = 0
+        day += datetime.timedelta(days=1)
+    for cid in sorted(c for c in chs if c.startswith('w-')):
+        for k in sorted(raced(cid)):
+            r = me(k); r['weeklies'] += 1
+            if r['_nw'] < len(REWARD_WEEKLY): r['skins'].append(REWARD_WEEKLY[r['_nw']]); r['_nw'] += 1
+    for cid, c in sorted(chs.items()):
+        if c['end'] > now: continue
+        ranked = rank_of(c['entries'])
+        if not ranked: continue
+        r = me(who(ranked[0][0]))
+        if c['kind'] == 'daily': r['daily_wins'] += 1; win = REWARD_DAILY_WIN
+        else: r['weekly_wins'] += 1; win = REWARD_WEEKLY_WIN
+        if win not in r['skins']: r['skins'].append(win)
+    for r in out.values():
+        r['streak'] = r.pop('_run'); r.pop('_ns'); r.pop('_nw')
+    return out
+
+
+def rewards_publish(lines, rw):
+    """K lines: every reward skin (id, how it's earned, its name); U lines: what each player has"""
+    for kind, ids in (('streak', REWARD_STREAK), ('weekly', REWARD_WEEKLY), ('daily_win', [REWARD_DAILY_WIN]), ('weekly_win', [REWARD_WEEKLY_WIN])):
+        for i in ids:   # K<TAB>id<TAB>kind<TAB>name
+            lines.append('\t'.join(['K', i, kind, REWARD_NAMES.get(i, i)]))
+    for k, r in sorted(rw.items()):   # U<TAB>key<TAB>skins (comma separated)<TAB>streak<TAB>dailies<TAB>weeklies<TAB>daily wins<TAB>weekly wins
+        lines.append('\t'.join(['U', k, ','.join(r['skins']), str(r['streak']), str(r['dailies']), str(r['weeklies']), str(r['daily_wins']), str(r['weekly_wins'])]))
+
+
 def main():
     if not TOKEN or not CHANNEL: sys.exit('DISCORD_TOKEN and DISCORD_CHANNEL must be set')
     os.makedirs(os.path.join(LB, 'ghosts'), exist_ok=True)
@@ -612,7 +686,11 @@ def main():
     for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok
         lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', ''),
                                 steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '']))
-    ch_publish(state, float(os.environ.get('LB_NOW') or time.time()), lines, rank_of, steam, steam_ok, shown)   # (LB_NOW: tests)
+    now = float(os.environ.get('LB_NOW') or time.time())   # (LB_NOW: tests)
+    ch_publish(state, now, lines, rank_of, steam, steam_ok, shown)
+    rw = rewards(state, now, rank_of, who)
+    rewards_publish(lines, rw)
+    json.dump(rw, open(os.path.join(LB, 'rewards.json'), 'w'), indent=1)
     open(os.path.join(LB, 'boards.txt'), 'w', newline='\n').write('\n'.join(lines) + '\n')
     json.dump(js, open(os.path.join(LB, 'boards.json'), 'w'), indent=1)
     open(os.path.join(LB, 'bans.txt'), 'w', newline='\n').write(   # X<TAB>key<TAB>kind<TAB>name<TAB>reason<TAB>when  (key = steam:<id> or <pid>, kind = mute/ban)
