@@ -181,6 +181,24 @@ def run_board(course, s, entry, reserved):
     return f"{course}-{run_dir(course, s, entry)}" + ('-wet' if reserved & 2 else '')
 
 
+def pos_at(samples, frames):
+    """where a run was `frames` (1/60 s) after GO"""
+    for a, b in zip(samples, samples[1:]):
+        if b[0] >= frames:
+            f = (frames - a[0]) / max(1e-6, b[0] - a[0])
+            return [a[k] + (b[k] - a[k]) * f for k in (1, 2, 3)]
+    return list(samples[-1][1:4])
+
+
+def board_end(board_info):
+    """the finish line: where the board's fastest run was when its timer stopped (None: no readable ghost)"""
+    for pid, e in sorted(board_info.get('entries', {}).items(), key=lambda kv: kv[1]['time_ms']):
+        try: lead = parse_ghost(open(os.path.join(LB, e['ghost']), 'rb').read())
+        except Exception: continue
+        return pos_at(lead['samples'], lead['finish'] / 100)
+    return None
+
+
 def check(sub, g, board_info):
     """None if the run looks real, else why not."""
     if g['ai']: return 'a CPU run'
@@ -194,6 +212,9 @@ def check(sub, g, board_info):
     s = g['samples']
     if s[0][0] > 10: return 'starts late'
     if s[-1][0] / 60 < g['finish'] / 6000 - 1.0: return 'the ghost stops before the finish'
+    # a run's recording ends ~10 s after its finish (51 runs on the board: 9.2 - 9.6 s); a finish read too early (the
+    # game's timeline rewound mid-race: a 59.7 s "finish" on Akagi, the ghost going on to 112 s) runs on far longer
+    if s[-1][0] / 60 > g['finish'] / 6000 + 30: return 'the ghost runs on long after the finish (%.0f s)' % (s[-1][0] / 60 - g['finish'] / 6000)
     length = 0.0
     for a, b in zip(s, s[1:]):
         dt = (b[0] - a[0]) / 60
@@ -205,6 +226,11 @@ def check(sub, g, board_info):
     if board_info:
         st = board_info['start']
         if sum(abs(s[0][1 + k] - st[k]) for k in range(3)) > 30: return 'starts somewhere else'
+        end = board_end(board_info)   # (when the timer stopped the car was at the finish line: on the board, at most 46 m off)
+        if end:
+            p = pos_at(s, g['finish'] / 100)
+            d = sum((p[k] - end[k]) ** 2 for k in range(3)) ** 0.5
+            if d > 150: return 'not at the finish line when the timer stopped (%.0f m off)' % d
         if board_info.get('lens') and len(board_info['lens']) >= 3 and length < 0.9 * statistics.median(board_info['lens']): return 'too short a route (cut?)'
     return None
 
