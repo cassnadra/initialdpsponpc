@@ -246,3 +246,25 @@ select option { background: #16181c; }
   .profTimes .pg { display: none; }
   body.mapon .foot { padding-bottom: 250px; }
 }
+
+/* ---------- challenges (lb/challenges.json): the daily + weekly course everyone races ---------- */
+.chal { background: rgba(20, 22, 26, .88); border: 1px solid var(--line); border-top: 3px solid var(--yellow); padding: 12px; }
+.chCard { border-left: 4px solid var(--yellow); background: var(--steel-2); padding: 8px 10px; margin-bottom: 10px; }
+.chCard.weekly { border-left-color: #5aa0ff; }
+.chHead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.chKind { font: italic 800 14px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--yellow); }
+.weekly .chKind { color: #5aa0ff; }
+.chLeft { color: var(--muted); font: 600 13px var(--cond); letter-spacing: .05em; text-transform: uppercase; }
+.chLabel { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 2px 0 6px; cursor: pointer; font: 700 19px var(--cond); color: var(--text); }
+.chLabel:hover { color: var(--yellow); }
+.chRows { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.chRows li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 6px; padding: 2px 0; border-top: 1px solid var(--line); }
+.chRows .n { color: var(--muted); font-weight: 600; }
+.chRows li:nth-child(1) .n { color: var(--gold); } .chRows li:nth-child(2) .n { color: var(--silver); } .chRows li:nth-child(3) .n { color: var(--bronze); }
+.chRows .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chRows .t { font-variant-numeric: tabular-nums; }
+.chNone { color: var(--muted); font-size: 14px; margin: 0; }
+.chalPast summary { cursor: pointer; font: 700 15px var(--cond); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.chalPast ol { list-style: none; margin: 6px 0 0; padding: 0; font-size: 14px; }
+.chalPast li { padding: 4px 0; border-top: 1px solid var(--line); }
+.chalPast .when { color: var(--muted); font-size: 12px; }

@@ -488,6 +488,62 @@ function closeProfile() {
   state.prof = ''; saveHash();
 }
 
+// ---------------- challenges (lb/challenges.json): today's and this week's course, their top times, past winners ----------------
+let chal = null;
+function timeLeft(end) {
+  const s = Math.max(0, end - Date.now() / 1000);
+  if (s <= 0) return 'over - the next one shows up soon';
+  const d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60);
+  return d ? `${d} day${d === 1 ? '' : 's'} ${h} h left` : `${h} h ${String(m).padStart(2, '0')} min left`;
+}
+function drawChallenges() {
+  if (!chal || !(chal.current.length || chal.past.length)) return;
+  $('chal').hidden = false;
+  const list = $('chalList'); list.textContent = '';
+  for (const c of chal.current) {
+    const card = document.createElement('div'); card.className = `chCard ${c.kind}`;
+    const head = document.createElement('div'); head.className = 'chHead';
+    head.append(Object.assign(document.createElement('span'), { className: 'chKind', textContent: c.kind === 'daily' ? 'Daily' : 'Weekly' }),
+      Object.assign(document.createElement('span'), { className: 'chLeft', textContent: timeLeft(c.end), title: `Ends ${new Date(c.end * 1000).toLocaleString()}` }));
+    const lbl = Object.assign(document.createElement('button'), { className: 'chLabel', textContent: c.label });
+    const [course, dir, wet] = [c.course, c.dir, c.board.endsWith('-wet') ? 1 : 0];
+    if (state.boards[boardId(course, dir, wet)]) {
+      lbl.title = 'Show this course\'s all-time ranking';
+      lbl.onclick = () => { state.course = course; state.dir = dir; state.wet = wet; state.picked = null; render(); };
+    } else lbl.disabled = true;
+    card.append(head, lbl);
+    if (c.entries.length) {
+      const ol = document.createElement('ol'); ol.className = 'chRows';
+      for (const e of c.entries.slice(0, 5)) {
+        const li = document.createElement('li');
+        const nm = Object.assign(document.createElement('span'), { className: 'nm', textContent: e.shown.replace(/ \(Steam\)$/, '') });
+        li.append(Object.assign(document.createElement('span'), { className: 'n', textContent: e.rank }), nm,
+          Object.assign(document.createElement('span'), { className: 't', textContent: fmtTime(e.time_ms) }));
+        li.title = carName(e.car);
+        ol.append(li);
+      }
+      card.append(ol);
+      if (c.drivers > 5) card.append(Object.assign(document.createElement('p'), { className: 'chNone', textContent: `${c.drivers} drivers` }));
+    } else card.append(Object.assign(document.createElement('p'), { className: 'chNone', textContent: 'No times yet - be the first (F1 -> Online -> Leaderboard -> Race it).' }));
+    list.append(card);
+  }
+  const past = chal.past.slice(0, 20);
+  $('chalPast').hidden = !past.length;
+  const ol = $('chalPastList'); ol.textContent = '';
+  for (const c of past) {
+    const li = document.createElement('li'), w = c.podium[0];
+    const day = new Date(c.start * 1000).toISOString().slice(0, 10);
+    li.append(Object.assign(document.createElement('div'), { className: 'when', textContent: `${c.kind === 'daily' ? 'Daily' : 'Weekly'} · ${day} · ${c.label}` }),
+      Object.assign(document.createElement('div'), { textContent: `${w.shown.replace(/ \(Steam\)$/, '')} ${fmtTime(w.time_ms)}` + (c.drivers > 1 ? ` (of ${c.drivers})` : '') }));
+    ol.append(li);
+  }
+}
+async function loadChallenges() {
+  try { chal = await (await fetch(RAW + 'challenges.json', { cache: 'no-cache' })).json(); } catch { chal = null; }
+  drawChallenges();
+  setInterval(drawChallenges, 30000);   // (the countdowns)
+}
+
 // ---------------- start ----------------
 function render() { drawCourses(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
 (async () => {
@@ -495,6 +551,7 @@ function render() { drawCourses(); drawFilters(); drawBoard(); saveHash(); loadM
   $('profClose').onclick = closeProfile; $('profScrim').onclick = closeProfile;
   document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !$('prof').hidden) closeProfile(); });
   try { await load(); } catch (err) { $('updated').textContent = 'Could not load the board'; console.error(err); return; }
+  loadChallenges();
   const cs = courses();
   if (!cs.length) { $('updated').textContent = 'No times yet'; return; }
   if (!state.course || !cs.some(c => c.course === state.course)) state.course = cs[0].course;

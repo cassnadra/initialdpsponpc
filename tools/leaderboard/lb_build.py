@@ -260,6 +260,161 @@ def board_label(sub, s, is_circuit, laps):
     return label + (' (wet)' if wet else '')
 
 
+# ---- challenges: one a day (UTC) and one a week (from Monday 00:00 UTC). Everyone races the same course, direction and
+# conditions; a run sent while it is on counts there (the same checks as any run - signed, ghost checked). Nothing to
+# set up: the picks come from the date (a hash of the challenge's id), so every run of this job agrees on them.
+# Published as C (challenge) + R (its ranking) lines in boards.txt, and challenges.json (with past winners) for the site.
+CH_COURSES = ['myougi', 'usui', 'akagi', 'akina', 'happou', 'iroha', 'syoumaru', 'tuchisaka']   # the quick race's order (racelobby.c)
+CH_NAMES = ['Myogi', 'Usui', 'Akagi', 'Akina', 'Happogahara', 'Irohazaka', 'Shomaru', 'Tsuchisaka']
+CH_CIRCUITS = {'myougi', 'usui'}
+CH_CONDS = [('day', 5), ('night', 3), ('wet', 2)]   # (weights) wet: either time of day - a wet run doesn't record which
+CH_EPOCH = '2026-11-02'          # (a Monday) the first challenges; each one avoids the last few picks before it
+CH_TOP = 20                      # entries per challenge in boards.txt
+CH_KEEP_GHOSTS_DAYS = 14         # a finished challenge's ghosts are removed after this (its results stay)
+
+
+def _day(s):
+    import datetime
+    return datetime.date.fromisoformat(s)
+
+
+def ch_pick(cid, avoid):
+    """(course index, direction, condition) for challenge `cid`, different from the (course, direction) pairs in avoid"""
+    import random
+    rng = random.Random(int.from_bytes(hashlib.sha256(('idss-challenge|' + cid).encode()).digest()[:8], 'big'))
+    while True:
+        c, d = rng.randrange(len(CH_COURSES)), rng.randrange(2)
+        if (c, d) not in avoid: break
+    conds = [k for k, w in CH_CONDS for _ in range(w) if not (CH_COURSES[c] == 'happou' and k == 'day')]   # (Happogahara: night only)
+    return c, d, rng.choice(conds)
+
+
+_ch_cache = {}
+def ch_weekly(monday):
+    """the weekly challenge starting on that Monday (a date)"""
+    import datetime
+    if ('w', monday) in _ch_cache: return _ch_cache['w', monday]
+    first = _day(CH_EPOCH)
+    avoid = set()
+    if monday > first:   # (the last 3 weeks' courses, any direction)
+        for k in range(1, 4):
+            m = monday - datetime.timedelta(weeks=k)
+            if m >= first: avoid |= {(ch_weekly(m)['ci'], d) for d in (0, 1)}
+    iso = monday.isocalendar()
+    ch = ch_make('w-%d-W%02d' % (iso[0], iso[1]), 'weekly', monday, monday + datetime.timedelta(days=7), avoid)
+    _ch_cache['w', monday] = ch
+    return ch
+
+
+def ch_daily(day):
+    """the daily challenge of that date: not the week's course, nor the last 6 days' (course, direction)"""
+    import datetime
+    if ('d', day) in _ch_cache: return _ch_cache['d', day]
+    first = _day(CH_EPOCH)
+    wk = ch_weekly(day - datetime.timedelta(days=day.weekday()))
+    avoid = {(wk['ci'], 0), (wk['ci'], 1)}
+    for k in range(1, 7):
+        p = day - datetime.timedelta(days=k)
+        if p >= first: avoid.add((ch_daily(p)['ci'], ch_daily(p)['dir']))
+    ch = ch_make('d-' + day.isoformat(), 'daily', day, day + datetime.timedelta(days=1), avoid)
+    _ch_cache['d', day] = ch
+    return ch
+
+
+def ch_make(cid, kind, start, end, avoid):
+    import calendar
+    c, d, cond = ch_pick(cid, avoid)
+    course = CH_COURSES[c]
+    return {'id': cid, 'kind': kind, 'ci': c, 'course': course, 'dir': d, 'cond': cond,
+            'board': '%s-%d%s' % (course, d, '-wet' if cond == 'wet' else ''),
+            'start': calendar.timegm(start.timetuple()), 'end': calendar.timegm(end.timetuple())}
+
+
+def ch_label(ch, boards):
+    """"Akina downhill, night": the direction's name from that board's label when it has times, else a guess"""
+    b = boards.get('%s-%d' % (ch['course'], ch['dir'])) or boards.get('%s-%d-wet' % (ch['course'], ch['dir']))
+    if b: base = re.sub(r' \((wet|\d+ laps)\)', '', b['label'])
+    else:
+        name = CH_NAMES[ch['ci']]
+        base = (name + (' (reverse)' if ch['dir'] else '')) if ch['course'] in CH_CIRCUITS else name + (' uphill' if ch['dir'] else ' downhill')
+    base = base.replace('Myougi', 'Myogi')
+    return base + {'day': ', day', 'night': ', night', 'wet': ', wet'}[ch['cond']]
+
+
+def ch_at(when):
+    """the challenges on at that unix time: [daily, weekly] (none before the first)"""
+    import datetime
+    day = datetime.datetime.fromtimestamp(when, datetime.timezone.utc).date()
+    if day < _day(CH_EPOCH): return []
+    return [ch_daily(day), ch_weekly(day - datetime.timedelta(days=day.weekday()))]
+
+
+def ch_matches(ch, board, course, reserved):
+    """the run (its board + ghost tail) was raced the way the challenge says"""
+    if board != ch['board']: return False
+    if ch['cond'] == 'wet' or course == 'happou': return True   # (board has it; Happogahara is always night)
+    return bool(reserved & 4) == (ch['cond'] == 'night')
+
+
+def msg_time(m):
+    import datetime
+    return datetime.datetime.fromisoformat(m['timestamp'].replace('Z', '+00:00')).timestamp()
+
+
+def ch_file(state, m, sub, g, data):
+    """a checked run: onto each challenge it fits (sent while that challenge was on), if it beats the player's time there"""
+    when = msg_time(m)
+    out = []
+    for ch in ch_at(when):
+        if not (ch['start'] <= when < ch['end']) or not ch_matches(ch, sub['board'], g['course'], g.get('reserved', 0)): continue
+        c = state.setdefault('challenges', {}).setdefault(ch['id'], {k: ch[k] for k in ('kind', 'course', 'dir', 'cond', 'board', 'start', 'end')} | {'entries': {}})
+        pid = sub['pid']
+        old = c['entries'].get(pid)
+        if old and old['time_ms'] <= sub['time_ms']: continue
+        gp = 'ghosts/ch/%s/%s.idg' % (ch['id'], pid)
+        os.makedirs(os.path.dirname(os.path.join(LB, gp)), exist_ok=True)
+        open(os.path.join(LB, gp), 'wb').write(data)
+        c['entries'][pid] = {'name': clean_name(sub.get('name')), 'time_ms': int(sub['time_ms']), 'car': int(sub.get('car', -1)),
+                             'date': m['timestamp'][:10], 'msg': m['id'], 'ghost': gp}
+        out.append(ch['id'])
+    return out
+
+
+def ch_publish(state, now, lines, rank_of, steam, steam_ok, shown):
+    """C + R lines for the challenges on now and the last finished daily / weekly; challenges.json (+ past winners)"""
+    import datetime
+    chs = state.setdefault('challenges', {})
+    for cid, c in chs.items():   # (old ghosts go; the results stay)
+        if c['end'] < now - CH_KEEP_GHOSTS_DAYS * 86400 and not c.get('ghosts_gone'):
+            shutil.rmtree(os.path.join(LB, 'ghosts', 'ch', cid), ignore_errors=True); c['ghosts_gone'] = True
+    cur = ch_at(now)
+    prev = []
+    if cur:
+        day = datetime.datetime.fromtimestamp(now, datetime.timezone.utc).date()
+        first = _day(CH_EPOCH)
+        if day - datetime.timedelta(days=1) >= first: prev.append(ch_daily(day - datetime.timedelta(days=1)))
+        mon = day - datetime.timedelta(days=day.weekday())
+        if mon - datetime.timedelta(weeks=1) >= first: prev.append(ch_weekly(mon - datetime.timedelta(weeks=1)))
+    js = {'now': int(now), 'current': [], 'recent': [], 'past': []}
+    for ch, state_name in [(c, 'on') for c in cur] + [(c, 'over') for c in prev]:
+        ch = dict(ch, label=ch_label(ch, state['boards']))
+        ranked = rank_of(chs.get(ch['id'], {}).get('entries', {}))
+        # C<TAB>id<TAB>kind<TAB>label<TAB>board<TAB>cond<TAB>course index<TAB>direction<TAB>start<TAB>end<TAB>on/over<TAB>drivers
+        lines.append('\t'.join(['C', ch['id'], ch['kind'], ch['label'], ch['board'], ch['cond'], str(ch['ci']), str(ch['dir']), str(ch['start']), str(ch['end']), state_name, str(len(ranked))]))
+        for r, (pid, e) in enumerate(ranked[:CH_TOP], 1):   # R<TAB>rank<TAB>name<TAB>time_ms<TAB>car<TAB>pid<TAB>ghost<TAB>date<TAB>steam<TAB>steam_ok
+            lines.append('\t'.join(['R', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
+        (js['current'] if state_name == 'on' else js['recent']).append({**{k: ch[k] for k in ('id', 'kind', 'label', 'board', 'cond', 'course', 'dir', 'start', 'end')}, 'drivers': len(ranked),
+            'entries': [{'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), **{k: e[k] for k in ('name', 'time_ms', 'car', 'date', 'ghost')}} for r, (pid, e) in enumerate(ranked[:CH_TOP], 1)]})
+    for cid, c in sorted(chs.items(), key=lambda kv: -kv[1]['end']):   # every finished challenge's podium
+        if c['end'] > now: continue
+        ranked = rank_of(c['entries'])
+        if not ranked: continue
+        ch = dict(c, id=cid, ci=CH_COURSES.index(c['course']) if c['course'] in CH_COURSES else 0)
+        js['past'].append({'id': cid, 'kind': c['kind'], 'label': ch_label(ch, state['boards']), 'board': c['board'], 'start': c['start'], 'end': c['end'], 'drivers': len(ranked),
+                           'podium': [{'rank': r, 'pid': pid, 'shown': shown(pid, e), 'name': e['name'], 'time_ms': e['time_ms'], 'car': e['car']} for r, (pid, e) in enumerate(ranked[:3], 1)]})
+    json.dump(js, open(os.path.join(LB, 'challenges.json'), 'w'), indent=1)
+
+
 def main():
     if not TOKEN or not CHANNEL: sys.exit('DISCORD_TOKEN and DISCORD_CHANNEL must be set')
     os.makedirs(os.path.join(LB, 'ghosts'), exist_ok=True)
@@ -422,6 +577,7 @@ def main():
             continue
         nm = clean_name(sub.get('name'))
         if nm not in names.setdefault(pid, []): names[pid].append(nm)
+        for cid in ch_file(state, m, sub, g, data): print(f"challenge {cid}: {nm} {sub['time_ms']} ms")   # (also a run slower than their best on the board)
         old = b['entries'].get(pid)
         if old and old['time_ms'] <= sub['time_ms']: continue
         gdir = os.path.join(LB, 'ghosts', board_key)
@@ -438,12 +594,14 @@ def main():
     def shown(pid, e): return e['name'] + (' (Steam)' if pid in steam else ' #' + pid[:4])
     def who(pid): return 'steam:' + steam[pid] if pid in steam else pid
     lines, js = ['# IDSS leaderboard 1'], {}
+    def rank_of(entries):   # [(pid, entry)] fastest first, one per player (a Steam account's PCs count as one)
+        best = {}
+        for pid, e in sorted(entries.items(), key=lambda kv: (kv[1]['time_ms'], kv[1]['msg'])):
+            best.setdefault(who(pid), (pid, e))
+        return sorted(best.values(), key=lambda kv: (kv[1]['time_ms'], kv[1]['msg']))
     for bid in sorted(state['boards']):
         b = state['boards'][bid]
-        best = {}
-        for pid, e in sorted(b['entries'].items(), key=lambda kv: (kv[1]['time_ms'], kv[1]['msg'])):
-            best.setdefault(who(pid), (pid, e))
-        ranked = sorted(best.values(), key=lambda kv: (kv[1]['time_ms'], kv[1]['msg']))[:TOP]
+        ranked = rank_of(b['entries'])[:TOP]
         lines.append('\t'.join(['B', bid, b['course'], b['label']]))
         js[bid] = {'course': b['course'], 'label': b['label'], 'entries': []}
         for r, (pid, e) in enumerate(ranked, 1):
@@ -452,6 +610,7 @@ def main():
     for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok
         lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', ''),
                                 steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '']))
+    ch_publish(state, float(os.environ.get('LB_NOW') or time.time()), lines, rank_of, steam, steam_ok, shown)   # (LB_NOW: tests)
     open(os.path.join(LB, 'boards.txt'), 'w', newline='\n').write('\n'.join(lines) + '\n')
     json.dump(js, open(os.path.join(LB, 'boards.json'), 'w'), indent=1)
     open(os.path.join(LB, 'bans.txt'), 'w', newline='\n').write(   # X<TAB>key<TAB>kind<TAB>name<TAB>reason<TAB>when  (key = steam:<id> or <pid>, kind = mute/ban)
