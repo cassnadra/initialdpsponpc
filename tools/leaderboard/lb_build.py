@@ -333,7 +333,9 @@ def ch_make(cid, kind, start, end, avoid):
 def ch_label(ch, boards):
     """"Akina downhill, night": the direction's name from that board's label when it has times, else a guess"""
     b = boards.get('%s-%d' % (ch['course'], ch['dir'])) or boards.get('%s-%d-wet' % (ch['course'], ch['dir']))
-    if b: base = re.sub(r' \((wet|\d+ laps)\)', '', b['label'])
+    if b:   # (its direction words; the course's display name - a board's label starts with the game's own: "Iroha uphill")
+        rest = re.sub(r' \((wet|\d+ laps)\)', '', b['label']).partition(' ')[2]
+        base = CH_NAMES[ch['ci']] + (' ' + rest if rest else '')
     else:
         name = CH_NAMES[ch['ci']]
         base = (name + (' (reverse)' if ch['dir'] else '')) if ch['course'] in CH_CIRCUITS else name + (' uphill' if ch['dir'] else ' downhill')
