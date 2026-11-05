@@ -1,14 +1,14 @@
 # IDSS leaderboard 1
 B	akagi-0	akagi	Akagi downhill
 E	1	Cassandra	154600	13	b46085569295d65f	ghosts/akagi-0/b46085569295d65f.idg	2026-10-22	76561198289153961	1
-E	2	Alex.Kirch	165033	22	ea03af8d21d8415e	ghosts/akagi-0/ea03af8d21d8415e.idg	2026-10-29		
+E	2	Alex.Kirch	165033	14	ea03af8d21d8415e	ghosts/akagi-0/ea03af8d21d8415e.idg	2026-10-29		
 B	akagi-0-wet	akagi	Akagi downhill (wet)
-E	1	Alex.Kirch	175866	10	ea03af8d21d8415e	ghosts/akagi-0-wet/ea03af8d21d8415e.idg	2026-10-29		
+E	1	Alex.Kirch	175866	21	ea03af8d21d8415e	ghosts/akagi-0-wet/ea03af8d21d8415e.idg	2026-10-29		
 B	akagi-1	akagi	Akagi uphill
 E	1	Cassandra	163800	0	b46085569295d65f	ghosts/akagi-1/b46085569295d65f.idg	2026-11-05	76561198289153961	1
-E	2	PRZ2K0	169066	12	798da52dbb827e1c	ghosts/akagi-1/798da52dbb827e1c.idg	2026-11-02		
-E	3	Alex.Kirch	181500	12	ea03af8d21d8415e	ghosts/akagi-1/ea03af8d21d8415e.idg	2026-10-29		
-E	4	Marcus	189833	12	f341e22f0a0d3a93	ghosts/akagi-1/f341e22f0a0d3a93.idg	2026-11-05		
+E	2	PRZ2K0	169066	2	798da52dbb827e1c	ghosts/akagi-1/798da52dbb827e1c.idg	2026-11-02		
+E	3	Alex.Kirch	181500	21	ea03af8d21d8415e	ghosts/akagi-1/ea03af8d21d8415e.idg	2026-10-29		
+E	4	Marcus	189833	8	f341e22f0a0d3a93	ghosts/akagi-1/f341e22f0a0d3a93.idg	2026-11-05		
 B	akina-0	akina	Akina downhill
 E	1	Cassandra	195500	0	b46085569295d65f	ghosts/akina-0/b46085569295d65f.idg	2026-10-31	76561198289153961	1
 B	iroha-1-wet	iroha	Iroha uphill (wet)
@@ -16,50 +16,50 @@ E	1	Cassandra	220566	13	b46085569295d65f	ghosts/iroha-1-wet/b46085569295d65f.idg
 B	myougi-0	myougi	Myougi
 E	1	AFK	176200	30	2ff94d72b41c145f	ghosts/myougi-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
 E	2	Cassandra	181533	13	b46085569295d65f	ghosts/myougi-0/b46085569295d65f.idg	2026-10-25	76561198289153961	1
-E	3	qfqr	182300	16	bea21af9c6bf95f3	ghosts/myougi-0/bea21af9c6bf95f3.idg	2026-10-25		
-E	4	BLACKLIST	182600	16	5168fd241b77a365	ghosts/myougi-0/5168fd241b77a365.idg	2026-10-25		
+E	3	qfqr	182300	8	bea21af9c6bf95f3	ghosts/myougi-0/bea21af9c6bf95f3.idg	2026-10-25		
+E	4	BLACKLIST	182600	23	5168fd241b77a365	ghosts/myougi-0/5168fd241b77a365.idg	2026-10-25		
 E	5	10:30 PM.mus	184266	17	aafb3d604c35ec8f	ghosts/myougi-0/aafb3d604c35ec8f.idg	2026-11-03		
-E	6	SeAshe	185233	16	fb6457d17ea6e509	ghosts/myougi-0/fb6457d17ea6e509.idg	2026-11-01		
+E	6	SeAshe	185233	27	fb6457d17ea6e509	ghosts/myougi-0/fb6457d17ea6e509.idg	2026-11-01		
 E	7	+Rockman+	185466	0	52143161d65181cd	ghosts/myougi-0/52143161d65181cd.idg	2026-10-27		
 E	8	yodasao	185533	7	5796e19e5d90fa1b	ghosts/myougi-0/5796e19e5d90fa1b.idg	2026-10-31		
-E	9	Icipher	186133	2	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
-E	10	PRZ2K0	186433	16	798da52dbb827e1c	ghosts/myougi-0/798da52dbb827e1c.idg	2026-11-02		
-E	11	Alex.Kirch	186500	16	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
-E	12	MATphantom	187000	16	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
+E	9	Icipher	186133	0	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
+E	10	PRZ2K0	186433	2	798da52dbb827e1c	ghosts/myougi-0/798da52dbb827e1c.idg	2026-11-02		
+E	11	Alex.Kirch	186500	21	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-10-29		
+E	12	MATphantom	187000	0	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
 E	13	Din_Lin	187466	0	963ca3a4a77a38f7	ghosts/myougi-0/963ca3a4a77a38f7.idg	2026-11-04		
-E	14	Sora	187966	2	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
-E	15	BusterWolf	188333	16	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
-E	16	Mainha	189700	2	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
-E	17	ADZ	190633	2	dd0ff6704e4ed00e	ghosts/myougi-0/dd0ff6704e4ed00e.idg	2026-11-05		
-E	18	sirex	191333	2	f81adc2ff759ed26	ghosts/myougi-0/f81adc2ff759ed26.idg	2026-11-05		
-E	19	SupaChill	191766	16	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-05		
-E	20	BL4ck0uT _YuGi	192100	2	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
-E	21	XShadowVileX	192433	2	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
-E	22	red	193133	2	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
+E	14	Sora	187966	8	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
+E	15	BusterWolf	188333	0	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
+E	16	Mainha	189700	0	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
+E	17	ADZ	190633	34	dd0ff6704e4ed00e	ghosts/myougi-0/dd0ff6704e4ed00e.idg	2026-11-05		
+E	18	sirex	191333	31	f81adc2ff759ed26	ghosts/myougi-0/f81adc2ff759ed26.idg	2026-11-05		
+E	19	SupaChill	191766	0	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-05		
+E	20	BL4ck0uT _YuGi	192100	0	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
+E	21	XShadowVileX	192433	0	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
+E	22	red	193133	21	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
 B	myougi-1	myougi	Myougi (reverse)
 E	1	Cassandra	181200	13	b46085569295d65f	ghosts/myougi-1/b46085569295d65f.idg	2026-10-26	76561198289153961	1
-E	2	Sora	183500	13	23f293906b0ffd82	ghosts/myougi-1/23f293906b0ffd82.idg	2026-11-01		
-E	3	SeAshe	184600	13	fb6457d17ea6e509	ghosts/myougi-1/fb6457d17ea6e509.idg	2026-11-01		
-E	4	PRZ2K0	186833	13	798da52dbb827e1c	ghosts/myougi-1/798da52dbb827e1c.idg	2026-11-02		
-E	5	Alex.Kirch	187066	13	ea03af8d21d8415e	ghosts/myougi-1/ea03af8d21d8415e.idg	2026-10-29		
-E	6	MATphantom	187100	13	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	2026-10-29		
-E	7	XShadowVileX	188100	13	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
-E	8	BusterWolf	190633	13	0bbe2ad8c59307dd	ghosts/myougi-1/0bbe2ad8c59307dd.idg	2026-11-02		
-E	9	Evil Night	191233	13	60f0b3ebbbf7d46a	ghosts/myougi-1/60f0b3ebbbf7d46a.idg	2026-11-03		
-E	10	SupaChill	192533	13	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-05		
-E	11	driver	193233	13	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
+E	2	Sora	183500	8	23f293906b0ffd82	ghosts/myougi-1/23f293906b0ffd82.idg	2026-11-01		
+E	3	SeAshe	184600	27	fb6457d17ea6e509	ghosts/myougi-1/fb6457d17ea6e509.idg	2026-11-01		
+E	4	PRZ2K0	186833	2	798da52dbb827e1c	ghosts/myougi-1/798da52dbb827e1c.idg	2026-11-02		
+E	5	Alex.Kirch	187066	21	ea03af8d21d8415e	ghosts/myougi-1/ea03af8d21d8415e.idg	2026-10-29		
+E	6	MATphantom	187100	0	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	2026-10-29		
+E	7	XShadowVileX	188100	0	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
+E	8	BusterWolf	190633	0	0bbe2ad8c59307dd	ghosts/myougi-1/0bbe2ad8c59307dd.idg	2026-11-02		
+E	9	Evil Night	191233	0	60f0b3ebbbf7d46a	ghosts/myougi-1/60f0b3ebbbf7d46a.idg	2026-11-03		
+E	10	SupaChill	192533	0	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-05		
+E	11	driver	193233	0	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
 B	usui-0	usui	Usui
-E	1	Alex.Kirch	189966	14	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29		
+E	1	Alex.Kirch	189966	21	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29		
 E	2	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
 E	3	Giogio	192366	24	7bef37ad91d8806b	ghosts/usui-0/7bef37ad91d8806b.idg	2026-10-30		
-E	4	PRZ2K0	195700	25	798da52dbb827e1c	ghosts/usui-0/798da52dbb827e1c.idg	2026-11-02		
-E	5	SeAshe	198900	25	fb6457d17ea6e509	ghosts/usui-0/fb6457d17ea6e509.idg	2026-11-01		
-E	6	MATphantom	199766	25	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
+E	4	PRZ2K0	195700	2	798da52dbb827e1c	ghosts/usui-0/798da52dbb827e1c.idg	2026-11-02		
+E	5	SeAshe	198900	27	fb6457d17ea6e509	ghosts/usui-0/fb6457d17ea6e509.idg	2026-11-01		
+E	6	MATphantom	199766	0	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
 E	7	AFK	200333	30	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
 B	usui-1	usui	Usui (reverse)
-E	1	BLACKLIST	181333	31	5168fd241b77a365	ghosts/usui-1/5168fd241b77a365.idg	2026-10-28		
-E	2	PRZ2K0	188966	31	798da52dbb827e1c	ghosts/usui-1/798da52dbb827e1c.idg	2026-11-02		
-E	3	SeAshe	196333	31	fb6457d17ea6e509	ghosts/usui-1/fb6457d17ea6e509.idg	2026-11-01		
+E	1	BLACKLIST	181333	23	5168fd241b77a365	ghosts/usui-1/5168fd241b77a365.idg	2026-10-28		
+E	2	PRZ2K0	188966	2	798da52dbb827e1c	ghosts/usui-1/798da52dbb827e1c.idg	2026-11-02		
+E	3	SeAshe	196333	27	fb6457d17ea6e509	ghosts/usui-1/fb6457d17ea6e509.idg	2026-11-01		
 P	0bbe2ad8c59307dd	1	2	0	0	BusterWolf						0
 P	10725c87f42d2d71	1	-1	0	0	VerOfficial						0
 P	1531e4adafe55f6c	1	-1	0	0	(-:[DarkLeviathan-Ego]:-						0
@@ -93,7 +93,7 @@ C	d-2026-11-05	daily	Irohazaka uphill, wet	iroha-1-wet	wet	5	1	1793836800	179392
 R	1	Cassandra	220566	13	b46085569295d65f	ghosts/ch/d-2026-11-05/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	on	2
 R	1	Cassandra	163800	0	b46085569295d65f	ghosts/ch/w-2026-W45/b46085569295d65f.idg	2026-11-05	76561198289153961	1
-R	2	Marcus	189833	12	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		
+R	2	Marcus	189833	8	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		
 C	d-2026-11-04	daily	Akina downhill, day	akina-0	day	3	0	1793750400	1793836800	over	0
 K	checker	streak	Tilted checker
 K	camo_digital	streak	Digital camo

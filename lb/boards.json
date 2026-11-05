@@ -24,7 +24,7 @@
     "steam_verified": false,
     "name": "Alex.Kirch",
     "time_ms": 165033,
-    "car": 22,
+    "car": 14,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/akagi-0/ea03af8d21d8415e.idg"
@@ -43,7 +43,7 @@
     "steam_verified": false,
     "name": "Alex.Kirch",
     "time_ms": 175866,
-    "car": 10,
+    "car": 21,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/akagi-0-wet/ea03af8d21d8415e.idg"
@@ -75,7 +75,7 @@
     "steam_verified": false,
     "name": "PRZ2K0",
     "time_ms": 169066,
-    "car": 12,
+    "car": 2,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/akagi-1/798da52dbb827e1c.idg"
@@ -88,7 +88,7 @@
     "steam_verified": false,
     "name": "Alex.Kirch",
     "time_ms": 181500,
-    "car": 12,
+    "car": 21,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
@@ -101,7 +101,7 @@
     "steam_verified": false,
     "name": "Marcus",
     "time_ms": 189833,
-    "car": 12,
+    "car": 8,
     "game": "jp",
     "date": "2026-11-05",
     "ghost": "ghosts/akagi-1/f341e22f0a0d3a93.idg"
@@ -184,7 +184,7 @@
     "steam_verified": false,
     "name": "qfqr",
     "time_ms": 182300,
-    "car": 16,
+    "car": 8,
     "game": "en",
     "date": "2026-10-25",
     "ghost": "ghosts/myougi-0/bea21af9c6bf95f3.idg"
@@ -197,7 +197,7 @@
     "steam_verified": false,
     "name": "BLACKLIST",
     "time_ms": 182600,
-    "car": 16,
+    "car": 23,
     "game": "en",
     "date": "2026-10-25",
     "ghost": "ghosts/myougi-0/5168fd241b77a365.idg"
@@ -223,7 +223,7 @@
     "steam_verified": false,
     "name": "SeAshe",
     "time_ms": 185233,
-    "car": 16,
+    "car": 27,
     "game": "jp",
     "date": "2026-11-01",
     "ghost": "ghosts/myougi-0/fb6457d17ea6e509.idg"
@@ -262,7 +262,7 @@
     "steam_verified": false,
     "name": "Icipher",
     "time_ms": 186133,
-    "car": 2,
+    "car": 0,
     "game": "en",
     "date": "2026-10-28",
     "ghost": "ghosts/myougi-0/062910041e786c15.idg"
@@ -275,7 +275,7 @@
     "steam_verified": false,
     "name": "PRZ2K0",
     "time_ms": 186433,
-    "car": 16,
+    "car": 2,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg"
@@ -288,7 +288,7 @@
     "steam_verified": false,
     "name": "Alex.Kirch",
     "time_ms": 186500,
-    "car": 16,
+    "car": 21,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/myougi-0/ea03af8d21d8415e.idg"
@@ -301,7 +301,7 @@
     "steam_verified": false,
     "name": "MATphantom",
     "time_ms": 187000,
-    "car": 16,
+    "car": 0,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
@@ -327,7 +327,7 @@
     "steam_verified": false,
     "name": "Sora",
     "time_ms": 187966,
-    "car": 2,
+    "car": 8,
     "game": "jp",
     "date": "2026-11-01",
     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
@@ -340,7 +340,7 @@
     "steam_verified": false,
     "name": "BusterWolf",
     "time_ms": 188333,
-    "car": 16,
+    "car": 0,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
@@ -353,7 +353,7 @@
     "steam_verified": false,
     "name": "Mainha",
     "time_ms": 189700,
-    "car": 2,
+    "car": 0,
     "game": "jp",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
@@ -366,7 +366,7 @@
     "steam_verified": false,
     "name": "ADZ",
     "time_ms": 190633,
-    "car": 2,
+    "car": 34,
     "game": "jp",
     "date": "2026-11-05",
     "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg"
@@ -379,7 +379,7 @@
     "steam_verified": false,
     "name": "sirex",
     "time_ms": 191333,
-    "car": 2,
+    "car": 31,
     "game": "jp",
     "date": "2026-11-05",
     "ghost": "ghosts/myougi-0/f81adc2ff759ed26.idg"
@@ -392,7 +392,7 @@
     "steam_verified": false,
     "name": "SupaChill",
     "time_ms": 191766,
-    "car": 16,
+    "car": 0,
     "game": "jp",
     "date": "2026-11-05",
     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
@@ -405,7 +405,7 @@
     "steam_verified": false,
     "name": "BL4ck0uT _YuGi",
     "time_ms": 192100,
-    "car": 2,
+    "car": 0,
     "game": "jp",
     "date": "2026-10-31",
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
@@ -418,7 +418,7 @@
     "steam_verified": false,
     "name": "XShadowVileX",
     "time_ms": 192433,
-    "car": 2,
+    "car": 0,
     "game": "en",
     "date": "2026-10-28",
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
@@ -431,7 +431,7 @@
     "steam_verified": false,
     "name": "red",
     "time_ms": 193133,
-    "car": 2,
+    "car": 21,
     "game": "jp",
     "date": "2026-10-31",
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
@@ -463,7 +463,7 @@
     "steam_verified": false,
     "name": "Sora",
     "time_ms": 183500,
-    "car": 13,
+    "car": 8,
     "game": "jp",
     "date": "2026-11-01",
     "ghost": "ghosts/myougi-1/23f293906b0ffd82.idg"
@@ -476,7 +476,7 @@
     "steam_verified": false,
     "name": "SeAshe",
     "time_ms": 184600,
-    "car": 13,
+    "car": 27,
     "game": "jp",
     "date": "2026-11-01",
     "ghost": "ghosts/myougi-1/fb6457d17ea6e509.idg"
@@ -489,7 +489,7 @@
     "steam_verified": false,
     "name": "PRZ2K0",
     "time_ms": 186833,
-    "car": 13,
+    "car": 2,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-1/798da52dbb827e1c.idg"
@@ -502,7 +502,7 @@
     "steam_verified": false,
     "name": "Alex.Kirch",
     "time_ms": 187066,
-    "car": 13,
+    "car": 21,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
@@ -515,7 +515,7 @@
     "steam_verified": false,
     "name": "MATphantom",
     "time_ms": 187100,
-    "car": 13,
+    "car": 0,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
@@ -528,7 +528,7 @@
     "steam_verified": false,
     "name": "XShadowVileX",
     "time_ms": 188100,
-    "car": 13,
+    "car": 0,
     "game": "en",
     "date": "2026-10-28",
     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
@@ -541,7 +541,7 @@
     "steam_verified": false,
     "name": "BusterWolf",
     "time_ms": 190633,
-    "car": 13,
+    "car": 0,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
@@ -554,7 +554,7 @@
     "steam_verified": false,
     "name": "Evil Night",
     "time_ms": 191233,
-    "car": 13,
+    "car": 0,
     "game": "jp",
     "date": "2026-11-03",
     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
@@ -567,7 +567,7 @@
     "steam_verified": false,
     "name": "SupaChill",
     "time_ms": 192533,
-    "car": 13,
+    "car": 0,
     "game": "jp",
     "date": "2026-11-05",
     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
@@ -580,7 +580,7 @@
     "steam_verified": false,
     "name": "driver",
     "time_ms": 193233,
-    "car": 13,
+    "car": 0,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/myougi-1/1a734c3b3debfca8.idg"
@@ -599,7 +599,7 @@
     "steam_verified": false,
     "name": "Alex.Kirch",
     "time_ms": 189966,
-    "car": 14,
+    "car": 21,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/usui-0/ea03af8d21d8415e.idg"
@@ -638,7 +638,7 @@
     "steam_verified": false,
     "name": "PRZ2K0",
     "time_ms": 195700,
-    "car": 25,
+    "car": 2,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/usui-0/798da52dbb827e1c.idg"
@@ -651,7 +651,7 @@
     "steam_verified": false,
     "name": "SeAshe",
     "time_ms": 198900,
-    "car": 25,
+    "car": 27,
     "game": "jp",
     "date": "2026-11-01",
     "ghost": "ghosts/usui-0/fb6457d17ea6e509.idg"
@@ -664,7 +664,7 @@
     "steam_verified": false,
     "name": "MATphantom",
     "time_ms": 199766,
-    "car": 25,
+    "car": 0,
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
@@ -696,7 +696,7 @@
     "steam_verified": false,
     "name": "BLACKLIST",
     "time_ms": 181333,
-    "car": 31,
+    "car": 23,
     "game": "en",
     "date": "2026-10-28",
     "ghost": "ghosts/usui-1/5168fd241b77a365.idg"
@@ -709,7 +709,7 @@
     "steam_verified": false,
     "name": "PRZ2K0",
     "time_ms": 188966,
-    "car": 31,
+    "car": 2,
     "game": "en",
     "date": "2026-11-02",
     "ghost": "ghosts/usui-1/798da52dbb827e1c.idg"
@@ -722,7 +722,7 @@
     "steam_verified": false,
     "name": "SeAshe",
     "time_ms": 196333,
-    "car": 31,
+    "car": 27,
     "game": "jp",
     "date": "2026-11-01",
     "ghost": "ghosts/usui-1/fb6457d17ea6e509.idg"

@@ -22,16 +22,18 @@
      "game": "en",
      "date": "2026-10-22",
      "msg": "1562724602453434421",
-     "ghost": "ghosts/akagi-0/b46085569295d65f.idg"
+     "ghost": "ghosts/akagi-0/b46085569295d65f.idg",
+     "car_from_model": 1
     },
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
      "time_ms": 165033,
-     "car": 22,
+     "car": 14,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565422651088965673",
-     "ghost": "ghosts/akagi-0/ea03af8d21d8415e.idg"
+     "ghost": "ghosts/akagi-0/ea03af8d21d8415e.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -68,7 +70,8 @@
      "game": "en",
      "date": "2026-10-30",
      "msg": "1565607476592910356",
-     "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg"
+     "ghost": "ghosts/usui-0/2ff94d72b41c145f.idg",
+     "car_from_model": 1
     },
     "b46085569295d65f": {
      "name": "Cassandra",
@@ -77,25 +80,28 @@
      "game": "en",
      "date": "2026-10-26",
      "msg": "1564136291921174538",
-     "ghost": "ghosts/usui-0/b46085569295d65f.idg"
+     "ghost": "ghosts/usui-0/b46085569295d65f.idg",
+     "car_from_model": 1
     },
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
      "time_ms": 189966,
-     "car": 14,
+     "car": 21,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565400762421354727",
-     "ghost": "ghosts/usui-0/ea03af8d21d8415e.idg"
+     "ghost": "ghosts/usui-0/ea03af8d21d8415e.idg",
+     "car_from_model": 1
     },
     "cb291afb8872aabc": {
      "name": "MATphantom",
      "time_ms": 199766,
-     "car": 25,
+     "car": 0,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565494571985535097",
-     "ghost": "ghosts/usui-0/cb291afb8872aabc.idg"
+     "ghost": "ghosts/usui-0/cb291afb8872aabc.idg",
+     "car_from_model": 1
     },
     "7bef37ad91d8806b": {
      "name": "Giogio",
@@ -104,25 +110,28 @@
      "game": "en",
      "date": "2026-10-30",
      "msg": "1565778902989930507",
-     "ghost": "ghosts/usui-0/7bef37ad91d8806b.idg"
+     "ghost": "ghosts/usui-0/7bef37ad91d8806b.idg",
+     "car_from_model": 1
     },
     "fb6457d17ea6e509": {
      "name": "SeAshe",
      "time_ms": 198900,
-     "car": 25,
+     "car": 27,
      "game": "jp",
      "date": "2026-11-01",
      "msg": "1566293100031123546",
-     "ghost": "ghosts/usui-0/fb6457d17ea6e509.idg"
+     "ghost": "ghosts/usui-0/fb6457d17ea6e509.idg",
+     "car_from_model": 1
     },
     "798da52dbb827e1c": {
      "name": "PRZ2K0",
      "time_ms": 195700,
-     "car": 25,
+     "car": 2,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566951249553916094",
-     "ghost": "ghosts/usui-0/798da52dbb827e1c.idg"
+     "ghost": "ghosts/usui-0/798da52dbb827e1c.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -182,25 +191,28 @@
      "game": "en",
      "date": "2026-10-25",
      "msg": "1564007657529151500",
-     "ghost": "ghosts/myougi-0/b46085569295d65f.idg"
+     "ghost": "ghosts/myougi-0/b46085569295d65f.idg",
+     "car_from_model": 1
     },
     "bea21af9c6bf95f3": {
      "name": "qfqr",
      "time_ms": 182300,
-     "car": 16,
+     "car": 8,
      "game": "en",
      "date": "2026-10-25",
      "msg": "1563936736051200032",
-     "ghost": "ghosts/myougi-0/bea21af9c6bf95f3.idg"
+     "ghost": "ghosts/myougi-0/bea21af9c6bf95f3.idg",
+     "car_from_model": 1
     },
     "5168fd241b77a365": {
      "name": "BLACKLIST",
      "time_ms": 182600,
-     "car": 16,
+     "car": 23,
      "game": "en",
      "date": "2026-10-25",
      "msg": "1563978812402835589",
-     "ghost": "ghosts/myougi-0/5168fd241b77a365.idg"
+     "ghost": "ghosts/myougi-0/5168fd241b77a365.idg",
+     "car_from_model": 1
     },
     "2ff94d72b41c145f": {
      "name": "AFK",
@@ -209,7 +221,8 @@
      "game": "en",
      "date": "2026-10-30",
      "msg": "1565598342451560468",
-     "ghost": "ghosts/myougi-0/2ff94d72b41c145f.idg"
+     "ghost": "ghosts/myougi-0/2ff94d72b41c145f.idg",
+     "car_from_model": 1
     },
     "52143161d65181cd": {
      "name": "+Rockman+",
@@ -218,52 +231,58 @@
      "game": "jp",
      "date": "2026-10-27",
      "msg": "1564779268934996009",
-     "ghost": "ghosts/myougi-0/52143161d65181cd.idg"
+     "ghost": "ghosts/myougi-0/52143161d65181cd.idg",
+     "car_from_model": 1
     },
     "062910041e786c15": {
      "name": "Icipher",
      "time_ms": 186133,
-     "car": 2,
+     "car": 0,
      "game": "en",
      "date": "2026-10-28",
      "msg": "1565018959164481599",
-     "ghost": "ghosts/myougi-0/062910041e786c15.idg"
+     "ghost": "ghosts/myougi-0/062910041e786c15.idg",
+     "car_from_model": 1
     },
     "55f9aa565f92c636": {
      "name": "XShadowVileX",
      "time_ms": 192433,
-     "car": 2,
+     "car": 0,
      "game": "en",
      "date": "2026-10-28",
      "msg": "1565050099606757386",
-     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
+     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg",
+     "car_from_model": 1
     },
     "cb291afb8872aabc": {
      "name": "MATphantom",
      "time_ms": 187000,
-     "car": 16,
+     "car": 0,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565203084051742854",
-     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
+     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg",
+     "car_from_model": 1
     },
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
      "time_ms": 186500,
-     "car": 16,
+     "car": 21,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565388151424553111",
-     "ghost": "ghosts/myougi-0/ea03af8d21d8415e.idg"
+     "ghost": "ghosts/myougi-0/ea03af8d21d8415e.idg",
+     "car_from_model": 1
     },
     "7876c31e772509fa": {
      "name": "red",
      "time_ms": 193133,
-     "car": 2,
+     "car": 21,
      "game": "jp",
      "date": "2026-10-31",
      "msg": "1565964897194344561",
-     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
+     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg",
+     "car_from_model": 1
     },
     "5796e19e5d90fa1b": {
      "name": "yodasao",
@@ -272,61 +291,68 @@
      "game": "en",
      "date": "2026-10-31",
      "msg": "1566149225941704817",
-     "ghost": "ghosts/myougi-0/5796e19e5d90fa1b.idg"
+     "ghost": "ghosts/myougi-0/5796e19e5d90fa1b.idg",
+     "car_from_model": 1
     },
     "d11124014e323aa6": {
      "name": "BL4ck0uT _YuGi",
      "time_ms": 192100,
-     "car": 2,
+     "car": 0,
      "game": "jp",
      "date": "2026-10-31",
      "msg": "1566173818639356074",
-     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
+     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg",
+     "car_from_model": 1
     },
     "fb6457d17ea6e509": {
      "name": "SeAshe",
      "time_ms": 185233,
-     "car": 16,
+     "car": 27,
      "game": "jp",
      "date": "2026-11-01",
      "msg": "1566287564065869927",
-     "ghost": "ghosts/myougi-0/fb6457d17ea6e509.idg"
+     "ghost": "ghosts/myougi-0/fb6457d17ea6e509.idg",
+     "car_from_model": 1
     },
     "23f293906b0ffd82": {
      "name": "Sora",
      "time_ms": 187966,
-     "car": 2,
+     "car": 8,
      "game": "jp",
      "date": "2026-11-01",
      "msg": "1566462080549126214",
-     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
+     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg",
+     "car_from_model": 1
     },
     "ec39ad52dee6b67e": {
      "name": "Mainha",
      "time_ms": 189700,
-     "car": 2,
+     "car": 0,
      "game": "jp",
      "date": "2026-11-02",
      "msg": "1566698082261930085",
-     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
+     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg",
+     "car_from_model": 1
     },
     "0bbe2ad8c59307dd": {
      "name": "BusterWolf",
      "time_ms": 188333,
-     "car": 16,
+     "car": 0,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566707022517506089",
-     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
+     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg",
+     "car_from_model": 1
     },
     "798da52dbb827e1c": {
      "name": "PRZ2K0",
      "time_ms": 186433,
-     "car": 16,
+     "car": 2,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566949625829523607",
-     "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg"
+     "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg",
+     "car_from_model": 1
     },
     "aafb3d604c35ec8f": {
      "name": "10:30 PM.mus",
@@ -335,16 +361,18 @@
      "game": "en",
      "date": "2026-11-03",
      "msg": "1567020816628056277",
-     "ghost": "ghosts/myougi-0/aafb3d604c35ec8f.idg"
+     "ghost": "ghosts/myougi-0/aafb3d604c35ec8f.idg",
+     "car_from_model": 1
     },
     "23a1d569341162c9": {
      "name": "SupaChill",
      "time_ms": 191766,
-     "car": 16,
+     "car": 0,
      "game": "jp",
      "date": "2026-11-05",
      "msg": "1567815108275736637",
-     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
+     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg",
+     "car_from_model": 1
     },
     "963ca3a4a77a38f7": {
      "name": "Din_Lin",
@@ -353,25 +381,28 @@
      "game": "jp",
      "date": "2026-11-04",
      "msg": "1567351023562137601",
-     "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg"
+     "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg",
+     "car_from_model": 1
     },
     "dd0ff6704e4ed00e": {
      "name": "ADZ",
      "time_ms": 190633,
-     "car": 2,
+     "car": 34,
      "game": "jp",
      "date": "2026-11-05",
      "msg": "1567847381993660481",
-     "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg"
+     "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg",
+     "car_from_model": 1
     },
     "f81adc2ff759ed26": {
      "name": "sirex",
      "time_ms": 191333,
-     "car": 2,
+     "car": 31,
      "game": "jp",
      "date": "2026-11-05",
      "msg": "1567975399026069545",
-     "ghost": "ghosts/myougi-0/f81adc2ff759ed26.idg"
+     "ghost": "ghosts/myougi-0/f81adc2ff759ed26.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -395,7 +426,8 @@
      "game": "en",
      "date": "2026-10-31",
      "msg": "1566004660165419099",
-     "ghost": "ghosts/akina-0/b46085569295d65f.idg"
+     "ghost": "ghosts/akina-0/b46085569295d65f.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -429,97 +461,108 @@
      "game": "en",
      "date": "2026-10-26",
      "msg": "1564120386357170279",
-     "ghost": "ghosts/myougi-1/b46085569295d65f.idg"
+     "ghost": "ghosts/myougi-1/b46085569295d65f.idg",
+     "car_from_model": 1
     },
     "55f9aa565f92c636": {
      "name": "XShadowVileX",
      "time_ms": 188100,
-     "car": 13,
+     "car": 0,
      "game": "en",
      "date": "2026-10-28",
      "msg": "1565051648521543800",
-     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
+     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg",
+     "car_from_model": 1
     },
     "cb291afb8872aabc": {
      "name": "MATphantom",
      "time_ms": 187100,
-     "car": 13,
+     "car": 0,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565202104899866624",
-     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
+     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg",
+     "car_from_model": 1
     },
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
      "time_ms": 187066,
-     "car": 13,
+     "car": 21,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565387133680746597",
-     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
+     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg",
+     "car_from_model": 1
     },
     "fb6457d17ea6e509": {
      "name": "SeAshe",
      "time_ms": 184600,
-     "car": 13,
+     "car": 27,
      "game": "jp",
      "date": "2026-11-01",
      "msg": "1566243760608641045",
-     "ghost": "ghosts/myougi-1/fb6457d17ea6e509.idg"
+     "ghost": "ghosts/myougi-1/fb6457d17ea6e509.idg",
+     "car_from_model": 1
     },
     "23f293906b0ffd82": {
      "name": "Sora",
      "time_ms": 183500,
-     "car": 13,
+     "car": 8,
      "game": "jp",
      "date": "2026-11-01",
      "msg": "1566464180985266237",
-     "ghost": "ghosts/myougi-1/23f293906b0ffd82.idg"
+     "ghost": "ghosts/myougi-1/23f293906b0ffd82.idg",
+     "car_from_model": 1
     },
     "0bbe2ad8c59307dd": {
      "name": "BusterWolf",
      "time_ms": 190633,
-     "car": 13,
+     "car": 0,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566706009928372224",
-     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
+     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg",
+     "car_from_model": 1
     },
     "1a734c3b3debfca8": {
      "name": "driver",
      "time_ms": 193233,
-     "car": 13,
+     "car": 0,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566841275427192903",
-     "ghost": "ghosts/myougi-1/1a734c3b3debfca8.idg"
+     "ghost": "ghosts/myougi-1/1a734c3b3debfca8.idg",
+     "car_from_model": 1
     },
     "798da52dbb827e1c": {
      "name": "PRZ2K0",
      "time_ms": 186833,
-     "car": 13,
+     "car": 2,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566948652218319002",
-     "ghost": "ghosts/myougi-1/798da52dbb827e1c.idg"
+     "ghost": "ghosts/myougi-1/798da52dbb827e1c.idg",
+     "car_from_model": 1
     },
     "60f0b3ebbbf7d46a": {
      "name": "Evil Night",
      "time_ms": 191233,
-     "car": 13,
+     "car": 0,
      "game": "jp",
      "date": "2026-11-03",
      "msg": "1566975559798366238",
-     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
+     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg",
+     "car_from_model": 1
     },
     "23a1d569341162c9": {
      "name": "SupaChill",
      "time_ms": 192533,
-     "car": 13,
+     "car": 0,
      "game": "jp",
      "date": "2026-11-05",
      "msg": "1567814013553746011",
-     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
+     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -543,20 +586,22 @@
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
      "time_ms": 181500,
-     "car": 12,
+     "car": 21,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565404723283230731",
-     "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
+     "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg",
+     "car_from_model": 1
     },
     "798da52dbb827e1c": {
      "name": "PRZ2K0",
      "time_ms": 169066,
-     "car": 12,
+     "car": 2,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566955110603423754",
-     "ghost": "ghosts/akagi-1/798da52dbb827e1c.idg"
+     "ghost": "ghosts/akagi-1/798da52dbb827e1c.idg",
+     "car_from_model": 1
     },
     "b46085569295d65f": {
      "name": "Cassandra",
@@ -565,16 +610,18 @@
      "game": "en",
      "date": "2026-11-05",
      "msg": "1567786894257815603",
-     "ghost": "ghosts/akagi-1/b46085569295d65f.idg"
+     "ghost": "ghosts/akagi-1/b46085569295d65f.idg",
+     "car_from_model": 1
     },
     "f341e22f0a0d3a93": {
      "name": "Marcus",
      "time_ms": 189833,
-     "car": 12,
+     "car": 8,
      "game": "jp",
      "date": "2026-11-05",
      "msg": "1567800295940038766",
-     "ghost": "ghosts/akagi-1/f341e22f0a0d3a93.idg"
+     "ghost": "ghosts/akagi-1/f341e22f0a0d3a93.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -593,11 +640,12 @@
     "ea03af8d21d8415e": {
      "name": "Alex.Kirch",
      "time_ms": 175866,
-     "car": 10,
+     "car": 21,
      "game": "en",
      "date": "2026-10-29",
      "msg": "1565406445749407935",
-     "ghost": "ghosts/akagi-0-wet/ea03af8d21d8415e.idg"
+     "ghost": "ghosts/akagi-0-wet/ea03af8d21d8415e.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -617,29 +665,32 @@
     "5168fd241b77a365": {
      "name": "BLACKLIST",
      "time_ms": 181333,
-     "car": 31,
+     "car": 23,
      "game": "en",
      "date": "2026-10-28",
      "msg": "1565011108195082371",
-     "ghost": "ghosts/usui-1/5168fd241b77a365.idg"
+     "ghost": "ghosts/usui-1/5168fd241b77a365.idg",
+     "car_from_model": 1
     },
     "fb6457d17ea6e509": {
      "name": "SeAshe",
      "time_ms": 196333,
-     "car": 31,
+     "car": 27,
      "game": "jp",
      "date": "2026-11-01",
      "msg": "1566294265074811054",
-     "ghost": "ghosts/usui-1/fb6457d17ea6e509.idg"
+     "ghost": "ghosts/usui-1/fb6457d17ea6e509.idg",
+     "car_from_model": 1
     },
     "798da52dbb827e1c": {
      "name": "PRZ2K0",
      "time_ms": 188966,
-     "car": 31,
+     "car": 2,
      "game": "en",
      "date": "2026-11-02",
      "msg": "1566953104920809563",
-     "ghost": "ghosts/usui-1/798da52dbb827e1c.idg"
+     "ghost": "ghosts/usui-1/798da52dbb827e1c.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -662,7 +713,8 @@
      "game": "en",
      "date": "2026-11-05",
      "msg": "1567780064165363812",
-     "ghost": "ghosts/iroha-1-wet/b46085569295d65f.idg"
+     "ghost": "ghosts/iroha-1-wet/b46085569295d65f.idg",
+     "car_from_model": 1
     }
    }
   }
@@ -1110,15 +1162,17 @@
      "car": 0,
      "date": "2026-11-05",
      "msg": "1567786894257815603",
-     "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg"
+     "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg",
+     "car_from_model": 1
     },
     "f341e22f0a0d3a93": {
      "name": "Marcus",
      "time_ms": 189833,
-     "car": 12,
+     "car": 8,
      "date": "2026-11-05",
      "msg": "1567800295940038766",
-     "ghost": "ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg"
+     "ghost": "ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -1137,7 +1191,8 @@
      "car": 13,
      "date": "2026-11-05",
      "msg": "1567780064165363812",
-     "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg"
+     "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg",
+     "car_from_model": 1
     }
    }
   }
