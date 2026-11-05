@@ -68,11 +68,12 @@ button, select, input { font: inherit; color: inherit; }
 /* ---------- layout ---------- */
 .bar { display: none; }
 .grid { max-width: 1480px; margin: 18px auto 0; display: grid; grid-template-columns: 230px minmax(0, 1fr) 360px; gap: 18px; padding: 0 20px 16px; align-items: start; }
-.grid > *, .side > * { min-width: 0; }
+.grid > *, .side > *, .prize, .filters, .mapPanel, .cpanel { min-width: 0; }
 .side { display: flex; flex-direction: column; gap: 18px; }
-.courses, .board, .filters, .mapPanel { background: rgba(20, 22, 26, .88); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 12px; }
+.cpanel, .board, .filters, .mapPanel, .prize { background: rgba(20, 22, 26, .88); border: 1px solid var(--line); border-top: 3px solid var(--red); padding: 12px; }
 
-/* ---------- course select ---------- */
+/* ---------- course select + challenges (the left column) ---------- */
+.courses { display: flex; flex-direction: column; gap: 18px; }
 .courses ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
 .courses li button {
   width: 100%; text-align: left; cursor: pointer; display: grid; grid-template-columns: 14px 1fr auto; align-items: center; gap: 2px 8px;
@@ -137,7 +138,7 @@ select option { background: #16181c; }
 .mapHead { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .mapBox { position: relative; background: var(--map-bg); border: 3px solid #111; outline: 1px solid #5c6b61; }
 .mapHud, .mapHint { display: none; }
-#map { width: 100%; aspect-ratio: 1 / 1; display: block; cursor: pointer; }
+#map { width: 100%; aspect-ratio: 1 / 1; max-height: max(240px, calc(100vh - 560px)); display: block; cursor: pointer; }   /* (the right column fits the screen) */
 .player { display: grid; grid-template-columns: auto 64px 1fr auto; align-items: center; gap: 8px; margin-top: 10px; }
 .player input[type=range] { width: 100%; accent-color: var(--yellow); }
 .clock { font: italic 800 20px var(--cond); font-variant-numeric: tabular-nums; min-width: 82px; text-align: right; }
@@ -217,6 +218,8 @@ select option { background: #16181c; }
   .filters { order: 1; display: none; }
   body.opts .filters { display: block; }
   .board { order: 2; padding: 10px 8px; }
+  .prize { order: 3; }
+  .prizePic { height: auto; aspect-ratio: 2 / 1; }
   .c-date, .c-gap, .c-car, .c-map { display: none; }
   .who .pic, .who .ph { display: none; }
   td { padding: 10px 8px; }
@@ -247,24 +250,43 @@ select option { background: #16181c; }
   body.mapon .foot { padding-bottom: 250px; }
 }
 
-/* ---------- challenges (lb/challenges.json): the daily + weekly course everyone races ---------- */
-.chal { background: rgba(20, 22, 26, .88); border: 1px solid var(--line); border-top: 3px solid var(--yellow); padding: 12px; }
-.chCard { border-left: 4px solid var(--yellow); background: var(--steel-2); padding: 8px 10px; margin-bottom: 10px; }
-.chCard.weekly { border-left-color: #5aa0ff; }
-.chHead { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-.chKind { font: italic 800 14px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--yellow); }
+/* ---------- challenges: picked like a course (lb/challenges.json) ---------- */
+.cpanel.chal { border-top-color: var(--yellow); }
+.chal ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+.chBtn {
+  width: 100%; text-align: left; cursor: pointer; display: grid; grid-template-columns: 14px auto 1fr; align-items: baseline; gap: 2px 8px;
+  background: var(--steel-2); border: 1px solid var(--line); border-left: 4px solid var(--yellow); padding: 7px 10px;
+}
+.chBtn.weekly { border-left-color: #5aa0ff; }
+.chBtn:hover { background: var(--steel-3); }
+.chBtn .arrow { color: transparent; font-size: 11px; }
+.chBtn.on { background: linear-gradient(90deg, var(--blue), var(--blue-dk)); border-color: #3d6cff; }
+.chBtn.on .arrow { color: var(--yellow); }
+.chKind { font: italic 800 15px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--yellow); }
 .weekly .chKind { color: #5aa0ff; }
-.chLeft { color: var(--muted); font: 600 13px var(--cond); letter-spacing: .05em; text-transform: uppercase; }
-.chLabel { display: block; width: 100%; text-align: left; background: none; border: 0; padding: 2px 0 6px; cursor: pointer; font: 700 19px var(--cond); color: var(--text); }
-.chLabel:hover { color: var(--yellow); }
-.chRows { list-style: none; margin: 0; padding: 0; font-size: 14px; }
-.chRows li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 6px; padding: 2px 0; border-top: 1px solid var(--line); }
-.chRows .n { color: var(--muted); font-weight: 600; }
-.chRows li:nth-child(1) .n { color: var(--gold); } .chRows li:nth-child(2) .n { color: var(--silver); } .chRows li:nth-child(3) .n { color: var(--bronze); }
-.chRows .nm { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.chRows .t { font-variant-numeric: tabular-nums; }
-.chNone { color: var(--muted); font-size: 14px; margin: 0; }
+.chBtn.on .chKind { color: #fff; }
+.chLeft { justify-self: end; color: var(--muted); font: 600 12px var(--cond); letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; }
+.chBtn.on .chLeft, .chBtn.on .cmeta { color: #dfe6ff; }
+.chLabel { grid-column: 2 / 4; font: italic 800 18px/1.1 var(--cond); letter-spacing: .03em; text-transform: uppercase; }
+.chBtn .cmeta { grid-column: 2 / 4; font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chalPast { margin-top: 8px; }
 .chalPast summary { cursor: pointer; font: 700 15px var(--cond); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
-.chalPast ol { list-style: none; margin: 6px 0 0; padding: 0; font-size: 14px; }
+.chalPast ol { list-style: none; margin: 6px 0 0; padding: 0; font-size: 13px; max-height: 260px; overflow-y: auto; }
 .chalPast li { padding: 4px 0; border-top: 1px solid var(--line); }
 .chalPast .when { color: var(--muted); font-size: 12px; }
+
+/* ---------- up for grabs: the skin the picked challenge's winner gets ---------- */
+.prize { border-top-color: var(--yellow); }
+.prizePic { background: #0d0e10; border: 1px solid var(--line); height: clamp(110px, calc(100vh - 820px), 170px); overflow: hidden; }   /* (smaller on short screens: the right column fits) */
+.prizePic img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.prizeName { margin-top: 8px; font: italic 800 20px/1.1 var(--cond); letter-spacing: .05em; text-transform: uppercase; color: var(--yellow); }
+.prizeHow { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+
+/* ---------- the search panel folds away ---------- */
+.filters > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; cursor: pointer; }
+.filters > summary::-webkit-details-marker { display: none; }
+.filters > summary .tab { margin-bottom: 0; }
+.filters[open] > summary { margin-bottom: 8px; }
+.fold::before { content: '▸'; display: inline-block; color: var(--muted); font-size: 14px; transition: transform .15s; }
+.filters[open] .fold::before { transform: rotate(90deg); }
+.filters > summary:hover .fold::before { color: var(--yellow); }

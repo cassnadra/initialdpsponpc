@@ -32,8 +32,15 @@
 
 <main class="grid">
   <nav class="courses" id="courses" aria-label="Courses">
-    <div class="tab">Course select</div>
-    <ul id="courseList"></ul>
+    <div class="cpanel">
+      <div class="tab">Course select</div>
+      <ul id="courseList"></ul>
+    </div>
+    <section class="cpanel chal" id="chal" aria-label="Challenges" hidden>
+      <div class="tab tab-blue">Challenges</div>
+      <ul id="chalList"></ul>
+      <details id="chalPast" class="chalPast" hidden><summary>Past winners</summary><ol id="chalPastList"></ol></details>
+    </section>
   </nav>
   <div id="scrim" class="scrim"></div>
 
@@ -62,13 +69,14 @@
   </section>
 
   <aside class="side">
-    <section class="chal" id="chal" aria-label="Challenges" hidden>
-      <div class="tab tab-blue">Challenges</div>
-      <div id="chalList"></div>
-      <details id="chalPast" class="chalPast" hidden><summary>Past winners</summary><ol id="chalPastList"></ol></details>
+    <section class="prize" id="prize" aria-label="Up for grabs" hidden>
+      <div class="tab tab-blue">Up for grabs</div>
+      <div class="prizePic"><img id="prizeImg" alt=""></div>
+      <div class="prizeName" id="prizeName"></div>
+      <p class="prizeHow" id="prizeHow"></p>
     </section>
-    <section class="filters" id="filters" aria-label="Search and filters">
-      <div class="tab">Search</div>
+    <details class="filters" id="filters" aria-label="Search and filters">
+      <summary><span class="tab">Search</span><span class="fold" aria-hidden="true"></span></summary>
       <div class="fBody">
         <input id="search" type="search" placeholder="Driver name" autocomplete="off">
         <div class="row">
@@ -94,7 +102,7 @@
         </div>
         <label class="check"><input id="steamOnly" type="checkbox"> Steam-verified drivers only</label>
       </div>
-    </section>
+    </details>
 
     <section class="mapPanel" aria-label="Course map">
       <div class="mapHead">

@@ -3,6 +3,7 @@
 'use strict';
 const REPO = 'cassnadra/initialdpsponpc';
 const RAW = `https://raw.githubusercontent.com/${REPO}/main/lb/`;
+const SKINS = `https://raw.githubusercontent.com/${REPO}/main/skins/`;   // (the reward skins; previews/<id>.png for the page)
 // A button that asks the board to update needs a small service holding the token (a static page can't keep one secret).
 // Set its URL here to show the button; it should answer {ok, wait_s} and keep the shared cool-down itself.
 const REFRESH_URL = '';
@@ -21,7 +22,7 @@ const COLORS = ['#ffcc00', '#1d6bff', '#e3141f', '#b04dff', '#ff7a00', '#00b37a'
 const MAX_ON_MAP = 6;
 
 const $ = id => document.getElementById(id);
-const state = { boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: '', sort: 'time', car: '', steamOnly: false, picked: [] };
+const state = { ch: '', boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: '', sort: 'time', car: '', steamOnly: false, picked: [] };
 
 // ---------------- formatting ----------------
 function fmtTime(ms) {
@@ -120,7 +121,7 @@ function drawCourses() {
   const q = state.search.toLowerCase();
   for (const c of courses()) {
     const li = document.createElement('li'), b = document.createElement('button');
-    b.className = c.course === state.course ? 'on' : '';
+    b.className = c.course === state.course && !state.ch ? 'on' : '';
     const arrow = document.createElement('span'); arrow.className = 'arrow'; arrow.textContent = '▶';
     const n = document.createElement('span'); n.className = 'cname'; n.textContent = courseName(c.course);
     const kj = document.createElement('span'); kj.className = 'kanji'; kj.lang = 'ja'; kj.textContent = COURSE_KANJI[c.course] || '';
@@ -128,7 +129,7 @@ function drawCourses() {
     meta.textContent = `${c.entries} time${c.entries === 1 ? '' : 's'} · ${c.boards.length} board${c.boards.length === 1 ? '' : 's'}`;
     if (playerOn(c.course, q)) { const h = document.createElement('span'); h.className = 'hit'; h.textContent = ' · found'; meta.append(h); }
     b.append(arrow, n, kj, meta);
-    b.onclick = () => { state.course = c.course; pickDefaults(); render(); document.body.classList.remove('drawer'); };
+    b.onclick = () => { state.ch = ''; state.course = c.course; pickDefaults(); render(); document.body.classList.remove('drawer'); };
     li.append(b); ul.append(li);
   }
 }
@@ -142,7 +143,12 @@ function pickDefaults() {
 }
 
 // ---------------- table ----------------
-function currentBoard() { return state.boards[boardId(state.course, state.dir, state.wet)]; }
+function currentChallenge() { return state.ch && chal ? [...chal.current, ...chal.recent].find(c => c.id === state.ch) || null : null; }
+function currentBoard() {
+  const c = currentChallenge();
+  if (c) return { course: c.course, label: c.label, entries: c.entries.map(e => ({ ...e, steam_verified: !!e.steam })) };
+  return state.boards[boardId(state.course, state.dir, state.wet)];
+}
 function visibleEntries(b) {
   if (!b) return [];
   const q = state.search.toLowerCase();
@@ -157,12 +163,14 @@ function visibleEntries(b) {
 }
 function drawBoard() {
   const b = currentBoard();
-  $('boardTitle').textContent = `${courseName(state.course)} · ${dirName(state.course, state.dir)}${state.wet ? ' · Wet' : ''}`;
+  const ch = currentChallenge();
+  $('boardTitle').textContent = ch ? `${ch.kind === 'daily' ? 'Daily' : 'Weekly'} challenge · ${ch.label}`
+    : `${courseName(state.course)} · ${dirName(state.course, state.dir)}${state.wet ? ' · Wet' : ''}`;
   const es = visibleEntries(b), total = b ? b.entries.length : 0;
   $('boardCount').textContent = b ? (es.length === total ? `${total} driver${total === 1 ? '' : 's'}` : `${es.length} of ${total} shown`) : '';
   const tb = $('rows'); tb.textContent = '';
   $('empty').hidden = es.length > 0;
-  $('empty').textContent = !b ? 'No times on this board yet.' : 'No times match the filters.';
+  $('empty').textContent = ch && !total ? 'No times yet - be the first (in the game: F1 -> Online -> Challenges -> Race it).' : !b ? 'No times on this board yet.' : 'No times match the filters.';
   const lead = b && b.entries.length ? b.entries[0].time_ms : 0;
   for (const e of es) {
     const tr = document.createElement('tr');
@@ -256,8 +264,12 @@ function drawFilters() {
 }
 function wire() {
   $('search').oninput = e => { state.search = e.target.value.trim(); drawCourses(); drawBoard(); saveHash(); };
-  for (const btn of $('dirSeg').children) btn.onclick = () => { state.dir = +btn.dataset.dir; state.picked = null; render(); };
-  for (const btn of $('wetSeg').children) btn.onclick = () => { state.wet = +btn.dataset.wet; state.picked = null; render(); };
+  for (const btn of $('dirSeg').children) btn.onclick = () => { state.ch = ''; state.dir = +btn.dataset.dir; state.picked = null; render(); };
+  for (const btn of $('wetSeg').children) btn.onclick = () => { state.ch = ''; state.wet = +btn.dataset.wet; state.picked = null; render(); };
+  // the search panel folds away (remembered); open when a search is in the link
+  let fOpen = false; try { fOpen = localStorage.getItem('lb_search') === '1'; } catch {}
+  $('filters').open = fOpen || !!state.search;
+  $('filters').addEventListener('toggle', () => { try { localStorage.setItem('lb_search', $('filters').open ? '1' : '0'); } catch {} });
   $('sort').onchange = e => { state.sort = e.target.value; drawBoard(); saveHash(); };
   $('carFilter').onchange = e => { state.car = e.target.value; drawBoard(); saveHash(); };
   $('steamOnly').onchange = e => { state.steamOnly = e.target.checked; drawBoard(); };
@@ -269,7 +281,7 @@ function wire() {
   $('courseBtn').onclick = () => document.body.classList.add('drawer');
   $('scrim').onclick = () => document.body.classList.remove('drawer');
   document.addEventListener('keydown', ev => { if (ev.key === 'Escape') document.body.classList.remove('drawer'); });
-  $('optBar').onclick = () => { const on = document.body.classList.toggle('opts'); $('optBar').setAttribute('aria-expanded', on); };
+  $('optBar').onclick = () => { const on = document.body.classList.toggle('opts'); $('optBar').setAttribute('aria-expanded', on); if (on) $('filters').open = true; };
   let mapOn = false; try { mapOn = localStorage.getItem('lb_map') === '1'; } catch {}
   $('mapOn').checked = mapOn; document.body.classList.toggle('mapon', mapOn);
   $('mapOn').onchange = e => {
@@ -296,6 +308,7 @@ function wire() {
 }
 function saveHash() {
   const p = new URLSearchParams({ c: state.course, d: state.dir, w: state.wet });
+  if (state.ch) p.set('ch', state.ch);
   if (state.search) p.set('q', state.search);
   if (state.sort !== 'time') p.set('s', state.sort);
   if (state.car !== '') p.set('car', state.car);
@@ -305,6 +318,7 @@ function saveHash() {
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   if (p.get('c')) state.course = p.get('c');
+  state.ch = p.get('ch') || '';
   state.dir = +(p.get('d') || 0); state.wet = +(p.get('w') || 0);
   state.t0 = +(p.get('t') || 0); state.search = p.get('q') || ''; state.sort = p.get('s') || 'time'; state.car = p.get('car') || ''; state.prof = p.get('p') || '';
   $('search').value = state.search; $('sort').value = state.sort;
@@ -501,31 +515,20 @@ function drawChallenges() {
   $('chal').hidden = false;
   const list = $('chalList'); list.textContent = '';
   for (const c of chal.current) {
-    const card = document.createElement('div'); card.className = `chCard ${c.kind}`;
-    const head = document.createElement('div'); head.className = 'chHead';
-    head.append(Object.assign(document.createElement('span'), { className: 'chKind', textContent: c.kind === 'daily' ? 'Daily' : 'Weekly' }),
-      Object.assign(document.createElement('span'), { className: 'chLeft', textContent: timeLeft(c.end), title: `Ends ${new Date(c.end * 1000).toLocaleString()}` }));
-    const lbl = Object.assign(document.createElement('button'), { className: 'chLabel', textContent: c.label });
-    const [course, dir, wet] = [c.course, c.dir, c.board.endsWith('-wet') ? 1 : 0];
-    if (state.boards[boardId(course, dir, wet)]) {
-      lbl.title = 'Show this course\'s all-time ranking';
-      lbl.onclick = () => { state.course = course; state.dir = dir; state.wet = wet; state.picked = null; render(); };
-    } else lbl.disabled = true;
-    card.append(head, lbl);
-    if (c.entries.length) {
-      const ol = document.createElement('ol'); ol.className = 'chRows';
-      for (const e of c.entries.slice(0, 5)) {
-        const li = document.createElement('li');
-        const nm = Object.assign(document.createElement('span'), { className: 'nm', textContent: e.shown.replace(/ \(Steam\)$/, '') });
-        li.append(Object.assign(document.createElement('span'), { className: 'n', textContent: e.rank }), nm,
-          Object.assign(document.createElement('span'), { className: 't', textContent: fmtTime(e.time_ms) }));
-        li.title = carName(e.car);
-        ol.append(li);
-      }
-      card.append(ol);
-      if (c.drivers > 5) card.append(Object.assign(document.createElement('p'), { className: 'chNone', textContent: `${c.drivers} drivers` }));
-    } else card.append(Object.assign(document.createElement('p'), { className: 'chNone', textContent: 'No times yet - be the first (F1 -> Online -> Leaderboard -> Race it).' }));
-    list.append(card);
+    const li = document.createElement('li'), b = document.createElement('button');
+    b.className = `chBtn ${c.kind}` + (c.id === state.ch ? ' on' : '');
+    const arrow = Object.assign(document.createElement('span'), { className: 'arrow', textContent: '▶' });
+    const kind = Object.assign(document.createElement('span'), { className: 'chKind', textContent: c.kind === 'daily' ? 'Daily' : 'Weekly' });
+    const left = Object.assign(document.createElement('span'), { className: 'chLeft', textContent: timeLeft(c.end), title: `Ends ${new Date(c.end * 1000).toLocaleString()}` });
+    const lbl = Object.assign(document.createElement('span'), { className: 'chLabel', textContent: c.label });
+    const meta = Object.assign(document.createElement('span'), { className: 'cmeta',
+      textContent: c.entries.length ? `${c.drivers} driver${c.drivers === 1 ? '' : 's'} · leader ${c.entries[0].shown.replace(/ \(Steam\)$/, '')} ${fmtTime(c.entries[0].time_ms)}` : 'No times yet - be the first' });
+    b.append(arrow, kind, left, lbl, meta);
+    b.onclick = () => {
+      state.ch = c.id; state.course = c.course; state.dir = c.dir; state.wet = c.board.endsWith('-wet') ? 1 : 0; state.picked = null;
+      render(); document.body.classList.remove('drawer');
+    };
+    li.append(b); list.append(li);
   }
   const past = chal.past.slice(0, 20);
   $('chalPast').hidden = !past.length;
@@ -538,20 +541,33 @@ function drawChallenges() {
     ol.append(li);
   }
 }
+const PRIZE = { daily: ['champion', 'Champion skin'], weekly: ['sunburst', 'Sunburst skin'] };
+function drawPrize() {
+  const c = currentChallenge();
+  $('prize').hidden = !c;
+  if (!c) return;
+  const [id, name] = PRIZE[c.kind] || PRIZE.daily;
+  if ($('prizeImg').dataset.id !== id) { $('prizeImg').dataset.id = id; $('prizeImg').src = `${SKINS}previews/${id}.png`; $('prizeImg').alt = name; }
+  $('prizeName').textContent = `Win it: ${name}`;
+  $('prizeHow').textContent = c.kind === 'daily'
+    ? 'First place when the day ends (00:00 UTC) wins it, for every car. Race 3 dailies in a row to unlock a skin as well.'
+    : 'First place when the week ends (Monday 00:00 UTC) wins it, for every car. Everyone who races the weekly unlocks a skin.';
+}
 async function loadChallenges() {
   try { chal = await (await fetch(RAW + 'challenges.json', { cache: 'no-cache' })).json(); } catch { chal = null; }
+  if (state.ch && !currentChallenge()) state.ch = '';   // (a link to one that's gone)
   drawChallenges();
   setInterval(drawChallenges, 30000);   // (the countdowns)
 }
 
 // ---------------- start ----------------
-function render() { drawCourses(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
+function render() { drawCourses(); drawChallenges(); drawPrize(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
 (async () => {
   wire(); readHash();
   $('profClose').onclick = closeProfile; $('profScrim').onclick = closeProfile;
   document.addEventListener('keydown', ev => { if (ev.key === 'Escape' && !$('prof').hidden) closeProfile(); });
   try { await load(); } catch (err) { $('updated').textContent = 'Could not load the board'; console.error(err); return; }
-  loadChallenges();
+  await loadChallenges();
   const cs = courses();
   if (!cs.length) { $('updated').textContent = 'No times yet'; return; }
   if (!state.course || !cs.some(c => c.course === state.course)) state.course = cs[0].course;
