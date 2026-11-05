@@ -81,3 +81,6 @@ P	ea03af8d21d8415e	1	2	0	0	Alex.Kirch		9daace2324a9ef39c681a4d278db4972
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe					
 P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx					
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c			
+C	d-2026-11-05	daily	Irohazaka uphill, wet	iroha-1-wet	wet	5	1	1793836800	1793923200	on	0
+C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	on	0
+C	d-2026-11-04	daily	Akina downhill, day	akina-0	day	3	0	1793750400	1793836800	over	0

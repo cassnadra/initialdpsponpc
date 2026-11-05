@@ -1,0 +1,47 @@
+{
+ "now": 1793857346,
+ "current": [
+  {
+   "id": "d-2026-11-05",
+   "kind": "daily",
+   "label": "Irohazaka uphill, wet",
+   "board": "iroha-1-wet",
+   "cond": "wet",
+   "course": "iroha",
+   "dir": 1,
+   "start": 1793836800,
+   "end": 1793923200,
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W45",
+   "kind": "weekly",
+   "label": "Akagi uphill, day",
+   "board": "akagi-1",
+   "cond": "day",
+   "course": "akagi",
+   "dir": 1,
+   "start": 1793577600,
+   "end": 1794182400,
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "recent": [
+  {
+   "id": "d-2026-11-04",
+   "kind": "daily",
+   "label": "Akina downhill, day",
+   "board": "akina-0",
+   "cond": "day",
+   "course": "akina",
+   "dir": 0,
+   "start": 1793750400,
+   "end": 1793836800,
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "past": []
+}
