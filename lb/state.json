@@ -1,5 +1,5 @@
 {
- "last_id": "1567701810569810105",
+ "last_id": "1567780912840712273",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -511,7 +511,8 @@
    ],
    "lens": [
     5767.7,
-    5710.1
+    5710.1,
+    5805.0
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -531,6 +532,15 @@
      "date": "2026-11-02",
      "msg": "1566955110603423754",
      "ghost": "ghosts/akagi-1/798da52dbb827e1c.idg"
+    },
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 167666,
+     "car": 17,
+     "game": "en",
+     "date": "2026-11-05",
+     "msg": "1567778345205108767",
+     "ghost": "ghosts/akagi-1/b46085569295d65f.idg"
     }
    }
   },
@@ -596,6 +606,29 @@
      "date": "2026-11-02",
      "msg": "1566953104920809563",
      "ghost": "ghosts/usui-1/798da52dbb827e1c.idg"
+    }
+   }
+  },
+  "iroha-1-wet": {
+   "course": "iroha",
+   "label": "Iroha uphill (wet)",
+   "start": [
+    1791.917724609375,
+    949.1502075195312,
+    -361.3892822265625
+   ],
+   "lens": [
+    5231.9
+   ],
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 220566,
+     "car": 13,
+     "game": "en",
+     "date": "2026-11-05",
+     "msg": "1567780064165363812",
+     "ghost": "ghosts/iroha-1-wet/b46085569295d65f.idg"
     }
    }
   }
@@ -722,12 +755,12 @@
  "profiles": {
   "b46085569295d65f": {
    "pic": -1,
-   "car": 0,
+   "car": -1,
    "cards": 42,
-   "play_h": 7,
-   "name": "Cassandra",
+   "play_h": 5,
+   "name": "Tester",
    "bio": "",
-   "car_img": "dc78e09b99a1af71bd7b4acae4a63d92",
+   "car_img": "",
    "discord": "cassnadra"
   },
   "2ff94d72b41c145f": {
@@ -992,5 +1025,44 @@
   }
  },
  "bans": {},
- "challenges": {}
+ "challenges": {
+  "w-2026-W45": {
+   "kind": "weekly",
+   "course": "akagi",
+   "dir": 1,
+   "cond": "day",
+   "board": "akagi-1",
+   "start": 1793577600,
+   "end": 1794182400,
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 167666,
+     "car": 17,
+     "date": "2026-11-05",
+     "msg": "1567778345205108767",
+     "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg"
+    }
+   }
+  },
+  "d-2026-11-05": {
+   "kind": "daily",
+   "course": "iroha",
+   "dir": 1,
+   "cond": "wet",
+   "board": "iroha-1-wet",
+   "start": 1793836800,
+   "end": 1793923200,
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 220566,
+     "car": 13,
+     "date": "2026-11-05",
+     "msg": "1567780064165363812",
+     "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg"
+    }
+   }
+  }
+ }
 }

@@ -1,18 +1,30 @@
 {
- "now": 1793857346,
+ "now": 1793858533,
  "current": [
   {
    "id": "d-2026-11-05",
    "kind": "daily",
-   "label": "Irohazaka uphill, wet",
+   "label": "Iroha uphill, wet",
    "board": "iroha-1-wet",
    "cond": "wet",
    "course": "iroha",
    "dir": 1,
    "start": 1793836800,
    "end": 1793923200,
-   "drivers": 0,
-   "entries": []
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "steam": "76561198289153961",
+     "name": "Cassandra",
+     "time_ms": 220566,
+     "car": 13,
+     "date": "2026-11-05",
+     "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg"
+    }
+   ]
   },
   {
    "id": "w-2026-W45",
@@ -24,8 +36,20 @@
    "dir": 1,
    "start": 1793577600,
    "end": 1794182400,
-   "drivers": 0,
-   "entries": []
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "steam": "76561198289153961",
+     "name": "Cassandra",
+     "time_ms": 167666,
+     "car": 17,
+     "date": "2026-11-05",
+     "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg"
+    }
+   ]
   }
  ],
  "recent": [

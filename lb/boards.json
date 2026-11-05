@@ -56,6 +56,19 @@
   "entries": [
    {
     "rank": 1,
+    "pid": "b46085569295d65f",
+    "shown": "Cassandra (Steam)",
+    "steam": "76561198289153961",
+    "steam_verified": true,
+    "name": "Cassandra",
+    "time_ms": 167666,
+    "car": 17,
+    "game": "en",
+    "date": "2026-11-05",
+    "ghost": "ghosts/akagi-1/b46085569295d65f.idg"
+   },
+   {
+    "rank": 2,
     "pid": "798da52dbb827e1c",
     "shown": "PRZ2K0 #798d",
     "steam": "",
@@ -68,7 +81,7 @@
     "ghost": "ghosts/akagi-1/798da52dbb827e1c.idg"
    },
    {
-    "rank": 2,
+    "rank": 3,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch #ea03",
     "steam": "",
@@ -98,6 +111,25 @@
     "game": "en",
     "date": "2026-10-31",
     "ghost": "ghosts/akina-0/b46085569295d65f.idg"
+   }
+  ]
+ },
+ "iroha-1-wet": {
+  "course": "iroha",
+  "label": "Iroha uphill (wet)",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "b46085569295d65f",
+    "shown": "Cassandra (Steam)",
+    "steam": "76561198289153961",
+    "steam_verified": true,
+    "name": "Cassandra",
+    "time_ms": 220566,
+    "car": 13,
+    "game": "en",
+    "date": "2026-11-05",
+    "ghost": "ghosts/iroha-1-wet/b46085569295d65f.idg"
    }
   ]
  },
