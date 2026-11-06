@@ -62,6 +62,7 @@ button, select, input { font: inherit; color: inherit; }
   background: linear-gradient(90deg, #3a3f47, #2a2e34);
   clip-path: polygon(0 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
 }
+.tab-long { font-size: 15px; letter-spacing: .04em; white-space: nowrap; }
 .tab-blue { background: linear-gradient(90deg, var(--blue), var(--blue-dk)); padding-right: 34px; }
 .count { color: var(--muted); font: 600 14px var(--cond); letter-spacing: .06em; text-transform: uppercase; }
 
@@ -294,6 +295,6 @@ select option { background: #16181c; }
 .filters > summary:hover .fold::before { color: var(--yellow); }
 
 /* the driver level ranking */
-.c-lv { width: 70px; }
-.c-xp { width: 90px; font-variant-numeric: tabular-nums; text-align: right; padding-right: 18px; }
+.c-stat { width: 90px; font-variant-numeric: tabular-nums; }
+.c-sub { color: var(--muted); }
 .lvview .mapPanel { display: none; }

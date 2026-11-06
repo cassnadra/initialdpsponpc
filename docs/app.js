@@ -22,7 +22,7 @@ const COLORS = ['#ffcc00', '#1d6bff', '#e3141f', '#b04dff', '#ff7a00', '#00b37a'
 const MAX_ON_MAP = 6;
 
 const $ = id => document.getElementById(id);
-const state = { view: '', ch: '', boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: '', sort: 'time', car: '', steamOnly: false, picked: [] };
+const state = { rewards: {}, bans: {}, view: '', ch: '', boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: '', sort: 'time', car: '', steamOnly: false, picked: [] };
 
 // ---------------- driver level (the game's level.c: level L to L + 1 takes 200 + 100 (L - 1) XP) ----------------
 function levelOf(xp) { let L = 1; while (L < 99 && xp >= 200 + 100 * (L - 1)) { xp -= 200 + 100 * (L - 1); L++; } return L; }
@@ -57,11 +57,14 @@ function dirName(course, dir) {
 
 // ---------------- data ----------------
 async function load() {
-  const [js, txt] = await Promise.all([
+  const [js, txt, rw, bans] = await Promise.all([
     fetch(RAW + 'boards.json', { cache: 'no-cache' }).then(r => r.json()),
     fetch(RAW + 'boards.txt', { cache: 'no-cache' }).then(r => r.text()).catch(() => ''),
+    fetch(RAW + 'rewards.json', { cache: 'no-cache' }).then(r => r.json()).catch(() => ({})),   // (challenge counts, for the player leaderboards)
+    fetch(RAW + 'bans.txt', { cache: 'no-cache' }).then(r => r.text()).catch(() => ''),          // (banned players: off them)
   ]);
-  state.boards = js;
+  state.boards = js; state.rewards = rw || {};
+  for (const line of bans.split('\n')) { const f = line.split('\t'); if (f[0] === 'X' && f[1]) state.bans[f[1]] = f[2]; }
   for (const line of txt.split('\n')) {   // P pid pic car cards play_s name bio car_img discord steam steam_ok
     const f = line.split('\t');
     if (f[0] === 'P') state.profiles[f[1]] = { name: f[6], bio: f[7], carImg: f[8], discord: f[9], steam: f[10], steamOk: f[11] === '1',
@@ -135,57 +138,99 @@ function drawCourses() {
     b.onclick = () => { state.view = ''; state.ch = ''; state.course = c.course; pickDefaults(); render(); document.body.classList.remove('drawer'); };
     li.append(b); ul.append(li);
   }
-  // the driver level ranking: everyone's level from their profile
-  const lv = levelRows(), li = document.createElement('li'), b = document.createElement('button');
-  b.className = state.view === 'levels' ? 'on' : '';
-  b.append(Object.assign(document.createElement('span'), { className: 'arrow', textContent: '▶' }),
-    Object.assign(document.createElement('span'), { className: 'cname', textContent: 'Driver levels' }),
-    Object.assign(document.createElement('span'), { className: 'kanji', lang: 'ja', textContent: 'レベル' }),
-    Object.assign(document.createElement('span'), { className: 'cmeta', textContent: lv.length ? `${lv.length} driver${lv.length === 1 ? '' : 's'} · top Lv ${levelOf(lv[0].xp)}` : 'No levels yet' }));
-  b.onclick = () => { state.view = 'levels'; state.ch = ''; render(); document.body.classList.remove('drawer'); };
-  li.append(b); ul.append(li);
 }
-// everyone with a level, most XP first: one row per Steam account (its PC with the most XP)
-function levelRows() {
-  const byKey = new Map();
-  for (const [pid, pr] of Object.entries(state.profiles)) {
-    if (!(pr.xp > 0)) continue;   // (none shared, or banned)
-    const key = pr.steam ? 's:' + pr.steam : pid, had = byKey.get(key);
-    if (!had || pr.xp > had.xp) byKey.set(key, { pid, ...pr });
+// ---------------- player leaderboards: levels, hours, challenges (not a course: their own list) ----------------
+const ordinal = r => r % 100 >= 11 && r % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[r % 10] || 'th');
+const lvlTag = xp => Object.assign(document.createElement('span'), { className: 'lvl', textContent: `Lv ${levelOf(xp)}` });
+const num = v => v.toLocaleString('en-US');
+// src 'prof': from the profiles (a Steam account's PCs: one row - its most XP, its hours added up);
+// src 'rw': from rewards.json (each player key: steam:<id> or their id)
+const STATS = [
+  { id: 'levels', label: 'Level', title: 'Driver levels', kanji: 'レベル', src: 'prof', val: p => p.xp, merge: 'max', head: ['Level', 'XP'], cells: r => [lvlTag(r.v), num(r.v)],
+    meta: rows => `top Lv ${levelOf(rows[0].v)}`, none: 'No levels yet - they come with the profile the game sends while you share your times.' },
+  { id: 'hours', label: 'Hours', title: 'Hours played', kanji: '時間', src: 'prof', val: p => Math.floor((p.playS || 0) / 3600), merge: 'sum', head: ['Hours'], cells: r => [`${num(r.v)} h`],
+    meta: rows => `top ${num(rows[0].v)} h`, none: 'No play time shared yet.' },
+  { id: 'dwins', label: 'Daily wins', kanji: '日間', src: 'rw', val: x => x.daily_wins, head: ['Wins'], cells: r => [num(r.v)],
+    meta: rows => `most ${rows[0].v}`, none: 'Nobody has won a daily yet - first place when one ends.' },
+  { id: 'wwins', label: 'Weekly wins', kanji: '週間', src: 'rw', val: x => x.weekly_wins, head: ['Wins'], cells: r => [num(r.v)],
+    meta: rows => `most ${rows[0].v}`, none: 'Nobody has won a weekly yet.' },
+  { id: 'raced', label: 'Challenges', title: 'Challenges raced', kanji: '挑戦', src: 'rw', val: x => (x.dailies || 0) + (x.weeklies || 0), head: ['Raced', 'Dailies', 'Weeklies'], cells: r => [num(r.v), num(r.x.dailies || 0), num(r.x.weeklies || 0)],
+    meta: rows => `most ${rows[0].v}`, none: 'No challenges raced yet.' },
+  { id: 'streak', label: 'Streak', title: 'Daily streak (days in a row)', kanji: '連続', src: 'rw', val: x => x.streak, head: ['Days in a row'], cells: r => [num(r.v)],
+    meta: rows => `longest ${rows[0].v}`, none: 'No daily streaks going - race today\'s daily to start one.' },
+];
+const stat = id => STATS.find(s => s.id === id);
+function anyName(pid, steam) {
+  for (const b of Object.values(state.boards)) { const e = b.entries.find(x => (pid && x.pid === pid) || (steam && x.steam === steam)); if (e) return e.name; }
+  return '';
+}
+function banned(key) { return state.bans[key] === 'ban'; }
+function statRows(s) {
+  const byKey = new Map();   // one row a player: a Steam account's PCs together
+  if (s.src === 'prof') {
+    for (const [pid, pr] of Object.entries(state.profiles)) {
+      const v = s.val(pr) || 0;
+      if (v <= 0 || banned(pid) || (pr.steam && banned('steam:' + pr.steam))) continue;
+      const key = pr.steam ? 's:' + pr.steam : pid, had = byKey.get(key);
+      if (!had) byKey.set(key, { pid, ...pr, v });
+      else {
+        const nv = s.merge === 'sum' ? had.v + v : Math.max(had.v, v);
+        if ((pr.xp || 0) > (had.xp || 0)) byKey.set(key, { pid, ...pr, v: nv }); else had.v = nv;   // (the name / car of its PC with the most XP)
+      }
+    }
+  } else {
+    for (const [key, x] of Object.entries(state.rewards)) {
+      const v = s.val(x) || 0;
+      if (v <= 0 || banned(key)) continue;
+      const steam = key.startsWith('steam:') ? key.slice(6) : '';
+      let pid = steam ? '' : key, pr = state.profiles[pid];
+      if (steam) for (const [p2, q] of Object.entries(state.profiles)) if (q.steam === steam && (!pr || (q.xp || 0) > (pr.xp || 0))) { pid = p2; pr = q; }
+      byKey.set(key, { pid, ...(pr || {}), steam: steam || (pr && pr.steam) || '', steamOk: pr ? pr.steamOk : !!steam, name: (pr && pr.name) || anyName(pid, steam), v, x });
+    }
   }
-  const anyName = pid => { for (const b of Object.values(state.boards)) { const e = b.entries.find(x => x.pid === pid); if (e) return e.name; } return ''; };
-  const rows = [...byKey.values()].map(r => ({ ...r, name: r.name || anyName(r.pid) || 'Player' }))
-    .sort((a, b) => b.xp - a.xp || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
-  rows.forEach((r, i) => { r.rank = i && rows[i - 1].xp === r.xp ? rows[i - 1].rank : i + 1; });
+  const rows = [...byKey.values()].map(r => ({ ...r, name: r.name || anyName(r.pid, r.steam) || 'Player' }))
+    .sort((a, b) => b.v - a.v || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
+  rows.forEach((r, i) => { r.rank = i && rows[i - 1].v === r.v ? rows[i - 1].rank : i + 1; });
   return rows;
 }
+function drawStatList() {
+  const ul = $('statList'); ul.textContent = '';
+  for (const s of STATS) {
+    const rows = statRows(s), li = document.createElement('li'), b = document.createElement('button');
+    b.className = state.view === s.id ? 'on' : '';
+    b.append(Object.assign(document.createElement('span'), { className: 'arrow', textContent: '▶' }),
+      Object.assign(document.createElement('span'), { className: 'cname', textContent: s.label }),
+      Object.assign(document.createElement('span'), { className: 'kanji', lang: 'ja', textContent: s.kanji }),
+      Object.assign(document.createElement('span'), { className: 'cmeta', textContent: rows.length ? `${rows.length} driver${rows.length === 1 ? '' : 's'} · ${s.meta(rows)}` : 'none yet' }));
+    b.onclick = () => { state.view = s.id; state.ch = ''; render(); document.body.classList.remove('drawer'); };
+    li.append(b); ul.append(li);
+  }
+}
 const HEAD_TIMES = $('thead').innerHTML;
-function drawLevels() {
-  $('boardTitle').textContent = 'Driver levels';
-  $('thead').innerHTML = '<tr><th class="c-rank">Pos</th><th>Driver</th><th class="c-lv">Level</th><th class="c-xp">XP</th><th class="c-car">Favourite car</th></tr>';
-  const q = state.search.toLowerCase(), all = levelRows(), rows = all.filter(r => !q || r.name.toLowerCase().includes(q));
+function drawStat(s) {
+  $('boardTitle').textContent = s.title || s.label;
+  $('thead').innerHTML = '<tr><th class="c-rank">Pos</th><th>Driver</th>' + s.head.map((h, i) => `<th class="c-stat${i ? ' c-sub' : ''}">${h}</th>`).join('') + '<th class="c-car">Favourite car</th></tr>';
+  const q = state.search.toLowerCase(), all = statRows(s), rows = all.filter(r => !q || r.name.toLowerCase().includes(q));
   $('boardCount').textContent = rows.length === all.length ? `${all.length} driver${all.length === 1 ? '' : 's'}` : `${rows.length} of ${all.length} shown`;
   const tb = $('rows'); tb.textContent = '';
   $('empty').hidden = rows.length > 0;
-  $('empty').textContent = all.length ? 'No drivers match the search.' : 'No levels yet - they come with the profile the game sends while you share your times.';
+  $('empty').textContent = all.length ? 'No drivers match the search.' : s.none;
   for (const r of rows) {
     const tr = document.createElement('tr'); tr.className = r.rank <= 3 ? `r${r.rank}` : '';
     const cell = (cls, content) => { const td = document.createElement('td'); if (cls) td.className = cls; if (content instanceof Node) td.append(content); else td.textContent = content; tr.append(td); return td; };
     const rk = document.createElement('span'); rk.textContent = String(r.rank);
-    const ord = Object.assign(document.createElement('span'), { className: 'ord', textContent: r.rank % 100 >= 11 && r.rank % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[r.rank % 10] || 'th') });
-    cell('c-rank', rk).append(ord);
+    cell('c-rank', rk).append(Object.assign(document.createElement('span'), { className: 'ord', textContent: ordinal(r.rank) }));
     const who = document.createElement('div'); who.className = 'who';
     who.append(r.carImg ? carPic(`${RAW}cars/${r.carImg}.png`) : Object.assign(document.createElement('span'), { className: 'ph' }));
     const nm = Object.assign(document.createElement('button'), { className: 'nameBtn', textContent: r.name, title: 'Driver profile' });
-    nm.onclick = ev => { ev.stopPropagation(); openProfile(r.pid); };
+    if (r.pid) nm.onclick = ev => { ev.stopPropagation(); openProfile(r.pid); }; else nm.disabled = true;
     who.append(nm);
     if (r.steam && r.steamOk) who.append(Object.assign(document.createElement('span'), { className: 'badge', textContent: 'Steam', title: 'Steam account verified' }));
     if (r.bio) who.title = r.bio;
     cell('', who);
-    cell('c-lv', Object.assign(document.createElement('span'), { className: 'lvl', textContent: `Lv ${levelOf(r.xp)}` }));
-    cell('c-xp', r.xp.toLocaleString('en-US'));
+    s.cells(r).forEach((c, i) => cell('c-stat' + (i ? ' c-sub' : ''), c));
     cell('c-car', r.car >= 0 ? carName(r.car) : '-');
-    tr.onclick = () => openProfile(r.pid);
+    if (r.pid) tr.onclick = () => openProfile(r.pid);
     tb.append(tr);
   }
 }
@@ -201,7 +246,7 @@ function pickDefaults() {
 // ---------------- table ----------------
 function currentChallenge() { return state.ch && chal ? [...chal.current, ...chal.recent].find(c => c.id === state.ch) || null : null; }
 function currentBoard() {
-  if (state.view === 'levels') return null;
+  if (state.view) return null;
   const c = currentChallenge();
   if (c) return { course: c.course, label: c.label, entries: c.entries.map(e => ({ ...e, steam_verified: !!e.steam })) };
   return state.boards[boardId(state.course, state.dir, state.wet)];
@@ -219,7 +264,7 @@ function visibleEntries(b) {
   return es.sort(by);
 }
 function drawBoard() {
-  if (state.view === 'levels') { drawLevels(); return; }
+  if (stat(state.view)) { drawStat(stat(state.view)); return; }
   if ($('thead').innerHTML !== HEAD_TIMES) $('thead').innerHTML = HEAD_TIMES;
   const b = currentBoard();
   const ch = currentChallenge();
@@ -379,7 +424,7 @@ function saveHash() {
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
   if (p.get('c')) state.course = p.get('c');
-  state.ch = p.get('ch') || ''; state.view = p.get('v') === 'levels' ? 'levels' : '';
+  state.ch = p.get('ch') || ''; state.view = stat(p.get('v')) ? p.get('v') : '';
   state.dir = +(p.get('d') || 0); state.wet = +(p.get('w') || 0);
   state.t0 = +(p.get('t') || 0); state.search = p.get('q') || ''; state.sort = p.get('s') || 'time'; state.car = p.get('car') || ''; state.prof = p.get('p') || '';
   $('search').value = state.search; $('sort').value = state.sort;
@@ -392,7 +437,7 @@ async function loadMap() {
   const b = currentBoard(), token = ++mapToken;
   pause(); replay.runs = []; replay.t = 0; replay.len = 0;
   $('legend').textContent = '';
-  if (!b || !b.entries.length) { replay.track = null; replay.view = null; $('mapNote').textContent = state.view === 'levels' ? 'pick a course for its runs' : 'no runs yet'; setPlayer(false); drawMap(); return; }
+  if (!b || !b.entries.length) { replay.track = null; replay.view = null; $('mapNote').textContent = state.view ? 'pick a course for its runs' : 'no runs yet'; setPlayer(false); drawMap(); return; }
   if (!state.picked) state.picked = b.entries.slice(0, Math.min(3, b.entries.length)).map(e => e.pid);
   const picks = state.picked.map(pid => b.entries.find(e => e.pid === pid)).filter(Boolean);
   $('mapNote').textContent = 'loading runs...';
@@ -623,7 +668,7 @@ async function loadChallenges() {
 }
 
 // ---------------- start ----------------
-function render() { document.body.classList.toggle('lvview', state.view === 'levels'); drawCourses(); drawChallenges(); drawPrize(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
+function render() { document.body.classList.toggle('lvview', !!state.view); drawCourses(); drawStatList(); drawChallenges(); drawPrize(); drawFilters(); drawBoard(); saveHash(); loadMap(); }
 (async () => {
   wire(); readHash();
   $('profClose').onclick = closeProfile; $('profScrim').onclick = closeProfile;
