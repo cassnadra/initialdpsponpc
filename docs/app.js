@@ -227,6 +227,7 @@ function drawStat(s) {
     who.append(nm);
     if (r.steam && r.steamOk) who.append(Object.assign(document.createElement('span'), { className: 'badge', textContent: 'Steam', title: 'Steam account verified' }));
     if (r.bio) who.title = r.bio;
+    if (r.car >= 0) who.append(Object.assign(document.createElement('span'), { className: 'sub', textContent: carName(r.car) }));   // (phones: the car column they hide)
     cell('', who);
     s.cells(r).forEach((c, i) => cell('c-stat' + (i ? ' c-sub' : ''), c));
     cell('c-car', r.car >= 0 ? carName(r.car) : '-');
@@ -302,6 +303,7 @@ function drawBoard() {
     if (prof && prof.xp > 0) who.append(Object.assign(document.createElement('span'), { className: 'lvl', textContent: `Lv ${levelOf(prof.xp)}`, title: `Driver level (${prof.xp} XP)` }));
     if (e.steam_verified) { const s = document.createElement('span'); s.className = 'badge'; s.textContent = 'Steam'; s.title = 'Steam account verified'; who.append(s); }
     if (prof && prof.bio) who.title = prof.bio;
+    who.append(Object.assign(document.createElement('span'), { className: 'sub', textContent: [e.time_ms === lead ? '' : `+${((e.time_ms - lead) / 1000).toFixed(3)}`, carName(e.car), e.date].filter(Boolean).join(' · ') }));   // (phones: the columns they hide)
     cell('', who);
     cell('c-time', fmtTime(e.time_ms));
     cell('c-gap', e.time_ms === lead ? '' : `+${((e.time_ms - lead) / 1000).toFixed(3)}`);
