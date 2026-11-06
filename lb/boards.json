@@ -217,6 +217,19 @@
    },
    {
     "rank": 6,
+    "pid": "f81adc2ff759ed26",
+    "shown": "sirex #f81a",
+    "steam": "",
+    "steam_verified": false,
+    "name": "sirex",
+    "time_ms": 185033,
+    "car": 31,
+    "game": "jp",
+    "date": "2026-11-06",
+    "ghost": "ghosts/myougi-0/f81adc2ff759ed26.idg"
+   },
+   {
+    "rank": 7,
     "pid": "fb6457d17ea6e509",
     "shown": "SeAshe #fb64",
     "steam": "",
@@ -229,7 +242,7 @@
     "ghost": "ghosts/myougi-0/fb6457d17ea6e509.idg"
    },
    {
-    "rank": 7,
+    "rank": 8,
     "pid": "52143161d65181cd",
     "shown": "+Rockman+ #5214",
     "steam": "",
@@ -242,7 +255,7 @@
     "ghost": "ghosts/myougi-0/52143161d65181cd.idg"
    },
    {
-    "rank": 8,
+    "rank": 9,
     "pid": "5796e19e5d90fa1b",
     "shown": "yodasao #5796",
     "steam": "",
@@ -255,7 +268,7 @@
     "ghost": "ghosts/myougi-0/5796e19e5d90fa1b.idg"
    },
    {
-    "rank": 9,
+    "rank": 10,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -268,7 +281,7 @@
     "ghost": "ghosts/myougi-0/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 10,
+    "rank": 11,
     "pid": "062910041e786c15",
     "shown": "Icipher #0629",
     "steam": "",
@@ -281,7 +294,7 @@
     "ghost": "ghosts/myougi-0/062910041e786c15.idg"
    },
    {
-    "rank": 11,
+    "rank": 12,
     "pid": "798da52dbb827e1c",
     "shown": "PRZ2K0 #798d",
     "steam": "",
@@ -294,7 +307,7 @@
     "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg"
    },
    {
-    "rank": 12,
+    "rank": 13,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -307,7 +320,7 @@
     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 13,
+    "rank": 14,
     "pid": "963ca3a4a77a38f7",
     "shown": "Din_Lin #963c",
     "steam": "",
@@ -320,7 +333,7 @@
     "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg"
    },
    {
-    "rank": 14,
+    "rank": 15,
     "pid": "23f293906b0ffd82",
     "shown": "Sora #23f2",
     "steam": "",
@@ -333,7 +346,7 @@
     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -346,7 +359,7 @@
     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 16,
+    "rank": 17,
     "pid": "ec39ad52dee6b67e",
     "shown": "Mainha #ec39",
     "steam": "",
@@ -359,7 +372,7 @@
     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
    },
    {
-    "rank": 17,
+    "rank": 18,
     "pid": "dd0ff6704e4ed00e",
     "shown": "ADZ #dd0f",
     "steam": "",
@@ -370,19 +383,6 @@
     "game": "jp",
     "date": "2026-11-05",
     "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg"
-   },
-   {
-    "rank": 18,
-    "pid": "f81adc2ff759ed26",
-    "shown": "sirex #f81a",
-    "steam": "",
-    "steam_verified": false,
-    "name": "sirex",
-    "time_ms": 191333,
-    "car": 31,
-    "game": "jp",
-    "date": "2026-11-05",
-    "ghost": "ghosts/myougi-0/f81adc2ff759ed26.idg"
    },
    {
     "rank": 19,
@@ -483,6 +483,19 @@
    },
    {
     "rank": 4,
+    "pid": "f81adc2ff759ed26",
+    "shown": "sirex #f81a",
+    "steam": "",
+    "steam_verified": false,
+    "name": "sirex",
+    "time_ms": 186533,
+    "car": 31,
+    "game": "jp",
+    "date": "2026-11-06",
+    "ghost": "ghosts/myougi-1/f81adc2ff759ed26.idg"
+   },
+   {
+    "rank": 5,
     "pid": "798da52dbb827e1c",
     "shown": "PRZ2K0 #798d",
     "steam": "",
@@ -495,7 +508,7 @@
     "ghost": "ghosts/myougi-1/798da52dbb827e1c.idg"
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -508,7 +521,7 @@
     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 6,
+    "rank": 7,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -521,7 +534,7 @@
     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
    },
    {
-    "rank": 7,
+    "rank": 8,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -534,7 +547,7 @@
     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
    },
    {
-    "rank": 8,
+    "rank": 9,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -547,7 +560,7 @@
     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 9,
+    "rank": 10,
     "pid": "60f0b3ebbbf7d46a",
     "shown": "Evil Night #60f0",
     "steam": "",
@@ -560,7 +573,7 @@
     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
    },
    {
-    "rank": 10,
+    "rank": 11,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -573,7 +586,7 @@
     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
    },
    {
-    "rank": 11,
+    "rank": 12,
     "pid": "1a734c3b3debfca8",
     "shown": "driver #1a73",
     "steam": "",

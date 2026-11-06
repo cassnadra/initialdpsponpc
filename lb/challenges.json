@@ -1,30 +1,18 @@
 {
- "now": 1793919176,
+ "now": 1793933711,
  "current": [
   {
-   "id": "d-2026-11-05",
+   "id": "d-2026-11-06",
    "kind": "daily",
-   "label": "Irohazaka uphill, wet",
-   "board": "iroha-1-wet",
+   "label": "Shomaru downhill, wet",
+   "board": "syoumaru-0-wet",
    "cond": "wet",
-   "course": "iroha",
-   "dir": 1,
-   "start": 1793836800,
-   "end": 1793923200,
-   "drivers": 1,
-   "entries": [
-    {
-     "rank": 1,
-     "pid": "b46085569295d65f",
-     "shown": "Cassandra (Steam)",
-     "steam": "76561198289153961",
-     "name": "Cassandra",
-     "time_ms": 220566,
-     "car": 13,
-     "date": "2026-11-05",
-     "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg"
-    }
-   ]
+   "course": "syoumaru",
+   "dir": 0,
+   "start": 1793923200,
+   "end": 1794009600,
+   "drivers": 0,
+   "entries": []
   },
   {
    "id": "w-2026-W45",
@@ -65,18 +53,50 @@
  ],
  "recent": [
   {
-   "id": "d-2026-11-04",
+   "id": "d-2026-11-05",
    "kind": "daily",
-   "label": "Akina downhill, day",
-   "board": "akina-0",
-   "cond": "day",
-   "course": "akina",
-   "dir": 0,
-   "start": 1793750400,
-   "end": 1793836800,
-   "drivers": 0,
-   "entries": []
+   "label": "Irohazaka uphill, wet",
+   "board": "iroha-1-wet",
+   "cond": "wet",
+   "course": "iroha",
+   "dir": 1,
+   "start": 1793836800,
+   "end": 1793923200,
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "steam": "76561198289153961",
+     "name": "Cassandra",
+     "time_ms": 220566,
+     "car": 13,
+     "date": "2026-11-05",
+     "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg"
+    }
+   ]
   }
  ],
- "past": []
+ "past": [
+  {
+   "id": "d-2026-11-05",
+   "kind": "daily",
+   "label": "Irohazaka uphill, wet",
+   "board": "iroha-1-wet",
+   "start": 1793836800,
+   "end": 1793923200,
+   "drivers": 1,
+   "podium": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "name": "Cassandra",
+     "time_ms": 220566,
+     "car": 13
+    }
+   ]
+  }
+ ]
 }

@@ -1,12 +1,13 @@
 {
  "steam:76561198289153961": {
   "skins": [
-   "flames"
+   "flames",
+   "champion"
   ],
   "streak": 1,
   "dailies": 1,
   "weeklies": 1,
-  "daily_wins": 0,
+  "daily_wins": 1,
   "weekly_wins": 0
  },
  "f341e22f0a0d3a93": {
