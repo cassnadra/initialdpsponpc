@@ -1,5 +1,5 @@
 {
- "last_id": "1568339065672044664",
+ "last_id": "1568424559525236749",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -771,7 +771,8 @@
   "f341e22f0a0d3a93": "5cf006c09c8be93169aa408dc39eca82f489a9714e077e6c72972443a126a9dd709125aa4cbfc7605a129af2bca7be541c438b3639fdff3bdece5f61c5c9800d",
   "dd0ff6704e4ed00e": "69f9f7935b2f6d02af9e7e4e40f9c33f3ede89ef6caa80caa43b00e80e8aa2b22fd6ff470d993423f3fbaa0195162c756a8ebc0a35c0c3afe83ae4522935f16e",
   "cc650cca66a363ff": "d0c23843659e308b8026ffaec5c8b8afd30fb89ccc8faa783dbb4e7719e422087644bc28f13a9f92b03cea3ea413bf732136f298a74010cf828aaf9b0935ca13",
-  "f81adc2ff759ed26": "b07873162593aa7428e9e6d953dacd3abb76fdd381e06f8288f6fd9933cec0a390e686b1f4d751299660e1e6a23fa67f0f16dcd5477e33e9c2067b9e4acde2ab"
+  "f81adc2ff759ed26": "b07873162593aa7428e9e6d953dacd3abb76fdd381e06f8288f6fd9933cec0a390e686b1f4d751299660e1e6a23fa67f0f16dcd5477e33e9c2067b9e4acde2ab",
+  "a86ea505ac796b9f": "4aa097412e4e8eede9bed8e7262796dcbfb5aef6666085e0230b07049973f6cb06df2baddf3d0520f78916a4ec7de7b66325731f7010c011a78bb368ff0f012a"
  },
  "names": {
   "b46085569295d65f": [
@@ -1157,6 +1158,17 @@
    "cards": 0,
    "play_h": 0,
    "name": "Chayam",
+   "bio": "",
+   "car_img": "",
+   "discord": "",
+   "xp": 0
+  },
+  "a86ea505ac796b9f": {
+   "pic": 1,
+   "car": 0,
+   "cards": 0,
+   "play_h": 0,
+   "name": "Terry209",
    "bio": "",
    "car_img": "",
    "discord": "",
