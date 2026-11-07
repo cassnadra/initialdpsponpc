@@ -1,5 +1,5 @@
 {
- "last_id": "1568424559525236749",
+ "last_id": "1568532330224680980",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -731,6 +731,31 @@
      "car_from_model": 1
     }
    }
+  },
+  "iroha-0": {
+   "course": "iroha",
+   "label": "Iroha downhill",
+   "start": [
+    114.87799835205078,
+    1289.979736328125,
+    -74.13130187988281
+   ],
+   "lens": [
+    5152.1,
+    5062.6
+   ],
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 197533,
+     "car": 13,
+     "game": "en",
+     "date": "2026-11-07",
+     "msg": "1568529520678408273",
+     "ghost": "ghosts/iroha-0/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
   }
  },
  "keys": {
@@ -877,9 +902,9 @@
    "play_h": 8,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "202bd9a8073422fe857afd8d20fc1cca",
+   "car_img": "5c57baf88dc2cc56b79c20645f884e3a",
    "discord": "cassnadra",
-   "xp": 2194
+   "xp": 2447
   },
   "2ff94d72b41c145f": {
    "pic": 1,
@@ -1222,6 +1247,26 @@
      "date": "2026-11-05",
      "msg": "1567780064165363812",
      "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
+  },
+  "d-2026-11-07": {
+   "kind": "daily",
+   "course": "iroha",
+   "dir": 0,
+   "cond": "night",
+   "board": "iroha-0",
+   "start": 1794009600,
+   "end": 1794096000,
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 197533,
+     "car": 13,
+     "date": "2026-11-07",
+     "msg": "1568529520678408273",
+     "ghost": "ghosts/ch/d-2026-11-07/b46085569295d65f.idg",
      "car_from_model": 1
     }
    }

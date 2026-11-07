@@ -127,6 +127,25 @@
    }
   ]
  },
+ "iroha-0": {
+  "course": "iroha",
+  "label": "Iroha downhill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "b46085569295d65f",
+    "shown": "Cassandra (Steam)",
+    "steam": "76561198289153961",
+    "steam_verified": true,
+    "name": "Cassandra",
+    "time_ms": 197533,
+    "car": 13,
+    "game": "en",
+    "date": "2026-11-07",
+    "ghost": "ghosts/iroha-0/b46085569295d65f.idg"
+   }
+  ]
+ },
  "iroha-1-wet": {
   "course": "iroha",
   "label": "Iroha uphill (wet)",

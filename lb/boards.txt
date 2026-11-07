@@ -11,6 +11,8 @@ E	3	Alex.Kirch	181500	21	ea03af8d21d8415e	ghosts/akagi-1/ea03af8d21d8415e.idg	20
 E	4	Marcus	189833	8	f341e22f0a0d3a93	ghosts/akagi-1/f341e22f0a0d3a93.idg	2026-11-05		
 B	akina-0	akina	Akina downhill
 E	1	Cassandra	195500	0	b46085569295d65f	ghosts/akina-0/b46085569295d65f.idg	2026-10-31	76561198289153961	1
+B	iroha-0	iroha	Iroha downhill
+E	1	Cassandra	197533	13	b46085569295d65f	ghosts/iroha-0/b46085569295d65f.idg	2026-11-07	76561198289153961	1
 B	iroha-1-wet	iroha	Iroha uphill (wet)
 E	1	Cassandra	220566	13	b46085569295d65f	ghosts/iroha-1-wet/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 B	myougi-0	myougi	Myougi
@@ -80,7 +82,7 @@ P	a44fe613bf64ea22	1	-1	0	7200	Deroh	Autism					0
 P	a86ea505ac796b9f	1	0	0	0	Terry209						0
 P	aafb3d604c35ec8f	1	17	0	0	10:30 PM.mus		a179abe442679ed02909c2f94f282d10				0
 P	aea9983b3f205f83	1	19	0	0	GD3 HONDA FIT		f6cae09079929e9f5158494a902e0596				0
-P	b46085569295d65f	-1	13	43	28800	Cassandra		202bd9a8073422fe857afd8d20fc1cca	cassnadra	76561198289153961	1	2194
+P	b46085569295d65f	-1	13	43	28800	Cassandra		5c57baf88dc2cc56b79c20645f884e3a	cassnadra	76561198289153961	1	2447
 P	bea21af9c6bf95f3	1	-1	0	0	qfqr						0
 P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091				0
 P	cc650cca66a363ff	1	2	0	0	Chayam						0
@@ -91,7 +93,8 @@ P	ea03af8d21d8415e	1	0	12	7200	Alex.Kirch		6806bf222a29839e3e5a1d271e1a40aa		765
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe						0
 P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx						0
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c				0
-C	d-2026-11-07	daily	Irohazaka downhill, night	iroha-0	night	5	0	1794009600	1794096000	on	0
+C	d-2026-11-07	daily	Irohazaka downhill, night	iroha-0	night	5	0	1794009600	1794096000	on	1
+R	1	Cassandra	197533	13	b46085569295d65f	ghosts/ch/d-2026-11-07/b46085569295d65f.idg	2026-11-07	76561198289153961	1
 C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	on	2
 R	1	Cassandra	162433	13	b46085569295d65f	ghosts/ch/w-2026-W45/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 R	2	Marcus	189833	8	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		
@@ -141,4 +144,4 @@ K	halftone_gold	weekly	Halftone fade (gold)
 K	champion	daily_win	Champion
 K	sunburst	weekly_win	Sunburst
 U	f341e22f0a0d3a93	flames	0	0	1	0	0
-U	steam:76561198289153961	flames,champion	0	1	1	1	0
+U	steam:76561198289153961	flames,champion	1	2	1	1	0
