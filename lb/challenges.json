@@ -1,30 +1,18 @@
 {
- "now": 1794090366,
+ "now": 1794101817,
  "current": [
   {
-   "id": "d-2026-11-07",
+   "id": "d-2026-11-08",
    "kind": "daily",
-   "label": "Irohazaka downhill, night",
-   "board": "iroha-0",
-   "cond": "night",
-   "course": "iroha",
+   "label": "Tsuchisaka downhill, day",
+   "board": "tuchisaka-0",
+   "cond": "day",
+   "course": "tuchisaka",
    "dir": 0,
-   "start": 1794009600,
-   "end": 1794096000,
-   "drivers": 1,
-   "entries": [
-    {
-     "rank": 1,
-     "pid": "b46085569295d65f",
-     "shown": "Cassandra (Steam)",
-     "steam": "76561198289153961",
-     "name": "Cassandra",
-     "time_ms": 197533,
-     "car": 13,
-     "date": "2026-11-07",
-     "ghost": "ghosts/ch/d-2026-11-07/b46085569295d65f.idg"
-    }
-   ]
+   "start": 1794096000,
+   "end": 1794182400,
+   "drivers": 0,
+   "entries": []
   },
   {
    "id": "w-2026-W45",
@@ -65,20 +53,51 @@
  ],
  "recent": [
   {
-   "id": "d-2026-11-06",
+   "id": "d-2026-11-07",
    "kind": "daily",
-   "label": "Shomaru downhill, wet",
-   "board": "syoumaru-0-wet",
-   "cond": "wet",
-   "course": "syoumaru",
+   "label": "Irohazaka downhill, night",
+   "board": "iroha-0",
+   "cond": "night",
+   "course": "iroha",
    "dir": 0,
-   "start": 1793923200,
-   "end": 1794009600,
-   "drivers": 0,
-   "entries": []
+   "start": 1794009600,
+   "end": 1794096000,
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "steam": "76561198289153961",
+     "name": "Cassandra",
+     "time_ms": 197533,
+     "car": 13,
+     "date": "2026-11-07",
+     "ghost": "ghosts/ch/d-2026-11-07/b46085569295d65f.idg"
+    }
+   ]
   }
  ],
  "past": [
+  {
+   "id": "d-2026-11-07",
+   "kind": "daily",
+   "label": "Irohazaka downhill, night",
+   "board": "iroha-0",
+   "start": 1794009600,
+   "end": 1794096000,
+   "drivers": 1,
+   "podium": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "name": "Cassandra",
+     "time_ms": 197533,
+     "car": 13
+    }
+   ]
+  },
   {
    "id": "d-2026-11-05",
    "kind": "daily",

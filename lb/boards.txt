@@ -93,12 +93,12 @@ P	ea03af8d21d8415e	1	0	12	7200	Alex.Kirch		6806bf222a29839e3e5a1d271e1a40aa		765
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe						0
 P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx						0
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c				0
-C	d-2026-11-07	daily	Irohazaka downhill, night	iroha-0	night	5	0	1794009600	1794096000	on	1
-R	1	Cassandra	197533	13	b46085569295d65f	ghosts/ch/d-2026-11-07/b46085569295d65f.idg	2026-11-07	76561198289153961	1
+C	d-2026-11-08	daily	Tsuchisaka downhill, day	tuchisaka-0	day	7	0	1794096000	1794182400	on	0
 C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	on	2
 R	1	Cassandra	162433	13	b46085569295d65f	ghosts/ch/w-2026-W45/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 R	2	Marcus	189833	8	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		
-C	d-2026-11-06	daily	Shomaru downhill, wet	syoumaru-0-wet	wet	6	0	1793923200	1794009600	over	0
+C	d-2026-11-07	daily	Irohazaka downhill, night	iroha-0	night	5	0	1794009600	1794096000	over	1
+R	1	Cassandra	197533	13	b46085569295d65f	ghosts/ch/d-2026-11-07/b46085569295d65f.idg	2026-11-07	76561198289153961	1
 K	checker	streak	Tilted checker
 K	camo_digital	streak	Digital camo
 K	twotone_black	streak	Two-tone (panda)
@@ -144,4 +144,4 @@ K	halftone_gold	weekly	Halftone fade (gold)
 K	champion	daily_win	Champion
 K	sunburst	weekly_win	Sunburst
 U	f341e22f0a0d3a93	flames	0	0	1	0	0
-U	steam:76561198289153961	flames,champion	1	2	1	1	0
+U	steam:76561198289153961	flames,champion	1	2	1	2	0
