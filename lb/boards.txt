@@ -63,12 +63,14 @@ B	usui-1	usui	Usui (reverse)
 E	1	BLACKLIST	181333	23	5168fd241b77a365	ghosts/usui-1/5168fd241b77a365.idg	2026-10-28		
 E	2	PRZ2K0	188966	2	798da52dbb827e1c	ghosts/usui-1/798da52dbb827e1c.idg	2026-11-02		
 E	3	SeAshe	196333	27	fb6457d17ea6e509	ghosts/usui-1/fb6457d17ea6e509.idg	2026-11-01		
+P	00621795540f2378	1	-1	0	0	AndersonGzl						0
 P	0bbe2ad8c59307dd	1	2	0	0	BusterWolf						0
 P	10725c87f42d2d71	1	-1	0	0	VerOfficial						0
 P	1531e4adafe55f6c	1	-1	0	0	(-:[DarkLeviathan-Ego]:-						0
 P	18f0147cfb0c1c94	1	-1	0	0	Doc703VA						0
 P	2327c9c66e935ed9	1	-1	0	0	Kal-EL						0
 P	23f293906b0ffd82	1	-1	0	0	Sora						0
+P	29ecfb6f072fe692	1	0	0	0	lw1ay.				76561198809737212	1	0
 P	2ff94d72b41c145f	1	-1	1	0	AFK				76561198259702682	1	0
 P	380f37887df72c14	1	-1	0	0	Ale						0
 P	5168fd241b77a365	1	23	0	0	BLACKLIST		fb467c26ecd18123dd80c94408867be6				0
