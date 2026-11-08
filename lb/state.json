@@ -1,5 +1,5 @@
 {
- "last_id": "1568913944922431509",
+ "last_id": "1569063933644644392",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -60,7 +60,8 @@
     8537.1,
     8442.3,
     8456.6,
-    8513.5
+    8513.5,
+    8500.8
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -131,6 +132,16 @@
      "date": "2026-11-02",
      "msg": "1566951249553916094",
      "ghost": "ghosts/usui-0/798da52dbb827e1c.idg",
+     "car_from_model": 1
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 180833,
+     "car": 23,
+     "game": "en",
+     "date": "2026-11-08",
+     "msg": "1569054751776055398",
+     "ghost": "ghosts/usui-0/5168fd241b77a365.idg",
      "car_from_model": 1
     }
    }
@@ -454,7 +465,8 @@
     9772.0,
     9770.2,
     9737.4,
-    9806.4
+    9806.4,
+    9785.8
    ],
    "entries": {
     "b46085569295d65f": {
@@ -575,6 +587,16 @@
      "date": "2026-11-06",
      "msg": "1568071258573377659",
      "ghost": "ghosts/myougi-1/f81adc2ff759ed26.idg",
+     "car_from_model": 1
+    },
+    "4426c121d62b8f7f": {
+     "name": ">.< Fuz",
+     "time_ms": 191500,
+     "car": 9,
+     "game": "jp",
+     "date": "2026-11-08",
+     "msg": "1569063479686463569",
+     "ghost": "ghosts/myougi-1/4426c121d62b8f7f.idg",
      "car_from_model": 1
     }
    }
@@ -799,7 +821,8 @@
   "f81adc2ff759ed26": "b07873162593aa7428e9e6d953dacd3abb76fdd381e06f8288f6fd9933cec0a390e686b1f4d751299660e1e6a23fa67f0f16dcd5477e33e9c2067b9e4acde2ab",
   "a86ea505ac796b9f": "4aa097412e4e8eede9bed8e7262796dcbfb5aef6666085e0230b07049973f6cb06df2baddf3d0520f78916a4ec7de7b66325731f7010c011a78bb368ff0f012a",
   "29ecfb6f072fe692": "44ba1c41ecea4ce682a9ef968d5035478cdd106543a32e4dbee9dcbcd594e5b24f251b3e26b73818ca78361b0c381cdd7216f68de24d6a19891bf71ce5e66b39",
-  "00621795540f2378": "0f1794644e2080aa6eb20a55fd51d5e341463b7cd010cef3ae0b85b489bc10847b6e79de14499b163836896a4e0ffbc187d6d1acfe43525bbdaa29afacf7a296"
+  "00621795540f2378": "0f1794644e2080aa6eb20a55fd51d5e341463b7cd010cef3ae0b85b489bc10847b6e79de14499b163836896a4e0ffbc187d6d1acfe43525bbdaa29afacf7a296",
+  "4426c121d62b8f7f": "77965b355600f893db31d0a9e9a32ef771def846fe8ed748f86fa6e8e6df3818d7f9ae21b45336bed8a7a94c60be36c0be78efa19765b255e9c338ccd275a192"
  },
  "names": {
   "b46085569295d65f": [
@@ -879,6 +902,9 @@
   ],
   "f81adc2ff759ed26": [
    "sirex"
+  ],
+  "4426c121d62b8f7f": [
+   ">.< Fuz"
   ]
  },
  "steam": {
@@ -948,8 +974,9 @@
    "play_h": 0,
    "name": "BLACKLIST",
    "bio": "",
-   "car_img": "fb467c26ecd18123dd80c94408867be6",
-   "discord": ""
+   "car_img": "b94194f43883702bf0bc6ec941dc4ba3",
+   "discord": "",
+   "xp": 882
   },
   "a44fe613bf64ea22": {
    "pic": 1,
@@ -1223,6 +1250,17 @@
    "name": "AndersonGzl",
    "bio": "",
    "car_img": "",
+   "discord": "",
+   "xp": 0
+  },
+  "4426c121d62b8f7f": {
+   "pic": 1,
+   "car": 16,
+   "cards": 1,
+   "play_h": 0,
+   "name": ">.< Fuz \u2605",
+   "bio": "",
+   "car_img": "f8b8f01798b9d397228831cd72765ba6",
    "discord": "",
    "xp": 0
   }

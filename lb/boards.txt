@@ -49,16 +49,18 @@ E	7	MATphantom	187100	0	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	20
 E	8	XShadowVileX	188100	0	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
 E	9	BusterWolf	190633	0	0bbe2ad8c59307dd	ghosts/myougi-1/0bbe2ad8c59307dd.idg	2026-11-02		
 E	10	Evil Night	191233	0	60f0b3ebbbf7d46a	ghosts/myougi-1/60f0b3ebbbf7d46a.idg	2026-11-03		
-E	11	SupaChill	192533	0	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-05		
-E	12	driver	193233	0	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
+E	11	>.< Fuz	191500	9	4426c121d62b8f7f	ghosts/myougi-1/4426c121d62b8f7f.idg	2026-11-08		
+E	12	SupaChill	192533	0	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-05		
+E	13	driver	193233	0	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
 B	usui-0	usui	Usui
-E	1	Alex.Kirch	189966	21	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
-E	2	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
-E	3	Giogio	192366	24	7bef37ad91d8806b	ghosts/usui-0/7bef37ad91d8806b.idg	2026-10-30		
-E	4	PRZ2K0	195700	2	798da52dbb827e1c	ghosts/usui-0/798da52dbb827e1c.idg	2026-11-02		
-E	5	SeAshe	198900	27	fb6457d17ea6e509	ghosts/usui-0/fb6457d17ea6e509.idg	2026-11-01		
-E	6	MATphantom	199766	0	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
-E	7	AFK	200333	30	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
+E	1	BLACKLIST	180833	23	5168fd241b77a365	ghosts/usui-0/5168fd241b77a365.idg	2026-11-08		
+E	2	Alex.Kirch	189966	21	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
+E	3	Cassandra	190333	13	b46085569295d65f	ghosts/usui-0/b46085569295d65f.idg	2026-10-26	76561198289153961	1
+E	4	Giogio	192366	24	7bef37ad91d8806b	ghosts/usui-0/7bef37ad91d8806b.idg	2026-10-30		
+E	5	PRZ2K0	195700	2	798da52dbb827e1c	ghosts/usui-0/798da52dbb827e1c.idg	2026-11-02		
+E	6	SeAshe	198900	27	fb6457d17ea6e509	ghosts/usui-0/fb6457d17ea6e509.idg	2026-11-01		
+E	7	MATphantom	199766	0	cb291afb8872aabc	ghosts/usui-0/cb291afb8872aabc.idg	2026-10-29		
+E	8	AFK	200333	30	2ff94d72b41c145f	ghosts/usui-0/2ff94d72b41c145f.idg	2026-10-30	76561198259702682	1
 B	usui-1	usui	Usui (reverse)
 E	1	BLACKLIST	181333	23	5168fd241b77a365	ghosts/usui-1/5168fd241b77a365.idg	2026-10-28		
 E	2	PRZ2K0	188966	2	798da52dbb827e1c	ghosts/usui-1/798da52dbb827e1c.idg	2026-11-02		
@@ -73,7 +75,8 @@ P	23f293906b0ffd82	1	-1	0	0	Sora						0
 P	29ecfb6f072fe692	1	0	0	0	lw1ay.				76561198809737212	1	0
 P	2ff94d72b41c145f	1	-1	1	0	AFK				76561198259702682	1	0
 P	380f37887df72c14	1	-1	0	0	Ale						0
-P	5168fd241b77a365	1	23	0	0	BLACKLIST		fb467c26ecd18123dd80c94408867be6				0
+P	4426c121d62b8f7f	1	16	1	0	>.< Fuz ★		f8b8f01798b9d397228831cd72765ba6				0
+P	5168fd241b77a365	1	23	0	0	BLACKLIST		b94194f43883702bf0bc6ec941dc4ba3				882
 P	52143161d65181cd	1	0	0	0	+Rockman+						0
 P	55f9aa565f92c636	1	-1	0	0	XShadowVileX						0
 P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf						0
