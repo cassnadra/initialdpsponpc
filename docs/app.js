@@ -25,7 +25,11 @@ const $ = id => document.getElementById(id);
 const state = { rewards: {}, bans: {}, view: '', ch: '', boards: {}, profiles: {}, course: null, dir: 0, wet: 0, search: '', sort: 'time', car: '', steamOnly: false, picked: [] };
 
 // ---------------- driver level (the game's level.c: level L to L + 1 takes 200 + 100 (L - 1) XP) ----------------
-function levelOf(xp) { let L = 1; while (L < 99 && xp >= 200 + 100 * (L - 1)) { xp -= 200 + 100 * (L - 1); L++; } return L; }
+// past level 99 it starts again at 1 with a prestige (P1, P2, ...: 504 900 XP each); the XP keeps counting
+const LEVEL_CYCLE = 504900;
+function levelOf(xp) { xp = Math.max(0, xp) % LEVEL_CYCLE; let L = 1; while (L < 99 && xp >= 200 + 100 * (L - 1)) { xp -= 200 + 100 * (L - 1); L++; } return L; }
+function prestigeOf(xp) { return Math.floor(Math.max(0, xp) / LEVEL_CYCLE); }
+function lvlText(xp) { const p = prestigeOf(xp); return (p ? `P${p} ` : '') + `Lv ${levelOf(xp)}`; }
 
 // ---------------- formatting ----------------
 function fmtTime(ms) {
@@ -141,13 +145,13 @@ function drawCourses() {
 }
 // ---------------- player leaderboards: levels, hours, challenges (not a course: their own list) ----------------
 const ordinal = r => r % 100 >= 11 && r % 100 <= 13 ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[r % 10] || 'th');
-const lvlTag = xp => Object.assign(document.createElement('span'), { className: 'lvl', textContent: `Lv ${levelOf(xp)}` });
+const lvlTag = xp => Object.assign(document.createElement('span'), { className: 'lvl', textContent: lvlText(xp) });
 const num = v => v.toLocaleString('en-US');
 // src 'prof': from the profiles (a Steam account's PCs: one row - its most XP, its hours added up);
 // src 'rw': from rewards.json (each player key: steam:<id> or their id)
 const STATS = [
   { id: 'levels', label: 'Level', title: 'Driver levels', kanji: 'レベル', src: 'prof', val: p => p.xp, merge: 'max', head: ['Level', 'XP'], cells: r => [lvlTag(r.v), num(r.v)],
-    meta: rows => `top Lv ${levelOf(rows[0].v)}`, none: 'No levels yet - they come with the profile the game sends while you share your times.' },
+    meta: rows => `top ${lvlText(rows[0].v)}`, none: 'No levels yet - they come with the profile the game sends while you share your times.' },
   { id: 'hours', label: 'Hours', title: 'Hours played', kanji: '時間', src: 'prof', val: p => Math.floor((p.playS || 0) / 3600), merge: 'sum', head: ['Hours'], cells: r => [`${num(r.v)} h`],
     meta: rows => `top ${num(rows[0].v)} h`, none: 'No play time shared yet.' },
   { id: 'dwins', label: 'Daily wins', kanji: '日間', src: 'rw', val: x => x.daily_wins, head: ['Wins'], cells: r => [num(r.v)],
@@ -300,7 +304,7 @@ function drawBoard() {
     nm.title = 'Driver profile';
     nm.onclick = ev => { ev.stopPropagation(); openProfile(e.pid); };
     who.append(nm);
-    if (prof && prof.xp > 0) who.append(Object.assign(document.createElement('span'), { className: 'lvl', textContent: `Lv ${levelOf(prof.xp)}`, title: `Driver level (${prof.xp} XP)` }));
+    if (prof && prof.xp > 0) who.append(Object.assign(document.createElement('span'), { className: 'lvl', textContent: lvlText(prof.xp), title: `Driver level (${prof.xp} XP)` }));
     if (e.steam_verified) { const s = document.createElement('span'); s.className = 'badge'; s.textContent = 'Steam'; s.title = 'Steam account verified'; who.append(s); }
     if (prof && prof.bio) who.title = prof.bio;
     who.append(Object.assign(document.createElement('span'), { className: 'sub', textContent: [e.time_ms === lead ? '' : `+${((e.time_ms - lead) / 1000).toFixed(3)}`, carName(e.car), e.date].filter(Boolean).join(' · ') }));   // (phones: the columns they hide)
@@ -557,7 +561,7 @@ function openProfile(pid) {
   $('profName').textContent = (pr.name || (any ? any.name : '')) || 'Driver';
   // tags: Steam (verified: a link to their Steam page), Discord, their id tag
   const tags = $('profTags'); tags.textContent = '';
-  if (pr.xp > 0) { const l = document.createElement('span'); l.className = 'lvl'; l.textContent = `Lv ${levelOf(pr.xp)}`; l.title = `${pr.xp} XP`; tags.append(l); }
+  if (pr.xp > 0) { const l = document.createElement('span'); l.className = 'lvl'; l.textContent = lvlText(pr.xp); l.title = `${pr.xp} XP`; tags.append(l); }
   const steam = pr.steam || (any && any.steam) || '', steamOk = pr.steamOk || (any && any.steam_verified);
   if (steam && steamOk) {
     const a = document.createElement('a'); a.className = 'steam'; a.textContent = 'Steam verified'; a.target = '_blank'; a.rel = 'noopener';

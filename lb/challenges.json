@@ -1,16 +1,50 @@
 {
- "now": 1794016221,
+ "now": 1794193940,
  "current": [
   {
-   "id": "d-2026-11-07",
+   "id": "d-2026-11-09",
    "kind": "daily",
-   "label": "Irohazaka downhill, night",
-   "board": "iroha-0",
+   "label": "Akagi downhill, day",
+   "board": "akagi-0",
+   "cond": "day",
+   "course": "akagi",
+   "dir": 0,
+   "start": 1794182400,
+   "end": 1794268800,
+   "skin": "champion",
+   "skin_name": "Champion",
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W46",
+   "kind": "weekly",
+   "label": "Irohazaka uphill, night",
+   "board": "iroha-1",
    "cond": "night",
    "course": "iroha",
+   "dir": 1,
+   "start": 1794182400,
+   "end": 1794787200,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "recent": [
+  {
+   "id": "d-2026-11-08",
+   "kind": "daily",
+   "label": "Tsuchisaka downhill, day",
+   "board": "tuchisaka-0",
+   "cond": "day",
+   "course": "tuchisaka",
    "dir": 0,
-   "start": 1794009600,
-   "end": 1794096000,
+   "start": 1794096000,
+   "end": 1794182400,
+   "skin": "champion",
+   "skin_name": "Champion",
    "drivers": 0,
    "entries": []
   },
@@ -24,6 +58,8 @@
    "dir": 1,
    "start": 1793577600,
    "end": 1794182400,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
    "drivers": 2,
    "entries": [
     {
@@ -51,22 +87,34 @@
    ]
   }
  ],
- "recent": [
-  {
-   "id": "d-2026-11-06",
-   "kind": "daily",
-   "label": "Shomaru downhill, wet",
-   "board": "syoumaru-0-wet",
-   "cond": "wet",
-   "course": "syoumaru",
-   "dir": 0,
-   "start": 1793923200,
-   "end": 1794009600,
-   "drivers": 0,
-   "entries": []
-  }
- ],
  "past": [
+  {
+   "id": "w-2026-W45",
+   "kind": "weekly",
+   "label": "Akagi uphill, day",
+   "board": "akagi-1",
+   "start": 1793577600,
+   "end": 1794182400,
+   "drivers": 2,
+   "podium": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "name": "Cassandra",
+     "time_ms": 162433,
+     "car": 13
+    },
+    {
+     "rank": 2,
+     "pid": "f341e22f0a0d3a93",
+     "shown": "Marcus #f341",
+     "name": "Marcus",
+     "time_ms": 189833,
+     "car": 8
+    }
+   ]
+  },
   {
    "id": "d-2026-11-05",
    "kind": "daily",
