@@ -1,5 +1,5 @@
 {
- "now": 1794194923,
+ "now": 1794217101,
  "current": [
   {
    "id": "d-2026-11-09",
@@ -13,8 +13,20 @@
    "end": 1794268800,
    "skin": "champion",
    "skin_name": "Champion",
-   "drivers": 0,
-   "entries": []
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "steam": "76561198289153961",
+     "name": "Cassandra",
+     "time_ms": 153100,
+     "car": 10,
+     "date": "2026-11-09",
+     "ghost": "ghosts/ch/d-2026-11-09/b46085569295d65f.idg"
+    }
+   ]
   },
   {
    "id": "w-2026-W46",

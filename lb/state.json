@@ -1,5 +1,5 @@
 {
- "last_id": "1569190191925825687",
+ "last_id": "1569196250471989248",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -12,16 +12,18 @@
    "lens": [
     5785.4,
     5759.4,
-    5789.4
+    5789.4,
+    5789.6,
+    5782.0
    ],
    "entries": {
     "b46085569295d65f": {
      "name": "Cassandra",
-     "time_ms": 154600,
-     "car": 13,
+     "time_ms": 153100,
+     "car": 10,
      "game": "en",
-     "date": "2026-10-22",
-     "msg": "1562724602453434421",
+     "date": "2026-11-09",
+     "msg": "1569196250471989248",
      "ghost": "ghosts/akagi-0/b46085569295d65f.idg",
      "car_from_model": 1
     },
@@ -933,10 +935,10 @@
    "play_h": 8,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "d9667993507ee9d34831d865de541b47",
+   "car_img": "c2f730bda7e4f2db7206d196ee753edf",
    "discord": "cassnadra",
    "xp": 3476,
-   "at": 1794194495
+   "at": 1794195226
   },
   "2ff94d72b41c145f": {
    "pic": 1,
@@ -1333,6 +1335,26 @@
      "date": "2026-11-07",
      "msg": "1568529520678408273",
      "ghost": "ghosts/ch/d-2026-11-07/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
+  },
+  "d-2026-11-09": {
+   "kind": "daily",
+   "course": "akagi",
+   "dir": 0,
+   "cond": "day",
+   "board": "akagi-0",
+   "start": 1794182400,
+   "end": 1794268800,
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 153100,
+     "car": 10,
+     "date": "2026-11-09",
+     "msg": "1569196250471989248",
+     "ghost": "ghosts/ch/d-2026-11-09/b46085569295d65f.idg",
      "car_from_model": 1
     }
    }
