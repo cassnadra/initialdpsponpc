@@ -1,5 +1,5 @@
 {
- "last_id": "1569196250471989248",
+ "last_id": "1569310526939603108",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -824,7 +824,9 @@
   "a86ea505ac796b9f": "4aa097412e4e8eede9bed8e7262796dcbfb5aef6666085e0230b07049973f6cb06df2baddf3d0520f78916a4ec7de7b66325731f7010c011a78bb368ff0f012a",
   "29ecfb6f072fe692": "44ba1c41ecea4ce682a9ef968d5035478cdd106543a32e4dbee9dcbcd594e5b24f251b3e26b73818ca78361b0c381cdd7216f68de24d6a19891bf71ce5e66b39",
   "00621795540f2378": "0f1794644e2080aa6eb20a55fd51d5e341463b7cd010cef3ae0b85b489bc10847b6e79de14499b163836896a4e0ffbc187d6d1acfe43525bbdaa29afacf7a296",
-  "4426c121d62b8f7f": "77965b355600f893db31d0a9e9a32ef771def846fe8ed748f86fa6e8e6df3818d7f9ae21b45336bed8a7a94c60be36c0be78efa19765b255e9c338ccd275a192"
+  "4426c121d62b8f7f": "77965b355600f893db31d0a9e9a32ef771def846fe8ed748f86fa6e8e6df3818d7f9ae21b45336bed8a7a94c60be36c0be78efa19765b255e9c338ccd275a192",
+  "8e25cd5465651786": "fccf4717950e1e93dd05605ca4cde5a0dfd3c2e0a4733b8dfc713a55d9206b03b66d4fc75a8ddf17767df8d9c3f0a49d52d3cefc9b2afe43d8070b1a65e6ad4a",
+  "dd75487c3aacaeab": "43cc2bedc87c5b4abc5f3413ba54a52932b9fc297acaa7a5054b70f1021a567e7da6bc5725c06504484701d2a9ab44b0054d97beb88e608916a585820aa60fdb"
  },
  "names": {
   "b46085569295d65f": [
@@ -1266,6 +1268,30 @@
    "car_img": "f8b8f01798b9d397228831cd72765ba6",
    "discord": "",
    "xp": 0
+  },
+  "8e25cd5465651786": {
+   "pic": 1,
+   "car": 0,
+   "cards": 0,
+   "play_h": 0,
+   "name": "VVarcolac",
+   "bio": "",
+   "car_img": "",
+   "discord": "",
+   "xp": 0,
+   "at": 1794218345
+  },
+  "dd75487c3aacaeab": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "GTEKNG",
+   "bio": "",
+   "car_img": "",
+   "discord": "",
+   "xp": 0,
+   "at": 1794223186
   }
  },
  "bans": {},
