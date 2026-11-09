@@ -1,5 +1,5 @@
 {
- "now": 1794189696,
+ "now": 1794194923,
  "current": [
   {
    "id": "d-2026-11-09",
@@ -11,6 +11,8 @@
    "dir": 0,
    "start": 1794182400,
    "end": 1794268800,
+   "skin": "champion",
+   "skin_name": "Champion",
    "drivers": 0,
    "entries": []
   },
@@ -24,6 +26,8 @@
    "dir": 1,
    "start": 1794182400,
    "end": 1794787200,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
    "drivers": 0,
    "entries": []
   }
@@ -39,6 +43,8 @@
    "dir": 0,
    "start": 1794096000,
    "end": 1794182400,
+   "skin": "champion",
+   "skin_name": "Champion",
    "drivers": 0,
    "entries": []
   },
@@ -52,6 +58,8 @@
    "dir": 1,
    "start": 1793577600,
    "end": 1794182400,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
    "drivers": 2,
    "entries": [
     {

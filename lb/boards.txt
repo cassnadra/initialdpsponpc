@@ -65,43 +65,43 @@ B	usui-1	usui	Usui (reverse)
 E	1	BLACKLIST	181333	23	5168fd241b77a365	ghosts/usui-1/5168fd241b77a365.idg	2026-10-28		
 E	2	PRZ2K0	188966	2	798da52dbb827e1c	ghosts/usui-1/798da52dbb827e1c.idg	2026-11-02		
 E	3	SeAshe	196333	27	fb6457d17ea6e509	ghosts/usui-1/fb6457d17ea6e509.idg	2026-11-01		
-P	00621795540f2378	1	-1	0	0	AndersonGzl						0
-P	0bbe2ad8c59307dd	1	2	0	0	BusterWolf						0
-P	10725c87f42d2d71	1	-1	0	0	VerOfficial						0
-P	1531e4adafe55f6c	1	-1	0	0	(-:[DarkLeviathan-Ego]:-						0
-P	18f0147cfb0c1c94	1	-1	0	0	Doc703VA						0
-P	2327c9c66e935ed9	1	-1	0	0	Kal-EL						0
-P	23f293906b0ffd82	1	-1	0	0	Sora						0
-P	29ecfb6f072fe692	1	0	0	0	lw1ay.				76561198809737212	1	0
-P	2ff94d72b41c145f	1	-1	1	0	AFK				76561198259702682	1	0
-P	380f37887df72c14	1	-1	0	0	Ale						0
-P	4426c121d62b8f7f	1	16	1	0	>.< Fuz ★		f8b8f01798b9d397228831cd72765ba6				0
-P	5168fd241b77a365	1	23	0	0	BLACKLIST		b94194f43883702bf0bc6ec941dc4ba3				882
-P	52143161d65181cd	1	0	0	0	+Rockman+						0
-P	55f9aa565f92c636	1	-1	0	0	XShadowVileX						0
-P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf						0
-P	7876c31e772509fa	1	13	1	0	red		89ee09d82cdea8d885cb6d86c80566f1				0
-P	7bef37ad91d8806b	1	24	2	0	Giogio		8626a45fab6773f29f6bc0ac65083201				0
-P	963ca3a4a77a38f7	1	0	0	0	Din_Lin		660a83d5d8bf5a899c0cd4e6adcd1430				0
-P	a44fe613bf64ea22	1	-1	0	7200	Deroh	Autism					0
-P	a86ea505ac796b9f	1	0	0	0	Terry209						0
-P	aafb3d604c35ec8f	1	17	0	0	10:30 PM.mus		a179abe442679ed02909c2f94f282d10				0
-P	aea9983b3f205f83	1	19	0	0	GD3 HONDA FIT		f6cae09079929e9f5158494a902e0596				0
-P	b46085569295d65f	-1	13	43	28800	Cassandra		2695acac5175c387046de8c192c2b03c	cassnadra	76561198289153961	1	2976
-P	bea21af9c6bf95f3	1	-1	0	0	qfqr						0
-P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091				0
-P	cc650cca66a363ff	1	2	0	0	Chayam						0
-P	d11124014e323aa6	1	-1	0	0	BL4ck0uT _YuGi						0
-P	dbbde3ded80d1c83	1	-1	0	0	Ueno						0
-P	dd0ff6704e4ed00e	1	34	1	0	ADZ						0
-P	ea03af8d21d8415e	1	0	12	7200	Alex.Kirch		6806bf222a29839e3e5a1d271e1a40aa		76561198064983234	1	0
-P	fb6457d17ea6e509	1	-1	7	10800	SeAshe						0
-P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx						0
-P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c				0
-C	d-2026-11-09	daily	Akagi downhill, day	akagi-0	day	2	0	1794182400	1794268800	on	0
-C	w-2026-W46	weekly	Irohazaka uphill, night	iroha-1	night	5	1	1794182400	1794787200	on	0
-C	d-2026-11-08	daily	Tsuchisaka downhill, day	tuchisaka-0	day	7	0	1794096000	1794182400	over	0
-C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	over	2
+P	00621795540f2378	1	-1	0	0	AndersonGzl						0	0f1794644e2080aa6eb20a55fd51d5e341463b7cd010cef3ae0b85b489bc10847b6e79de14499b163836896a4e0ffbc187d6d1acfe43525bbdaa29afacf7a296
+P	0bbe2ad8c59307dd	1	2	0	0	BusterWolf						0	36338fbe10764a5235aac8b029660d74de34cc67f3595b745d8a90685c97db49091c43f50755fa3250b179c01d59ba0f81105d00e38ca9790376f512442e6e12
+P	10725c87f42d2d71	1	-1	0	0	VerOfficial						0	28280da907a5ac0d154ff21583ba36af3fbaa73639f7beedb2638b887689cba442df0ae22a78faf6c7c2a9a7092273085ce8284b390fcef7d3956644fbec50a2
+P	1531e4adafe55f6c	1	-1	0	0	(-:[DarkLeviathan-Ego]:-						0	0b3cb8248457d59134e67451b9f1870f87ce7f3a6879f982ff53723c5624f1717cc0ae36a7618ba90a36a5df63cccca8fd1cd6d63230958d8a70f19d9ab2e7b5
+P	18f0147cfb0c1c94	1	-1	0	0	Doc703VA						0	cb09a46cbae7da4164d9ae50a7abe7d6d0e5a83980d22e0a86ececd8065357dcb9c3b7f677042a8d8c4c8b7a963f917eaba1b8732fe65ab26580409e89fda509
+P	2327c9c66e935ed9	1	-1	0	0	Kal-EL						0	cab9ab08b392b338af762ee2ef96e08ce62dd15f6fe388ddb58db7ddfd64572127983237c3db2180b628292d55d709820f053c933cc213e5ed4b48a66cb19b9a
+P	23f293906b0ffd82	1	-1	0	0	Sora						0	466d2c79c969bac8ee9bac8ecc4aaf3a0fba71681e099b6b5de65462664514141c91b35ddc7659f65d8759d24948bf541db23512e4db121f0686fd70868fc2c9
+P	29ecfb6f072fe692	1	0	0	0	lw1ay.				76561198809737212	1	0	44ba1c41ecea4ce682a9ef968d5035478cdd106543a32e4dbee9dcbcd594e5b24f251b3e26b73818ca78361b0c381cdd7216f68de24d6a19891bf71ce5e66b39
+P	2ff94d72b41c145f	1	-1	1	0	AFK				76561198259702682	1	0	a189f2ca547d40597f0bfa70799f33d0cfadf2adf2ef7d7888aa20f45dd4001dcf11ec139e576429c4b2824369c4cf4afb5d38b17c5aa3c28ce36451dee354ef
+P	380f37887df72c14	1	-1	0	0	Ale						0	8e792f169655d79954e070be4aedc77084a2f30eb2f34fa0b701de96247d0e00998a2bca0d82bea08ebaef093082e58baa9ef9cf61d5fc78bae98d30f4a22d0f
+P	4426c121d62b8f7f	1	16	1	0	>.< Fuz ★		f8b8f01798b9d397228831cd72765ba6				0	77965b355600f893db31d0a9e9a32ef771def846fe8ed748f86fa6e8e6df3818d7f9ae21b45336bed8a7a94c60be36c0be78efa19765b255e9c338ccd275a192
+P	5168fd241b77a365	1	23	0	0	BLACKLIST		b94194f43883702bf0bc6ec941dc4ba3				882	a0425cada2c76e6a579a0e9f25ae67d45a0b4c3152fd8b2fc05217d7adf4bd36149d5cc3ce27986d1b8daf672e4aafc4043bd660483048692ee40ee08670cbe2
+P	52143161d65181cd	1	0	0	0	+Rockman+						0	32ab853251171cc5ac5cd2033cd4b5a64fbfefdc31ec971f66b32017fdc045bdd442edee83bd897c69f2baabae0b87043962f551667b3d80f42389a3bd0fc781
+P	55f9aa565f92c636	1	-1	0	0	XShadowVileX						0	88de12678361e9945ce7cc65b2548aae123e5dbb8586cbfef1938e18c3e8bbb20f5a8e31f1e5401569facf5b4cf83212aa62dd67ab23105a62eb23401a7a1306
+P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf						0	9def07936b9071a1136b2ecb66aaa3a6f189a56e08493993f79dff5442c026db5caf1459e56a8265fc8fdbd31c50fb3a7f61f5434d388130d9489f6101028a2b
+P	7876c31e772509fa	1	13	1	0	red		89ee09d82cdea8d885cb6d86c80566f1				0	98682f2bf0d2ebdc7a420148e300b420dc82535ac96485e50041dadd461f920bbccccb4c717a1acb4e3a3d65b3da1b77f571e0cb21921f731037834cba38fd51
+P	7bef37ad91d8806b	1	24	2	0	Giogio		8626a45fab6773f29f6bc0ac65083201				0	8c49e21eb7c8325e47a55642c98f42f72ab1f2d0af3378ba8eb6b0d0f287194f12d5be9b1b39154d44f78b9d183ce0a6fd3b65070abb0f008ad66cbc2a5ef739
+P	963ca3a4a77a38f7	1	0	0	0	Din_Lin		660a83d5d8bf5a899c0cd4e6adcd1430				0	efd547007a053c29df5dbd2e71aeeb536b9360564c353cb82b31733f7f89fb07e401a27ade93f51f009c5fca17dd4c0dbae0c734f474393f1c1253dd2183f07b
+P	a44fe613bf64ea22	1	-1	0	7200	Deroh	Autism					0	5fa9614c57ee38111331a5c8d5f9e459251d3ad29e957092fd8adfaf7abb27a22b15cd928b545ef869980751a36792c926d0e1a0c8347958a15813891c6f8a82
+P	a86ea505ac796b9f	1	0	0	0	Terry209						0	4aa097412e4e8eede9bed8e7262796dcbfb5aef6666085e0230b07049973f6cb06df2baddf3d0520f78916a4ec7de7b66325731f7010c011a78bb368ff0f012a
+P	aafb3d604c35ec8f	1	17	0	0	10:30 PM.mus		a179abe442679ed02909c2f94f282d10				0	35824c8bc3ceb0b099ccf0338a59c02db3fd7d82a7dad6e7409c0ea310a21ba48992c29ef25a3cd102cd299146e93a115654d8b17affbc02d135eb94983b8785
+P	aea9983b3f205f83	1	19	0	0	GD3 HONDA FIT		f6cae09079929e9f5158494a902e0596				0	c4133c8bb5e8710d4c419559753f45c1cb52770b09d5134a062d615b45a18c356104e5ddade3fe343c831272ea098f178441aa5fc9e415ec1589a8858d6a5074
+P	b46085569295d65f	-1	10	43	28800	Cassandra		d9667993507ee9d34831d865de541b47	cassnadra	76561198289153961	1	3476	92aaa9127eaf88ea38de52ce6e50e18e87ec777574eaa1abee4a3350e3fefa6cfed9baf77e363261d0709ed8f341cf47dd650f757361bfc1da85b0af99e8c6a4
+P	bea21af9c6bf95f3	1	-1	0	0	qfqr						0	f0f03d9aa004256f8e6a78cae7f6a64ff2fa6c5b95b48b0375bfbbc15798af63f380e4e0d93fc97293536d01d4dab4c170a36c5b5e04e18f23dd682ac857ca06
+P	cb291afb8872aabc	1	0	4	0	MATphantom		67adc908723dc5e0eb2638adb2559091				0	8b3ca3547997069ec5e1e5aca1794549c8a388fedb55edce67ffbf5b8ed339132d9bb540795fcb8a8cc2d0db2504701031c6622508822d7df98c9a34224a8c89
+P	cc650cca66a363ff	1	2	0	0	Chayam						0	d0c23843659e308b8026ffaec5c8b8afd30fb89ccc8faa783dbb4e7719e422087644bc28f13a9f92b03cea3ea413bf732136f298a74010cf828aaf9b0935ca13
+P	d11124014e323aa6	1	-1	0	0	BL4ck0uT _YuGi						0	9160c54d55c90cda53b1b55c8d7490530ad491c2d5ac25c7ee2ed9bffda71a5a93f9dca8aef7e9c0199d0b0c9364042035b23efeb946e7926abed67b99c18f1a
+P	dbbde3ded80d1c83	1	-1	0	0	Ueno						0	4a8b19b3af5e4bd6af18ff7c3b4bd1f2c964ed74aee0a112392fa10769d499296f94e8adb7edecc8e58584f7d04004735cf3a54a79ca36121bbe6ee670474f3f
+P	dd0ff6704e4ed00e	1	34	1	0	ADZ						0	69f9f7935b2f6d02af9e7e4e40f9c33f3ede89ef6caa80caa43b00e80e8aa2b22fd6ff470d993423f3fbaa0195162c756a8ebc0a35c0c3afe83ae4522935f16e
+P	ea03af8d21d8415e	1	0	12	7200	Alex.Kirch		6806bf222a29839e3e5a1d271e1a40aa		76561198064983234	1	0	c2637e6749222b598d13e167b08a855a4d9e364736ddf86427f6d1869c022f9b3b63b71fd10c6136baccb5f57c46bb1017f2b7ff1351441b1b977fd087988f61
+P	fb6457d17ea6e509	1	-1	7	10800	SeAshe						0	fb9e0344890be0b118f913577c1419c9990f9d9a4371b3f16fecdf76994667275b78ae0265787d09eb00b5c574361c7a00b521ac4403ad24daa9c57385988d14
+P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx						0	23fac3c22a7cec86e8b030fa1f54d0c8b1e97a24d59a5f88c061697d37220824b914fd230c25c5e5ffb36be9ab06579c0757b0c152bb0e07e7574424f1876a09
+P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c				0	c6601acf302f6a28dab2f91e6ee2c005bb6035a1dcaab0c1e91f452c96ae6083e802310ca6d27916d0d34670053ef96f42e14579bcaf9c7e90c1255cd8513b4d
+C	d-2026-11-09	daily	Akagi downhill, day	akagi-0	day	2	0	1794182400	1794268800	on	0	champion	Champion
+C	w-2026-W46	weekly	Irohazaka uphill, night	iroha-1	night	5	1	1794182400	1794787200	on	0	sunburst	Sunburst
+C	d-2026-11-08	daily	Tsuchisaka downhill, day	tuchisaka-0	day	7	0	1794096000	1794182400	over	0	champion	Champion
+C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	over	2	sunburst	Sunburst
 R	1	Cassandra	162433	13	b46085569295d65f	ghosts/ch/w-2026-W45/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 R	2	Marcus	189833	8	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		
 K	checker	streak	Tilted checker
@@ -148,5 +148,47 @@ K	stripes_red	weekly	Twin stripes (red)
 K	halftone_gold	weekly	Halftone fade (gold)
 K	champion	daily_win	Champion
 K	sunburst	weekly_win	Sunburst
+K	camo_duo	level	Field Camo	2	0
+K	seigaiha_band_ember	level	Seigaiha Band Ember	3	0
+K	diagonal_half	level	Diagonal Half	4	0
+K	split_decision	level	Split Decision	5	1
+K	sunset_steps_ice	level	Sunset Steps Ice	6	0
+K	rising_sun_toxic	level	Rising Sun Toxic	7	0
+K	ribbon_wrap	level	Ribbon Wrap	8	0
+K	koi_vinyl	level	Koi Vinyl	9	0
+K	wide_hockey_70s	level	70s Wide Hockey	10	1
+K	wing_block	level	Rear Wing Block	11	0
+K	argyle_bold	level	Bold Argyle	12	0
+K	rally_roundel	level	Retro Rally 7	13	0
+K	tricolour_split	level	Tri-Colour Split	14	0
+K	plaid_tartan	level	Tartan Plaid	15	1
+K	number_86_gold	level	Number 86 Gold	16	0
+K	split_decision_forest	level	Split Decision Forest	17	0
+K	caution_zone	level	Caution Zone	18	0
+K	split_decision_sakura	level	Split Decision Sakura	19	0
+K	chequer_fade	level	Chequered Fade	20	1
+K	tread_print	level	Tyre Track Print	21	0
+K	hairline	level	Hairline	22	0
+K	velocity_stripes_gold	level	Velocity Stripes Gold	23	0
+K	kaido_split_blue	level	Kaido Two-Tone Blue	24	0
+K	bonnet_chevrons	level	Bonnet Chevrons	25	1
+K	wave_surf	level	Surf Wave	26	0
+K	quarter_split	level	Quarter Split	27	0
+K	circuit_trace	level	Circuit Traces	28	0
+K	ghost_livery	level	Ghost Livery	29	0
+K	flame_vinyl	level	Flame Vinyl	30	1
+K	mosaic_tiles	level	Mosaic Tiles	31	0
+K	tri_stripe_vinyl	level	Retro Tri-Stripe	32	0
+K	hockey_mirror	level	Mirrored Hockey	33	0
+K	halftone_comic	level	Comic Halftone	34	0
+K	swoosh_bold	level	Big Side Swoosh	35	1
+K	door_numbers	level	Door Numerals 23	36	0
+K	cloud_print	level	Cloud Print	37	0
+K	checker_roof	level	Checker Roof	38	0
+K	tape_stripes	level	Tape Stripes	39	0
+K	lightning_spear	level	Lightning Spear	40	1
+K	offset_stripe	level	Offset Racing Stripe	41	0
+K	number_band_vinyl	level	Number & Side Band	42	0
+K	velocity_stripes	level	Velocity Stripes	43	0
 U	f341e22f0a0d3a93	flames	0	0	1	0	0
 U	steam:76561198289153961	flames,champion,sunburst	0	2	1	2	1

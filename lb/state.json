@@ -1,5 +1,5 @@
 {
- "last_id": "1569063933644644392",
+ "last_id": "1569190191925825687",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -928,14 +928,15 @@
  "profiles": {
   "b46085569295d65f": {
    "pic": -1,
-   "car": 13,
+   "car": 10,
    "cards": 43,
    "play_h": 8,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "2695acac5175c387046de8c192c2b03c",
+   "car_img": "d9667993507ee9d34831d865de541b47",
    "discord": "cassnadra",
-   "xp": 2976
+   "xp": 3476,
+   "at": 1794194495
   },
   "2ff94d72b41c145f": {
    "pic": 1,
@@ -1336,5 +1337,11 @@
     }
    }
   }
+ },
+ "ch_skins": {
+  "d-2026-11-09": "champion",
+  "w-2026-W46": "sunburst",
+  "d-2026-11-08": "champion",
+  "d-2026-11-07": "champion"
  }
 }
