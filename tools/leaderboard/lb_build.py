@@ -6,6 +6,7 @@ checks every ghost, keeps each player's best per board and writes into LB_DIR:
   boards.json  the same for people / web pages
   ghosts/<board>/<pid>.idg
   state.json   what has been read (last message id), every accepted entry, each player id's key + names used
+  mail/<pid>.txt  each player's last mails (encrypted by the game to the recipient: only the two of them can read one)
   config.txt   (yours, never touched): submit_webhook=<url> makes every copy of the game send there
 A board is "<course>-<direction>" (0 / 1), plus "-wet" for a run on the course's rain variant (a wet lap is slower,
 so dry and wet have their own boards; the ghost's tail records which).
@@ -122,6 +123,19 @@ def check_profile(pr, keys):
     return None
 
 
+MAIL_KEEP = 100      # mails kept per player
+MAIL_PER_DAY = 40    # mails a player may send a day
+def check_mail(ml, keys, profiles):
+    """None if a mail is well formed, signed by the key that owns its sender's id and for someone with a profile, else why not."""
+    fr, to, n, c, g = (str(ml.get(k, '')) for k in ('from', 'to', 'n', 'c', 'g'))
+    if not re.fullmatch(r'[0-9a-f]{16}', fr) or not re.fullmatch(r'[0-9a-f]{16}', to): return 'bad player id'
+    if not re.fullmatch(r'[0-9a-f]{24}', n) or not re.fullmatch(r'[0-9a-f]{32}', g) or not re.fullmatch(r'(?:[0-9a-f]{2}){1,700}', c): return 'bad contents'
+    if to not in profiles: return 'nobody with that id has a profile'
+    if not ecdsa_p256.verify(str(ml.get('pub', '')), str(ml.get('sig', '')), ('mail|%s|%s|%d|%s|%s|%s' % (fr, to, int(ml['t']), n, c, g)).encode()): return 'bad signature'
+    if fr in keys and keys[fr] != ml['pub']: return 'player id already belongs to another key (impersonation?)'
+    return None
+
+
 def check_admin(sub, keys, steam, steam_ok, signed):
     """None if a moderation command is from the admin, else why not. The command must be signed with the key that
     owns `sub['pid']`, and that player id must be Steam-verified to ADMIN_STEAM_ID - so only the admin's PC
@@ -211,6 +225,69 @@ def board_end(board_info):
     return None
 
 
+# ---- anticheat: the world records, how fast a car can go, the route ----
+# The speedrun.com world records (https://www.speedrun.com/initial_d_street_stage, in-game time): a run more than
+# WR_MARGIN seconds faster than the record is not real (a broken timer, a rewound race, a cheat). Refresh: src_wr.py
+WR = {   # speedrun.com, 2026-11-06 - '<course>-<down/up>-<dry/wet>' (circuits: down = counter-clockwise, up = clockwise)
+    'akagi-down-dry': 140.976,
+    'akagi-down-wet': 144.964,
+    'akagi-up-dry': 147.353,
+    'akagi-up-wet': 150.712,
+    'akina-down-dry': 176.952,
+    'akina-down-wet': 179.989,
+    'akina-up-dry': 186.974,
+    'akina-up-wet': 187.952,
+    'happou-down-dry': 141.087,
+    'happou-down-wet': 145.597,
+    'happou-up-dry': 141.381,
+    'happou-up-wet': 144.737,
+    'iroha-down-dry': 177.954,
+    'iroha-down-wet': 182.805,
+    'iroha-up-dry': 184.7,
+    'iroha-up-wet': 190.478,
+    'myougi-down-dry': 174.391,
+    'myougi-down-wet': 174.85,
+    'myougi-up-dry': 174.601,
+    'myougi-up-wet': 175.097,
+    'syoumaru-down-dry': 177.849,
+    'syoumaru-down-wet': 184.771,
+    'syoumaru-up-dry': 179.192,
+    'syoumaru-up-wet': 184.973,
+    'tuchisaka-down-dry': 159.134,
+    'tuchisaka-down-wet': 164.26,
+    'tuchisaka-up-dry': 159.571,
+    'tuchisaka-up-wet': 163.989,
+    'usui-down-dry': 166.846,
+    'usui-down-wet': 169.502,
+    'usui-up-dry': 167.272,
+    'usui-up-wet': 169.985,
+}
+WR_MARGIN = 3.0
+def wr_floor(course, s, wet, laps):
+    """the fastest a run can be (s): the record less the margin; None if there's no record for it"""
+    is_circuit = sum(abs(s[-1][1 + k] - s[0][1 + k]) for k in range(3)) <= CIRCUIT_END
+    w = 'wet' if wet else 'dry'
+    if is_circuit:   # (which of our directions is speedrun.com's counter-clockwise isn't known: the faster of the two)
+        recs = [WR.get(f'{course}-{d}-{w}') or WR.get(f'{course}-{d}-dry') for d in ('down', 'up')]
+        recs = [r for r in recs if r]
+        if not recs: return None
+        return min(recs) * laps / COURSE_LAPS.get(course, 3) - WR_MARGIN
+    d = 'down' if s[-1][2] < s[0][2] else 'up'
+    rec = WR.get(f'{course}-{d}-{w}') or WR.get(f'{course}-{d}-dry')
+    return rec - WR_MARGIN if rec else None
+
+# the most a car covers in any second: real runs on the board reach ~220 km/h (single samples spike higher - walls,
+# the game putting the car back - but not for a whole second)
+MAX_1S_KMH = 300
+def max_1s_kmh(s):
+    cum = [0.0]
+    for a, b in zip(s, s[1:]): cum.append(cum[-1] + ((b[1] - a[1]) ** 2 + (b[2] - a[2]) ** 2 + (b[3] - a[3]) ** 2) ** 0.5)
+    best, j = 0.0, 0
+    for i in range(len(s)):
+        while j < len(s) - 1 and s[j][0] - s[i][0] < 60: j += 1
+        if s[j][0] - s[i][0] >= 60: best = max(best, (cum[j] - cum[i]) / ((s[j][0] - s[i][0]) / 60))
+    return best * 3.6
+
 def check(sub, g, board_info):
     """None if the run looks real, else why not."""
     if g['ai']: return 'a CPU run'
@@ -235,6 +312,10 @@ def check(sub, g, board_info):
         if d / dt > 110: return 'impossible speed (%.0f km/h)' % (d / dt * 3.6)
         length += d
     g['length'] = length
+    v1 = max_1s_kmh(s)
+    if v1 > MAX_1S_KMH: return 'impossible speed for a whole second (%.0f km/h)' % v1
+    floor = wr_floor(g['course'], s, g.get('reserved', 0) & 2, run_shape(s)[1])
+    if floor and g['finish'] / 6000 < floor: return 'faster than the world record allows (%.3f s; the record less %g s: %.3f s)' % (g['finish'] / 6000, WR_MARGIN, floor)
     if board_info:
         st = board_info['start']
         if sum(abs(s[0][1 + k] - st[k]) for k in range(3)) > 30: return 'starts somewhere else'
@@ -396,6 +477,38 @@ def ch_matches(ch, board, course, reserved):
     return bool(reserved & 4) == (ch['cond'] == 'night')
 
 
+# ---- plausible progress: a profile's XP / time played can only grow as fast as the game gives them ----
+# The game keeps them sealed (stats.c), but its key is in the exe: the board is the real check. Every profile message
+# carries Discord's own time (not the player's), so between two profiles of one player:
+#   time played grows by at most the hours that went by (+1 for rounding to whole hours)
+#   XP grows by at most XP_PER_HOUR for each of those hours (+ XP_SLACK: the challenges / skins of a day)
+# and a first profile (or one from before this check) by the hours since PLAY_EPOCH / XP_PER_HOUR per hour played.
+# XP_PER_HOUR: a race gives at most 250 x 1.4 (Iroha) x 2.5 (beating the record by 10%) + 150 (a new best) = 1025
+# XP, and the fastest run on any board is 2:34 (+ the countdown and menus: ~3 min a race at the very least): ~21 races
+# an hour, ~21 500 XP - 30 000 leaves room for the challenges' firsts.
+# An implausible profile keeps the player's last accepted XP / time played (0 for a first one) and they are put in
+# state.json's "suspects" with why - for the admin to look at (and ban with the in-game tool if it's cheating).
+XP_PER_HOUR = 30000
+XP_SLACK = 5000
+PLAY_EPOCH = 1756684800   # 2026-09-01 00:00 UTC: before the first build anyone else had (v0.9.0, 2026-10-22)
+def plausible(prev, xp, play_h, now):
+    """(xp, play_h, why): what to keep of a profile's XP / time played, and why it was cut ('' if it wasn't)"""
+    why = []
+    if prev and prev.get('at'):
+        hours = max(0.0, (now - prev['at']) / 3600)
+        max_play = prev.get('play_h', 0) + int(hours) + 1
+        if play_h > max_play: why.append(f"time played {prev.get('play_h', 0)} -> {play_h} h in {hours:.1f} h"); play_h = prev.get('play_h', 0)
+        max_xp = prev.get('xp', 0) + int(XP_PER_HOUR * (hours + 1)) + XP_SLACK
+        if xp > max_xp: why.append(f"XP {prev.get('xp', 0)} -> {xp} in {hours:.1f} h"); xp = prev.get('xp', 0)
+    else:
+        old_play, old_xp = (prev or {}).get('play_h', 0), (prev or {}).get('xp', 0)
+        max_play = int(max(0, now - PLAY_EPOCH) / 3600) + 1
+        if play_h > max_play: why.append(f"time played {play_h} h (more than since the game came out)"); play_h = min(old_play, max_play)
+    if xp > XP_PER_HOUR * (play_h + 1) + XP_SLACK:   # (XP needs the time played to earn it)
+        why.append(f"XP {xp} in {play_h} h played"); xp = min((prev or {}).get('xp', 0), XP_PER_HOUR * (play_h + 1) + XP_SLACK)
+    return xp, play_h, '; '.join(why)
+
+
 def msg_time(m):
     import datetime
     return datetime.datetime.fromisoformat(m['timestamp'].replace('Z', '+00:00')).timestamp()
@@ -439,11 +552,12 @@ def ch_publish(state, now, lines, rank_of, steam, steam_ok, shown):
     for ch, state_name in [(c, 'on') for c in cur] + [(c, 'over') for c in prev]:
         ch = dict(ch, label=ch_label(ch, state['boards']))
         ranked = rank_of(chs.get(ch['id'], {}).get('entries', {}))
-        # C<TAB>id<TAB>kind<TAB>label<TAB>board<TAB>cond<TAB>course index<TAB>direction<TAB>start<TAB>end<TAB>on/over<TAB>drivers
-        lines.append('\t'.join(['C', ch['id'], ch['kind'], ch['label'], ch['board'], ch['cond'], str(ch['ci']), str(ch['dir']), str(ch['start']), str(ch['end']), state_name, str(len(ranked))]))
+        ch['skin'] = ch_skin(state, ch['id'], ch['kind'], ch['start']); ch['skin_name'] = ch_skin_names().get(ch['skin'], ch['skin'])
+        # C<TAB>id<TAB>kind<TAB>label<TAB>board<TAB>cond<TAB>course index<TAB>direction<TAB>start<TAB>end<TAB>on/over<TAB>drivers<TAB>winner's skin<TAB>its name
+        lines.append('\t'.join(['C', ch['id'], ch['kind'], ch['label'], ch['board'], ch['cond'], str(ch['ci']), str(ch['dir']), str(ch['start']), str(ch['end']), state_name, str(len(ranked)), ch['skin'], ch['skin_name']]))
         for r, (pid, e) in enumerate(ranked[:CH_TOP], 1):   # R<TAB>rank<TAB>name<TAB>time_ms<TAB>car<TAB>pid<TAB>ghost<TAB>date<TAB>steam<TAB>steam_ok
             lines.append('\t'.join(['R', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
-        (js['current'] if state_name == 'on' else js['recent']).append({**{k: ch[k] for k in ('id', 'kind', 'label', 'board', 'cond', 'course', 'dir', 'start', 'end')}, 'drivers': len(ranked),
+        (js['current'] if state_name == 'on' else js['recent']).append({**{k: ch[k] for k in ('id', 'kind', 'label', 'board', 'cond', 'course', 'dir', 'start', 'end', 'skin', 'skin_name')}, 'drivers': len(ranked),
             'entries': [{'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), **{k: e[k] for k in ('name', 'time_ms', 'car', 'date', 'ghost')}} for r, (pid, e) in enumerate(ranked[:CH_TOP], 1)]})
     for cid, c in sorted(chs.items(), key=lambda kv: -kv[1]['end']):   # every finished challenge's podium
         if c['end'] > now: continue
@@ -468,6 +582,12 @@ REWARD_WEEKLY = ['flames', 'honeycomb', 'stripes', 'sunset', 'halftone_purple', 
                  'stripes_red', 'halftone_gold']
 REWARD_DAILY_WIN = 'champion'
 REWARD_WEEKLY_WIN = 'sunburst'
+# From CH_SKIN_FROM on, each daily / weekly has its own winner's skin: the next of its pool (daily_pool.txt /
+# weekly_pool.txt, "ID  NAME" lines), the pool gone through in a random order, then shuffled again (a pool of 90
+# dailies: a new order every 90 days). Each challenge's skin is kept in state.json (ch_skins) the first time it's
+# picked, so changing a pool never changes one already given; an empty pool: the fixed skin above
+CH_SKIN_FROM = '2026-11-07'
+POOL_DIR = os.environ.get('CH_POOLS') or os.path.dirname(os.path.abspath(__file__))
 REWARD_NAMES = {'checker': 'Tilted checker', 'camo_digital': 'Digital camo', 'twotone_black': 'Two-tone (panda)', 'stars': 'Star field',
                 'fade_red': 'Fade (white to red)', 'racestripe': 'Racing stripe', 'camo_arctic': 'Arctic camo', 'polka': 'Polka dots',
                 'splatter': 'Paint splatter', 'pinstripe': 'Pinstripes', 'tiger': 'Tiger', 'hockey': 'Hockey stick',
@@ -481,6 +601,53 @@ REWARD_NAMES = {'checker': 'Tilted checker', 'camo_digital': 'Digital camo', 'tw
                 'slashes_lime': 'Shard slashes (lime)', 'flames_green': 'Toxic flames', 'honeycomb_red': 'Honeycomb (red)',
                 'sunset_toxic': 'Sunset speed (toxic)', 'stripes_red': 'Twin stripes (red)', 'halftone_gold': 'Halftone fade (gold)',
                 'champion': 'Champion', 'sunburst': 'Sunburst'}
+
+
+def ch_pool(kind):
+    """[(id, name)] of daily_pool.txt / weekly_pool.txt (kind daily / weekly); a bad line is skipped (and said)"""
+    path = os.path.join(POOL_DIR, '%s_pool.txt' % kind)
+    out, ids = [], set(REWARD_STREAK + REWARD_WEEKLY + [REWARD_DAILY_WIN, REWARD_WEEKLY_WIN]) | {sid for _, sid, _, _ in level_rewards()}
+    if kind == 'weekly': ids |= {sid for sid, _ in ch_pool('daily')}
+    if not os.path.exists(path): return out
+    for n, line in enumerate(open(path, encoding='utf8'), 1):
+        line = line.strip()
+        if not line or line.startswith('#'): continue
+        f = re.split(r'\t+|\s{2,}', line)
+        try:
+            sid, name = f[0], clean_text(f[1], 39)
+            if not re.fullmatch(r'[a-z0-9_]{1,23}', sid): raise ValueError('bad id')
+            if sid in ids: raise ValueError('id %s is used already' % sid)
+            if not name: raise ValueError('no name')
+        except (ValueError, IndexError) as e:
+            print(f'{kind}_pool.txt line {n} skipped: {e}'); continue
+        ids.add(sid); out.append((sid, name))
+    return out
+
+
+def ch_skin(state, cid, kind, start):
+    """the winner's skin of challenge cid (kind daily / weekly, start: unix time) - picked once, then kept"""
+    import calendar, random
+    fixed = REWARD_DAILY_WIN if kind == 'daily' else REWARD_WEEKLY_WIN
+    got = state.setdefault('ch_skins', {})
+    if cid in got: return got[cid]
+    if start < calendar.timegm(_day(CH_SKIN_FROM).timetuple()): return fixed   # (before the pools: as it was)
+    pool = [sid for sid, _ in ch_pool(kind)]
+    if not pool: got[cid] = fixed; return fixed
+    rot = state.setdefault('ch_pool', {}).setdefault(kind, {'order': [], 'cycle': 0, 'last': ''})
+    rot['order'] = [x for x in rot['order'] if x in pool]   # (one taken out of the pool: skipped)
+    if not rot['order']:   # the pool gone through: a new random order (not starting with the one just given)
+        rot['cycle'] += 1
+        order = pool[:]
+        random.Random('idss-pool|%s|%d' % (kind, rot['cycle'])).shuffle(order)
+        if len(order) > 1 and order[0] == rot['last']: order.append(order.pop(0))
+        rot['order'] = order
+    sid = rot['order'].pop(0)
+    rot['last'] = sid; got[cid] = sid
+    return sid
+
+
+def ch_skin_names():
+    return dict(REWARD_NAMES, **{sid: name for k in ('daily', 'weekly') for sid, name in ch_pool(k)})
 
 
 def rewards(state, now, rank_of, who):
@@ -512,19 +679,55 @@ def rewards(state, now, rank_of, who):
         ranked = rank_of(c['entries'])
         if not ranked: continue
         r = me(who(ranked[0][0]))
-        if c['kind'] == 'daily': r['daily_wins'] += 1; win = REWARD_DAILY_WIN
-        else: r['weekly_wins'] += 1; win = REWARD_WEEKLY_WIN
+        if c['kind'] == 'daily': r['daily_wins'] += 1
+        else: r['weekly_wins'] += 1
+        win = ch_skin(state, cid, c['kind'], c['start'])
         if win not in r['skins']: r['skins'].append(win)
     for r in out.values():
         r['streak'] = r.pop('_run'); r.pop('_ns'); r.pop('_nw')
     return out
 
 
-def rewards_publish(lines, rw):
-    """K lines: every reward skin (id, how it's earned, its name); U lines: what each player has"""
-    for kind, ids in (('streak', REWARD_STREAK), ('weekly', REWARD_WEEKLY), ('daily_win', [REWARD_DAILY_WIN]), ('weekly_win', [REWARD_WEEKLY_WIN])):
+# level reward skins (level_rewards.txt): reaching the level unlocks one (a "p<N>" line: reaching prestige N - past
+# level 99 the level starts again with a star) - the game checks your level itself (it is
+# your game's own count, like the play time), so nothing per player here
+LEVEL_REWARDS = os.environ.get('LEVEL_REWARDS') or os.path.join(os.path.dirname(os.path.abspath(__file__)), 'level_rewards.txt')
+def level_rewards():
+    """[(level, id, name, milestone)] by level; a bad line is skipped (and said)"""
+    out, levels, ids = [], set(), set(REWARD_STREAK + REWARD_WEEKLY + [REWARD_DAILY_WIN, REWARD_WEEKLY_WIN])
+    if not os.path.exists(LEVEL_REWARDS): return out
+    for n, line in enumerate(open(LEVEL_REWARDS, encoding='utf8'), 1):
+        line = line.strip()
+        if not line or line.startswith('#'): continue
+        f = re.split(r'\t+|\s{2,}', line)
+        try:
+            pm = re.fullmatch(r'[pP](\d+)', f[0])   # (p1, p2, ...: a prestige skin - listed as level 99 + N: older games show it locked)
+            lv, sid, name = (99 + int(pm.group(1)) if pm else int(f[0])), f[1], clean_text(f[2], 39)
+            ms = bool(pm) or (len(f) > 3 and f[3].strip().lower() == 'milestone')
+            if pm and not 1 <= int(pm.group(1)) <= 50: raise ValueError('prestige must be p1..p50')
+            if not pm and not 2 <= lv <= 99: raise ValueError('level must be 2..99 (or p1.. for a prestige skin)')
+            if not re.fullmatch(r'[a-z0-9_]{1,23}', sid): raise ValueError('bad id')
+            if lv in levels: raise ValueError('a second skin for level %d' % lv)
+            if sid in ids: raise ValueError('id %s is used already' % sid)
+            if not name: raise ValueError('no name')
+        except (ValueError, IndexError) as e:
+            print(f'level_rewards.txt line {n} skipped: {e}'); continue
+        levels.add(lv); ids.add(sid); out.append((lv, sid, name, ms))
+    return sorted(out)
+
+
+def rewards_publish(lines, rw, state):
+    """K lines: every reward skin (id, how it's earned, its name, and for a level one its level + milestone); U lines: what each player has"""
+    given = {'daily': [REWARD_DAILY_WIN], 'weekly': [REWARD_WEEKLY_WIN]}   # (the winners' skins: a pool's once a challenge has had it)
+    for cid, sid in sorted(state.get('ch_skins', {}).items(), key=lambda kv: kv[0]):
+        k = 'daily' if cid.startswith('d-') else 'weekly'
+        if sid not in given[k]: given[k].append(sid)
+    names = ch_skin_names()
+    for kind, ids in (('streak', REWARD_STREAK), ('weekly', REWARD_WEEKLY), ('daily_win', given['daily']), ('weekly_win', given['weekly'])):
         for i in ids:   # K<TAB>id<TAB>kind<TAB>name
-            lines.append('\t'.join(['K', i, kind, REWARD_NAMES.get(i, i)]))
+            lines.append('\t'.join(['K', i, kind, names.get(i, i)]))
+    for lv, sid, name, ms in level_rewards():   # K<TAB>id<TAB>level<TAB>name<TAB>level<TAB>1 = milestone
+        lines.append('\t'.join(['K', sid, 'level', name, str(lv), '1' if ms else '0']))
     for k, r in sorted(rw.items()):   # U<TAB>key<TAB>skins (comma separated)<TAB>streak<TAB>dailies<TAB>weeklies<TAB>daily wins<TAB>weekly wins
         lines.append('\t'.join(['U', k, ','.join(r['skins']), str(r['streak']), str(r['dailies']), str(r['weeklies']), str(r['daily_wins']), str(r['weekly_wins'])]))
 
@@ -601,9 +804,14 @@ def main():
                 if not ok_img: img = ''
             else: img = ''
             pic = int(pr.get('pic', 1)); pic = pic if pic == -1 or 1 <= pic <= 173 else 1   # (any collection card)
+            xp, play_h, cut = plausible(profiles.get(pr['pid']), max(0, min(10 ** 8, int(pr.get('xp', 0)))), max(0, min(100000, int(pr.get('play_h', 0)))), msg_time(m))
+            if cut:
+                state.setdefault('suspects', {}).setdefault(pr['pid'], []).append({'t': int(msg_time(m)), 'why': cut, 'name': clean_text(pr.get('name'), 24)})
+                del state['suspects'][pr['pid']][:-20]   # (the last 20 per player)
+                print(f"{pr['pid']}: profile's progress not believable ({cut}) - kept XP {xp}, {play_h} h; listed in suspects")
             profiles[pr['pid']] = {'pic': pic, 'car': max(-1, min(34, int(pr.get('car', -1)))), 'cards': max(-1, min(173, int(pr.get('cards', -1)))),
-                                   'play_h': max(0, min(100000, int(pr.get('play_h', 0)))), 'name': clean_text(pr.get('name'), 24), 'bio': clean_text(pr.get('bio'), 120),
-                                   'car_img': img, 'discord': clean_text(pr.get('discord'), 37), 'xp': max(0, min(10 ** 8, int(pr.get('xp', 0))))}
+                                   'play_h': play_h, 'name': clean_text(pr.get('name'), 24), 'bio': clean_text(pr.get('bio'), 120),
+                                   'car_img': img, 'discord': clean_text(pr.get('discord'), 37), 'xp': xp, 'at': int(msg_time(m))}
             print(f"{pr['pid']}: profile updated")
             continue
         if c.startswith('IDSS-LINK 1 ') and m.get('attachments'):   # sent when a player signs in through Steam (+ the bot woken up):
@@ -649,6 +857,42 @@ def main():
             if key:
                 bans[key] = {'name': clean_name(d.get('name')), 'reason': clean_text(d.get('reason'), 120), 'when': m['timestamp'][:10], 'kind': kind}
                 print(f"ban: {key} ({bans[key]['name']}) {kind}")
+            continue
+        if c.startswith('IDSS-RESET 1 '):   # the admin resets a player's progress (XP, time played, cards): the board's copy now,
+            try:                             # their game when it next reads the board (a Z line)
+                d = json.loads(c[len('IDSS-RESET 1 '):])
+                tsteam, tpid = str(d.get('steam', '')), str(d.get('target', ''))
+                why = check_admin(d, keys, steam, steam_ok, 'reset|%s|%s' % (tsteam, tpid))
+            except Exception as e:
+                why = 'unreadable (%s)' % e
+            if why: print(f"reset {m['id']} rejected: {why}"); continue
+            keys.setdefault(d['pid'], d['pub'])
+            key = ('steam:' + tsteam) if tsteam else tpid
+            if key:
+                t = int(msg_time(m))
+                state.setdefault('resets', {})[key] = t
+                for p2, pr in profiles.items():   # (every profile of theirs: that id, or linked to that Steam account)
+                    if p2 == tpid or (tsteam and steam.get(p2) == tsteam): pr.update(xp=0, play_h=0, cards=-1, at=t)
+                print(f"reset: {key} ({clean_name(d.get('name'))}) - progress back to zero")
+            continue
+        if c.startswith('IDSS-MAIL 1 '):   # a mail from one player to another (its text encrypted for the two of them)
+            try:
+                ml = json.loads(c[len('IDSS-MAIL 1 '):])
+                why = check_mail(ml, keys, profiles)
+                fr = ml['from']
+                if not why and (fr in bans or (steam.get(fr) and 'steam:' + steam[fr] in bans)): why = 'the sender is muted / banned'
+                day = m['timestamp'][:10]
+                sent = state.setdefault('mail_sent', {})
+                if not why and sent.get(fr, {}).get(day, 0) >= MAIL_PER_DAY: why = 'more than %d today' % MAIL_PER_DAY
+            except Exception as e:
+                why = 'unreadable (%s)' % e
+            if why: print(f"mail {m['id']} rejected: {why}"); continue
+            keys.setdefault(fr, ml['pub'])
+            sent[fr] = {day: sent.get(fr, {}).get(day, 0) + 1}   # (today's count only)
+            box = state.setdefault('mail', {}).setdefault(ml['to'], [])
+            box.append({'id': m['id'], 'from': fr, 't': int(ml['t']), 'pub': ml['pub'], 'n': ml['n'], 'c': ml['c'], 'g': ml['g']})
+            del box[:-MAIL_KEEP]
+            print(f"mail {m['id']}: {fr} -> {ml['to']}")
             continue
         if not c.startswith('IDSS-LB 1 ') or not m.get('attachments'): continue
         try:
@@ -727,13 +971,21 @@ def main():
             lines.append('\t'.join(['E', str(r), e['name'].replace('\t', ' '), str(e['time_ms']), str(e['car']), pid, e['ghost'], e['date'], steam.get(pid, ''), ('1' if steam_ok.get(pid) else '0') if pid in steam else '']))
             js[bid]['entries'].append({'rank': r, 'pid': pid, 'shown': shown(pid, e), 'steam': steam.get(pid, ''), 'steam_verified': bool(steam_ok.get(pid)), **{k: e[k] for k in ('name', 'time_ms', 'car', 'game', 'date', 'ghost')}})
     def banned(pid): return (pid in bans and bans[pid].get('kind') != 'mute') or (steam.get(pid) and bans.get('steam:' + steam[pid], {'kind': 'mute'}).get('kind') != 'mute')
-    for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok<TAB>xp
+    for key, t in sorted(state.get('resets', {}).items()):   # Z<TAB>key<TAB>time: the admin reset that player's progress (their game resets itself once)
+        lines.append('\t'.join(['Z', key, str(t)]))
+    for pid, pr in sorted(profiles.items()):   # profile cards: P<TAB>pid<TAB>pic<TAB>car<TAB>cards<TAB>play seconds<TAB>name<TAB>bio<TAB>car_img<TAB>discord<TAB>steam<TAB>steam_ok<TAB>xp<TAB>key
         lines.append('\t'.join(['P', pid, str(pr['pic']), str(pr['car']), str(pr['cards']), str(pr['play_h'] * 3600), pr['name'], pr['bio'], pr.get('car_img', ''), pr.get('discord', ''),
-                                steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '', '0' if banned(pid) else str(pr.get('xp', 0))]))   # (a banned player's XP: 0, off the level ranking)
+                                steam.get(pid, ''), ('1' if steam_ok.get(pid) else '') if pid in steam else '', '0' if banned(pid) else str(pr.get('xp', 0)),
+                                keys.get(pid, '')]))   # (a banned player's XP: 0, off the level ranking; the key: mail to them is encrypted with it)
+    # mailboxes: M<TAB>id<TAB>from<TAB>name<TAB>steam<TAB>when<TAB>their key<TAB>nonce<TAB>text<TAB>tag, oldest first
+    os.makedirs(os.path.join(LB, 'mail'), exist_ok=True)
+    for to, box in state.get('mail', {}).items():
+        ml = ['# IDSS mail 1'] + ['\t'.join(['M', x['id'], x['from'], profiles.get(x['from'], {}).get('name', '') or 'Player', steam.get(x['from'], ''), str(x['t']), x['pub'], x['n'], x['c'], x['g']]) for x in box]
+        open(os.path.join(LB, 'mail', to + '.txt'), 'w', newline='\n').write('\n'.join(ml) + '\n')
     now = float(os.environ.get('LB_NOW') or time.time())   # (LB_NOW: tests)
     ch_publish(state, now, lines, rank_of, steam, steam_ok, shown)
     rw = rewards(state, now, rank_of, who)
-    rewards_publish(lines, rw)
+    rewards_publish(lines, rw, state)
     json.dump(rw, open(os.path.join(LB, 'rewards.json'), 'w'), indent=1)
     open(os.path.join(LB, 'boards.txt'), 'w', newline='\n').write('\n'.join(lines) + '\n')
     json.dump(js, open(os.path.join(LB, 'boards.json'), 'w'), indent=1)

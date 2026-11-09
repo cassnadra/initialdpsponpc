@@ -1,0 +1,53 @@
+# Level reward skins: reaching the level unlocks the skin (in the game: F1 -> Car -> Reward skins). lb_build.py reads
+# this and publishes it with the board (K lines, kind "level"), so new ones need no new game build.
+# One per line, tab or 2+ spaces between the fields:
+#   LEVEL   ID   NAME   [milestone]
+#     LEVEL      2..99, at most one skin per level
+#     ID         the skin's folder in skins/ (lowercase letters, digits, _; at most 23) - skins/<ID>/car00.png .. car34.png
+#                must be published before the line goes in, or the game can't download it
+#     NAME       what the game shows (at most 39 characters)
+#     milestone  a bigger reward (every 5 / 10 levels): the level-up notice calls it out, the picker marks it
+# Lines starting with # are ignored.
+
+2	camo_duo	Field Camo
+3	seigaiha_band_ember	Seigaiha Band Ember
+4	diagonal_half	Diagonal Half
+5	split_decision	Split Decision	milestone
+6	sunset_steps_ice	Sunset Steps Ice
+7	rising_sun_toxic	Rising Sun Toxic
+8	ribbon_wrap	Ribbon Wrap
+9	koi_vinyl	Koi Vinyl
+10	wide_hockey_70s	70s Wide Hockey	milestone
+11	wing_block	Rear Wing Block
+12	argyle_bold	Bold Argyle
+13	rally_roundel	Retro Rally 7
+14	tricolour_split	Tri-Colour Split
+15	plaid_tartan	Tartan Plaid	milestone
+16	number_86_gold	Number 86 Gold
+17	split_decision_forest	Split Decision Forest
+18	caution_zone	Caution Zone
+19	split_decision_sakura	Split Decision Sakura
+20	chequer_fade	Chequered Fade	milestone
+21	tread_print	Tyre Track Print
+22	hairline	Hairline
+23	velocity_stripes_gold	Velocity Stripes Gold
+24	kaido_split_blue	Kaido Two-Tone Blue
+25	bonnet_chevrons	Bonnet Chevrons	milestone
+26	wave_surf	Surf Wave
+27	quarter_split	Quarter Split
+28	circuit_trace	Circuit Traces
+29	ghost_livery	Ghost Livery
+30	flame_vinyl	Flame Vinyl	milestone
+31	mosaic_tiles	Mosaic Tiles
+32	tri_stripe_vinyl	Retro Tri-Stripe
+33	hockey_mirror	Mirrored Hockey
+34	halftone_comic	Comic Halftone
+35	swoosh_bold	Big Side Swoosh	milestone
+36	door_numbers	Door Numerals 23
+37	cloud_print	Cloud Print
+38	checker_roof	Checker Roof
+39	tape_stripes	Tape Stripes
+40	lightning_spear	Lightning Spear	milestone
+41	offset_stripe	Offset Racing Stripe
+42	number_band_vinyl	Number & Side Band
+43	velocity_stripes	Velocity Stripes

@@ -1,0 +1,7 @@
+# The daily challenges' winner skins: from 2026-11-07 on, first place in each daily gets
+# its own skin - the next of this pool, gone through in a random order, then shuffled again (lb_build.py ch_skin).
+# Each challenge's skin is kept once picked, so adding / removing lines never changes one already given. Empty: the
+# old fixed skin (champion). Publish a skin's PNGs (skins/<ID>/car00.png .. car34.png) before its line goes in.
+# One per line, tab or 2+ spaces between the fields:
+#   ID     the skin's folder in skins/ (lowercase letters, digits, _; at most 23; not used by any other reward)
+#   NAME   what the game shows (at most 39 characters)
