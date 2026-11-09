@@ -1,6 +1,34 @@
 {
- "now": 1794178037,
+ "now": 1794189696,
  "current": [
+  {
+   "id": "d-2026-11-09",
+   "kind": "daily",
+   "label": "Akagi downhill, day",
+   "board": "akagi-0",
+   "cond": "day",
+   "course": "akagi",
+   "dir": 0,
+   "start": 1794182400,
+   "end": 1794268800,
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W46",
+   "kind": "weekly",
+   "label": "Irohazaka uphill, night",
+   "board": "iroha-1",
+   "cond": "night",
+   "course": "iroha",
+   "dir": 1,
+   "start": 1794182400,
+   "end": 1794787200,
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "recent": [
   {
    "id": "d-2026-11-08",
    "kind": "daily",
@@ -51,34 +79,34 @@
    ]
   }
  ],
- "recent": [
+ "past": [
   {
-   "id": "d-2026-11-07",
-   "kind": "daily",
-   "label": "Irohazaka downhill, night",
-   "board": "iroha-0",
-   "cond": "night",
-   "course": "iroha",
-   "dir": 0,
-   "start": 1794009600,
-   "end": 1794096000,
-   "drivers": 1,
-   "entries": [
+   "id": "w-2026-W45",
+   "kind": "weekly",
+   "label": "Akagi uphill, day",
+   "board": "akagi-1",
+   "start": 1793577600,
+   "end": 1794182400,
+   "drivers": 2,
+   "podium": [
     {
      "rank": 1,
      "pid": "b46085569295d65f",
      "shown": "Cassandra (Steam)",
-     "steam": "76561198289153961",
      "name": "Cassandra",
-     "time_ms": 197533,
-     "car": 13,
-     "date": "2026-11-07",
-     "ghost": "ghosts/ch/d-2026-11-07/b46085569295d65f.idg"
+     "time_ms": 162433,
+     "car": 13
+    },
+    {
+     "rank": 2,
+     "pid": "f341e22f0a0d3a93",
+     "shown": "Marcus #f341",
+     "name": "Marcus",
+     "time_ms": 189833,
+     "car": 8
     }
    ]
-  }
- ],
- "past": [
+  },
   {
    "id": "d-2026-11-07",
    "kind": "daily",
