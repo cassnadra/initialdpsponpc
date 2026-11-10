@@ -1,5 +1,5 @@
 {
- "last_id": "1569650030665662505",
+ "last_id": "1569704929956986940",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -63,7 +63,8 @@
     8442.3,
     8456.6,
     8513.5,
-    8500.8
+    8500.8,
+    8488.4
    ],
    "entries": {
     "2ff94d72b41c145f": {
@@ -144,6 +145,16 @@
      "date": "2026-11-08",
      "msg": "1569054751776055398",
      "ghost": "ghosts/usui-0/5168fd241b77a365.idg",
+     "car_from_model": 1
+    },
+    "8bdc45452680df48": {
+     "name": "VVarcolac",
+     "time_ms": 199933,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-10",
+     "msg": "1569662440147521637",
+     "ghost": "ghosts/usui-0/8bdc45452680df48.idg",
      "car_from_model": 1
     }
    }
@@ -849,7 +860,8 @@
   "00621795540f2378": "0f1794644e2080aa6eb20a55fd51d5e341463b7cd010cef3ae0b85b489bc10847b6e79de14499b163836896a4e0ffbc187d6d1acfe43525bbdaa29afacf7a296",
   "4426c121d62b8f7f": "77965b355600f893db31d0a9e9a32ef771def846fe8ed748f86fa6e8e6df3818d7f9ae21b45336bed8a7a94c60be36c0be78efa19765b255e9c338ccd275a192",
   "8e25cd5465651786": "fccf4717950e1e93dd05605ca4cde5a0dfd3c2e0a4733b8dfc713a55d9206b03b66d4fc75a8ddf17767df8d9c3f0a49d52d3cefc9b2afe43d8070b1a65e6ad4a",
-  "dd75487c3aacaeab": "43cc2bedc87c5b4abc5f3413ba54a52932b9fc297acaa7a5054b70f1021a567e7da6bc5725c06504484701d2a9ab44b0054d97beb88e608916a585820aa60fdb"
+  "dd75487c3aacaeab": "43cc2bedc87c5b4abc5f3413ba54a52932b9fc297acaa7a5054b70f1021a567e7da6bc5725c06504484701d2a9ab44b0054d97beb88e608916a585820aa60fdb",
+  "8bdc45452680df48": "51b03b86308d3bf187229468e541606dd03d7b9ea588198de39d3eab9f54eac979cb12a292d1eb3a5dd36e6d1c8c9826aca55208328132778f06e41bb68d76ea"
  },
  "names": {
   "b46085569295d65f": [
@@ -935,6 +947,9 @@
   ],
   "8e25cd5465651786": [
    "VVarcolac"
+  ],
+  "8bdc45452680df48": [
+   "VVarcolac"
   ]
  },
  "steam": {
@@ -960,13 +975,13 @@
    "pic": -1,
    "car": 10,
    "cards": 43,
-   "play_h": 8,
+   "play_h": 9,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "c2f730bda7e4f2db7206d196ee753edf",
+   "car_img": "9ebf28adc8a5fff9253073023be3bac3",
    "discord": "cassnadra",
-   "xp": 3476,
-   "at": 1794195226
+   "xp": 4844,
+   "at": 1794317219
   },
   "2ff94d72b41c145f": {
    "pic": 1,

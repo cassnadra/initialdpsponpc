@@ -755,6 +755,19 @@
    },
    {
     "rank": 8,
+    "pid": "8bdc45452680df48",
+    "shown": "VVarcolac #8bdc",
+    "steam": "",
+    "steam_verified": false,
+    "name": "VVarcolac",
+    "time_ms": 199933,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-10",
+    "ghost": "ghosts/usui-0/8bdc45452680df48.idg"
+   },
+   {
+    "rank": 9,
     "pid": "2ff94d72b41c145f",
     "shown": "AFK (Steam)",
     "steam": "76561198259702682",
