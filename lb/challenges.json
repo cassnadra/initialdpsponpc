@@ -1,6 +1,38 @@
 {
- "now": 1794254493,
+ "now": 1794278369,
  "current": [
+  {
+   "id": "d-2026-11-10",
+   "kind": "daily",
+   "label": "Myogi, day",
+   "board": "myougi-0",
+   "cond": "day",
+   "course": "myougi",
+   "dir": 0,
+   "start": 1794268800,
+   "end": 1794355200,
+   "skin": "champion",
+   "skin_name": "Champion",
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W46",
+   "kind": "weekly",
+   "label": "Irohazaka uphill, night",
+   "board": "iroha-1",
+   "cond": "night",
+   "course": "iroha",
+   "dir": 1,
+   "start": 1794182400,
+   "end": 1794787200,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "recent": [
   {
    "id": "d-2026-11-09",
    "kind": "daily",
@@ -27,38 +59,6 @@
      "ghost": "ghosts/ch/d-2026-11-09/b46085569295d65f.idg"
     }
    ]
-  },
-  {
-   "id": "w-2026-W46",
-   "kind": "weekly",
-   "label": "Irohazaka uphill, night",
-   "board": "iroha-1",
-   "cond": "night",
-   "course": "iroha",
-   "dir": 1,
-   "start": 1794182400,
-   "end": 1794787200,
-   "skin": "sunburst",
-   "skin_name": "Sunburst",
-   "drivers": 0,
-   "entries": []
-  }
- ],
- "recent": [
-  {
-   "id": "d-2026-11-08",
-   "kind": "daily",
-   "label": "Tsuchisaka downhill, day",
-   "board": "tuchisaka-0",
-   "cond": "day",
-   "course": "tuchisaka",
-   "dir": 0,
-   "start": 1794096000,
-   "end": 1794182400,
-   "skin": "champion",
-   "skin_name": "Champion",
-   "drivers": 0,
-   "entries": []
   },
   {
    "id": "w-2026-W45",
@@ -100,6 +100,25 @@
   }
  ],
  "past": [
+  {
+   "id": "d-2026-11-09",
+   "kind": "daily",
+   "label": "Akagi downhill, day",
+   "board": "akagi-0",
+   "start": 1794182400,
+   "end": 1794268800,
+   "drivers": 1,
+   "podium": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "name": "Cassandra",
+     "time_ms": 153100,
+     "car": 10
+    }
+   ]
+  },
   {
    "id": "w-2026-W45",
    "kind": "weekly",
