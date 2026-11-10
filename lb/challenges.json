@@ -1,5 +1,5 @@
 {
- "now": 1794278369,
+ "now": 1794306069,
  "current": [
   {
    "id": "d-2026-11-10",
@@ -13,8 +13,20 @@
    "end": 1794355200,
    "skin": "champion",
    "skin_name": "Champion",
-   "drivers": 0,
-   "entries": []
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "8e25cd5465651786",
+     "shown": "VVarcolac #8e25",
+     "steam": "",
+     "name": "VVarcolac",
+     "time_ms": 188900,
+     "car": 0,
+     "date": "2026-11-10",
+     "ghost": "ghosts/ch/d-2026-11-10/8e25cd5465651786.idg"
+    }
+   ]
   },
   {
    "id": "w-2026-W46",

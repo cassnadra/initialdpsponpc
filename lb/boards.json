@@ -327,6 +327,19 @@
    },
    {
     "rank": 13,
+    "pid": "8e25cd5465651786",
+    "shown": "VVarcolac #8e25",
+    "steam": "",
+    "steam_verified": false,
+    "name": "VVarcolac",
+    "time_ms": 186600,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-10",
+    "ghost": "ghosts/myougi-0/8e25cd5465651786.idg"
+   },
+   {
+    "rank": 14,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -339,7 +352,7 @@
     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 14,
+    "rank": 15,
     "pid": "963ca3a4a77a38f7",
     "shown": "Din_Lin #963c",
     "steam": "",
@@ -352,7 +365,7 @@
     "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg"
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "23f293906b0ffd82",
     "shown": "Sora #23f2",
     "steam": "",
@@ -365,7 +378,7 @@
     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
    },
    {
-    "rank": 16,
+    "rank": 17,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -378,7 +391,7 @@
     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 17,
+    "rank": 18,
     "pid": "ec39ad52dee6b67e",
     "shown": "Mainha #ec39",
     "steam": "",
@@ -391,7 +404,7 @@
     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
    },
    {
-    "rank": 18,
+    "rank": 19,
     "pid": "dd0ff6704e4ed00e",
     "shown": "ADZ #dd0f",
     "steam": "",
@@ -404,7 +417,7 @@
     "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg"
    },
    {
-    "rank": 19,
+    "rank": 20,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -417,7 +430,7 @@
     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
    },
    {
-    "rank": 20,
+    "rank": 21,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -430,7 +443,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 21,
+    "rank": 22,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -443,7 +456,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 22,
+    "rank": 23,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -554,6 +567,19 @@
    },
    {
     "rank": 8,
+    "pid": "8e25cd5465651786",
+    "shown": "VVarcolac #8e25",
+    "steam": "",
+    "steam_verified": false,
+    "name": "VVarcolac",
+    "time_ms": 188066,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-10",
+    "ghost": "ghosts/myougi-1/8e25cd5465651786.idg"
+   },
+   {
+    "rank": 9,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -566,7 +592,7 @@
     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
    },
    {
-    "rank": 9,
+    "rank": 10,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -579,7 +605,7 @@
     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 10,
+    "rank": 11,
     "pid": "60f0b3ebbbf7d46a",
     "shown": "Evil Night #60f0",
     "steam": "",
@@ -592,7 +618,7 @@
     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
    },
    {
-    "rank": 11,
+    "rank": 12,
     "pid": "4426c121d62b8f7f",
     "shown": ">.< Fuz #4426",
     "steam": "",
@@ -605,7 +631,7 @@
     "ghost": "ghosts/myougi-1/4426c121d62b8f7f.idg"
    },
    {
-    "rank": 12,
+    "rank": 13,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -618,7 +644,7 @@
     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
    },
    {
-    "rank": 13,
+    "rank": 14,
     "pid": "1a734c3b3debfca8",
     "shown": "driver #1a73",
     "steam": "",

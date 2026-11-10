@@ -1,5 +1,5 @@
 {
- "last_id": "1569310526939603108",
+ "last_id": "1569650030665662505",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -196,7 +196,9 @@
     9751.4,
     9782.6,
     9734.3,
-    9775.2
+    9775.2,
+    9786.5,
+    9739.5
    ],
    "entries": {
     "b46085569295d65f": {
@@ -418,6 +420,16 @@
      "msg": "1568072292892942477",
      "ghost": "ghosts/myougi-0/f81adc2ff759ed26.idg",
      "car_from_model": 1
+    },
+    "8e25cd5465651786": {
+     "name": "VVarcolac",
+     "time_ms": 186600,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-10",
+     "msg": "1569650030665662505",
+     "ghost": "ghosts/myougi-0/8e25cd5465651786.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -468,7 +480,8 @@
     9770.2,
     9737.4,
     9806.4,
-    9785.8
+    9785.8,
+    9792.2
    ],
    "entries": {
     "b46085569295d65f": {
@@ -599,6 +612,16 @@
      "date": "2026-11-08",
      "msg": "1569063479686463569",
      "ghost": "ghosts/myougi-1/4426c121d62b8f7f.idg",
+     "car_from_model": 1
+    },
+    "8e25cd5465651786": {
+     "name": "VVarcolac",
+     "time_ms": 188066,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-10",
+     "msg": "1569646881779355750",
+     "ghost": "ghosts/myougi-1/8e25cd5465651786.idg",
      "car_from_model": 1
     }
    }
@@ -909,6 +932,9 @@
   ],
   "4426c121d62b8f7f": [
    ">.< Fuz"
+  ],
+  "8e25cd5465651786": [
+   "VVarcolac"
   ]
  },
  "steam": {
@@ -1271,15 +1297,15 @@
   },
   "8e25cd5465651786": {
    "pic": 1,
-   "car": 0,
+   "car": 16,
    "cards": 0,
    "play_h": 0,
    "name": "VVarcolac",
    "bio": "",
-   "car_img": "",
+   "car_img": "23a59235d1be8437e8b3f5d6165019fd",
    "discord": "",
    "xp": 0,
-   "at": 1794218345
+   "at": 1794303837
   },
   "dd75487c3aacaeab": {
    "pic": 1,
@@ -1381,6 +1407,26 @@
      "date": "2026-11-09",
      "msg": "1569196250471989248",
      "ghost": "ghosts/ch/d-2026-11-09/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
+  },
+  "d-2026-11-10": {
+   "kind": "daily",
+   "course": "myougi",
+   "dir": 0,
+   "cond": "day",
+   "board": "myougi-0",
+   "start": 1794268800,
+   "end": 1794355200,
+   "entries": {
+    "8e25cd5465651786": {
+     "name": "VVarcolac",
+     "time_ms": 188900,
+     "car": 0,
+     "date": "2026-11-10",
+     "msg": "1569645270621364345",
+     "ghost": "ghosts/ch/d-2026-11-10/8e25cd5465651786.idg",
      "car_from_model": 1
     }
    }
