@@ -28,12 +28,12 @@ E	8	+Rockman+	185466	0	52143161d65181cd	ghosts/myougi-0/52143161d65181cd.idg	202
 E	9	yodasao	185533	7	5796e19e5d90fa1b	ghosts/myougi-0/5796e19e5d90fa1b.idg	2026-10-31		
 E	10	Alex.Kirch	185700	14	ea03af8d21d8415e	ghosts/myougi-0/ea03af8d21d8415e.idg	2026-11-05	76561198064983234	1
 E	11	Icipher	186133	0	062910041e786c15	ghosts/myougi-0/062910041e786c15.idg	2026-10-28		
-E	12	PRZ2K0	186433	2	798da52dbb827e1c	ghosts/myougi-0/798da52dbb827e1c.idg	2026-11-02		
-E	13	VVarcolac	186600	0	8e25cd5465651786	ghosts/myougi-0/8e25cd5465651786.idg	2026-11-10		
-E	14	MATphantom	187000	0	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
-E	15	Din_Lin	187466	0	963ca3a4a77a38f7	ghosts/myougi-0/963ca3a4a77a38f7.idg	2026-11-04		
-E	16	Sora	187966	8	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
-E	17	xzhb	188133	33	9c0d5663561cbe20	ghosts/myougi-0/9c0d5663561cbe20.idg	2026-11-11		
+E	12	xzhb	186133	33	9c0d5663561cbe20	ghosts/myougi-0/9c0d5663561cbe20.idg	2026-11-11		
+E	13	PRZ2K0	186433	2	798da52dbb827e1c	ghosts/myougi-0/798da52dbb827e1c.idg	2026-11-02		
+E	14	VVarcolac	186600	0	8e25cd5465651786	ghosts/myougi-0/8e25cd5465651786.idg	2026-11-10		
+E	15	MATphantom	187000	0	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
+E	16	Din_Lin	187466	0	963ca3a4a77a38f7	ghosts/myougi-0/963ca3a4a77a38f7.idg	2026-11-04		
+E	17	Sora	187966	8	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
 E	18	BusterWolf	188333	0	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
 E	19	Mainha	189700	0	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
 E	20	ADZ	190633	34	dd0ff6704e4ed00e	ghosts/myougi-0/dd0ff6704e4ed00e.idg	2026-11-05		

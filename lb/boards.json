@@ -327,6 +327,19 @@
    },
    {
     "rank": 12,
+    "pid": "9c0d5663561cbe20",
+    "shown": "xzhb #9c0d",
+    "steam": "",
+    "steam_verified": false,
+    "name": "xzhb",
+    "time_ms": 186133,
+    "car": 33,
+    "game": "jp",
+    "date": "2026-11-11",
+    "ghost": "ghosts/myougi-0/9c0d5663561cbe20.idg"
+   },
+   {
+    "rank": 13,
     "pid": "798da52dbb827e1c",
     "shown": "PRZ2K0 #798d",
     "steam": "",
@@ -339,7 +352,7 @@
     "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg"
    },
    {
-    "rank": 13,
+    "rank": 14,
     "pid": "8e25cd5465651786",
     "shown": "VVarcolac #8e25",
     "steam": "",
@@ -352,7 +365,7 @@
     "ghost": "ghosts/myougi-0/8e25cd5465651786.idg"
    },
    {
-    "rank": 14,
+    "rank": 15,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -365,7 +378,7 @@
     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "963ca3a4a77a38f7",
     "shown": "Din_Lin #963c",
     "steam": "",
@@ -378,7 +391,7 @@
     "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg"
    },
    {
-    "rank": 16,
+    "rank": 17,
     "pid": "23f293906b0ffd82",
     "shown": "Sora #23f2",
     "steam": "",
@@ -389,19 +402,6 @@
     "game": "jp",
     "date": "2026-11-01",
     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
-   },
-   {
-    "rank": 17,
-    "pid": "9c0d5663561cbe20",
-    "shown": "xzhb #9c0d",
-    "steam": "",
-    "steam_verified": false,
-    "name": "xzhb",
-    "time_ms": 188133,
-    "car": 33,
-    "game": "jp",
-    "date": "2026-11-11",
-    "ghost": "ghosts/myougi-0/9c0d5663561cbe20.idg"
    },
    {
     "rank": 18,
