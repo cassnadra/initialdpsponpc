@@ -37,6 +37,19 @@ function fmtTime(ms) {
   return `${m}'${String(s).padStart(2, '0')}"${String(r).padStart(3, '0')}`;   // (as the game shows it: 2'57"466)
 }
 const carName = c => (c >= 0 && c < CARS.length ? CARS[c] : 'Unknown car');
+// favourite car: the car most of their board times are in (a tie: the newest run's; a Steam account's PCs together).
+// No times: the car picked in their game (the profile's car - just the one last chosen, not a favourite).
+function favCar(pid, pr) {
+  const steam = pr && pr.steam, n = new Map(), last = new Map();
+  for (const b of Object.values(state.boards)) for (const e of b.entries) {
+    if (!(e.pid === pid || (steam && e.steam === steam)) || !(e.car >= 0)) continue;
+    n.set(e.car, (n.get(e.car) || 0) + 1);
+    if (!last.has(e.car) || e.date > last.get(e.car)) last.set(e.car, e.date);
+  }
+  let best = -1;
+  for (const [c, k] of n) if (best < 0 || k > n.get(best) || (k === n.get(best) && last.get(c) > last.get(best))) best = c;
+  return best >= 0 ? best : (pr && pr.car >= 0 ? pr.car : -1);
+}
 const courseName = c => COURSE_NAMES[c] || c.charAt(0).toUpperCase() + c.slice(1);
 function boardId(course, dir, wet) { return `${course}-${dir}${wet ? '-wet' : ''}`; }
 // what a board's direction is called: downhill / uphill, or normal / reverse on circuits
@@ -192,7 +205,7 @@ function statRows(s) {
       byKey.set(key, { pid, ...(pr || {}), steam: steam || (pr && pr.steam) || '', steamOk: pr ? pr.steamOk : !!steam, name: (pr && pr.name) || anyName(pid, steam), v, x });
     }
   }
-  const rows = [...byKey.values()].map(r => ({ ...r, name: r.name || anyName(r.pid, r.steam) || 'Player' }))
+  const rows = [...byKey.values()].map(r => ({ ...r, name: r.name || anyName(r.pid, r.steam) || 'Player', car: favCar(r.pid, r) }))
     .sort((a, b) => b.v - a.v || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }));
   rows.forEach((r, i) => { r.rank = i && rows[i - 1].v === r.v ? rows[i - 1].rank : i + 1; });
   return rows;
@@ -570,7 +583,7 @@ function openProfile(pid) {
   if (pr.discord) { const d = document.createElement('span'); d.className = 'discord'; d.textContent = 'Discord: ' + pr.discord; tags.append(d); }
   const idt = document.createElement('span'); idt.className = 'id'; idt.textContent = '#' + pid.slice(0, 4); tags.append(idt);
   $('profBio').textContent = pr.bio || '';
-  $('profFav').textContent = pr.car >= 0 ? carName(pr.car) : (any ? carName(any.car) : '-');
+  { const fc = favCar(pid, pr); $('profFav').textContent = fc >= 0 ? carName(fc) : '-'; }
   $('profCards').textContent = pr.cards > 0 ? `${pr.cards} / 173` : '-';
   $('profPlay').textContent = pr.playS > 0 ? `${Math.round(pr.playS / 3600)} h` : '-';
   // the car: their turntable picture, turning; drag to turn it yourself
