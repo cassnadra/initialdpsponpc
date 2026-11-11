@@ -1,6 +1,38 @@
 {
- "now": 1794351037,
+ "now": 1794363569,
  "current": [
+  {
+   "id": "d-2026-11-11",
+   "kind": "daily",
+   "label": "Akagi uphill, night",
+   "board": "akagi-1",
+   "cond": "night",
+   "course": "akagi",
+   "dir": 1,
+   "start": 1794355200,
+   "end": 1794441600,
+   "skin": "champion",
+   "skin_name": "Champion",
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W46",
+   "kind": "weekly",
+   "label": "Irohazaka uphill, night",
+   "board": "iroha-1",
+   "cond": "night",
+   "course": "iroha",
+   "dir": 1,
+   "start": 1794182400,
+   "end": 1794787200,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "recent": [
   {
    "id": "d-2026-11-10",
    "kind": "daily",
@@ -25,50 +57,6 @@
      "car": 0,
      "date": "2026-11-10",
      "ghost": "ghosts/ch/d-2026-11-10/8e25cd5465651786.idg"
-    }
-   ]
-  },
-  {
-   "id": "w-2026-W46",
-   "kind": "weekly",
-   "label": "Irohazaka uphill, night",
-   "board": "iroha-1",
-   "cond": "night",
-   "course": "iroha",
-   "dir": 1,
-   "start": 1794182400,
-   "end": 1794787200,
-   "skin": "sunburst",
-   "skin_name": "Sunburst",
-   "drivers": 0,
-   "entries": []
-  }
- ],
- "recent": [
-  {
-   "id": "d-2026-11-09",
-   "kind": "daily",
-   "label": "Akagi downhill, day",
-   "board": "akagi-0",
-   "cond": "day",
-   "course": "akagi",
-   "dir": 0,
-   "start": 1794182400,
-   "end": 1794268800,
-   "skin": "champion",
-   "skin_name": "Champion",
-   "drivers": 1,
-   "entries": [
-    {
-     "rank": 1,
-     "pid": "b46085569295d65f",
-     "shown": "Cassandra (Steam)",
-     "steam": "76561198289153961",
-     "name": "Cassandra",
-     "time_ms": 153100,
-     "car": 10,
-     "date": "2026-11-09",
-     "ghost": "ghosts/ch/d-2026-11-09/b46085569295d65f.idg"
     }
    ]
   },
@@ -112,6 +100,25 @@
   }
  ],
  "past": [
+  {
+   "id": "d-2026-11-10",
+   "kind": "daily",
+   "label": "Myogi, day",
+   "board": "myougi-0",
+   "start": 1794268800,
+   "end": 1794355200,
+   "drivers": 1,
+   "podium": [
+    {
+     "rank": 1,
+     "pid": "8e25cd5465651786",
+     "shown": "VVarcolac #8e25",
+     "name": "VVarcolac",
+     "time_ms": 188900,
+     "car": 0
+    }
+   ]
+  },
   {
    "id": "d-2026-11-09",
    "kind": "daily",

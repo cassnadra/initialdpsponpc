@@ -5,18 +5,20 @@
    "champion",
    "sunburst"
   ],
-  "streak": 1,
+  "streak": 0,
   "dailies": 3,
   "weeklies": 1,
   "daily_wins": 3,
   "weekly_wins": 1
  },
  "8e25cd5465651786": {
-  "skins": [],
+  "skins": [
+   "champion"
+  ],
   "streak": 1,
   "dailies": 1,
   "weeklies": 0,
-  "daily_wins": 0,
+  "daily_wins": 1,
   "weekly_wins": 0
  },
  "f341e22f0a0d3a93": {
