@@ -18,6 +18,19 @@
    },
    {
     "rank": 2,
+    "pid": "5168fd241b77a365",
+    "shown": "BLACKLIST #5168",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BLACKLIST",
+    "time_ms": 154633,
+    "car": 23,
+    "game": "en",
+    "date": "2026-11-12",
+    "ghost": "ghosts/akagi-0/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 3,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -37,6 +50,19 @@
   "entries": [
    {
     "rank": 1,
+    "pid": "5168fd241b77a365",
+    "shown": "BLACKLIST #5168",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BLACKLIST",
+    "time_ms": 160666,
+    "car": 23,
+    "game": "en",
+    "date": "2026-11-12",
+    "ghost": "ghosts/akagi-0-wet/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 2,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -56,6 +82,19 @@
   "entries": [
    {
     "rank": 1,
+    "pid": "5168fd241b77a365",
+    "shown": "BLACKLIST #5168",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BLACKLIST",
+    "time_ms": 161433,
+    "car": 23,
+    "game": "en",
+    "date": "2026-11-12",
+    "ghost": "ghosts/akagi-1/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 2,
     "pid": "b46085569295d65f",
     "shown": "Cassandra (Steam)",
     "steam": "76561198289153961",
@@ -68,7 +107,7 @@
     "ghost": "ghosts/akagi-1/b46085569295d65f.idg"
    },
    {
-    "rank": 2,
+    "rank": 3,
     "pid": "798da52dbb827e1c",
     "shown": "PRZ2K0 #798d",
     "steam": "",
@@ -81,7 +120,7 @@
     "ghost": "ghosts/akagi-1/798da52dbb827e1c.idg"
    },
    {
-    "rank": 3,
+    "rank": 4,
     "pid": "f52a777f88d4c443",
     "shown": "MK #f52a",
     "steam": "",
@@ -94,7 +133,7 @@
     "ghost": "ghosts/akagi-1/f52a777f88d4c443.idg"
    },
    {
-    "rank": 4,
+    "rank": 5,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -107,7 +146,7 @@
     "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "f341e22f0a0d3a93",
     "shown": "Marcus #f341",
     "steam": "",
@@ -137,6 +176,38 @@
     "game": "en",
     "date": "2026-10-31",
     "ghost": "ghosts/akina-0/b46085569295d65f.idg"
+   },
+   {
+    "rank": 2,
+    "pid": "5168fd241b77a365",
+    "shown": "BLACKLIST #5168",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BLACKLIST",
+    "time_ms": 196433,
+    "car": 23,
+    "game": "en",
+    "date": "2026-11-12",
+    "ghost": "ghosts/akina-0/5168fd241b77a365.idg"
+   }
+  ]
+ },
+ "akina-1": {
+  "course": "akina",
+  "label": "Akina uphill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "5168fd241b77a365",
+    "shown": "BLACKLIST #5168",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BLACKLIST",
+    "time_ms": 205766,
+    "car": 23,
+    "game": "en",
+    "date": "2026-11-12",
+    "ghost": "ghosts/akina-1/5168fd241b77a365.idg"
    }
   ]
  },

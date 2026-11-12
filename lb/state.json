@@ -1,5 +1,5 @@
 {
- "last_id": "1570279910654615752",
+ "last_id": "1570464798255226933",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -14,7 +14,8 @@
     5759.4,
     5789.4,
     5789.6,
-    5782.0
+    5782.0,
+    5762.5
    ],
    "entries": {
     "b46085569295d65f": {
@@ -35,6 +36,16 @@
      "date": "2026-10-29",
      "msg": "1565422651088965673",
      "ghost": "ghosts/akagi-0/ea03af8d21d8415e.idg",
+     "car_from_model": 1
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 154633,
+     "car": 23,
+     "game": "en",
+     "date": "2026-11-12",
+     "msg": "1570432620955828316",
+     "ghost": "ghosts/akagi-0/5168fd241b77a365.idg",
      "car_from_model": 1
     }
    }
@@ -466,7 +477,8 @@
    ],
    "lens": [
     7631.0,
-    7577.0
+    7577.0,
+    7553.7
    ],
    "entries": {
     "b46085569295d65f": {
@@ -477,6 +489,16 @@
      "date": "2026-10-31",
      "msg": "1566004660165419099",
      "ghost": "ghosts/akina-0/b46085569295d65f.idg",
+     "car_from_model": 1
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 196433,
+     "car": 23,
+     "game": "en",
+     "date": "2026-11-12",
+     "msg": "1570436936777072650",
+     "ghost": "ghosts/akina-0/5168fd241b77a365.idg",
      "car_from_model": 1
     }
    }
@@ -676,7 +698,8 @@
     5811.8,
     5844.4,
     5792.3,
-    5793.9
+    5793.9,
+    5750.4
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -728,6 +751,16 @@
      "msg": "1569936684479680553",
      "ghost": "ghosts/akagi-1/f52a777f88d4c443.idg",
      "car_from_model": 1
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 161433,
+     "car": 23,
+     "game": "en",
+     "date": "2026-11-12",
+     "msg": "1570429476372742174",
+     "ghost": "ghosts/akagi-1/5168fd241b77a365.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -740,7 +773,8 @@
     -1724.0999755859375
    ],
    "lens": [
-    5774.0
+    5774.0,
+    5804.6
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -751,6 +785,16 @@
      "date": "2026-10-29",
      "msg": "1565406445749407935",
      "ghost": "ghosts/akagi-0-wet/ea03af8d21d8415e.idg",
+     "car_from_model": 1
+    },
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 160666,
+     "car": 23,
+     "game": "en",
+     "date": "2026-11-12",
+     "msg": "1570430924007669771",
+     "ghost": "ghosts/akagi-0-wet/5168fd241b77a365.idg",
      "car_from_model": 1
     }
    }
@@ -872,6 +916,30 @@
      "car_from_model": 1
     }
    }
+  },
+  "akina-1": {
+   "course": "akina",
+   "label": "Akina uphill",
+   "start": [
+    1795.5,
+    665.1932373046875,
+    -1974.9000244140625
+   ],
+   "lens": [
+    7592.2
+   ],
+   "entries": {
+    "5168fd241b77a365": {
+     "name": "BLACKLIST",
+     "time_ms": 205766,
+     "car": 23,
+     "game": "en",
+     "date": "2026-11-12",
+     "msg": "1570434216120950875",
+     "ghost": "ghosts/akina-1/5168fd241b77a365.idg",
+     "car_from_model": 1
+    }
+   }
   }
  },
  "keys": {
@@ -921,7 +989,8 @@
   "dd75487c3aacaeab": "43cc2bedc87c5b4abc5f3413ba54a52932b9fc297acaa7a5054b70f1021a567e7da6bc5725c06504484701d2a9ab44b0054d97beb88e608916a585820aa60fdb",
   "8bdc45452680df48": "51b03b86308d3bf187229468e541606dd03d7b9ea588198de39d3eab9f54eac979cb12a292d1eb3a5dd36e6d1c8c9826aca55208328132778f06e41bb68d76ea",
   "f52a777f88d4c443": "4153c0effe1dc537cc8a0cb8086ea42711a745de2f17b8b73de39d3cd2a2e3c395a3971cf015a21c559e1fffbee9d2314e4c56f7b9d853743c42d59644d136ce",
-  "9c0d5663561cbe20": "fc454e9359962133f474ddad2a7bf4ae7e487749258bbb1c81786e99612248ba50cb6b820dc1a41fb0abb62256bc48dd57cedc555f676d5f615b4d48e199197a"
+  "9c0d5663561cbe20": "fc454e9359962133f474ddad2a7bf4ae7e487749258bbb1c81786e99612248ba50cb6b820dc1a41fb0abb62256bc48dd57cedc555f676d5f615b4d48e199197a",
+  "91f446806f22c64f": "9105ba62cf6487701c0825b93bf47d6ee0feded483087bf6d424276a7a2aa70b7f6ad067939730bd452e351fc6afcbf4d9daf996b003cdd99401418b2e7a270e"
  },
  "names": {
   "b46085569295d65f": [
@@ -1083,12 +1152,13 @@
    "pic": 1,
    "car": 23,
    "cards": 0,
-   "play_h": 0,
+   "play_h": 1,
    "name": "BLACKLIST",
    "bio": "",
-   "car_img": "b94194f43883702bf0bc6ec941dc4ba3",
+   "car_img": "0441b27411d29b0199d577aaa8d2ae1c",
    "discord": "",
-   "xp": 882
+   "xp": 3222,
+   "at": 1794491451
   },
   "a44fe613bf64ea22": {
    "pic": 1,
@@ -1411,6 +1481,18 @@
    "discord": "",
    "xp": 0,
    "at": 1794454305
+  },
+  "91f446806f22c64f": {
+   "pic": 1,
+   "car": 2,
+   "cards": 0,
+   "play_h": 0,
+   "name": "alex141093",
+   "bio": "",
+   "car_img": "",
+   "discord": "",
+   "xp": 0,
+   "at": 1794498385
   }
  },
  "bans": {},
