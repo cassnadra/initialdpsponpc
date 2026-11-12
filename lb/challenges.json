@@ -1,16 +1,16 @@
 {
- "now": 1794439884,
+ "now": 1794456359,
  "current": [
   {
-   "id": "d-2026-11-11",
+   "id": "d-2026-11-12",
    "kind": "daily",
-   "label": "Akagi uphill, night",
-   "board": "akagi-1",
-   "cond": "night",
-   "course": "akagi",
-   "dir": 1,
-   "start": 1794355200,
-   "end": 1794441600,
+   "label": "Happogahara downhill, wet",
+   "board": "happou-0-wet",
+   "cond": "wet",
+   "course": "happou",
+   "dir": 0,
+   "start": 1794441600,
+   "end": 1794528000,
    "skin": "champion",
    "skin_name": "Champion",
    "drivers": 0,
@@ -34,31 +34,19 @@
  ],
  "recent": [
   {
-   "id": "d-2026-11-10",
+   "id": "d-2026-11-11",
    "kind": "daily",
-   "label": "Myogi, day",
-   "board": "myougi-0",
-   "cond": "day",
-   "course": "myougi",
-   "dir": 0,
-   "start": 1794268800,
-   "end": 1794355200,
+   "label": "Akagi uphill, night",
+   "board": "akagi-1",
+   "cond": "night",
+   "course": "akagi",
+   "dir": 1,
+   "start": 1794355200,
+   "end": 1794441600,
    "skin": "champion",
    "skin_name": "Champion",
-   "drivers": 1,
-   "entries": [
-    {
-     "rank": 1,
-     "pid": "8e25cd5465651786",
-     "shown": "VVarcolac #8e25",
-     "steam": "",
-     "name": "VVarcolac",
-     "time_ms": 188900,
-     "car": 0,
-     "date": "2026-11-10",
-     "ghost": "ghosts/ch/d-2026-11-10/8e25cd5465651786.idg"
-    }
-   ]
+   "drivers": 0,
+   "entries": []
   },
   {
    "id": "w-2026-W45",

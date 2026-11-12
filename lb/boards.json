@@ -496,6 +496,25 @@
    }
   ]
  },
+ "myougi-0-wet": {
+  "course": "myougi",
+  "label": "Myougi (wet)",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "8bdc45452680df48",
+    "shown": "VVarcolac #8bdc",
+    "steam": "",
+    "steam_verified": false,
+    "name": "VVarcolac",
+    "time_ms": 185866,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-12",
+    "ghost": "ghosts/myougi-0-wet/8bdc45452680df48.idg"
+   }
+  ]
+ },
  "myougi-1": {
   "course": "myougi",
   "label": "Myougi (reverse)",

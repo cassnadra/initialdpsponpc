@@ -1,5 +1,5 @@
 {
- "last_id": "1569964912405520394",
+ "last_id": "1570279910654615752",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -848,6 +848,30 @@
      "car_from_model": 1
     }
    }
+  },
+  "myougi-0-wet": {
+   "course": "myougi",
+   "label": "Myougi (wet)",
+   "start": [
+    -2.5,
+    119.98725891113281,
+    1.7999999523162842
+   ],
+   "lens": [
+    9794.3
+   ],
+   "entries": {
+    "8bdc45452680df48": {
+     "name": "VVarcolac",
+     "time_ms": 185866,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-12",
+     "msg": "1570279388875063378",
+     "ghost": "ghosts/myougi-0-wet/8bdc45452680df48.idg",
+     "car_from_model": 1
+    }
+   }
   }
  },
  "keys": {
@@ -1375,6 +1399,18 @@
    "discord": "",
    "xp": 0,
    "at": 1794223186
+  },
+  "8bdc45452680df48": {
+   "pic": 1,
+   "car": 13,
+   "cards": 0,
+   "play_h": 2,
+   "name": "VVarcolac",
+   "bio": "",
+   "car_img": "e02e15b8d591f4b8f26283356b93b1ec",
+   "discord": "",
+   "xp": 0,
+   "at": 1794454305
   }
  },
  "bans": {},
@@ -1495,6 +1531,7 @@
   "d-2026-11-08": "champion",
   "d-2026-11-07": "champion",
   "d-2026-11-10": "champion",
-  "d-2026-11-11": "champion"
+  "d-2026-11-11": "champion",
+  "d-2026-11-12": "champion"
  }
 }
