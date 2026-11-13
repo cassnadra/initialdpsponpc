@@ -385,6 +385,19 @@
    },
    {
     "rank": 11,
+    "pid": "47c25ae57813d486",
+    "shown": "malhems teams #47c2",
+    "steam": "",
+    "steam_verified": false,
+    "name": "malhems teams",
+    "time_ms": 185766,
+    "car": 8,
+    "game": "jp",
+    "date": "2026-11-13",
+    "ghost": "ghosts/myougi-0/47c25ae57813d486.idg"
+   },
+   {
+    "rank": 12,
     "pid": "062910041e786c15",
     "shown": "Icipher #0629",
     "steam": "",
@@ -397,7 +410,7 @@
     "ghost": "ghosts/myougi-0/062910041e786c15.idg"
    },
    {
-    "rank": 12,
+    "rank": 13,
     "pid": "9c0d5663561cbe20",
     "shown": "xzhb #9c0d",
     "steam": "",
@@ -410,7 +423,7 @@
     "ghost": "ghosts/myougi-0/9c0d5663561cbe20.idg"
    },
    {
-    "rank": 13,
+    "rank": 14,
     "pid": "798da52dbb827e1c",
     "shown": "PRZ2K0 #798d",
     "steam": "",
@@ -423,7 +436,7 @@
     "ghost": "ghosts/myougi-0/798da52dbb827e1c.idg"
    },
    {
-    "rank": 14,
+    "rank": 15,
     "pid": "8e25cd5465651786",
     "shown": "VVarcolac #8e25",
     "steam": "",
@@ -436,7 +449,7 @@
     "ghost": "ghosts/myougi-0/8e25cd5465651786.idg"
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -449,7 +462,7 @@
     "ghost": "ghosts/myougi-0/cb291afb8872aabc.idg"
    },
    {
-    "rank": 16,
+    "rank": 17,
     "pid": "963ca3a4a77a38f7",
     "shown": "Din_Lin #963c",
     "steam": "",
@@ -462,7 +475,7 @@
     "ghost": "ghosts/myougi-0/963ca3a4a77a38f7.idg"
    },
    {
-    "rank": 17,
+    "rank": 18,
     "pid": "23f293906b0ffd82",
     "shown": "Sora #23f2",
     "steam": "",
@@ -475,7 +488,7 @@
     "ghost": "ghosts/myougi-0/23f293906b0ffd82.idg"
    },
    {
-    "rank": 18,
+    "rank": 19,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -488,7 +501,7 @@
     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 19,
+    "rank": 20,
     "pid": "ec39ad52dee6b67e",
     "shown": "Mainha #ec39",
     "steam": "",
@@ -501,7 +514,7 @@
     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
    },
    {
-    "rank": 20,
+    "rank": 21,
     "pid": "dd0ff6704e4ed00e",
     "shown": "ADZ #dd0f",
     "steam": "",
@@ -514,7 +527,7 @@
     "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg"
    },
    {
-    "rank": 21,
+    "rank": 22,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -527,7 +540,7 @@
     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
    },
    {
-    "rank": 22,
+    "rank": 23,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -540,7 +553,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 23,
+    "rank": 24,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -553,7 +566,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 24,
+    "rank": 25,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -566,7 +579,7 @@
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
    },
    {
-    "rank": 25,
+    "rank": 26,
     "pid": "d12b5b8cd5ac2eef",
     "shown": "sons of flowers #d12b",
     "steam": "",
@@ -618,6 +631,19 @@
    },
    {
     "rank": 2,
+    "pid": "47c25ae57813d486",
+    "shown": "malhems teams #47c2",
+    "steam": "",
+    "steam_verified": false,
+    "name": "malhems teams",
+    "time_ms": 182333,
+    "car": 8,
+    "game": "jp",
+    "date": "2026-11-13",
+    "ghost": "ghosts/myougi-1/47c25ae57813d486.idg"
+   },
+   {
+    "rank": 3,
     "pid": "23f293906b0ffd82",
     "shown": "Sora #23f2",
     "steam": "",
@@ -630,7 +656,7 @@
     "ghost": "ghosts/myougi-1/23f293906b0ffd82.idg"
    },
    {
-    "rank": 3,
+    "rank": 4,
     "pid": "9c0d5663561cbe20",
     "shown": "xzhb #9c0d",
     "steam": "",
@@ -643,7 +669,7 @@
     "ghost": "ghosts/myougi-1/9c0d5663561cbe20.idg"
    },
    {
-    "rank": 4,
+    "rank": 5,
     "pid": "fb6457d17ea6e509",
     "shown": "SeAshe #fb64",
     "steam": "",
@@ -656,7 +682,7 @@
     "ghost": "ghosts/myougi-1/fb6457d17ea6e509.idg"
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "f81adc2ff759ed26",
     "shown": "sirex #f81a",
     "steam": "",
@@ -669,7 +695,7 @@
     "ghost": "ghosts/myougi-1/f81adc2ff759ed26.idg"
    },
    {
-    "rank": 6,
+    "rank": 7,
     "pid": "798da52dbb827e1c",
     "shown": "PRZ2K0 #798d",
     "steam": "",
@@ -682,7 +708,7 @@
     "ghost": "ghosts/myougi-1/798da52dbb827e1c.idg"
    },
    {
-    "rank": 7,
+    "rank": 8,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -695,7 +721,7 @@
     "ghost": "ghosts/myougi-1/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 8,
+    "rank": 9,
     "pid": "cb291afb8872aabc",
     "shown": "MATphantom #cb29",
     "steam": "",
@@ -708,7 +734,7 @@
     "ghost": "ghosts/myougi-1/cb291afb8872aabc.idg"
    },
    {
-    "rank": 9,
+    "rank": 10,
     "pid": "8e25cd5465651786",
     "shown": "VVarcolac #8e25",
     "steam": "",
@@ -721,7 +747,7 @@
     "ghost": "ghosts/myougi-1/8e25cd5465651786.idg"
    },
    {
-    "rank": 10,
+    "rank": 11,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -734,7 +760,7 @@
     "ghost": "ghosts/myougi-1/55f9aa565f92c636.idg"
    },
    {
-    "rank": 11,
+    "rank": 12,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -747,7 +773,7 @@
     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 12,
+    "rank": 13,
     "pid": "60f0b3ebbbf7d46a",
     "shown": "Evil Night #60f0",
     "steam": "",
@@ -760,7 +786,7 @@
     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
    },
    {
-    "rank": 13,
+    "rank": 14,
     "pid": "4426c121d62b8f7f",
     "shown": ">.< Fuz #4426",
     "steam": "",
@@ -773,7 +799,7 @@
     "ghost": "ghosts/myougi-1/4426c121d62b8f7f.idg"
    },
    {
-    "rank": 14,
+    "rank": 15,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -786,7 +812,7 @@
     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "1a734c3b3debfca8",
     "shown": "driver #1a73",
     "steam": "",

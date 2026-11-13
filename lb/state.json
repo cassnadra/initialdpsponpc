@@ -1,5 +1,5 @@
 {
- "last_id": "1570569120330678382",
+ "last_id": "1570644487078682624",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -223,7 +223,9 @@
     9739.5,
     9755.3,
     9762.5,
-    9718.6
+    9718.6,
+    9782.6,
+    9748.7
    ],
    "entries": {
     "b46085569295d65f": {
@@ -475,6 +477,16 @@
      "msg": "1570569120330678382",
      "ghost": "ghosts/myougi-0/d12b5b8cd5ac2eef.idg",
      "car_from_model": 1
+    },
+    "47c25ae57813d486": {
+     "name": "malhems teams",
+     "time_ms": 185766,
+     "car": 8,
+     "game": "jp",
+     "date": "2026-11-13",
+     "msg": "1570644487078682624",
+     "ghost": "ghosts/myougi-0/47c25ae57813d486.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -538,7 +550,8 @@
     9806.4,
     9785.8,
     9792.2,
-    9792.0
+    9792.0,
+    9778.2
    ],
    "entries": {
     "b46085569295d65f": {
@@ -689,6 +702,16 @@
      "date": "2026-11-11",
      "msg": "1569963860797034559",
      "ghost": "ghosts/myougi-1/9c0d5663561cbe20.idg",
+     "car_from_model": 1
+    },
+    "47c25ae57813d486": {
+     "name": "malhems teams",
+     "time_ms": 182333,
+     "car": 8,
+     "game": "jp",
+     "date": "2026-11-13",
+     "msg": "1570642207088836688",
+     "ghost": "ghosts/myougi-1/47c25ae57813d486.idg",
      "car_from_model": 1
     }
    }
@@ -1002,7 +1025,8 @@
   "f52a777f88d4c443": "4153c0effe1dc537cc8a0cb8086ea42711a745de2f17b8b73de39d3cd2a2e3c395a3971cf015a21c559e1fffbee9d2314e4c56f7b9d853743c42d59644d136ce",
   "9c0d5663561cbe20": "fc454e9359962133f474ddad2a7bf4ae7e487749258bbb1c81786e99612248ba50cb6b820dc1a41fb0abb62256bc48dd57cedc555f676d5f615b4d48e199197a",
   "91f446806f22c64f": "9105ba62cf6487701c0825b93bf47d6ee0feded483087bf6d424276a7a2aa70b7f6ad067939730bd452e351fc6afcbf4d9daf996b003cdd99401418b2e7a270e",
-  "d12b5b8cd5ac2eef": "8afdb53d877fcfa87dba88d5722902d82e16840be5754beaf7b905fb9c57cf71f6a48e32f28a99d4af889ff26e7ea25c09dac355faa06719129e00bc88ffa821"
+  "d12b5b8cd5ac2eef": "8afdb53d877fcfa87dba88d5722902d82e16840be5754beaf7b905fb9c57cf71f6a48e32f28a99d4af889ff26e7ea25c09dac355faa06719129e00bc88ffa821",
+  "47c25ae57813d486": "991939e3a4138bee0dbf9914f222fbec069ce49f2162d5bb966fa4afa00d05dfd12f447d4fc0a50eed3355ffc3485d57d99213ec4b63255931ac9958d8581d12"
  },
  "names": {
   "b46085569295d65f": [
@@ -1100,6 +1124,9 @@
   ],
   "d12b5b8cd5ac2eef": [
    "sons of flowers"
+  ],
+  "47c25ae57813d486": [
+   "malhems teams"
   ]
  },
  "steam": {
