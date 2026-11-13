@@ -47,6 +47,7 @@ E	21	SupaChill	191766	0	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	20
 E	22	BL4ck0uT _YuGi	192100	0	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
 E	23	XShadowVileX	192433	0	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
 E	24	red	193133	21	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
+E	25	sons of flowers	193333	0	d12b5b8cd5ac2eef	ghosts/myougi-0/d12b5b8cd5ac2eef.idg	2026-11-12		
 B	myougi-0-wet	myougi	Myougi (wet)
 E	1	VVarcolac	185866	0	8bdc45452680df48	ghosts/myougi-0-wet/8bdc45452680df48.idg	2026-11-12		
 B	myougi-1	myougi	Myougi (reverse)
@@ -116,9 +117,9 @@ P	ea03af8d21d8415e	1	0	12	7200	Alex.Kirch		6806bf222a29839e3e5a1d271e1a40aa		765
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe						0	fb9e0344890be0b118f913577c1419c9990f9d9a4371b3f16fecdf76994667275b78ae0265787d09eb00b5c574361c7a00b521ac4403ad24daa9c57385988d14
 P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx						0	23fac3c22a7cec86e8b030fa1f54d0c8b1e97a24d59a5f88c061697d37220824b914fd230c25c5e5ffb36be9ab06579c0757b0c152bb0e07e7574424f1876a09
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c				0	c6601acf302f6a28dab2f91e6ee2c005bb6035a1dcaab0c1e91f452c96ae6083e802310ca6d27916d0d34670053ef96f42e14579bcaf9c7e90c1255cd8513b4d
-C	d-2026-11-12	daily	Happogahara downhill, wet	happou-0-wet	wet	4	0	1794441600	1794528000	on	0	champion	Champion
+C	d-2026-11-13	daily	Shomaru downhill, day	syoumaru-0	day	6	0	1794528000	1794614400	on	0	champion	Champion
 C	w-2026-W46	weekly	Irohazaka uphill, night	iroha-1	night	5	1	1794182400	1794787200	on	0	sunburst	Sunburst
-C	d-2026-11-11	daily	Akagi uphill, night	akagi-1	night	2	1	1794355200	1794441600	over	0	champion	Champion
+C	d-2026-11-12	daily	Happogahara downhill, wet	happou-0-wet	wet	4	0	1794441600	1794528000	over	0	champion	Champion
 C	w-2026-W45	weekly	Akagi uphill, day	akagi-1	day	2	1	1793577600	1794182400	over	2	sunburst	Sunburst
 R	1	Cassandra	162433	13	b46085569295d65f	ghosts/ch/w-2026-W45/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 R	2	Marcus	189833	8	f341e22f0a0d3a93	ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg	2026-11-05		

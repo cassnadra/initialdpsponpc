@@ -1,5 +1,5 @@
 {
- "last_id": "1570464798255226933",
+ "last_id": "1570569120330678382",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -222,7 +222,8 @@
     9786.5,
     9739.5,
     9755.3,
-    9762.5
+    9762.5,
+    9718.6
    ],
    "entries": {
     "b46085569295d65f": {
@@ -463,6 +464,16 @@
      "date": "2026-11-11",
      "msg": "1569964912405520394",
      "ghost": "ghosts/myougi-0/9c0d5663561cbe20.idg",
+     "car_from_model": 1
+    },
+    "d12b5b8cd5ac2eef": {
+     "name": "sons of flowers",
+     "time_ms": 193333,
+     "car": 0,
+     "game": "jp",
+     "date": "2026-11-12",
+     "msg": "1570569120330678382",
+     "ghost": "ghosts/myougi-0/d12b5b8cd5ac2eef.idg",
      "car_from_model": 1
     }
    }
@@ -990,7 +1001,8 @@
   "8bdc45452680df48": "51b03b86308d3bf187229468e541606dd03d7b9ea588198de39d3eab9f54eac979cb12a292d1eb3a5dd36e6d1c8c9826aca55208328132778f06e41bb68d76ea",
   "f52a777f88d4c443": "4153c0effe1dc537cc8a0cb8086ea42711a745de2f17b8b73de39d3cd2a2e3c395a3971cf015a21c559e1fffbee9d2314e4c56f7b9d853743c42d59644d136ce",
   "9c0d5663561cbe20": "fc454e9359962133f474ddad2a7bf4ae7e487749258bbb1c81786e99612248ba50cb6b820dc1a41fb0abb62256bc48dd57cedc555f676d5f615b4d48e199197a",
-  "91f446806f22c64f": "9105ba62cf6487701c0825b93bf47d6ee0feded483087bf6d424276a7a2aa70b7f6ad067939730bd452e351fc6afcbf4d9daf996b003cdd99401418b2e7a270e"
+  "91f446806f22c64f": "9105ba62cf6487701c0825b93bf47d6ee0feded483087bf6d424276a7a2aa70b7f6ad067939730bd452e351fc6afcbf4d9daf996b003cdd99401418b2e7a270e",
+  "d12b5b8cd5ac2eef": "8afdb53d877fcfa87dba88d5722902d82e16840be5754beaf7b905fb9c57cf71f6a48e32f28a99d4af889ff26e7ea25c09dac355faa06719129e00bc88ffa821"
  },
  "names": {
   "b46085569295d65f": [
@@ -1085,6 +1097,9 @@
   ],
   "9c0d5663561cbe20": [
    "xzhb"
+  ],
+  "d12b5b8cd5ac2eef": [
+   "sons of flowers"
   ]
  },
  "steam": {
@@ -1614,6 +1629,7 @@
   "d-2026-11-07": "champion",
   "d-2026-11-10": "champion",
   "d-2026-11-11": "champion",
-  "d-2026-11-12": "champion"
+  "d-2026-11-12": "champion",
+  "d-2026-11-13": "champion"
  }
 }

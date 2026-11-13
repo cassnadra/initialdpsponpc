@@ -564,6 +564,19 @@
     "game": "jp",
     "date": "2026-10-31",
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
+   },
+   {
+    "rank": 25,
+    "pid": "d12b5b8cd5ac2eef",
+    "shown": "sons of flowers #d12b",
+    "steam": "",
+    "steam_verified": false,
+    "name": "sons of flowers",
+    "time_ms": 193333,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-11-12",
+    "ghost": "ghosts/myougi-0/d12b5b8cd5ac2eef.idg"
    }
   ]
  },
