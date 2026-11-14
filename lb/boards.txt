@@ -45,7 +45,7 @@ E	19	Penguin	188100	0	741935540f631fb4	ghosts/myougi-0/741935540f631fb4.idg	2026
 E	20	BusterWolf	188333	0	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
 E	21	Mainha	189700	0	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
 E	22	ADZ	190633	34	dd0ff6704e4ed00e	ghosts/myougi-0/dd0ff6704e4ed00e.idg	2026-11-05		
-E	23	SupaChill	191766	0	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-05		
+E	23	SupaChill	191566	0	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-14		
 E	24	BL4ck0uT _YuGi	192100	0	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
 E	25	XShadowVileX	192433	0	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
 E	26	red	193133	21	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
