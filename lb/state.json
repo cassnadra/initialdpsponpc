@@ -1,5 +1,5 @@
 {
- "last_id": "1570838428030074923",
+ "last_id": "1571052922215862465",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -971,6 +971,30 @@
      "date": "2026-11-12",
      "msg": "1570434216120950875",
      "ghost": "ghosts/akina-1/5168fd241b77a365.idg",
+     "car_from_model": 1
+    }
+   }
+  },
+  "myougi-1-wet": {
+   "course": "myougi",
+   "label": "Myougi (reverse) (wet)",
+   "start": [
+    2.5,
+    119.9941635131836,
+    -1.7999999523162842
+   ],
+   "lens": [
+    9812.6
+   ],
+   "entries": {
+    "8bdc45452680df48": {
+     "name": "VVarcolac",
+     "time_ms": 186166,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-14",
+     "msg": "1571052922215862465",
+     "ghost": "ghosts/myougi-1-wet/8bdc45452680df48.idg",
      "car_from_model": 1
     }
    }

@@ -68,6 +68,8 @@ E	13	Evil Night	191233	0	60f0b3ebbbf7d46a	ghosts/myougi-1/60f0b3ebbbf7d46a.idg	2
 E	14	>.< Fuz	191500	9	4426c121d62b8f7f	ghosts/myougi-1/4426c121d62b8f7f.idg	2026-11-08		
 E	15	SupaChill	192533	0	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-05		
 E	16	driver	193233	0	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
+B	myougi-1-wet	myougi	Myougi (reverse) (wet)
+E	1	VVarcolac	186166	0	8bdc45452680df48	ghosts/myougi-1-wet/8bdc45452680df48.idg	2026-11-14		
 B	usui-0	usui	Usui
 E	1	BLACKLIST	180833	23	5168fd241b77a365	ghosts/usui-0/5168fd241b77a365.idg	2026-11-08		
 E	2	Alex.Kirch	189966	21	ea03af8d21d8415e	ghosts/usui-0/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
