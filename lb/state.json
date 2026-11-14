@@ -1,5 +1,5 @@
 {
- "last_id": "1571052922215862465",
+ "last_id": "1571123141319590061",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -225,7 +225,8 @@
     9762.5,
     9718.6,
     9782.6,
-    9748.7
+    9748.7,
+    9779.9
    ],
    "entries": {
     "b46085569295d65f": {
@@ -487,6 +488,16 @@
      "msg": "1570644487078682624",
      "ghost": "ghosts/myougi-0/47c25ae57813d486.idg",
      "car_from_model": 1
+    },
+    "741935540f631fb4": {
+     "name": "Penguin",
+     "time_ms": 188100,
+     "car": 0,
+     "game": "jp",
+     "date": "2026-11-14",
+     "msg": "1571120795525320705",
+     "ghost": "ghosts/myougi-0/741935540f631fb4.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -551,7 +562,8 @@
     9785.8,
     9792.2,
     9792.0,
-    9778.2
+    9778.2,
+    9772.8
    ],
    "entries": {
     "b46085569295d65f": {
@@ -712,6 +724,16 @@
      "date": "2026-11-13",
      "msg": "1570642207088836688",
      "ghost": "ghosts/myougi-1/47c25ae57813d486.idg",
+     "car_from_model": 1
+    },
+    "741935540f631fb4": {
+     "name": "Penguin",
+     "time_ms": 188833,
+     "car": 0,
+     "game": "jp",
+     "date": "2026-11-14",
+     "msg": "1571121955581722774",
+     "ghost": "ghosts/myougi-1/741935540f631fb4.idg",
      "car_from_model": 1
     }
    }
@@ -1051,7 +1073,8 @@
   "91f446806f22c64f": "9105ba62cf6487701c0825b93bf47d6ee0feded483087bf6d424276a7a2aa70b7f6ad067939730bd452e351fc6afcbf4d9daf996b003cdd99401418b2e7a270e",
   "d12b5b8cd5ac2eef": "8afdb53d877fcfa87dba88d5722902d82e16840be5754beaf7b905fb9c57cf71f6a48e32f28a99d4af889ff26e7ea25c09dac355faa06719129e00bc88ffa821",
   "47c25ae57813d486": "991939e3a4138bee0dbf9914f222fbec069ce49f2162d5bb966fa4afa00d05dfd12f447d4fc0a50eed3355ffc3485d57d99213ec4b63255931ac9958d8581d12",
-  "4308d307d730dfd5": "0d9b4411359b7f4e820ad0ee1e4177b8dc33ddd591f6924642c75711c7958eb8b071875c9a545e7c72286c5657e2449fab0a302f1c63736aa02e64b0eb57a5ca"
+  "4308d307d730dfd5": "0d9b4411359b7f4e820ad0ee1e4177b8dc33ddd591f6924642c75711c7958eb8b071875c9a545e7c72286c5657e2449fab0a302f1c63736aa02e64b0eb57a5ca",
+  "741935540f631fb4": "4abf6ed83ecca7f0ce8d13e9b3270395ae204dfda441a368e5ed4165a59988ec6b265b7d173b91dcca6da04c88d838f713c86dca380b8d51b2a0e4cc6e06a0e1"
  },
  "names": {
   "b46085569295d65f": [
@@ -1152,6 +1175,9 @@
   ],
   "47c25ae57813d486": [
    "malhems teams"
+  ],
+  "741935540f631fb4": [
+   "Penguin"
   ]
  },
  "steam": {
@@ -1572,6 +1598,18 @@
    "discord": "",
    "xp": 0,
    "at": 1794587466
+  },
+  "741935540f631fb4": {
+   "pic": 1,
+   "car": 16,
+   "cards": 2,
+   "play_h": 0,
+   "name": "Penguin",
+   "bio": "Just a bird from the artics",
+   "car_img": "de2daa4c9e427d24dc561e21e0377d64",
+   "discord": "",
+   "xp": 0,
+   "at": 1794655346
   }
  },
  "bans": {},

@@ -41,14 +41,15 @@ E	15	VVarcolac	186600	0	8e25cd5465651786	ghosts/myougi-0/8e25cd5465651786.idg	20
 E	16	MATphantom	187000	0	cb291afb8872aabc	ghosts/myougi-0/cb291afb8872aabc.idg	2026-10-29		
 E	17	Din_Lin	187466	0	963ca3a4a77a38f7	ghosts/myougi-0/963ca3a4a77a38f7.idg	2026-11-04		
 E	18	Sora	187966	8	23f293906b0ffd82	ghosts/myougi-0/23f293906b0ffd82.idg	2026-11-01		
-E	19	BusterWolf	188333	0	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
-E	20	Mainha	189700	0	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
-E	21	ADZ	190633	34	dd0ff6704e4ed00e	ghosts/myougi-0/dd0ff6704e4ed00e.idg	2026-11-05		
-E	22	SupaChill	191766	0	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-05		
-E	23	BL4ck0uT _YuGi	192100	0	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
-E	24	XShadowVileX	192433	0	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
-E	25	red	193133	21	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
-E	26	sons of flowers	193333	0	d12b5b8cd5ac2eef	ghosts/myougi-0/d12b5b8cd5ac2eef.idg	2026-11-12		
+E	19	Penguin	188100	0	741935540f631fb4	ghosts/myougi-0/741935540f631fb4.idg	2026-11-14		
+E	20	BusterWolf	188333	0	0bbe2ad8c59307dd	ghosts/myougi-0/0bbe2ad8c59307dd.idg	2026-11-02		
+E	21	Mainha	189700	0	ec39ad52dee6b67e	ghosts/myougi-0/ec39ad52dee6b67e.idg	2026-11-02		
+E	22	ADZ	190633	34	dd0ff6704e4ed00e	ghosts/myougi-0/dd0ff6704e4ed00e.idg	2026-11-05		
+E	23	SupaChill	191766	0	23a1d569341162c9	ghosts/myougi-0/23a1d569341162c9.idg	2026-11-05		
+E	24	BL4ck0uT _YuGi	192100	0	d11124014e323aa6	ghosts/myougi-0/d11124014e323aa6.idg	2026-10-31		
+E	25	XShadowVileX	192433	0	55f9aa565f92c636	ghosts/myougi-0/55f9aa565f92c636.idg	2026-10-28		
+E	26	red	193133	21	7876c31e772509fa	ghosts/myougi-0/7876c31e772509fa.idg	2026-10-31		
+E	27	sons of flowers	193333	0	d12b5b8cd5ac2eef	ghosts/myougi-0/d12b5b8cd5ac2eef.idg	2026-11-12		
 B	myougi-0-wet	myougi	Myougi (wet)
 E	1	VVarcolac	185866	0	8bdc45452680df48	ghosts/myougi-0-wet/8bdc45452680df48.idg	2026-11-12		
 B	myougi-1	myougi	Myougi (reverse)
@@ -63,11 +64,12 @@ E	8	Alex.Kirch	187066	21	ea03af8d21d8415e	ghosts/myougi-1/ea03af8d21d8415e.idg	2
 E	9	MATphantom	187100	0	cb291afb8872aabc	ghosts/myougi-1/cb291afb8872aabc.idg	2026-10-29		
 E	10	VVarcolac	188066	0	8e25cd5465651786	ghosts/myougi-1/8e25cd5465651786.idg	2026-11-10		
 E	11	XShadowVileX	188100	0	55f9aa565f92c636	ghosts/myougi-1/55f9aa565f92c636.idg	2026-10-28		
-E	12	BusterWolf	190633	0	0bbe2ad8c59307dd	ghosts/myougi-1/0bbe2ad8c59307dd.idg	2026-11-02		
-E	13	Evil Night	191233	0	60f0b3ebbbf7d46a	ghosts/myougi-1/60f0b3ebbbf7d46a.idg	2026-11-03		
-E	14	>.< Fuz	191500	9	4426c121d62b8f7f	ghosts/myougi-1/4426c121d62b8f7f.idg	2026-11-08		
-E	15	SupaChill	192533	0	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-05		
-E	16	driver	193233	0	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
+E	12	Penguin	188833	0	741935540f631fb4	ghosts/myougi-1/741935540f631fb4.idg	2026-11-14		
+E	13	BusterWolf	190633	0	0bbe2ad8c59307dd	ghosts/myougi-1/0bbe2ad8c59307dd.idg	2026-11-02		
+E	14	Evil Night	191233	0	60f0b3ebbbf7d46a	ghosts/myougi-1/60f0b3ebbbf7d46a.idg	2026-11-03		
+E	15	>.< Fuz	191500	9	4426c121d62b8f7f	ghosts/myougi-1/4426c121d62b8f7f.idg	2026-11-08		
+E	16	SupaChill	192533	0	23a1d569341162c9	ghosts/myougi-1/23a1d569341162c9.idg	2026-11-05		
+E	17	driver	193233	0	1a734c3b3debfca8	ghosts/myougi-1/1a734c3b3debfca8.idg	2026-11-02		
 B	myougi-1-wet	myougi	Myougi (reverse) (wet)
 E	1	VVarcolac	186166	0	8bdc45452680df48	ghosts/myougi-1-wet/8bdc45452680df48.idg	2026-11-14		
 B	usui-0	usui	Usui
@@ -100,6 +102,7 @@ P	5168fd241b77a365	1	23	0	3600	BLACKLIST		0441b27411d29b0199d577aaa8d2ae1c				32
 P	52143161d65181cd	1	0	0	0	+Rockman+						0	32ab853251171cc5ac5cd2033cd4b5a64fbfefdc31ec971f66b32017fdc045bdd442edee83bd897c69f2baabae0b87043962f551667b3d80f42389a3bd0fc781
 P	55f9aa565f92c636	1	-1	0	0	XShadowVileX						0	88de12678361e9945ce7cc65b2548aae123e5dbb8586cbfef1938e18c3e8bbb20f5a8e31f1e5401569facf5b4cf83212aa62dd67ab23105a62eb23401a7a1306
 P	5fa3dcfbafb837ec	1	-1	0	0	xcb wf						0	9def07936b9071a1136b2ecb66aaa3a6f189a56e08493993f79dff5442c026db5caf1459e56a8265fc8fdbd31c50fb3a7f61f5434d388130d9489f6101028a2b
+P	741935540f631fb4	1	16	2	0	Penguin	Just a bird from the artics	de2daa4c9e427d24dc561e21e0377d64				0	4abf6ed83ecca7f0ce8d13e9b3270395ae204dfda441a368e5ed4165a59988ec6b265b7d173b91dcca6da04c88d838f713c86dca380b8d51b2a0e4cc6e06a0e1
 P	7876c31e772509fa	1	13	1	0	red		89ee09d82cdea8d885cb6d86c80566f1				0	98682f2bf0d2ebdc7a420148e300b420dc82535ac96485e50041dadd461f920bbccccb4c717a1acb4e3a3d65b3da1b77f571e0cb21921f731037834cba38fd51
 P	7bef37ad91d8806b	1	24	2	0	Giogio		8626a45fab6773f29f6bc0ac65083201				0	8c49e21eb7c8325e47a55642c98f42f72ab1f2d0af3378ba8eb6b0d0f287194f12d5be9b1b39154d44f78b9d183ce0a6fd3b65070abb0f008ad66cbc2a5ef739
 P	8bdc45452680df48	1	13	0	7200	VVarcolac		e02e15b8d591f4b8f26283356b93b1ec				0	51b03b86308d3bf187229468e541606dd03d7b9ea588198de39d3eab9f54eac979cb12a292d1eb3a5dd36e6d1c8c9826aca55208328132778f06e41bb68d76ea

@@ -489,6 +489,19 @@
    },
    {
     "rank": 19,
+    "pid": "741935540f631fb4",
+    "shown": "Penguin #7419",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Penguin",
+    "time_ms": 188100,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-11-14",
+    "ghost": "ghosts/myougi-0/741935540f631fb4.idg"
+   },
+   {
+    "rank": 20,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -501,7 +514,7 @@
     "ghost": "ghosts/myougi-0/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 20,
+    "rank": 21,
     "pid": "ec39ad52dee6b67e",
     "shown": "Mainha #ec39",
     "steam": "",
@@ -514,7 +527,7 @@
     "ghost": "ghosts/myougi-0/ec39ad52dee6b67e.idg"
    },
    {
-    "rank": 21,
+    "rank": 22,
     "pid": "dd0ff6704e4ed00e",
     "shown": "ADZ #dd0f",
     "steam": "",
@@ -527,7 +540,7 @@
     "ghost": "ghosts/myougi-0/dd0ff6704e4ed00e.idg"
    },
    {
-    "rank": 22,
+    "rank": 23,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -540,7 +553,7 @@
     "ghost": "ghosts/myougi-0/23a1d569341162c9.idg"
    },
    {
-    "rank": 23,
+    "rank": 24,
     "pid": "d11124014e323aa6",
     "shown": "BL4ck0uT _YuGi #d111",
     "steam": "",
@@ -553,7 +566,7 @@
     "ghost": "ghosts/myougi-0/d11124014e323aa6.idg"
    },
    {
-    "rank": 24,
+    "rank": 25,
     "pid": "55f9aa565f92c636",
     "shown": "XShadowVileX #55f9",
     "steam": "",
@@ -566,7 +579,7 @@
     "ghost": "ghosts/myougi-0/55f9aa565f92c636.idg"
    },
    {
-    "rank": 25,
+    "rank": 26,
     "pid": "7876c31e772509fa",
     "shown": "red #7876",
     "steam": "",
@@ -579,7 +592,7 @@
     "ghost": "ghosts/myougi-0/7876c31e772509fa.idg"
    },
    {
-    "rank": 26,
+    "rank": 27,
     "pid": "d12b5b8cd5ac2eef",
     "shown": "sons of flowers #d12b",
     "steam": "",
@@ -761,6 +774,19 @@
    },
    {
     "rank": 12,
+    "pid": "741935540f631fb4",
+    "shown": "Penguin #7419",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Penguin",
+    "time_ms": 188833,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-11-14",
+    "ghost": "ghosts/myougi-1/741935540f631fb4.idg"
+   },
+   {
+    "rank": 13,
     "pid": "0bbe2ad8c59307dd",
     "shown": "BusterWolf #0bbe",
     "steam": "",
@@ -773,7 +799,7 @@
     "ghost": "ghosts/myougi-1/0bbe2ad8c59307dd.idg"
    },
    {
-    "rank": 13,
+    "rank": 14,
     "pid": "60f0b3ebbbf7d46a",
     "shown": "Evil Night #60f0",
     "steam": "",
@@ -786,7 +812,7 @@
     "ghost": "ghosts/myougi-1/60f0b3ebbbf7d46a.idg"
    },
    {
-    "rank": 14,
+    "rank": 15,
     "pid": "4426c121d62b8f7f",
     "shown": ">.< Fuz #4426",
     "steam": "",
@@ -799,7 +825,7 @@
     "ghost": "ghosts/myougi-1/4426c121d62b8f7f.idg"
    },
    {
-    "rank": 15,
+    "rank": 16,
     "pid": "23a1d569341162c9",
     "shown": "SupaChill #23a1",
     "steam": "",
@@ -812,7 +838,7 @@
     "ghost": "ghosts/myougi-1/23a1d569341162c9.idg"
    },
    {
-    "rank": 16,
+    "rank": 17,
     "pid": "1a734c3b3debfca8",
     "shown": "driver #1a73",
     "steam": "",
