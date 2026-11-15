@@ -994,6 +994,25 @@
    }
   ]
  },
+ "usui-0-wet": {
+  "course": "usui",
+  "label": "Usui (wet)",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "226208e5c2ae704b",
+    "shown": "VVarcolac #2262",
+    "steam": "",
+    "steam_verified": false,
+    "name": "VVarcolac",
+    "time_ms": 207166,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-11-15",
+    "ghost": "ghosts/usui-0-wet/226208e5c2ae704b.idg"
+   }
+  ]
+ },
  "usui-1": {
   "course": "usui",
   "label": "Usui (reverse)",
