@@ -871,6 +871,25 @@
    }
   ]
  },
+ "syoumaru-0": {
+  "course": "syoumaru",
+  "label": "Syoumaru downhill",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "5e26d14fd9e0bd2c",
+    "shown": "BigCheeseSniffa #5e26",
+    "steam": "",
+    "steam_verified": false,
+    "name": "BigCheeseSniffa",
+    "time_ms": 180133,
+    "car": 8,
+    "game": "en",
+    "date": "2026-11-15",
+    "ghost": "ghosts/syoumaru-0/5e26d14fd9e0bd2c.idg"
+   }
+  ]
+ },
  "usui-0": {
   "course": "usui",
   "label": "Usui",
