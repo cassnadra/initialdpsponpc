@@ -1,6 +1,38 @@
 {
- "now": 1794777660,
+ "now": 1794791452,
  "current": [
+  {
+   "id": "d-2026-11-16",
+   "kind": "daily",
+   "label": "Usui (reverse), day",
+   "board": "usui-1",
+   "cond": "day",
+   "course": "usui",
+   "dir": 1,
+   "start": 1794787200,
+   "end": 1794873600,
+   "skin": "champion",
+   "skin_name": "Champion",
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W47",
+   "kind": "weekly",
+   "label": "Tsuchisaka downhill, night",
+   "board": "tuchisaka-0",
+   "cond": "night",
+   "course": "tuchisaka",
+   "dir": 0,
+   "start": 1794787200,
+   "end": 1795392000,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "recent": [
   {
    "id": "d-2026-11-15",
    "kind": "daily",
@@ -30,61 +62,6 @@
    "skin_name": "Sunburst",
    "drivers": 0,
    "entries": []
-  }
- ],
- "recent": [
-  {
-   "id": "d-2026-11-14",
-   "kind": "daily",
-   "label": "Akina uphill, night",
-   "board": "akina-1",
-   "cond": "night",
-   "course": "akina",
-   "dir": 1,
-   "start": 1794614400,
-   "end": 1794700800,
-   "skin": "champion",
-   "skin_name": "Champion",
-   "drivers": 0,
-   "entries": []
-  },
-  {
-   "id": "w-2026-W45",
-   "kind": "weekly",
-   "label": "Akagi uphill, day",
-   "board": "akagi-1",
-   "cond": "day",
-   "course": "akagi",
-   "dir": 1,
-   "start": 1793577600,
-   "end": 1794182400,
-   "skin": "sunburst",
-   "skin_name": "Sunburst",
-   "drivers": 2,
-   "entries": [
-    {
-     "rank": 1,
-     "pid": "b46085569295d65f",
-     "shown": "Cassandra (Steam)",
-     "steam": "76561198289153961",
-     "name": "Cassandra",
-     "time_ms": 162433,
-     "car": 13,
-     "date": "2026-11-05",
-     "ghost": "ghosts/ch/w-2026-W45/b46085569295d65f.idg"
-    },
-    {
-     "rank": 2,
-     "pid": "f341e22f0a0d3a93",
-     "shown": "Marcus #f341",
-     "steam": "",
-     "name": "Marcus",
-     "time_ms": 189833,
-     "car": 8,
-     "date": "2026-11-05",
-     "ghost": "ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg"
-    }
-   ]
   }
  ],
  "past": [
