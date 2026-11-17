@@ -2,13 +2,14 @@
  "steam:76561198289153961": {
   "skins": [
    "flames",
+   "honeycomb",
    "champion",
    "sunburst"
   ],
-  "streak": 0,
-  "dailies": 3,
-  "weeklies": 1,
-  "daily_wins": 3,
+  "streak": 1,
+  "dailies": 4,
+  "weeklies": 2,
+  "daily_wins": 4,
   "weekly_wins": 1
  },
  "8e25cd5465651786": {

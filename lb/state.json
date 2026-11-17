@@ -1,5 +1,5 @@
 {
- "last_id": "1571623853673807987",
+ "last_id": "1572049887019929761",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -227,7 +227,8 @@
     9782.6,
     9748.7,
     9779.9,
-    9699.6
+    9699.6,
+    9750.3
    ],
    "entries": {
     "b46085569295d65f": {
@@ -498,6 +499,16 @@
      "date": "2026-11-14",
      "msg": "1571120795525320705",
      "ghost": "ghosts/myougi-0/741935540f631fb4.idg",
+     "car_from_model": 1
+    },
+    "e0fc86715d74f22f": {
+     "name": "Jonas Savimbi",
+     "time_ms": 188133,
+     "car": 27,
+     "game": "jp",
+     "date": "2026-11-17",
+     "msg": "1572049887019929761",
+     "ghost": "ghosts/myougi-0/e0fc86715d74f22f.idg",
      "car_from_model": 1
     }
    }
@@ -866,7 +877,8 @@
    ],
    "lens": [
     8450.8,
-    8495.6
+    8495.6,
+    8512.1
    ],
    "entries": {
     "5168fd241b77a365": {
@@ -897,6 +909,16 @@
      "date": "2026-11-02",
      "msg": "1566953104920809563",
      "ghost": "ghosts/usui-1/798da52dbb827e1c.idg",
+     "car_from_model": 1
+    },
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 184200,
+     "car": 10,
+     "game": "en",
+     "date": "2026-11-16",
+     "msg": "1571978860927389767",
+     "ghost": "ghosts/usui-1/b46085569295d65f.idg",
      "car_from_model": 1
     }
    }
@@ -935,16 +957,18 @@
    ],
    "lens": [
     5152.1,
-    5062.6
+    5062.6,
+    5068.4,
+    5085.4
    ],
    "entries": {
     "b46085569295d65f": {
      "name": "Cassandra",
-     "time_ms": 197533,
-     "car": 13,
+     "time_ms": 196600,
+     "car": 0,
      "game": "en",
-     "date": "2026-11-07",
-     "msg": "1568529520678408273",
+     "date": "2026-11-16",
+     "msg": "1571986943665766532",
      "ghost": "ghosts/iroha-0/b46085569295d65f.idg",
      "car_from_model": 1
     }
@@ -1069,6 +1093,31 @@
      "car_from_model": 1
     }
    }
+  },
+  "tuchisaka-0": {
+   "course": "tuchisaka",
+   "label": "Tuchisaka uphill",
+   "start": [
+    -30.020000457763672,
+    390.2431640625,
+    517.27001953125
+   ],
+   "lens": [
+    6763.5,
+    6748.0
+   ],
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 185700,
+     "car": 10,
+     "game": "en",
+     "date": "2026-11-16",
+     "msg": "1571981104464920676",
+     "ghost": "ghosts/tuchisaka-0/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
   }
  },
  "keys": {
@@ -1126,7 +1175,9 @@
   "741935540f631fb4": "4abf6ed83ecca7f0ce8d13e9b3270395ae204dfda441a368e5ed4165a59988ec6b265b7d173b91dcca6da04c88d838f713c86dca380b8d51b2a0e4cc6e06a0e1",
   "27de6c02476dd419": "f3b0535935ef78f13f154c46979554732529fbec9e237dfa09329cb4b56b7d2c062eff17133046418745c332b178f64f279d5ad0e407e9ec8dbf50641466a854",
   "226208e5c2ae704b": "0c4a97a2a146c0fc01bd5ed46212299208a2c715df6d8a9cf6af15911e4bd4de795fc5c12dac0597bdac100348816bd28419d15d141d64decd4594d11135d3a4",
-  "5e26d14fd9e0bd2c": "00e4dd10184c24dfe6b72e53d9e3ea09e3d30c23c267670470aac94405d282485039c72ad4dfbff8aea113d3c1e26726b0448de4d605a5c9694bd363eef5f886"
+  "5e26d14fd9e0bd2c": "00e4dd10184c24dfe6b72e53d9e3ea09e3d30c23c267670470aac94405d282485039c72ad4dfbff8aea113d3c1e26726b0448de4d605a5c9694bd363eef5f886",
+  "ab86205081cfad87": "1ab12ec39444643ebb8b8e6f2459249f3324de95ad67f78e04787af30a8e95d4c466fbad27a11f3fc52573ba089bdcb3517a9b543b479e9a480957c71687ef1c",
+  "e0fc86715d74f22f": "1cd990dc4624e8c15cb02b5a19b3e9a7cecd5a7708e027c92dc2dad6a4ffbb59cdcdb8ef44adbebdc3e957a743a88020690f581158fdbecf96bdd81e530590a9"
  },
  "names": {
   "b46085569295d65f": [
@@ -1236,6 +1287,9 @@
   ],
   "5e26d14fd9e0bd2c": [
    "BigCheeseSniffa"
+  ],
+  "e0fc86715d74f22f": [
+   "Jonas Savimbi"
   ]
  },
  "steam": {
@@ -1259,15 +1313,15 @@
  "profiles": {
   "b46085569295d65f": {
    "pic": -1,
-   "car": 10,
+   "car": 0,
    "cards": 43,
-   "play_h": 9,
+   "play_h": 11,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "9ebf28adc8a5fff9253073023be3bac3",
+   "car_img": "17860b89f1344e18ad1ae65f67550fd5",
    "discord": "cassnadra",
-   "xp": 4844,
-   "at": 1794317219
+   "xp": 7175,
+   "at": 1794860227
   },
   "2ff94d72b41c145f": {
    "pic": 1,
@@ -1704,6 +1758,30 @@
    "discord": "",
    "xp": 0,
    "at": 1794774726
+  },
+  "ab86205081cfad87": {
+   "pic": 1,
+   "car": 34,
+   "cards": 0,
+   "play_h": 0,
+   "name": "Agux2",
+   "bio": "",
+   "car_img": "70af21ce596d5b8f731e14845a8dd3a0",
+   "discord": "",
+   "xp": 0,
+   "at": 1794872916
+  },
+  "e0fc86715d74f22f": {
+   "pic": 1,
+   "car": -1,
+   "cards": 0,
+   "play_h": 0,
+   "name": "Jonas Savimbi",
+   "bio": "",
+   "car_img": "",
+   "discord": "",
+   "xp": 0,
+   "at": 1794875832
   }
  },
  "bans": {},
@@ -1816,6 +1894,46 @@
      "car_from_model": 1
     }
    }
+  },
+  "d-2026-11-16": {
+   "kind": "daily",
+   "course": "usui",
+   "dir": 1,
+   "cond": "day",
+   "board": "usui-1",
+   "start": 1794787200,
+   "end": 1794873600,
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 184200,
+     "car": 10,
+     "date": "2026-11-16",
+     "msg": "1571978860927389767",
+     "ghost": "ghosts/ch/d-2026-11-16/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
+  },
+  "w-2026-W47": {
+   "kind": "weekly",
+   "course": "tuchisaka",
+   "dir": 0,
+   "cond": "night",
+   "board": "tuchisaka-0",
+   "start": 1794787200,
+   "end": 1795392000,
+   "entries": {
+    "b46085569295d65f": {
+     "name": "Cassandra",
+     "time_ms": 185700,
+     "car": 10,
+     "date": "2026-11-16",
+     "msg": "1571981104464920676",
+     "ghost": "ghosts/ch/w-2026-W47/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
   }
  },
  "ch_skins": {
@@ -1830,6 +1948,7 @@
   "d-2026-11-14": "champion",
   "d-2026-11-15": "champion",
   "d-2026-11-16": "champion",
-  "w-2026-W47": "sunburst"
+  "w-2026-W47": "sunburst",
+  "d-2026-11-17": "champion"
  }
 }

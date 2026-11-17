@@ -1,6 +1,50 @@
 {
- "now": 1794851746,
+ "now": 1794878073,
  "current": [
+  {
+   "id": "d-2026-11-17",
+   "kind": "daily",
+   "label": "Akagi downhill, day",
+   "board": "akagi-0",
+   "cond": "day",
+   "course": "akagi",
+   "dir": 0,
+   "start": 1794873600,
+   "end": 1794960000,
+   "skin": "champion",
+   "skin_name": "Champion",
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W47",
+   "kind": "weekly",
+   "label": "Tsuchisaka uphill, night",
+   "board": "tuchisaka-0",
+   "cond": "night",
+   "course": "tuchisaka",
+   "dir": 0,
+   "start": 1794787200,
+   "end": 1795392000,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "steam": "76561198289153961",
+     "name": "Cassandra",
+     "time_ms": 185700,
+     "car": 10,
+     "date": "2026-11-16",
+     "ghost": "ghosts/ch/w-2026-W47/b46085569295d65f.idg"
+    }
+   ]
+  }
+ ],
+ "recent": [
   {
    "id": "d-2026-11-16",
    "kind": "daily",
@@ -13,40 +57,20 @@
    "end": 1794873600,
    "skin": "champion",
    "skin_name": "Champion",
-   "drivers": 0,
-   "entries": []
-  },
-  {
-   "id": "w-2026-W47",
-   "kind": "weekly",
-   "label": "Tsuchisaka downhill, night",
-   "board": "tuchisaka-0",
-   "cond": "night",
-   "course": "tuchisaka",
-   "dir": 0,
-   "start": 1794787200,
-   "end": 1795392000,
-   "skin": "sunburst",
-   "skin_name": "Sunburst",
-   "drivers": 0,
-   "entries": []
-  }
- ],
- "recent": [
-  {
-   "id": "d-2026-11-15",
-   "kind": "daily",
-   "label": "Shomaru uphill, wet",
-   "board": "syoumaru-1-wet",
-   "cond": "wet",
-   "course": "syoumaru",
-   "dir": 1,
-   "start": 1794700800,
-   "end": 1794787200,
-   "skin": "champion",
-   "skin_name": "Champion",
-   "drivers": 0,
-   "entries": []
+   "drivers": 1,
+   "entries": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "steam": "76561198289153961",
+     "name": "Cassandra",
+     "time_ms": 184200,
+     "car": 10,
+     "date": "2026-11-16",
+     "ghost": "ghosts/ch/d-2026-11-16/b46085569295d65f.idg"
+    }
+   ]
   },
   {
    "id": "w-2026-W46",
@@ -65,6 +89,25 @@
   }
  ],
  "past": [
+  {
+   "id": "d-2026-11-16",
+   "kind": "daily",
+   "label": "Usui (reverse), day",
+   "board": "usui-1",
+   "start": 1794787200,
+   "end": 1794873600,
+   "drivers": 1,
+   "podium": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "name": "Cassandra",
+     "time_ms": 184200,
+     "car": 10
+    }
+   ]
+  },
   {
    "id": "d-2026-11-10",
    "kind": "daily",
