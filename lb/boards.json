@@ -189,6 +189,19 @@
     "game": "en",
     "date": "2026-11-12",
     "ghost": "ghosts/akina-0/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 3,
+    "pid": "de3075b68c60a06b",
+    "shown": "GARAXE #de30",
+    "steam": "",
+    "steam_verified": false,
+    "name": "GARAXE",
+    "time_ms": 206900,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-17",
+    "ghost": "ghosts/akina-0/de3075b68c60a06b.idg"
    }
   ]
  },
@@ -208,6 +221,19 @@
     "game": "en",
     "date": "2026-11-12",
     "ghost": "ghosts/akina-1/5168fd241b77a365.idg"
+   },
+   {
+    "rank": 2,
+    "pid": "de3075b68c60a06b",
+    "shown": "GARAXE #de30",
+    "steam": "",
+    "steam_verified": false,
+    "name": "GARAXE",
+    "time_ms": 222566,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-17",
+    "ghost": "ghosts/akina-1/de3075b68c60a06b.idg"
    }
   ]
  },

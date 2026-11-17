@@ -16,8 +16,10 @@ E	6	Marcus	189833	8	f341e22f0a0d3a93	ghosts/akagi-1/f341e22f0a0d3a93.idg	2026-11
 B	akina-0	akina	Akina downhill
 E	1	Cassandra	195500	0	b46085569295d65f	ghosts/akina-0/b46085569295d65f.idg	2026-10-31	76561198289153961	1
 E	2	BLACKLIST	196433	23	5168fd241b77a365	ghosts/akina-0/5168fd241b77a365.idg	2026-11-12		
+E	3	GARAXE	206900	0	de3075b68c60a06b	ghosts/akina-0/de3075b68c60a06b.idg	2026-11-17		
 B	akina-1	akina	Akina uphill
 E	1	BLACKLIST	205766	23	5168fd241b77a365	ghosts/akina-1/5168fd241b77a365.idg	2026-11-12		
+E	2	GARAXE	222566	0	de3075b68c60a06b	ghosts/akina-1/de3075b68c60a06b.idg	2026-11-17		
 B	iroha-0	iroha	Iroha downhill
 E	1	Cassandra	196600	0	b46085569295d65f	ghosts/iroha-0/b46085569295d65f.idg	2026-11-16	76561198289153961	1
 B	iroha-1-wet	iroha	Iroha uphill (wet)
