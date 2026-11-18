@@ -1,16 +1,16 @@
 {
- "now": 1794940472,
+ "now": 1794964437,
  "current": [
   {
-   "id": "d-2026-11-17",
+   "id": "d-2026-11-18",
    "kind": "daily",
-   "label": "Akagi downhill, day",
-   "board": "akagi-0",
+   "label": "Akina downhill, day",
+   "board": "akina-0",
    "cond": "day",
-   "course": "akagi",
+   "course": "akina",
    "dir": 0,
-   "start": 1794873600,
-   "end": 1794960000,
+   "start": 1794960000,
+   "end": 1795046400,
    "skin": "champion",
    "skin_name": "Champion",
    "drivers": 0,
@@ -46,31 +46,19 @@
  ],
  "recent": [
   {
-   "id": "d-2026-11-16",
+   "id": "d-2026-11-17",
    "kind": "daily",
-   "label": "Usui (reverse), day",
-   "board": "usui-1",
+   "label": "Akagi downhill, day",
+   "board": "akagi-0",
    "cond": "day",
-   "course": "usui",
-   "dir": 1,
-   "start": 1794787200,
-   "end": 1794873600,
+   "course": "akagi",
+   "dir": 0,
+   "start": 1794873600,
+   "end": 1794960000,
    "skin": "champion",
    "skin_name": "Champion",
-   "drivers": 1,
-   "entries": [
-    {
-     "rank": 1,
-     "pid": "b46085569295d65f",
-     "shown": "Cassandra (Steam)",
-     "steam": "76561198289153961",
-     "name": "Cassandra",
-     "time_ms": 184200,
-     "car": 10,
-     "date": "2026-11-16",
-     "ghost": "ghosts/ch/d-2026-11-16/b46085569295d65f.idg"
-    }
-   ]
+   "drivers": 0,
+   "entries": []
   },
   {
    "id": "w-2026-W46",
