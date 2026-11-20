@@ -655,6 +655,19 @@
     "game": "jp",
     "date": "2026-11-12",
     "ghost": "ghosts/myougi-0/d12b5b8cd5ac2eef.idg"
+   },
+   {
+    "rank": 30,
+    "pid": "39d5ce16112c1a3b",
+    "shown": "Awarer #39d5",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Awarer",
+    "time_ms": 193866,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-11-19",
+    "ghost": "ghosts/myougi-0/39d5ce16112c1a3b.idg"
    }
   ]
  },

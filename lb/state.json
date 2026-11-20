@@ -1,5 +1,5 @@
 {
- "last_id": "1572939306488700999",
+ "last_id": "1573116302304743555",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -190,7 +190,6 @@
     -1.7999999523162842
    ],
    "lens": [
-    9787.3,
     9776.3,
     9725.1,
     9714.1,
@@ -239,7 +238,8 @@
     9699.6,
     9750.3,
     9746.6,
-    9712.2
+    9712.2,
+    9732.8
    ],
    "entries": {
     "b46085569295d65f": {
@@ -530,6 +530,16 @@
      "date": "2026-11-19",
      "msg": "1572936112215818402",
      "ghost": "ghosts/myougi-0/de3075b68c60a06b.idg",
+     "car_from_model": 1
+    },
+    "39d5ce16112c1a3b": {
+     "name": "Awarer",
+     "time_ms": 193866,
+     "car": 0,
+     "game": "jp",
+     "date": "2026-11-19",
+     "msg": "1573116302304743555",
+     "ghost": "ghosts/myougi-0/39d5ce16112c1a3b.idg",
      "car_from_model": 1
     }
    }
@@ -1245,7 +1255,8 @@
   "e0fc86715d74f22f": "1cd990dc4624e8c15cb02b5a19b3e9a7cecd5a7708e027c92dc2dad6a4ffbb59cdcdb8ef44adbebdc3e957a743a88020690f581158fdbecf96bdd81e530590a9",
   "de3075b68c60a06b": "740f19594adc1404409b6460f07af804c71072a518950a417ff97bcf225fb646782d35e383e5bc089f4f9a0a7719aaf2401347e75f85529de05958202261043b",
   "17c85d4cbddaef1f": "242e72ec506a5a8bdd09e900aaebdb6cc3bc21c97849fe890643b70e2240e0e346c8beaf29772c93155a40d59ca5c4ed24c9f8dbf2ddd3a0645b4909cfa79a28",
-  "0b64ee09764802a3": "bca4e4cb3fa0252ab468e2e4c7e9ddb9933cd2bfaf80484ac8ac8d2ce56592e86469f3e472a2be92534d46fd36348dab963d76060ae61168887967dd5037e9f5"
+  "0b64ee09764802a3": "bca4e4cb3fa0252ab468e2e4c7e9ddb9933cd2bfaf80484ac8ac8d2ce56592e86469f3e472a2be92534d46fd36348dab963d76060ae61168887967dd5037e9f5",
+  "39d5ce16112c1a3b": "b572d6c49e60f0bf6e4c3b0f85c2964bb7bb63be4625520457f6510338672fe4ec930a23582878e0a34542c20cdd32e2e46de966c90c00ab7cbba0f9ab69f733"
  },
  "names": {
   "b46085569295d65f": [
@@ -1361,6 +1372,9 @@
   ],
   "de3075b68c60a06b": [
    "GARAXE"
+  ],
+  "39d5ce16112c1a3b": [
+   "Awarer"
   ]
  },
  "steam": {
@@ -1940,7 +1954,8 @@
      "ghost": "ghosts/ch/d-2026-11-05/b46085569295d65f.idg",
      "car_from_model": 1
     }
-   }
+   },
+   "ghosts_gone": true
   },
   "d-2026-11-07": {
    "kind": "daily",
@@ -2058,6 +2073,7 @@
   "w-2026-W47": "sunburst",
   "d-2026-11-17": "champion",
   "d-2026-11-18": "champion",
-  "d-2026-11-19": "champion"
+  "d-2026-11-19": "champion",
+  "d-2026-11-20": "champion"
  }
 }
