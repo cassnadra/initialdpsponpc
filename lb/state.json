@@ -1988,7 +1988,8 @@
      "ghost": "ghosts/ch/d-2026-11-07/b46085569295d65f.idg",
      "car_from_model": 1
     }
-   }
+   },
+   "ghosts_gone": true
   },
   "d-2026-11-09": {
    "kind": "daily",
@@ -2088,6 +2089,7 @@
   "d-2026-11-18": "champion",
   "d-2026-11-19": "champion",
   "d-2026-11-20": "champion",
-  "d-2026-11-21": "champion"
+  "d-2026-11-21": "champion",
+  "d-2026-11-22": "champion"
  }
 }
