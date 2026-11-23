@@ -1960,7 +1960,8 @@
      "ghost": "ghosts/ch/w-2026-W45/f341e22f0a0d3a93.idg",
      "car_from_model": 1
     }
-   }
+   },
+   "ghosts_gone": true
   },
   "d-2026-11-05": {
    "kind": "daily",
@@ -2103,6 +2104,8 @@
   "d-2026-11-19": "champion",
   "d-2026-11-20": "champion",
   "d-2026-11-21": "champion",
-  "d-2026-11-22": "champion"
+  "d-2026-11-22": "champion",
+  "d-2026-11-23": "champion",
+  "w-2026-W48": "sunburst"
  }
 }

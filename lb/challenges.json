@@ -1,6 +1,38 @@
 {
- "now": 1795381975,
+ "now": 1795398238,
  "current": [
+  {
+   "id": "d-2026-11-23",
+   "kind": "daily",
+   "label": "Usui, wet",
+   "board": "usui-0-wet",
+   "cond": "wet",
+   "course": "usui",
+   "dir": 0,
+   "start": 1795392000,
+   "end": 1795478400,
+   "skin": "champion",
+   "skin_name": "Champion",
+   "drivers": 0,
+   "entries": []
+  },
+  {
+   "id": "w-2026-W48",
+   "kind": "weekly",
+   "label": "Shomaru uphill, day",
+   "board": "syoumaru-1",
+   "cond": "day",
+   "course": "syoumaru",
+   "dir": 1,
+   "start": 1795392000,
+   "end": 1795996800,
+   "skin": "sunburst",
+   "skin_name": "Sunburst",
+   "drivers": 0,
+   "entries": []
+  }
+ ],
+ "recent": [
   {
    "id": "d-2026-11-22",
    "kind": "daily",
@@ -44,39 +76,26 @@
    ]
   }
  ],
- "recent": [
-  {
-   "id": "d-2026-11-21",
-   "kind": "daily",
-   "label": "Irohazaka uphill, night",
-   "board": "iroha-1",
-   "cond": "night",
-   "course": "iroha",
-   "dir": 1,
-   "start": 1795219200,
-   "end": 1795305600,
-   "skin": "champion",
-   "skin_name": "Champion",
-   "drivers": 0,
-   "entries": []
-  },
-  {
-   "id": "w-2026-W46",
-   "kind": "weekly",
-   "label": "Irohazaka uphill, night",
-   "board": "iroha-1",
-   "cond": "night",
-   "course": "iroha",
-   "dir": 1,
-   "start": 1794182400,
-   "end": 1794787200,
-   "skin": "sunburst",
-   "skin_name": "Sunburst",
-   "drivers": 0,
-   "entries": []
-  }
- ],
  "past": [
+  {
+   "id": "w-2026-W47",
+   "kind": "weekly",
+   "label": "Tsuchisaka uphill, night",
+   "board": "tuchisaka-0",
+   "start": 1794787200,
+   "end": 1795392000,
+   "drivers": 1,
+   "podium": [
+    {
+     "rank": 1,
+     "pid": "b46085569295d65f",
+     "shown": "Cassandra (Steam)",
+     "name": "Cassandra",
+     "time_ms": 185700,
+     "car": 10
+    }
+   ]
+  },
   {
    "id": "d-2026-11-16",
    "kind": "daily",
