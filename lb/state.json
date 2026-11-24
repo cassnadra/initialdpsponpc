@@ -1,5 +1,5 @@
 {
- "last_id": "1574156075840573602",
+ "last_id": "1574552499073847337",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -15,7 +15,8 @@
     5789.4,
     5789.6,
     5782.0,
-    5762.5
+    5762.5,
+    5720.3
    ],
    "entries": {
     "b46085569295d65f": {
@@ -46,6 +47,16 @@
      "date": "2026-11-12",
      "msg": "1570432620955828316",
      "ghost": "ghosts/akagi-0/5168fd241b77a365.idg",
+     "car_from_model": 1
+    },
+    "de3075b68c60a06b": {
+     "name": "GARAXE",
+     "time_ms": 162266,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-23",
+     "msg": "1574550689705762836",
+     "ghost": "ghosts/akagi-0/de3075b68c60a06b.idg",
      "car_from_model": 1
     }
    }
@@ -820,7 +831,8 @@
     5844.4,
     5792.3,
     5793.9,
-    5750.4
+    5750.4,
+    5735.0
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -882,6 +894,16 @@
      "msg": "1570429476372742174",
      "ghost": "ghosts/akagi-1/5168fd241b77a365.idg",
      "car_from_model": 1
+    },
+    "de3075b68c60a06b": {
+     "name": "GARAXE",
+     "time_ms": 171300,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-23",
+     "msg": "1574548879859257474",
+     "ghost": "ghosts/akagi-1/de3075b68c60a06b.idg",
+     "car_from_model": 1
     }
    }
   },
@@ -895,7 +917,8 @@
    ],
    "lens": [
     5774.0,
-    5804.6
+    5804.6,
+    5751.1
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -916,6 +939,16 @@
      "date": "2026-11-12",
      "msg": "1570430924007669771",
      "ghost": "ghosts/akagi-0-wet/5168fd241b77a365.idg",
+     "car_from_model": 1
+    },
+    "de3075b68c60a06b": {
+     "name": "GARAXE",
+     "time_ms": 172900,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-23",
+     "msg": "1574549867467112459",
+     "ghost": "ghosts/akagi-0-wet/de3075b68c60a06b.idg",
      "car_from_model": 1
     }
    }
@@ -1190,6 +1223,30 @@
      "date": "2026-11-16",
      "msg": "1571981104464920676",
      "ghost": "ghosts/tuchisaka-0/b46085569295d65f.idg",
+     "car_from_model": 1
+    }
+   }
+  },
+  "akina-1-wet": {
+   "course": "akina",
+   "label": "Akina uphill (wet)",
+   "start": [
+    1795.5,
+    665.1946411132812,
+    -1974.9000244140625
+   ],
+   "lens": [
+    7601.6
+   ],
+   "entries": {
+    "de3075b68c60a06b": {
+     "name": "GARAXE",
+     "time_ms": 221666,
+     "car": 0,
+     "game": "en",
+     "date": "2026-11-23",
+     "msg": "1574552499073847337",
+     "ghost": "ghosts/akina-1-wet/de3075b68c60a06b.idg",
      "car_from_model": 1
     }
    }
@@ -2023,7 +2080,8 @@
      "ghost": "ghosts/ch/d-2026-11-09/b46085569295d65f.idg",
      "car_from_model": 1
     }
-   }
+   },
+   "ghosts_gone": true
   },
   "d-2026-11-10": {
    "kind": "daily",
@@ -2106,6 +2164,7 @@
   "d-2026-11-21": "champion",
   "d-2026-11-22": "champion",
   "d-2026-11-23": "champion",
-  "w-2026-W48": "sunburst"
+  "w-2026-W48": "sunburst",
+  "d-2026-11-24": "champion"
  }
 }

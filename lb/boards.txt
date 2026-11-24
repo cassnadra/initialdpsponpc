@@ -2,17 +2,20 @@
 B	akagi-0	akagi	Akagi downhill
 E	1	Cassandra	153100	10	b46085569295d65f	ghosts/akagi-0/b46085569295d65f.idg	2026-11-09	76561198289153961	1
 E	2	BLACKLIST	154633	23	5168fd241b77a365	ghosts/akagi-0/5168fd241b77a365.idg	2026-11-12		
-E	3	Alex.Kirch	165033	14	ea03af8d21d8415e	ghosts/akagi-0/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
+E	3	GARAXE	162266	0	de3075b68c60a06b	ghosts/akagi-0/de3075b68c60a06b.idg	2026-11-23		
+E	4	Alex.Kirch	165033	14	ea03af8d21d8415e	ghosts/akagi-0/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
 B	akagi-0-wet	akagi	Akagi downhill (wet)
 E	1	BLACKLIST	160666	23	5168fd241b77a365	ghosts/akagi-0-wet/5168fd241b77a365.idg	2026-11-12		
-E	2	Alex.Kirch	175866	21	ea03af8d21d8415e	ghosts/akagi-0-wet/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
+E	2	GARAXE	172900	0	de3075b68c60a06b	ghosts/akagi-0-wet/de3075b68c60a06b.idg	2026-11-23		
+E	3	Alex.Kirch	175866	21	ea03af8d21d8415e	ghosts/akagi-0-wet/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
 B	akagi-1	akagi	Akagi uphill
 E	1	BLACKLIST	161433	23	5168fd241b77a365	ghosts/akagi-1/5168fd241b77a365.idg	2026-11-12		
 E	2	Cassandra	162433	13	b46085569295d65f	ghosts/akagi-1/b46085569295d65f.idg	2026-11-05	76561198289153961	1
 E	3	PRZ2K0	169066	2	798da52dbb827e1c	ghosts/akagi-1/798da52dbb827e1c.idg	2026-11-02		
-E	4	MK	174866	22	f52a777f88d4c443	ghosts/akagi-1/f52a777f88d4c443.idg	2026-11-11		
-E	5	Alex.Kirch	181500	21	ea03af8d21d8415e	ghosts/akagi-1/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
-E	6	Marcus	189833	8	f341e22f0a0d3a93	ghosts/akagi-1/f341e22f0a0d3a93.idg	2026-11-05		
+E	4	GARAXE	171300	0	de3075b68c60a06b	ghosts/akagi-1/de3075b68c60a06b.idg	2026-11-23		
+E	5	MK	174866	22	f52a777f88d4c443	ghosts/akagi-1/f52a777f88d4c443.idg	2026-11-11		
+E	6	Alex.Kirch	181500	21	ea03af8d21d8415e	ghosts/akagi-1/ea03af8d21d8415e.idg	2026-10-29	76561198064983234	1
+E	7	Marcus	189833	8	f341e22f0a0d3a93	ghosts/akagi-1/f341e22f0a0d3a93.idg	2026-11-05		
 B	akina-0	akina	Akina downhill
 E	1	Cassandra	195500	0	b46085569295d65f	ghosts/akina-0/b46085569295d65f.idg	2026-10-31	76561198289153961	1
 E	2	BLACKLIST	196433	23	5168fd241b77a365	ghosts/akina-0/5168fd241b77a365.idg	2026-11-12		
@@ -20,6 +23,8 @@ E	3	GARAXE	206900	0	de3075b68c60a06b	ghosts/akina-0/de3075b68c60a06b.idg	2026-11
 B	akina-1	akina	Akina uphill
 E	1	BLACKLIST	205766	23	5168fd241b77a365	ghosts/akina-1/5168fd241b77a365.idg	2026-11-12		
 E	2	GARAXE	222566	0	de3075b68c60a06b	ghosts/akina-1/de3075b68c60a06b.idg	2026-11-17		
+B	akina-1-wet	akina	Akina uphill (wet)
+E	1	GARAXE	221666	0	de3075b68c60a06b	ghosts/akina-1-wet/de3075b68c60a06b.idg	2026-11-23		
 B	iroha-0	iroha	Iroha downhill
 E	1	Cassandra	196600	0	b46085569295d65f	ghosts/iroha-0/b46085569295d65f.idg	2026-11-16	76561198289153961	1
 B	iroha-1-wet	iroha	Iroha uphill (wet)
@@ -150,9 +155,9 @@ P	ea03af8d21d8415e	1	0	12	7200	Alex.Kirch		6806bf222a29839e3e5a1d271e1a40aa		765
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe						0	fb9e0344890be0b118f913577c1419c9990f9d9a4371b3f16fecdf76994667275b78ae0265787d09eb00b5c574361c7a00b521ac4403ad24daa9c57385988d14
 P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx						0	23fac3c22a7cec86e8b030fa1f54d0c8b1e97a24d59a5f88c061697d37220824b914fd230c25c5e5ffb36be9ab06579c0757b0c152bb0e07e7574424f1876a09
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c				0	c6601acf302f6a28dab2f91e6ee2c005bb6035a1dcaab0c1e91f452c96ae6083e802310ca6d27916d0d34670053ef96f42e14579bcaf9c7e90c1255cd8513b4d
-C	d-2026-11-23	daily	Usui, wet	usui-0-wet	wet	1	0	1795392000	1795478400	on	0	champion	Champion
+C	d-2026-11-24	daily	Akagi uphill, night	akagi-1	night	2	1	1795478400	1795564800	on	0	champion	Champion
 C	w-2026-W48	weekly	Shomaru uphill, day	syoumaru-1	day	6	1	1795392000	1795996800	on	0	sunburst	Sunburst
-C	d-2026-11-22	daily	Akina uphill, night	akina-1	night	3	1	1795305600	1795392000	over	0	champion	Champion
+C	d-2026-11-23	daily	Usui, wet	usui-0-wet	wet	1	0	1795392000	1795478400	over	0	champion	Champion
 C	w-2026-W47	weekly	Tsuchisaka uphill, night	tuchisaka-0	night	7	0	1794787200	1795392000	over	1	sunburst	Sunburst
 R	1	Cassandra	185700	10	b46085569295d65f	ghosts/ch/w-2026-W47/b46085569295d65f.idg	2026-11-16	76561198289153961	1
 K	checker	streak	Tilted checker

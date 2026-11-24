@@ -31,6 +31,19 @@
    },
    {
     "rank": 3,
+    "pid": "de3075b68c60a06b",
+    "shown": "GARAXE #de30",
+    "steam": "",
+    "steam_verified": false,
+    "name": "GARAXE",
+    "time_ms": 162266,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-23",
+    "ghost": "ghosts/akagi-0/de3075b68c60a06b.idg"
+   },
+   {
+    "rank": 4,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -63,6 +76,19 @@
    },
    {
     "rank": 2,
+    "pid": "de3075b68c60a06b",
+    "shown": "GARAXE #de30",
+    "steam": "",
+    "steam_verified": false,
+    "name": "GARAXE",
+    "time_ms": 172900,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-23",
+    "ghost": "ghosts/akagi-0-wet/de3075b68c60a06b.idg"
+   },
+   {
+    "rank": 3,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -121,6 +147,19 @@
    },
    {
     "rank": 4,
+    "pid": "de3075b68c60a06b",
+    "shown": "GARAXE #de30",
+    "steam": "",
+    "steam_verified": false,
+    "name": "GARAXE",
+    "time_ms": 171300,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-23",
+    "ghost": "ghosts/akagi-1/de3075b68c60a06b.idg"
+   },
+   {
+    "rank": 5,
     "pid": "f52a777f88d4c443",
     "shown": "MK #f52a",
     "steam": "",
@@ -133,7 +172,7 @@
     "ghost": "ghosts/akagi-1/f52a777f88d4c443.idg"
    },
    {
-    "rank": 5,
+    "rank": 6,
     "pid": "ea03af8d21d8415e",
     "shown": "Alex.Kirch (Steam)",
     "steam": "76561198064983234",
@@ -146,7 +185,7 @@
     "ghost": "ghosts/akagi-1/ea03af8d21d8415e.idg"
    },
    {
-    "rank": 6,
+    "rank": 7,
     "pid": "f341e22f0a0d3a93",
     "shown": "Marcus #f341",
     "steam": "",
@@ -234,6 +273,25 @@
     "game": "en",
     "date": "2026-11-17",
     "ghost": "ghosts/akina-1/de3075b68c60a06b.idg"
+   }
+  ]
+ },
+ "akina-1-wet": {
+  "course": "akina",
+  "label": "Akina uphill (wet)",
+  "entries": [
+   {
+    "rank": 1,
+    "pid": "de3075b68c60a06b",
+    "shown": "GARAXE #de30",
+    "steam": "",
+    "steam_verified": false,
+    "name": "GARAXE",
+    "time_ms": 221666,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-23",
+    "ghost": "ghosts/akina-1-wet/de3075b68c60a06b.idg"
    }
   ]
  },
