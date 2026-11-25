@@ -54,6 +54,19 @@
     "game": "en",
     "date": "2026-10-29",
     "ghost": "ghosts/akagi-0/ea03af8d21d8415e.idg"
+   },
+   {
+    "rank": 5,
+    "pid": "d8e9402c172d126a",
+    "shown": "Lone #d8e9",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Lone",
+    "time_ms": 178733,
+    "car": 0,
+    "game": "en",
+    "date": "2026-11-25",
+    "ghost": "ghosts/akagi-0/d8e9402c172d126a.idg"
    }
   ]
  },
