@@ -1,5 +1,5 @@
 {
- "last_id": "1574552499073847337",
+ "last_id": "1574912968402149618",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -1315,7 +1315,8 @@
   "0b64ee09764802a3": "bca4e4cb3fa0252ab468e2e4c7e9ddb9933cd2bfaf80484ac8ac8d2ce56592e86469f3e472a2be92534d46fd36348dab963d76060ae61168887967dd5037e9f5",
   "39d5ce16112c1a3b": "b572d6c49e60f0bf6e4c3b0f85c2964bb7bb63be4625520457f6510338672fe4ec930a23582878e0a34542c20cdd32e2e46de966c90c00ab7cbba0f9ab69f733",
   "4b753be420435d17": "e0d86c6698f4f7d24c0934593eb8e22d48055eecb8c99711a4f6bf3efa2faf1ef3228c9145be358ad82753664d92e948f7a90969489028360d53a206da7dbb68",
-  "3bf7e6fa000084f7": "fa0af57a7453f8f43d7798b569f90c4a3972963101e99255a1a57921e4c2f4392f80450952e84fd3d73ab8b66e89b511cd7eaf32fe387c91155c553cf5031542"
+  "3bf7e6fa000084f7": "fa0af57a7453f8f43d7798b569f90c4a3972963101e99255a1a57921e4c2f4392f80450952e84fd3d73ab8b66e89b511cd7eaf32fe387c91155c553cf5031542",
+  "f270b90d4fd3f4b3": "34dab12c88731cc9ec14780a847c3163c127c9029b9314efa5bc564f6369fc47c6a2ac486f0a85331349fd1b04ed27f628fc75e59ba71a30ef9c5fb6653def4b"
  },
  "names": {
   "b46085569295d65f": [
@@ -1986,6 +1987,18 @@
    "discord": "",
    "xp": 0,
    "at": 1795378454
+  },
+  "f270b90d4fd3f4b3": {
+   "pic": 1,
+   "car": 0,
+   "cards": 0,
+   "play_h": 0,
+   "name": "Vulveeta",
+   "bio": "",
+   "car_img": "",
+   "discord": "",
+   "xp": 0,
+   "at": 1795558912
   }
  },
  "bans": {},
@@ -2101,7 +2114,8 @@
      "ghost": "ghosts/ch/d-2026-11-10/8e25cd5465651786.idg",
      "car_from_model": 1
     }
-   }
+   },
+   "ghosts_gone": true
   },
   "d-2026-11-16": {
    "kind": "daily",
@@ -2165,6 +2179,7 @@
   "d-2026-11-22": "champion",
   "d-2026-11-23": "champion",
   "w-2026-W48": "sunburst",
-  "d-2026-11-24": "champion"
+  "d-2026-11-24": "champion",
+  "d-2026-11-25": "champion"
  }
 }
