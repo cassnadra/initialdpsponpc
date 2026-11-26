@@ -1,5 +1,5 @@
 {
- "last_id": "1575281212996587581",
+ "last_id": "1575453484298276864",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -212,7 +212,6 @@
     -1.7999999523162842
    ],
    "lens": [
-    9776.3,
     9725.1,
     9714.1,
     9776.4,
@@ -261,7 +260,8 @@
     9750.3,
     9746.6,
     9712.2,
-    9732.8
+    9732.8,
+    9791.2
    ],
    "entries": {
     "b46085569295d65f": {
@@ -562,6 +562,16 @@
      "date": "2026-11-19",
      "msg": "1573116302304743555",
      "ghost": "ghosts/myougi-0/39d5ce16112c1a3b.idg",
+     "car_from_model": 1
+    },
+    "4e2bd6030b8bfbec": {
+     "name": "a2dam12",
+     "time_ms": 187400,
+     "car": 6,
+     "game": "jp",
+     "date": "2026-11-26",
+     "msg": "1575404722230267925",
+     "ghost": "ghosts/myougi-0/4e2bd6030b8bfbec.idg",
      "car_from_model": 1
     }
    }
@@ -1340,7 +1350,8 @@
   "3bf7e6fa000084f7": "fa0af57a7453f8f43d7798b569f90c4a3972963101e99255a1a57921e4c2f4392f80450952e84fd3d73ab8b66e89b511cd7eaf32fe387c91155c553cf5031542",
   "f270b90d4fd3f4b3": "34dab12c88731cc9ec14780a847c3163c127c9029b9314efa5bc564f6369fc47c6a2ac486f0a85331349fd1b04ed27f628fc75e59ba71a30ef9c5fb6653def4b",
   "d8e9402c172d126a": "b639add30391b3281e4223d7296f3695f1a1446fe313b0343fa21dfb7cd212d9de705faa9f5907140317b2db9597fa0b18114479b1abb68f758acdf666f68806",
-  "e47c6afa1a441855": "9e30e76e2b80e68469dd8c2ac2ef874fc9d6edcb66af0d114a0d6101fa5c01a85460ae68a68c0a005ed74785012fc904c5d398b9df34452448e4380ce8a279bf"
+  "e47c6afa1a441855": "9e30e76e2b80e68469dd8c2ac2ef874fc9d6edcb66af0d114a0d6101fa5c01a85460ae68a68c0a005ed74785012fc904c5d398b9df34452448e4380ce8a279bf",
+  "4e2bd6030b8bfbec": "b08cbd7e758732bafe51b07e823bc4babb1cd57c4f640ab17f9d647a377312fd08cc11352b89495e426fd207ad3a9ff2ab11ca251af5b4c314f9648bb80849d5"
  },
  "names": {
   "b46085569295d65f": [
@@ -1465,6 +1476,9 @@
   ],
   "e47c6afa1a441855": [
    "Toyota Starlet"
+  ],
+  "4e2bd6030b8bfbec": [
+   "a2dam12"
   ]
  },
  "steam": {
@@ -1493,10 +1507,10 @@
    "play_h": 11,
    "name": "Cassandra",
    "bio": "",
-   "car_img": "17860b89f1344e18ad1ae65f67550fd5",
+   "car_img": "221c89a3b4d14aac810e4759439d8817",
    "discord": "cassnadra",
-   "xp": 7175,
-   "at": 1794860227
+   "xp": 9581,
+   "at": 1795687781
   },
   "2ff94d72b41c145f": {
    "pic": 1,
