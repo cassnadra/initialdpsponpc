@@ -1,5 +1,5 @@
 {
- "last_id": "1575025004809166908",
+ "last_id": "1575281212996587581",
  "boards": {
   "akagi-0": {
    "course": "akagi",
@@ -843,7 +843,8 @@
     5792.3,
     5793.9,
     5750.4,
-    5735.0
+    5735.0,
+    5814.9
    ],
    "entries": {
     "ea03af8d21d8415e": {
@@ -914,6 +915,16 @@
      "date": "2026-11-23",
      "msg": "1574548879859257474",
      "ghost": "ghosts/akagi-1/de3075b68c60a06b.idg",
+     "car_from_model": 1
+    },
+    "e47c6afa1a441855": {
+     "name": "Toyota Starlet",
+     "time_ms": 184866,
+     "car": 0,
+     "game": "jp",
+     "date": "2026-11-25",
+     "msg": "1575281212996587581",
+     "ghost": "ghosts/akagi-1/e47c6afa1a441855.idg",
      "car_from_model": 1
     }
    }
@@ -1328,7 +1339,8 @@
   "4b753be420435d17": "e0d86c6698f4f7d24c0934593eb8e22d48055eecb8c99711a4f6bf3efa2faf1ef3228c9145be358ad82753664d92e948f7a90969489028360d53a206da7dbb68",
   "3bf7e6fa000084f7": "fa0af57a7453f8f43d7798b569f90c4a3972963101e99255a1a57921e4c2f4392f80450952e84fd3d73ab8b66e89b511cd7eaf32fe387c91155c553cf5031542",
   "f270b90d4fd3f4b3": "34dab12c88731cc9ec14780a847c3163c127c9029b9314efa5bc564f6369fc47c6a2ac486f0a85331349fd1b04ed27f628fc75e59ba71a30ef9c5fb6653def4b",
-  "d8e9402c172d126a": "b639add30391b3281e4223d7296f3695f1a1446fe313b0343fa21dfb7cd212d9de705faa9f5907140317b2db9597fa0b18114479b1abb68f758acdf666f68806"
+  "d8e9402c172d126a": "b639add30391b3281e4223d7296f3695f1a1446fe313b0343fa21dfb7cd212d9de705faa9f5907140317b2db9597fa0b18114479b1abb68f758acdf666f68806",
+  "e47c6afa1a441855": "9e30e76e2b80e68469dd8c2ac2ef874fc9d6edcb66af0d114a0d6101fa5c01a85460ae68a68c0a005ed74785012fc904c5d398b9df34452448e4380ce8a279bf"
  },
  "names": {
   "b46085569295d65f": [
@@ -1450,6 +1462,9 @@
   ],
   "d8e9402c172d126a": [
    "Lone"
+  ],
+  "e47c6afa1a441855": [
+   "Toyota Starlet"
   ]
  },
  "steam": {
@@ -2207,6 +2222,7 @@
   "d-2026-11-23": "champion",
   "w-2026-W48": "sunburst",
   "d-2026-11-24": "champion",
-  "d-2026-11-25": "champion"
+  "d-2026-11-25": "champion",
+  "d-2026-11-26": "champion"
  }
 }

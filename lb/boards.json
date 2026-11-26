@@ -199,6 +199,19 @@
    },
    {
     "rank": 7,
+    "pid": "e47c6afa1a441855",
+    "shown": "Toyota Starlet #e47c",
+    "steam": "",
+    "steam_verified": false,
+    "name": "Toyota Starlet",
+    "time_ms": 184866,
+    "car": 0,
+    "game": "jp",
+    "date": "2026-11-25",
+    "ghost": "ghosts/akagi-1/e47c6afa1a441855.idg"
+   },
+   {
+    "rank": 8,
     "pid": "f341e22f0a0d3a93",
     "shown": "Marcus #f341",
     "steam": "",
