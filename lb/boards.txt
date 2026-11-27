@@ -160,9 +160,9 @@ P	f270b90d4fd3f4b3	1	0	0	0	Vulveeta						0	34dab12c88731cc9ec14780a847c3163c127c
 P	fb6457d17ea6e509	1	-1	7	10800	SeAshe						0	fb9e0344890be0b118f913577c1419c9990f9d9a4371b3f16fecdf76994667275b78ae0265787d09eb00b5c574361c7a00b521ac4403ad24daa9c57385988d14
 P	fe5cdccfe44c1bac	1	-1	0	0	pysinixx						0	23fac3c22a7cec86e8b030fa1f54d0c8b1e97a24d59a5f88c061697d37220824b914fd230c25c5e5ffb36be9ab06579c0757b0c152bb0e07e7574424f1876a09
 P	ffbe4156772f9fc4	1	0	0	0	Nüch		d235d9a817f6808d9e4ee4c6884d101c				0	c6601acf302f6a28dab2f91e6ee2c005bb6035a1dcaab0c1e91f452c96ae6083e802310ca6d27916d0d34670053ef96f42e14579bcaf9c7e90c1255cd8513b4d
-C	d-2026-11-26	daily	Happogahara downhill, wet	happou-0-wet	wet	4	0	1795651200	1795737600	on	0	champion	Champion
+C	d-2026-11-27	daily	Tsuchisaka uphill, wet	tuchisaka-1-wet	wet	7	1	1795737600	1795824000	on	0	champion	Champion
 C	w-2026-W48	weekly	Shomaru uphill, day	syoumaru-1	day	6	1	1795392000	1795996800	on	0	sunburst	Sunburst
-C	d-2026-11-25	daily	Akina downhill, wet	akina-0-wet	wet	3	0	1795564800	1795651200	over	0	champion	Champion
+C	d-2026-11-26	daily	Happogahara downhill, wet	happou-0-wet	wet	4	0	1795651200	1795737600	over	0	champion	Champion
 C	w-2026-W47	weekly	Tsuchisaka uphill, night	tuchisaka-0	night	7	0	1794787200	1795392000	over	1	sunburst	Sunburst
 R	1	Cassandra	185700	10	b46085569295d65f	ghosts/ch/w-2026-W47/b46085569295d65f.idg	2026-11-16	76561198289153961	1
 K	checker	streak	Tilted checker
